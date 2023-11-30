@@ -1,0 +1,107 @@
+name: RPPP Homework Continous Deployment
+env:
+  # TO DO: Change from 99 to correct group number. Note: this should be the only change in this file!!!
+  GROUP: '99'
+on:  
+  workflow_dispatch:
+  push:    
+    branches: [ master ]      
+
+jobs:  
+  check-secrets: 
+    runs-on: ubuntu-latest     
+    outputs:
+      data-available : ${{ steps.variables.outputs.data-available }}      
+    steps:    
+    - name: Check secrets 
+      id: variables
+      run: |                                 
+        #echo "data-available=${{ env.GROUP != '99' && secrets.USERNAME != '' && secrets.PASSWORD != '' }}" >> $GITHUB_OUTPUT      
+        echo "data-available=${{ env.GROUP != '990' && secrets.USERNAME != '' && secrets.PASSWORD != '' }}" >> $GITHUB_OUTPUT      
+              
+  build-and-deploy:
+    needs: check-secrets 
+    if: needs.check-secrets.outputs.data-available == 'true'
+    env:     
+      # Leave project folder as-is, except if you main project has been renamed (in that case, an admin must change the application definition for kestrel service)      
+      PROJECT-FOLDER : RPPP-WebApp
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup variables
+      id: variables
+      run: |                    
+        echo "group=${{ env.GROUP }}" >> $GITHUB_OUTPUT
+        echo "port=$((50000 + 100 * 10#${{ env.GROUP }}))" >> $GITHUB_OUTPUT
+        echo "zip-filename=G${{ env.GROUP }}-V$GITHUB_RUN_NUMBER-$(date +'%Y-%m-%d').tar.gz" >> $GITHUB_OUTPUT 
+        echo "publish-folder=${{ github.workspace }}/published" >> $GITHUB_OUTPUT        
+    - name: Print variables
+      run: |
+        echo "Group: ${{ steps.variables.outputs.group }}"  
+        echo "Zip filename: ${{ steps.variables.outputs.zip-filename }}"             
+        echo "Publish folder: ${{ steps.variables.outputs.publish-folder }}"
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: |
+        cd ${{ env.PROJECT-FOLDER }}
+        dotnet restore
+    - name: Build
+      run: |
+        cd ${{ env.PROJECT-FOLDER }}
+        dotnet build --configuration Release --no-restore
+    #- name: Test          
+    #  run: |
+    #    cd ${{ env.PROJECT-FOLDER }}
+    #    dotnet test --no-build --verbosity normal
+    - name: Publish      
+      run: |
+        cd ${{ env.PROJECT-FOLDER }}
+        #dotnet publish -c=Release -o='${{ steps.variables.outputs.publish-folder }}'
+        dotnet publish -c=Release --property:PublishDir=${{ steps.variables.outputs.publish-folder }}
+    - name: Change connection string in appsettings.json      
+      uses: benday-inc/edit-dbconnstr-in-appsettings@v1.3
+      with:
+        pathtosettingsfile: '${{ steps.variables.outputs.publish-folder }}/appsettings.json'
+        name: 'RPPP${{ steps.variables.outputs.group }}'
+        connectionstring: "Server=dosa.fer.hr,3000;Database=RPPP${{ steps.variables.outputs.group }};user id=${{ secrets.USERNAME }};password=${{ secrets.PASSWORD }}"
+    - name: Set Kestrel info      
+      uses: jossef/action-set-json-field@v2.1
+      with:
+        file: ${{ steps.variables.outputs.publish-folder }}/appsettings.json
+        field: Kestrel.EndPoints.Http.Url      
+        value: http://0.0.0.0:${{ steps.variables.outputs.port }}
+    - name: Set PathBase      
+      uses: jossef/action-set-json-field@v2.1
+      with:
+        file: ${{ steps.variables.outputs.publish-folder }}/appsettings.json
+        field: PathBase
+        value: /rppp/${{ steps.variables.outputs.group }}
+    - name: Compress      
+      run: |
+        cd ${{ steps.variables.outputs.publish-folder }}
+        tar -cvzf ${{ github.workspace }}/${{ steps.variables.outputs.zip-filename }} .
+    - name: Copy to destination server      
+      uses: kostya-ten/ssh-server-deploy@v4
+      with:
+        host: dosa.fer.hr
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        scp_source: "${{ github.workspace }}/${{ steps.variables.outputs.zip-filename }}"
+        scp_target: "/var/www/rppp/${{ steps.variables.outputs.group }}"  
+        #before_script: rm -r -f /var/www/rppp/${{ steps.variables.outputs.group }}/*        
+    - name: Unpack      
+      uses: appleboy/ssh-action@master
+      with:
+        host: dosa.fer.hr
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        script: |
+          cd /var/www/rppp/${{ steps.variables.outputs.group }}
+          #echo "Preparing new deployment" >> app_offline.htm
+          tar -xvzf ${{ steps.variables.outputs.zip-filename }}  --no-overwrite-dir
+          rm ${{ steps.variables.outputs.zip-filename }}
+          date >> restart_required.txt
+
