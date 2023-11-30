@@ -1,0 +1,45 @@
+﻿@model RPPP_WebApp.ViewModels.OwnerViewModel
+@{
+  ViewData["Title"] = "Vlasnici";
+}
+<h1>Popis vlasnika</h1>
+
+<pager page-info="@Model.PagingInfo" page-action="Index" page-title="Unesite željenu stranicu"
+       class="float-right">
+</pager>
+
+<table class="table table-sm table-striped table-hover" id="tableowner">
+  <thead>
+    <tr>
+      <th>
+        <a asp-route-sort="1" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 1 ? !Model.PagingInfo.Ascending : true)">
+          OIB
+        </a>
+      </th>
+      <th>
+        <a asp-route-sort="2" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 2 ? !Model.PagingInfo.Ascending : true)">
+          Ime
+        </a>
+      </th>
+      <th>
+        <a asp-route-sort="3" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 3 ? !Model.PagingInfo.Ascending : true)">
+          Prezime
+        </a>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var owner in Model.Owner) {
+      <tr>
+        <td class="text-left">@owner.Oib</td>
+        <td class="text-left">@owner.Name</td>
+        <td class="text-left">@owner.Surname</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@section scripts{
+  <script src="~/js/pager.js" asp-append-version="true"></script>
+  
+}
