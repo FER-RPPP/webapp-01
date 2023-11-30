@@ -1,7 +1,7 @@
 name: RPPP Homework Continous Deployment
 env:
   # TO DO: Change from 99 to correct group number. Note: this should be the only change in this file!!!
-  GROUP: '99'
+  GROUP: '01'
 on:  
   workflow_dispatch:
   push:    
