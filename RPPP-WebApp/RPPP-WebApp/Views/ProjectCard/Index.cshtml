@@ -1,0 +1,70 @@
+﻿@using RPPP_WebApp
+
+@model RPPP_WebApp.ViewModels.ProjectCardsViewModel
+@{
+  ViewData["Title"] = "Projektne kartice";
+}
+
+<h1 class="mt-3">Popis projektnih kartica</h1>
+
+<a asp-action="Create">Unos nove projektne kartice</a>
+
+<pager page-info="@Model.PagingInfo" page-action="Index" page-title="Unesite željenu stranicu" class="float-end"></pager>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        <a asp-route-sort="1" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 1 ? !Model.PagingInfo.Ascending : true)">
+          IBAN
+        </a>
+      </th>
+      <th>
+        <a asp-route-sort="2" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 2 ? !Model.PagingInfo.Ascending : true)">
+          Saldo
+        </a>
+      </th>
+      <th>
+        <a asp-route-sort="3" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 3 ? !Model.PagingInfo.Ascending : true)">
+          Datum aktivacije
+        </a>
+      </th>
+      <th>
+        <a asp-route-sort="4" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 4 ? !Model.PagingInfo.Ascending : true)">
+          Vlasnik
+        </a>
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var projectCard in Model.ProjectCard) {
+      <tr>
+        <td class="text-left">@projectCard.Iban</td>
+        <td class="text-left">@projectCard.Balance.ToString("C2")</td>
+        <td class="text-left">@projectCard.ActivationDate.ToString("dd.MM.yyyy.")</td>
+        <td class="text-left">@projectCard.Owner</td>
+        <td class="btn-toolbar gap-2 justify-content-end">
+          <a asp-action="Edit"
+             asp-route-id="@projectCard.Iban"
+             asp-route-page="@Model.PagingInfo.CurrentPage"
+             asp-route-sort="@Model.PagingInfo.Sort"
+             asp-route-ascending="@Model.PagingInfo.Ascending"
+             class="btn btn-sm btn-success" title="Ažuriraj"><i class="fas fa-edit"></i></a>
+
+          <form asp-action="Delete" method="post"
+                asp-route-page="@Model.PagingInfo.CurrentPage"
+                asp-route-sort="@Model.PagingInfo.Sort"
+                asp-route-ascending="@Model.PagingInfo.Ascending">
+            <input type="hidden" name="Oib" value="@projectCard.Iban" />
+            <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši"><i class="fas fa-trash-alt"></i></button>
+          </form>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@section scripts{
+  <script src="~/js/pager.js" asp-append-version="true"></script>
+}
