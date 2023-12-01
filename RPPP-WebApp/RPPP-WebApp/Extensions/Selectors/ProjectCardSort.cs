@@ -9,7 +9,7 @@ namespace RPPP_WebApp.Extensions.Selectors {
         1 => o => o.Iban,
         2 => o => o.Balance,
         3 => o => o.ActivationDate,
-        4 => o => o.Oib,
+        4 => o => o.OibNavigation.Name,
         _ => null
       };
 

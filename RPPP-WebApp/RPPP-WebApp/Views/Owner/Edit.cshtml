@@ -1,4 +1,5 @@
 ﻿@model RPPP_WebApp.Model.Owner
+
 @{
   ViewData["Title"] = "Ažuriraj vlasnika";
 }
@@ -10,12 +11,12 @@
       method="post">
   <div asp-validation-summary="All"></div>
   <div class="form-group mt-3">
-    <label asp-for="Name"></label>
+    <label asp-for="Name">Ime</label>
     <div><span asp-validation-for="Name" class="text-danger"></span></div>
     <textarea asp-for="Name" class="form-control"></textarea>
   </div>
   <div class="form-group mt-3">
-    <label asp-for="Surname"></label>
+    <label asp-for="Surname">Prezime</label>
     <div><span asp-validation-for="Surname" class="text-danger"></span></div>
     <textarea asp-for="Surname" class="form-control"></textarea>
   </div>

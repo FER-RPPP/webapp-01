@@ -1,7 +1,9 @@
 ﻿@model RPPP_WebApp.Model.ProjectCard
+
 @{
-  ViewData["Title"] = "Novi vlasnik";
+  ViewData["Title"] = "Nova projektna kartica";
 }
+
 <h2 class="mt-3">Unos nove projektne kartice</h2>
 
 <form asp-action="Create" method="post">
@@ -30,7 +32,7 @@
   </div>
   <div class="text-center mt-3">
     <button class="btn btn-primary" type="submit">Dodaj</button>
-    <a asp-action="Index" class="btn btn-default">Odustani</a>
+    <a asp-action="Index" class="btn btn-secondary">Odustani</a>
   </div>
 </form>
 

@@ -6,7 +6,6 @@ using RPPP_WebApp.Extensions.Selectors;
 using RPPP_WebApp.Extensions;
 using RPPP_WebApp.Model;
 using RPPP_WebApp.ViewModels;
-using System;
 
 namespace RPPP_WebApp.Controllers {
 	public class OwnerController : Controller {
@@ -40,8 +39,9 @@ namespace RPPP_WebApp.Controllers {
         ItemsPerPage = pagesize,
         TotalItems = count
       };
+
       if (page < 1 || page > pagingInfo.TotalPages) {
-        return RedirectToAction(nameof(Index), new { page = pagingInfo.TotalPages, sort, ascending });
+        return RedirectToAction(nameof(Index), new { page = 1, sort, ascending });
       }
 
       query = query.ApplySort(sort, ascending);
@@ -116,12 +116,12 @@ namespace RPPP_WebApp.Controllers {
     }
 
 
-    [HttpGet("Owner/Edit/{Oib}")]
-    public IActionResult Edit(string Oib, int page = 1, int sort = 1, bool ascending = true) {
-      var owner = ctx.Owner.AsNoTracking().Where(o => o.Oib == Oib).SingleOrDefault();
+    [HttpGet]
+    public IActionResult Edit(string id, int page = 1, int sort = 1, bool ascending = true) {
+      var owner = ctx.Owner.AsNoTracking().Where(o => o.Oib == id).SingleOrDefault();
       if (owner == null) {
-        logger.LogWarning("Ne postoji vlasnik s OIB-om: " + Oib);
-        return NotFound("Ne postoji vlasnik s OIB-om: " + Oib);
+        logger.LogWarning("Ne postoji vlasnik s OIB-om: " + id);
+        return NotFound("Ne postoji vlasnik s OIB-om: " + id);
       }
       else {
         ViewBag.Page = page;
@@ -133,13 +133,13 @@ namespace RPPP_WebApp.Controllers {
 
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Update(string Oib, int page = 1, int sort = 1, bool ascending = true) {
+    public async Task<IActionResult> Update(string id, int page = 1, int sort = 1, bool ascending = true) {
       try {
         Owner owner = await ctx.Owner
-                          .Where(o => o.Oib == Oib)
+                          .Where(o => o.Oib == id)
                           .FirstOrDefaultAsync();
         if (owner == null) {
-          return NotFound("Neispravan OIB vlasnika: " + Oib);
+          return NotFound("Neispravan OIB vlasnika: " + id);
         }
 
         if (await TryUpdateModelAsync<Owner>(owner, "",
@@ -150,7 +150,7 @@ namespace RPPP_WebApp.Controllers {
           ViewBag.Ascending = ascending;
           try {
             await ctx.SaveChangesAsync();
-            TempData[Constants.Message] = "Vlasnik ažuriran.";
+            TempData[Constants.Message] = $"Vlasnik (OIB = {id}) ažuriran.";
             TempData[Constants.ErrorOccurred] = false;
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
           }
@@ -167,7 +167,7 @@ namespace RPPP_WebApp.Controllers {
       catch (Exception exc) {
         TempData[Constants.Message] = exc.CompleteExceptionMessage();
         TempData[Constants.ErrorOccurred] = true;
-        return RedirectToAction(nameof(Edit), Oib);
+        return RedirectToAction(nameof(Edit), id);
       }
     }
   }

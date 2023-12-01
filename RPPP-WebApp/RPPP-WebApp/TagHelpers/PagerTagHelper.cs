@@ -31,8 +31,6 @@ namespace RPPP_WebApp.TagHelpers {
 
     public string PageTitle { get; set; }
 
-
-
     public override void Process(TagHelperContext context, TagHelperOutput output) {
       output.TagName = "nav";
       int offset = appData.PageOffset;

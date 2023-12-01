@@ -15,7 +15,7 @@ namespace RPPP_WebApp.ModelsValidation {
         .NotEmpty().WithMessage("Datum aktivacije je obvezno polje");
 
       RuleFor(o => o.Oib)
-       .NotEmpty().WithMessage("Vlasnik je obvezno polje");
+        .NotEmpty().WithMessage("Vlasnik je obvezno polje");
     }
   }
 }
