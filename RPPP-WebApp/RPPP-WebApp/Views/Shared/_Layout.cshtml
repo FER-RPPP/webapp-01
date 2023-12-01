@@ -7,6 +7,7 @@
 
   <title>@ViewData["Title"] (RPPP)</title>
   <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
   @RenderSection("styles", required: false)
 </head>
@@ -14,9 +15,10 @@
   <partial name="_Nav" />
 
   <div class="container body-container">
+
     @RenderBody()
   </div>
-
+  s
   <script>
     window.applicationBaseUrl = '@Url.Content("~/")';
   </script>

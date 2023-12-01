@@ -6,6 +6,7 @@ using RPPP_WebApp.Extensions.Selectors;
 using RPPP_WebApp.Extensions;
 using RPPP_WebApp.Model;
 using RPPP_WebApp.ViewModels;
+using System;
 
 namespace RPPP_WebApp.Controllers {
 	public class OwnerController : Controller {
@@ -87,7 +88,91 @@ namespace RPPP_WebApp.Controllers {
         return View(owner);
       }
     }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Delete(string Oib, int page = 1, int sort = 1, bool ascending = true) {
+      var owner = ctx.Owner.Find(Oib);
+      if (owner != null) {
+        try {
+          ctx.Remove(owner);
+          ctx.SaveChanges();
+          logger.LogInformation($"Vlasnik {owner.Name} {owner.Surname} uspješno obrisan.");
+          TempData[Constants.Message] = $"Vlasnik {owner.Name} {owner.Surname} uspješno obrisan.";
+          TempData[Constants.ErrorOccurred] = false;
+        }
+        catch (Exception exc) {
+          TempData[Constants.Message] = "Pogreška prilikom brisanja vlasnika: " + exc.CompleteExceptionMessage();
+          TempData[Constants.ErrorOccurred] = true;
+          logger.LogError("Pogreška prilikom brisanja vlasnika: " + exc.CompleteExceptionMessage());
+        }
+      }
+      else {
+        logger.LogWarning("Ne postoji vlasnik s OIB-om: {0} ", Oib);
+        TempData[Constants.Message] = "Ne postoji vlasnik s OIB-om: " + Oib;
+        TempData[Constants.ErrorOccurred] = true;
+      }
+      return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
+    }
+
+
+    [HttpGet("Owner/Edit/{Oib}")]
+    public IActionResult Edit(string Oib, int page = 1, int sort = 1, bool ascending = true) {
+      var owner = ctx.Owner.AsNoTracking().Where(o => o.Oib == Oib).SingleOrDefault();
+      if (owner == null) {
+        logger.LogWarning("Ne postoji vlasnik s OIB-om: " + Oib);
+        return NotFound("Ne postoji vlasnik s OIB-om: " + Oib);
+      }
+      else {
+        ViewBag.Page = page;
+        ViewBag.Sort = sort;
+        ViewBag.Ascending = ascending;
+        return View(owner);
+      }
+    }
+
+    [HttpPost, ActionName("Edit")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Update(string Oib, int page = 1, int sort = 1, bool ascending = true) {
+      try {
+        Owner owner = await ctx.Owner
+                          .Where(o => o.Oib == Oib)
+                          .FirstOrDefaultAsync();
+        if (owner == null) {
+          return NotFound("Neispravan OIB vlasnika: " + Oib);
+        }
+
+        if (await TryUpdateModelAsync<Owner>(owner, "",
+            o => o.Oib, o => o.Name, o => o.Surname
+        )) {
+          ViewBag.Page = page;
+          ViewBag.Sort = sort;
+          ViewBag.Ascending = ascending;
+          try {
+            await ctx.SaveChangesAsync();
+            TempData[Constants.Message] = "Vlasnik ažuriran.";
+            TempData[Constants.ErrorOccurred] = false;
+            return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
+          }
+          catch (Exception exc) {
+            ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
+            return View(owner);
+          }
+        }
+        else {
+          ModelState.AddModelError(string.Empty, "Podatke o vlasniku nije moguće povezati s forme");
+          return View(owner);
+        }
+      }
+      catch (Exception exc) {
+        TempData[Constants.Message] = exc.CompleteExceptionMessage();
+        TempData[Constants.ErrorOccurred] = true;
+        return RedirectToAction(nameof(Edit), Oib);
+      }
+    }
   }
 }
+
+
 
 

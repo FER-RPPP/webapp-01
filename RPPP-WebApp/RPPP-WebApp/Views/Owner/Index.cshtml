@@ -11,7 +11,7 @@
   </div>
 }
 
-<h1>Popis vlasnika</h1>
+<h1 class="mt-3">Popis vlasnika</h1>
 
 <a asp-action="Create">Unos novog vlasnika</a>
 
@@ -34,6 +34,9 @@
         <a asp-route-sort="3" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 3 ? !Model.PagingInfo.Ascending : true)">
           Prezime
         </a>
+      </th>
+      <th>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -42,6 +45,22 @@
         <td class="text-left">@owner.Oib</td>
         <td class="text-left">@owner.Name</td>
         <td class="text-left">@owner.Surname</td>
+        <td class="btn-toolbar gap-2 justify-content-end">
+          <a asp-action="Edit"
+             asp-route-id="@owner.Oib"
+             asp-route-page="@Model.PagingInfo.CurrentPage"
+             asp-route-sort="@Model.PagingInfo.Sort"
+             asp-route-ascending="@Model.PagingInfo.Ascending"
+             class="btn btn-sm btn-success" title="Ažuriraj"><i class="fas fa-edit"></i></a>
+
+          <form asp-action="Delete" method="post"
+                asp-route-page="@Model.PagingInfo.CurrentPage"
+                asp-route-sort="@Model.PagingInfo.Sort"
+                asp-route-ascending="@Model.PagingInfo.Ascending">
+            <input type="hidden" name="Oib" value="@owner.Oib" />
+            <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši"><i class="fas fa-trash-alt"></i></button>
+          </form>
+        </td>
       </tr>
     }
   </tbody>
