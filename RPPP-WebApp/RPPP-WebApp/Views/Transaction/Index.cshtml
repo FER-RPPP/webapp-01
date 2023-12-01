@@ -5,6 +5,12 @@
   ViewData["Title"] = "Transakcije";
 }
 
+@if (TempData.ContainsKey(Constants.Message)) {
+  <div id="successMessage" class="alert alert-success">
+    @TempData[Constants.Message]
+  </div>
+}
+
 <h1 class="mt-3">Transakcije</h1>
 
 <a asp-action="Create">Unos nove transakcije</a>
@@ -68,7 +74,7 @@
                 asp-route-page="@Model.PagingInfo.CurrentPage"
                 asp-route-sort="@Model.PagingInfo.Sort"
                 asp-route-ascending="@Model.PagingInfo.Ascending">
-            <input type="hidden" name="Oib" value="@transaction.Id" />
+            <input type="hidden" name="Id" value="@transaction.Id" />
             <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši"><i class="fas fa-trash-alt"></i></button>
           </form>
         </td>
@@ -79,4 +85,13 @@
 
 @section scripts{
   <script src="~/js/pager.js" asp-append-version="true"></script>
+
+  <script>
+    setTimeout(function () {
+      var successMessage = document.getElementById('successMessage');
+      if (successMessage !== null) {
+        successMessage.remove();
+      }
+    }, 5000);
+  </script>
 }

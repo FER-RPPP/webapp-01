@@ -17,10 +17,10 @@ namespace RPPP_WebApp.ModelsValidation {
       RuleFor(o => o.Date)
         .NotEmpty().WithMessage("Datum je obvezno polje");
 
-      RuleFor(o => o.Type)
+      RuleFor(o => o.TypeId)
         .NotEmpty().WithMessage("Vrsta transakcije je obvezno polje");
 
-      RuleFor(o => o.Purpose)
+      RuleFor(o => o.PurposeId)
         .NotEmpty().WithMessage("Svrha transakcije je obvezno polje");
 
     }

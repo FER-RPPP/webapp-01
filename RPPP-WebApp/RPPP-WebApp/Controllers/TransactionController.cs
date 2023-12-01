@@ -47,13 +47,14 @@ namespace RPPP_WebApp.Controllers {
       query = query.ApplySort(sort, ascending);
 
       var transaction = await query
-                  .Select(m => new TransactionViewModel {
-                    Iban = m.IbanNavigation.Iban,
-                    Recipient = m.Recipient,
-                    Amount = m.Amount,
-                    Date = m.Date,
-                    Type = m.Type.TypeName,
-                    Purpose = m.Purpose.PurposeName,
+                  .Select(o => new TransactionViewModel {
+                    Id = o.Id,
+                    Iban = o.IbanNavigation.Iban,
+                    Recipient = o.Recipient,
+                    Amount = o.Amount,
+                    Date = o.Date,
+                    Type = o.Type.TypeName,
+                    Purpose = o.Purpose.PurposeName,
                   })
                   .Skip((page - 1) * pagesize)
                   .Take(pagesize)
@@ -82,7 +83,7 @@ namespace RPPP_WebApp.Controllers {
           ctx.Add(transaction);
           await ctx.SaveChangesAsync();
 
-          TempData[Constants.Message] = $"Transakcija {transaction.Id} je dodana.";
+          TempData[Constants.Message] = $"Transakcija je dodana.";
           TempData[Constants.ErrorOccurred] = false;
           return RedirectToAction(nameof(Index));
 
@@ -96,6 +97,91 @@ namespace RPPP_WebApp.Controllers {
       else {
         await PrepareDropDownLists();
         return View(transaction);
+      }
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Delete(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
+      var transaction = ctx.Transaction.Find(Id);
+      if (transaction != null) {
+        try {
+          ctx.Remove(transaction);
+          ctx.SaveChanges();
+          logger.LogInformation($"Transakcija uspješno obrisana.");
+          TempData[Constants.Message] = $"Transakcija uspješno obrisana.";
+          TempData[Constants.ErrorOccurred] = false;
+        }
+        catch (Exception exc) {
+          TempData[Constants.Message] = "Pogreška prilikom brisanja transakcije: " + exc.CompleteExceptionMessage();
+          TempData[Constants.ErrorOccurred] = true;
+          logger.LogError("Pogreška prilikom brisanja transakcije: " + exc.CompleteExceptionMessage());
+        }
+      }
+      else {
+        logger.LogWarning("Ne postoji transakcija: ", Id);
+        TempData[Constants.Message] = "Ne postoji transakcija: " + Id;
+        TempData[Constants.ErrorOccurred] = true;
+      }
+
+      return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Edit(Guid id, int page = 1, int sort = 1, bool ascending = true) {
+      var transaction = ctx.Transaction.AsNoTracking().Where(o => o.Id == id).SingleOrDefault();
+      if (transaction == null) {
+        logger.LogWarning("Ne postoji transakcija: " + id);
+        return NotFound("Ne postoji transakcija: " + id);
+      }
+      else {
+        ViewBag.Page = page;
+        ViewBag.Sort = sort;
+        ViewBag.Ascending = ascending;
+        await PrepareDropDownLists();
+        return View(transaction);
+      }
+    }
+
+    [HttpPost, ActionName("Edit")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Update(Guid id, int page = 1, int sort = 1, bool ascending = true) {
+      try {
+        Transaction transaction = await ctx.Transaction
+                          .Where(o => o.Id == id)
+                          .FirstOrDefaultAsync();
+        if (transaction == null) {
+          return NotFound("Neispravan id transakcije: " + id);
+        }
+
+        if (await TryUpdateModelAsync(transaction, "",
+            o => o.Id, o => o.Iban, o => o.Recipient, o => o.Amount, o => o.Date, o => o.TypeId, o => o.PurposeId
+        )) {
+          ViewBag.Page = page;
+          ViewBag.Sort = sort;
+          ViewBag.Ascending = ascending;
+          try {
+            await ctx.SaveChangesAsync();
+            TempData[Constants.Message] = $"Transakcija je ažurirana.";
+            TempData[Constants.ErrorOccurred] = false;
+            return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
+          }
+          catch (Exception exc) {
+            ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
+            await PrepareDropDownLists();
+            return View(transaction);
+          }
+        }
+        else {
+          ModelState.AddModelError(string.Empty, "Podatke o transakciji nije moguće povezati s forme");
+          await PrepareDropDownLists();
+          return View(transaction);
+        }
+      }
+      catch (Exception exc) {
+        TempData[Constants.Message] = exc.CompleteExceptionMessage();
+        TempData[Constants.ErrorOccurred] = true;
+        return RedirectToAction(nameof(Edit), new { id = id, page = page, sort = sort, ascending = ascending });
       }
     }
 
