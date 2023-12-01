@@ -5,11 +5,11 @@ $(function () {
 
   $('.pagebox').keyup(function (event) {
     var keycode = event.which;
-    var pageBox = $(this);
+    var pageBox = $(this); 
     if (keycode == 13) {
       if (validRange(pageBox.val(), pageBox.data("min"), pageBox.data("max"))) {
         var link = pageBox.data('url');
-        link = link + '?page=' + pageBox.val();
+        link = link.replace('-1', pageBox.val());
         window.location = link;
       }
     }
@@ -24,7 +24,6 @@ function validRange(str, min, max) {
   if (intRegex.test(str)) {
     var num = parseInt(str);
     if (num >= min && num <= max) {
-      console.log(true);
       return true;
     } else {
       return false;
