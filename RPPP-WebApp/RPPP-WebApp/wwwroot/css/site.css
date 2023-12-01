@@ -13,31 +13,10 @@
     border-color:red;
 }
 
-
-.pagerbox {
-   list-style: none;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 0;
+.pagebox {
+  width: 45px;
 }
 
-.pagerbox li {
-   margin: 0 3px;
+.pagebox::selection {
+  background-color: grey;
 }
-
-.page-link {
-   padding: 8px 12px;
-   border: 1px solid ;
-   color: #333;
-}
-
-.page-link:hover {
-   background-color: royalblue;
-   color: white;
-}
-
-.page-link.active {
-   background-color: royalblue;
-   color: white;
- }

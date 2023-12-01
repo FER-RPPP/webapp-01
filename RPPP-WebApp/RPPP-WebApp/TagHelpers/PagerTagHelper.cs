@@ -37,7 +37,7 @@ namespace RPPP_WebApp.TagHelpers {
       output.TagName = "nav";
       int offset = appData.PageOffset;
       TagBuilder paginationList = new TagBuilder("ul");
-      paginationList.AddCssClass("pagerbox");
+      paginationList.AddCssClass("pagination");
 
       if (PageInfo.CurrentPage - offset > 1)
       {
