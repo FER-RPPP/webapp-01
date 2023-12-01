@@ -4,6 +4,8 @@ using Microsoft.Extensions.Options;
 using RPPP_WebApp.Model;
 using RPPP_WebApp.ViewModels;
 using RPPP_WebApp.Extensions.Selectors;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using RPPP_WebApp.Extensions;
 
 namespace RPPP_WebApp.Controllers {
   public class ProjectCardController : Controller {
@@ -62,5 +64,49 @@ namespace RPPP_WebApp.Controllers {
 
       return View(model);
     }
+
+    [HttpGet]
+    public async Task<IActionResult> Create() {
+      await PrepareDropDownLists();
+      return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(ProjectCard projectCard) {
+      if (ModelState.IsValid) {
+        try {
+          ctx.Add(projectCard);
+          await ctx.SaveChangesAsync();
+
+          TempData[Constants.Message] = $"Projektna kartica {projectCard.Iban} dodana.";
+          TempData[Constants.ErrorOccurred] = false;
+          return RedirectToAction(nameof(Index));
+
+        }
+        catch (Exception exc) {
+          ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
+          await PrepareDropDownLists();
+          return View(projectCard);
+        }
+      }
+      else {
+        await PrepareDropDownLists();
+        return View(projectCard);
+      }
+    }
+
+    private async Task PrepareDropDownLists() {
+      var owners = await ctx.Owner
+                            .ToListAsync();
+
+      var ownersList = owners.Select(owner => new SelectListItem {
+        Text = $"{owner.Name} {owner.Surname} ({owner.Oib})",
+        Value = owner.Oib.ToString()
+      }).ToList();
+
+      ViewBag.Owners = ownersList;
+    }
+
   }
 }

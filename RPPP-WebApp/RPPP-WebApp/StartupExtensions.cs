@@ -13,7 +13,8 @@ namespace RPPP_WebApp {
 
       builder.Services.AddFluentValidationAutoValidation()
                       .AddFluentValidationClientsideAdapters()
-                      .AddValidatorsFromAssemblyContaining<OwnerValidator>(); ;
+                      .AddValidatorsFromAssemblyContaining<OwnerValidator>()
+                      .AddValidatorsFromAssemblyContaining<ProjectCardValidator>(); ;
 
       IConfiguration configuration = builder.Configuration;
       builder.Services.AddDbContext<Rppp01Context>(options => {
