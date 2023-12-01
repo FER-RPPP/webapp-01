@@ -1,12 +1,21 @@
-﻿@model RPPP_WebApp.ViewModels.OwnerViewModel
+﻿@using RPPP_WebApp
+
+@model RPPP_WebApp.ViewModels.OwnerViewModel
 @{
   ViewData["Title"] = "Vlasnici";
 }
+
+@if (TempData.ContainsKey(Constants.Message)) {
+  <div id="successMessage" class="alert alert-success">
+    @TempData[Constants.Message]
+  </div>
+}
+
 <h1>Popis vlasnika</h1>
 
-<pager page-info="@Model.PagingInfo" page-action="Index" page-title="Unesite željenu stranicu"
-       class="float-right">
-</pager>
+<a asp-action="Create">Unos novog vlasnika</a>
+
+<pager page-info="@Model.PagingInfo" page-action="Index" page-title="Unesite željenu stranicu" class="float-end"></pager>
 
 <table class="table table-sm table-striped table-hover" id="tableowner">
   <thead>
@@ -41,5 +50,15 @@
 
 @section scripts{
   <script src="~/js/pager.js" asp-append-version="true"></script>
-  
+
+  <script>
+    setTimeout(function () {
+      var successMessage = document.getElementById('successMessage');
+      if (successMessage !== null) {
+        successMessage.remove();
+      }
+    }, 5000);
+  </script>
 }
+
+  

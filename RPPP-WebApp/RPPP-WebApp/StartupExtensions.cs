@@ -1,22 +1,19 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using RPPP_WebApp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using RPPP_WebApp.ModelsValidation;
 
 namespace RPPP_WebApp {
   public static class StartupExtensions {
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder) {
       builder.Services.AddControllersWithViews();
+
+
+      builder.Services.AddFluentValidationAutoValidation()
+                      .AddFluentValidationClientsideAdapters()
+                      .AddValidatorsFromAssemblyContaining<OwnerValidator>(); ;
 
       IConfiguration configuration = builder.Configuration;
       builder.Services.AddDbContext<Rppp01Context>(options => {

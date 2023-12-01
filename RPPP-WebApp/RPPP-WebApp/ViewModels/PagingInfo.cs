@@ -6,8 +6,7 @@
     public bool Ascending { get; set; }
     public int TotalPages {
       get {
-        return (int)Math.Ceiling(
-        (decimal)TotalItems / ItemsPerPage);
+        return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage);
       }
     }
     public int Sort { get; set; }

@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace RPPP_WebApp.Model;
 
 public partial class Owner
 {
-    public string Oib { get; set; }
+  [Display(Name = "OIB", Prompt = "Unesite OIB")]
+  public string Oib { get; set; }
 
-    public string Name { get; set; }
+  [Display(Name = "Ime", Prompt = "Unesite ime")]
+  public string Name { get; set; }
 
-    public string Surname { get; set; }
+  [Display(Name = "Prezime", Prompt = "Unesite prezime")]
+  public string Surname { get; set; }
 
-    public virtual ICollection<Project> Project { get; set; } = new List<Project>();
+  public virtual ICollection<Project> Project { get; set; } = new List<Project>();
 
-    public virtual ICollection<ProjectCard> ProjectCard { get; set; } = new List<ProjectCard>();
+  public virtual ICollection<ProjectCard> ProjectCard { get; set; } = new List<ProjectCard>();
 }
