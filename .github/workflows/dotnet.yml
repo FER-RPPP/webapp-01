@@ -66,7 +66,7 @@ jobs:
       with:
         pathtosettingsfile: '${{ steps.variables.outputs.publish-folder }}/appsettings.json'
         name: 'RPPP${{ steps.variables.outputs.group }}'
-        connectionstring: "Server=dosa.fer.hr,3000;Database=RPPP${{ steps.variables.outputs.group }};user id=${{ secrets.USERNAME }};password=${{ secrets.PASSWORD }}"
+        connectionstring: "Server=dosa.fer.hr,3000;Database=RPPP${{ steps.variables.outputs.group }};user id=${{ secrets.USERNAME }};password=${{ secrets.PASSWORD }}TrustServerCertificate=True"
     - name: Set Kestrel info      
       uses: jossef/action-set-json-field@v2.1
       with:
