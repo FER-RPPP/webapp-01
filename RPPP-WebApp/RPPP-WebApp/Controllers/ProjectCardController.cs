@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using RPPP_WebApp.Extensions;
 using System.Text.Json;
 using System.Security.Cryptography;
+using NLog.Filters;
 
 namespace RPPP_WebApp.Controllers {
   public class ProjectCardController : Controller {
@@ -83,6 +84,48 @@ namespace RPPP_WebApp.Controllers {
 
       return View(model);
     }
+
+
+
+    public async Task<IActionResult> Show(string id, int page = 1, int sort = 1, bool ascending = true) {
+
+      var query = ctx.Transaction
+                     .AsNoTracking();
+      query = query.ApplySort(sort, ascending);
+
+      var transaction = await query
+                  .Where(o => o.Iban == id)
+                  .Select(o => new TransactionViewModel {
+                    Recipient = o.Recipient,
+                    Amount = o.Amount,
+                    Date = o.Date,
+                    Type = o.Type.TypeName,
+                    Purpose = o.Purpose.PurposeName,
+                  })
+                  .ToListAsync();
+
+      var projectCard = await ctx.ProjectCard
+        .Where(o => o.Iban == id)
+        .Select(o => new ProjectCardViewModel {
+          Owner = o.OibNavigation.Name + " " + o.OibNavigation.Surname + " (" + o.Oib + ")",
+          Balance = o.Balance,
+          ActivationDate = o.ActivationDate
+        })
+        .FirstOrDefaultAsync();
+
+      var model = new TransactionsViewModel {
+        Transaction = transaction
+      };
+
+      ViewData["Iban"] = id;
+      ViewData["Owner"] = projectCard.Owner;
+      ViewData["Balance"] = projectCard.Balance;
+      ViewData["ActivationDate"] = projectCard.ActivationDate;
+
+      return View(model);
+    }
+
+
 
     [HttpGet]
     public async Task<IActionResult> Create() {

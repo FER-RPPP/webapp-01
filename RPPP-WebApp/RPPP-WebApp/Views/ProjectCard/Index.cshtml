@@ -48,7 +48,16 @@
   <tbody>
     @foreach (var projectCard in Model.ProjectCard) {
       <tr>
-        <td class="text-left">@projectCard.Iban</td>
+        <td class="text-left">
+          <a asp-action="Show"
+             asp-route-id="@projectCard.Iban"
+            asp-route-page="@Model.PagingInfo.CurrentPage"
+            asp-route-sort="@Model.PagingInfo.Sort"
+            asp-route-ascending="@Model.PagingInfo.Ascending"
+            asp-route-filter="@Model.Filter">
+            @projectCard.Iban
+          </a>
+        </td>
         <td class="text-left">@projectCard.Balance.ToString("C2")</td>
         <td class="text-left">@projectCard.ActivationDate.ToString("dd.MM.yyyy.")</td>
         <td class="text-left">@projectCard.Owner</td>
