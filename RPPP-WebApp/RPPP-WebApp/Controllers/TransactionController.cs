@@ -73,7 +73,8 @@ namespace RPPP_WebApp.Controllers {
 
       var model = new TransactionsViewModel {
         Transaction = transaction,
-        PagingInfo = pagingInfo
+        PagingInfo = pagingInfo,
+        Filter = filter
       };
 
       return View(model);

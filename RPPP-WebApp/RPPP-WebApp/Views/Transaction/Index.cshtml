@@ -70,12 +70,14 @@
              asp-route-page="@Model.PagingInfo.CurrentPage"
              asp-route-sort="@Model.PagingInfo.Sort"
              asp-route-ascending="@Model.PagingInfo.Ascending"
+             asp-route-filter="@Model.Filter"
              class="btn btn-sm btn-success" title="Ažuriraj"><i class="fas fa-edit"></i></a>
 
           <form asp-action="Delete" method="post"
                 asp-route-page="@Model.PagingInfo.CurrentPage"
                 asp-route-sort="@Model.PagingInfo.Sort"
-                asp-route-ascending="@Model.PagingInfo.Ascending">
+                asp-route-ascending="@Model.PagingInfo.Ascending"
+                asp-route-filter="@Model.Filter">
             <input type="hidden" name="Id" value="@transaction.Id" />
             <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši"><i class="fas fa-trash-alt"></i></button>
           </form>
