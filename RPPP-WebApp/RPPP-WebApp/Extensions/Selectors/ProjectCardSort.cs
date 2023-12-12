@@ -10,6 +10,7 @@ namespace RPPP_WebApp.Extensions.Selectors {
         2 => o => o.Balance,
         3 => o => o.ActivationDate,
         4 => o => o.OibNavigation.Name,
+        5 => o => o.Transaction.OrderBy(t => t.Recipient).Select(t => t.Recipient).FirstOrDefault(),
         _ => null
       };
 

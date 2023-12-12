@@ -65,12 +65,15 @@ namespace RPPP_WebApp.Controllers {
 
       query = query.ApplySort(sort, ascending);
 
+      var maxLength = 50;
+
       var projectCard = await query
                   .Select(o => new ProjectCardViewModel {
                     Iban = o.Iban,
                     Balance = o.Balance,
                     ActivationDate = o.ActivationDate,
-                    Owner = $"{o.OibNavigation.Name} {o.OibNavigation.Surname} ({o.OibNavigation.Oib})"
+                    Owner = $"{o.OibNavigation.Name} {o.OibNavigation.Surname} ({o.OibNavigation.Oib})",
+                    Recipient = MakeShorter(string.Join(", ", o.Transaction.Select(t => t.Recipient)), maxLength)
                   })
                   .Skip((page - 1) * pagesize)
                   .Take(pagesize)
@@ -85,6 +88,12 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
     }
 
+    public static string MakeShorter(string value, int maxLength) {
+      if (value.Length <= maxLength)
+        return value;
+      else
+        return value.Substring(0, maxLength) + "...";
+    }
 
 
     public async Task<IActionResult> Show(string id, int page = 1, int sort = 1, bool ascending = true) {

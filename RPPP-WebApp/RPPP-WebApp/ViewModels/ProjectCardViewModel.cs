@@ -7,5 +7,7 @@
     public DateTime ActivationDate { get; set; }
 
     public string Owner { get; set; }
+
+    public string Recipient { get; set; }
   }
 }
