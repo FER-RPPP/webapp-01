@@ -15,6 +15,8 @@
 
 <a asp-action="Create">Unos nove projektne kartice</a>
 
+<partial name="Filter" model="Model.Filter" />
+
 <pager page-info="@Model.PagingInfo" page-action="Index" page-title="Unesite željenu stranicu" class="float-end"></pager>
 
 <table class="table table-striped">
@@ -56,12 +58,14 @@
              asp-route-page="@Model.PagingInfo.CurrentPage"
              asp-route-sort="@Model.PagingInfo.Sort"
              asp-route-ascending="@Model.PagingInfo.Ascending"
+             asp-route-filter="@Model.Filter"
              class="btn btn-sm btn-success" title="Ažuriraj"><i class="fas fa-edit"></i></a>
 
           <form asp-action="Delete" method="post"
-                asp-route-page="@Model.PagingInfo.CurrentPage"
-                asp-route-sort="@Model.PagingInfo.Sort"
-                asp-route-ascending="@Model.PagingInfo.Ascending">
+            asp-route-page="@Model.PagingInfo.CurrentPage"
+            asp-route-sort="@Model.PagingInfo.Sort"
+            asp-route-ascending="@Model.PagingInfo.Ascending"
+            asp-route-filter="@Model.Filter">
             <input type="hidden" name="Iban" value="@projectCard.Iban" />
             <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši"><i class="fas fa-trash-alt"></i></button>
           </form>

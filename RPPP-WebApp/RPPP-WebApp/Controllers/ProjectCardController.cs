@@ -21,18 +21,34 @@ namespace RPPP_WebApp.Controllers {
       appData = options.Value;
     }
 
-    public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true) {
+    public async Task<IActionResult> Index(ProjectCardFilter filter, int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.ProjectCard
                      .AsNoTracking();
 
+      string errorMessage = "Ne postoji niti jedna projektna kartica";
+      if (!string.IsNullOrEmpty(filter.Oib)) {
+        query = query.Where(p => p.OibNavigation.Oib.Contains(filter.Oib));
+        errorMessage += $" gdje je OIB vlasnika: {filter.Oib}";
+      }
+
+      if (!string.IsNullOrEmpty(filter.Name)) {
+        query = query.Where(p => p.OibNavigation.Name.Contains(filter.Name));
+        errorMessage += $" gdje je ime vlasnika: {filter.Name}";
+      }
+
+      if (!string.IsNullOrEmpty(filter.Surname)) {
+        query = query.Where(p => p.OibNavigation.Surname.Contains(filter.Surname));
+        errorMessage += $" gdje je prezime vlasnika: {filter.Surname}";
+      }
+
       int count = await query.CountAsync();
       if (count == 0) {
-        logger.LogInformation("Ne postoji niti jedna projektna kartica.");
-        TempData[Constants.Message] = "Ne postoji niti jedna projektna kartica.";
+        logger.LogInformation(errorMessage);
+        TempData[Constants.Message] = errorMessage;
         TempData[Constants.ErrorOccurred] = false;
         return RedirectToAction(nameof(Index));
-      }
+      } 
 
       var pagingInfo = new PagingInfo {
         CurrentPage = page,
@@ -61,7 +77,8 @@ namespace RPPP_WebApp.Controllers {
 
       var model = new ProjectCardsViewModel {
         ProjectCard = projectCard,
-        PagingInfo = pagingInfo
+        PagingInfo = pagingInfo,
+        Filter = filter,
       };
 
       return View(model);

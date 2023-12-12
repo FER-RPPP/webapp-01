@@ -19,15 +19,26 @@ namespace RPPP_WebApp.Controllers {
       appData = options.Value;
     }
 
-    public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true) {
+    public async Task<IActionResult> Index(TransactionFilter filter, int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.Transaction
                      .AsNoTracking();
 
+      string errorMessage = "Ne postoji niti jedna transakcija";
+      if (!string.IsNullOrEmpty(filter.PurposeName)) {
+        query = query.Where(p => p.Purpose.PurposeName.Contains(filter.PurposeName));
+        errorMessage += $" gdje je svrha: {filter.PurposeName}";
+      }
+
+      if (!string.IsNullOrEmpty(filter.TypeName)) {
+        query = query.Where(p => p.Type.TypeName.Contains(filter.TypeName));
+        errorMessage += $" gdje je vrsta: {filter.TypeName}";
+      }
+
       int count = await query.CountAsync();
       if (count == 0) {
-        logger.LogInformation("Ne postoji niti jedna transakcija.");
-        TempData[Constants.Message] = "Ne postoji niti jedna transakcija.";
+        logger.LogInformation(errorMessage);
+        TempData[Constants.Message] = errorMessage;
         TempData[Constants.ErrorOccurred] = false;
         return RedirectToAction(nameof(Index));
       }
