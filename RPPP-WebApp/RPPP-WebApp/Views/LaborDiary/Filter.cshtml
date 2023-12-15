@@ -1,0 +1,12 @@
+﻿@model RPPP_WebApp.ViewModels.LaborDiaryFilter
+
+<form asp-action="Index" asp-controller="LaborDiary" method="get">
+  <div class="form-group">
+    <label asp-for="Type">Filtriraj po <strong>vrsti</strong> posla:</label>
+    <input asp-for="Type" class="form-control" />
+  </div>
+  <div class="mt-3">
+    <button type="submit" class="btn btn-primary">Filtriraj</button>
+    <a asp-action="Index" asp-controller="LaborDiary" class="btn btn-secondary">Očisti filter</a>
+  </div>
+</form>
