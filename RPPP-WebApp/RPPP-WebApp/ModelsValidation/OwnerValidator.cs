@@ -10,18 +10,13 @@ namespace RPPP_WebApp.ModelsValidation {
 
       RuleFor(o => o.Oib)
         .NotEmpty().WithMessage("OIB je obvezno polje")
-        .Length(11).WithMessage("OIB mora sadržavati 11 znakova")
-        .Must(BeUniqueOib).WithMessage("Vlasnik s ovim OIB-om već postoji");
+        .Length(11).WithMessage("OIB mora sadržavati 11 znakova");
 
       RuleFor(o => o.Name)
         .NotEmpty().WithMessage("Ime je obvezno polje");
 
       RuleFor(o => o.Surname)
         .NotEmpty().WithMessage("Prezime je obvezno polje");
-    }
-
-    private bool BeUniqueOib(string oib) {
-      return !this.ctx.Owner.Any(o => o.Oib == oib);
     }
   }
 }
