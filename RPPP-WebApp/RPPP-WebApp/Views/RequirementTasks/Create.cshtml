@@ -1,0 +1,60 @@
+﻿@model RPPP_WebApp.Model.RequirementTask
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>RequirementTask</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <select asp-for="Id" class ="form-control" asp-items="ViewBag.Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlannedStartDate" class="control-label"></label>
+                <input asp-for="PlannedStartDate" class="form-control" />
+                <span asp-validation-for="PlannedStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlannedEndDate" class="control-label"></label>
+                <input asp-for="PlannedEndDate" class="form-control" />
+                <span asp-validation-for="PlannedEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActualStartDate" class="control-label"></label>
+                <input asp-for="ActualStartDate" class="form-control" />
+                <span asp-validation-for="ActualStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActualEndDate" class="control-label"></label>
+                <input asp-for="ActualEndDate" class="form-control" />
+                <span asp-validation-for="ActualEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskStatusId" class="control-label"></label>
+                <select asp-for="TaskStatusId" class ="form-control" asp-items="ViewBag.TaskStatusId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectRequirementId" class="control-label"></label>
+                <select asp-for="ProjectRequirementId" class ="form-control" asp-items="ViewBag.ProjectRequirementId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

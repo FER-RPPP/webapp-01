@@ -446,7 +446,7 @@ public partial class Rppp01Context : DbContext
             entity.Property(e => e.ProjectRequirementId).HasColumnName("project_requirement_id");
             entity.Property(e => e.TaskStatusId).HasColumnName("task_status_id");
 
-            entity.HasOne(d => d.IdNavigation).WithOne(p => p.RequirementTask)
+            entity.HasOne(d => d.ProjectWork).WithOne(p => p.RequirementTask)
                 .HasForeignKey<RequirementTask>(d => d.Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__requirement___id__4F47C5E3");

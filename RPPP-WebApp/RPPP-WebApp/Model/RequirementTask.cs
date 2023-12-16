@@ -19,7 +19,7 @@ public partial class RequirementTask
 
     public Guid ProjectRequirementId { get; set; }
 
-    public virtual ProjectWork IdNavigation { get; set; }
+    public virtual ProjectWork ProjectWork{ get; set; }
 
     public virtual ProjectRequirement ProjectRequirement { get; set; }
 
