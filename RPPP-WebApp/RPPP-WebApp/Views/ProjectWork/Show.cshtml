@@ -1,0 +1,56 @@
+﻿@using RPPP_WebApp
+
+@model RPPP_WebApp.ViewModels.LaborDiariesViewModel
+@{
+  ViewData["Title"] = "Transakcije projektne kartice";
+}
+
+@{
+  string title = ViewData["WorkTitle"]?.ToString() ?? "";
+  string project = ViewData["Project"]?.ToString() ?? "";
+  string assignee = ViewData["Assignee"]?.ToString() ?? "";
+  string description = ViewData["Description"]?.ToString() ?? "";
+
+  string pageTitle = $"Evidencija radnog vremena projektne aktivnosti {title}";
+  string pageOwnerInfo = $"Projekt - {project}";
+  string pageBalance = $"Dodijeljeni radnik - {assignee}";
+  string pageDate = $"Opis - {description}";
+}
+
+<h1 class="mt-3">@pageTitle</h1>
+<p>@pageOwnerInfo</p>
+<p>@pageBalance</p>
+<p>@pageDate</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        Datum
+      </th>
+      <th>
+        Radnik
+      </th>
+      <th>
+        Utrošeni sati
+      </th>
+      <th>
+        Vrsta posla
+      </th>
+      <th>
+        Opis posla
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var laborDiary in Model.LaborDiary) {
+      <tr>
+        <td class="text-left">@laborDiary.Date.ToString("dd.MM.yyyy")</td>
+        <td class="text-left">@laborDiary.Worker</td>
+        <td class="text-left">@laborDiary.HoursSpent.ToString("F2")</td>
+        <td class="text-left">@laborDiary.LaborType</td>
+        <td class="text-left">@laborDiary.LaborDescription</td>
+      </tr>
+    }
+  </tbody>
+</table>
