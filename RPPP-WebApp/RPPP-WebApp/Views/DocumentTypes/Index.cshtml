@@ -1,0 +1,82 @@
+﻿@model PaginatedList<RPPP_WebApp.Model.DocumentType>
+@using RPPP_WebApp.Views
+
+@{
+    ViewData["Title"] = "Document Types";
+    ViewData["OibSortParm"] = ViewData["CurrentSort"]?.ToString() == "name_asc" ? "name_desc" : "name_asc";
+}
+
+@if (TempData["StatusMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["StatusMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+
+<h1>Document Types</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">
+                Name
+            </a>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    Page @(Model.PageIndex) of @(Model.TotalPages)
+    @if (Model.HasPreviousPage)
+    {
+        <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-sortOrder="@ViewData["CurrentSort"]" class="btn btn-default">Previous</a>
+    }
+    @for (int i = 1; i <= Model.TotalPages; i++)
+    {
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@i"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @(i == Model.PageIndex ? "active" : "")">@i</a>
+    }
+    @if (Model.HasNextPage)
+    {
+        <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-sortOrder="@ViewData["CurrentSort"]" class="btn btn-default">Next</a>
+    }
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".alert").fadeOut('slow');
+            }, 2500);
+        });
+    </script>
+}

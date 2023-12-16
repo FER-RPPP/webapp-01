@@ -1,0 +1,113 @@
+﻿@model PaginatedList<RPPP_WebApp.Model.Client>
+@using RPPP_WebApp.Views
+
+@{
+    ViewData["Title"] = "Clients";
+    ViewData["OibSortParm"] = ViewData["CurrentSort"]?.ToString() == "oib_asc" ? "oib_desc" : "oib_asc";
+    ViewData["IbanSortParm"] = ViewData["CurrentSort"]?.ToString() == "iban_asc" ? "iban_desc" : "iban_asc";
+    ViewData["EmailSortParm"] = ViewData["CurrentSort"]?.ToString() == "email_asc" ? "email_desc" : "email_asc";
+    ViewData["FirstNameSortParm"] = ViewData["CurrentSort"]?.ToString() == "first_name_asc" ? "first_name_desc" : "first_name_asc";
+    ViewData["LastNameSortParm"] = ViewData["CurrentSort"]?.ToString() == "last_name_asc" ? "last_name_desc" : "last_name_asc";
+}
+
+@if (TempData["StatusMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["StatusMessage"]
+    </div>
+}
+
+
+<h1>Clients</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["OibSortParm"]">
+                    OIB
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IbanSortParm"]">
+                    IBAN
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["EmailSortParm"]">
+                    Email
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["FirstNameSortParm"]">
+                    First Name
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["LastNameSortParm"]">
+                    Last Name
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Oib)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Iban)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    Page @(Model.PageIndex) of @(Model.TotalPages)
+    @if (Model.HasPreviousPage)
+    {
+        <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-sortOrder="@ViewData["CurrentSort"]" class="btn btn-default">Previous</a>
+    }
+    @for (int i = 1; i <= Model.TotalPages; i++)
+    {
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@i"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @(i == Model.PageIndex ? "active" : "")">@i</a>
+    }
+    @if (Model.HasNextPage)
+    {
+        <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" asp-route-sortOrder="@ViewData["CurrentSort"]" class="btn btn-default">Next</a>
+    }
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".alert").fadeOut('slow');
+            }, 2500);
+        });
+    </script>
+}
