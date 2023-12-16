@@ -137,8 +137,16 @@ namespace RPPP_WebApp.Controllers
             if (ModelState.IsValid)
             {
                 ctx.Add(requirementTask);
-                await ctx.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    await ctx.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                } catch(Exception ex)
+                {
+                    TempData["ErrorMessage"] = "Unsuccessful add: An error occurred while saving the entity changes." +
+                        "Maybe the ProjectWork item already has it's RequirementTask entity!";
+
+                }
             }
             ViewData["ProjectRequirementId"] = new SelectList(ctx.ProjectRequirement, "Id", "Description", requirementTask.ProjectRequirementId);
             ViewData["Id"] = new SelectList(ctx.ProjectWork, "Id", "Title", requirementTask.Id);
