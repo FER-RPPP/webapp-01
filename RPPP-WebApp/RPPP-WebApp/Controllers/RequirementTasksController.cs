@@ -136,7 +136,6 @@ namespace RPPP_WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                requirementTask.Id = Guid.NewGuid();
                 ctx.Add(requirementTask);
                 await ctx.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
