@@ -105,6 +105,8 @@ namespace RPPP_WebApp.Controllers
                 .Include(p => p.Card)
                 .Include(p => p.Client)
                 .Include(p => p.Owner)
+                .Include(p => p.Document)
+                    .ThenInclude(d => d.DocumentType)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (project == null)
             {

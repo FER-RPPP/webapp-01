@@ -42,7 +42,35 @@
         </dd>
     </dl>
 </div>
+@if (Model.Document != null && Model.Document.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Format</th>
+                <th>Document Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model.Document)
+            {
+                <tr>
+                    <td>@task.Name</td>
+                    <td>@task.Format</td>
+                    <td>@task.DocumentType.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+    <p>No tasks associated with this requirement.</p>
+}
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a> |
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
+
