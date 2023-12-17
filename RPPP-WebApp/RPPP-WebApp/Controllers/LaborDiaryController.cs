@@ -24,10 +24,10 @@ namespace RPPP_WebApp.Controllers {
       var query = ctx.LaborDiary
                      .AsNoTracking();
 
-      string errorMessage = "Ne postoji niti jedna transakcija";
+      string errorMessage = "Ne postoji niti jedan zapis";
 
       if (!string.IsNullOrEmpty(filter.Type)) {
-        query = query.Where(p => p.LaborType.Type.Contains(filter.Type));   // NOTE SI TU OSTAVLJAM
+        query = query.Where(p => p.LaborType.Type.Contains(filter.Type));
         errorMessage += $" gdje je vrsta: {filter.Type}";
       }
 

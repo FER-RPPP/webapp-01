@@ -1,0 +1,119 @@
+﻿@model PaginatedList<RPPP_WebApp.Model.Project>
+@using RPPP_WebApp.Views
+
+@{
+    ViewData["Title"] = "Projects";
+    ViewData["NameSortParm"] = ViewData["CurrentSort"]?.ToString() == "name_asc" ? "name_desc" : "name_asc";
+    ViewData["TypeSortParm"] = ViewData["CurrentSort"]?.ToString() == "type_asc" ? "type_desc" : "type_asc";
+    ViewData["IbanSortParam"] = ViewData["CurrentSort"]?.ToString() == "iban_asc" ? "iban_desc" : "iban_asc";
+    ViewData["ClientSortParam"] = ViewData["CurrentSort"]?.ToString() == "client_asc" ? "client_desc" : "client_asc";
+    ViewData["OwnerSortParam"] = ViewData["CurrentSort"]?.ToString() == "owner_asc" ? "owner_desc" : "owner_asc";
+}
+
+@if (TempData["StatusMessage"] != null)
+{
+<div class="alert alert-success" role="alert">
+    @TempData["StatusMessage"]
+</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+
+<h1>Projects</h1>
+<br>
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<form asp-action="Index" method="get">
+    <p>
+        <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" />
+        <input type="submit" value="Search" class="btn btn-default" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">
+                    Name
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["TypeSortParm"]">
+                    Type
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IbanSortParam"]">
+                    Iban
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["ClientSortParam"]">
+                    Client
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["OwnerSortParam"]">
+                    Owner
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card.Iban)
+            </td>
+            <td>
+                @($"{item.Client.FirstName} {item.Client.LastName} ({item.Client.Oib})")
+            </td>
+            <td>
+                @($"{item.Owner.Name} {item.Owner.Surname} ({item.Owner.Oib})")
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            </td>
+
+        </tr>
+
+}
+    </tbody>
+</table>
+
+<div>
+    @for (int i = 1; i <= Model.TotalPages; i++)
+    {
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@i"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @(i == Model.PageIndex ? "active" : "")">@i</a>
+    }
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".alert").fadeOut('slow');
+            }, 2500);
+        });
+    </script>
+}

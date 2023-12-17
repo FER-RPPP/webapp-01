@@ -1,0 +1,20 @@
+﻿@model RPPP_WebApp.ViewModels.ProjectWorkFilter
+
+<form asp-action="Index" asp-controller="ProjectWork" method="get">
+  <div class="form-group mt-3">
+    <label asp-for="Title">Filtriraj po <strong>naslovu</strong> projektne aktivnosti:</label>
+    <input asp-for="Title" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label asp-for="Project">Filtriraj po <strong>projektu</strong> projektne aktivnosti:</label>
+    <input asp-for="Project" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label asp-for="Assignee">Filtriraj po <strong>dodijeljenom radniku</strong> projektne aktivnosti:</label>
+    <input asp-for="Assignee" class="form-control" />
+  </div>
+  <div class="mt-3">
+    <button type="submit" class="btn btn-primary">Filtriraj</button>
+    <a asp-action="Index" asp-controller="ProjectWork" class="btn btn-secondary">Očisti filter</a>
+  </div>
+</form>
