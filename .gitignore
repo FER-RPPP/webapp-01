@@ -340,7 +340,8 @@ obj/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -671,8 +672,6 @@ FodyWeavers.xsd
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,bower,yarn,aspnetcore,visualstudio,visualstudiocode,dotnetcore,angular,vue,vuejs,docfx
 
-# if libraries are restored automatically using libman, bower, yarn, etc.
-**/wwwroot/lib
 
 **/yarn.lock
 **/logs/internal-nlog.txt
