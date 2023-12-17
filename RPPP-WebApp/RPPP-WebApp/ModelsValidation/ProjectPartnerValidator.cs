@@ -12,8 +12,7 @@ namespace RPPP_WebApp.ModelsValidation
 
             RuleFor(o => o.ProjectId)
                 .NotEmpty().WithMessage("Projekt je obvezno polje");
-            RuleFor(o => o.WorkerId)
-                .NotEmpty().WithMessage("Radnik je obvezno polje");
+ 
             RuleFor(o => o.RoleId)
                 .NotEmpty().WithMessage("Uloga je obvezno polje");
         }
