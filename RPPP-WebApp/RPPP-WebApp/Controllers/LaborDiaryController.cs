@@ -90,9 +90,9 @@ namespace RPPP_WebApp.Controllers {
         try {
           ctx.Add(laborDiary);
           await ctx.SaveChangesAsync();
-          logger.LogInformation(new EventId(1000), $"Zapis {laborDiary.Date} - {laborDiary.Worker} je dodan.");
+          logger.LogInformation(new EventId(1000), $"Zapis {laborDiary.Date} - {laborDiary.Worker.FirstName} {laborDiary.Worker.LastName} je dodan.");
 
-          TempData[Constants.Message] = $"Zapis {laborDiary.Date} - {laborDiary.Worker} je dodan.";
+          TempData[Constants.Message] = $"Zapis {laborDiary.Date} - {laborDiary.Worker.FirstName} {laborDiary.Worker.LastName} je dodan.";
           TempData[Constants.ErrorOccurred] = false;
           return RedirectToAction(nameof(Index));
 
@@ -118,8 +118,8 @@ namespace RPPP_WebApp.Controllers {
         try {
           ctx.Remove(laborDiary);
           ctx.SaveChanges();
-          logger.LogInformation($"Zapis {laborDiary.Date} - {laborDiary.Worker} uspješno obrisan.");
-          TempData[Constants.Message] = $"Zapis {laborDiary.Date} - {laborDiary.Worker} uspješno obrisan.";
+          logger.LogInformation($"Zapis {laborDiary.Date} - {laborDiary.Worker.FirstName} {laborDiary.Worker.LastName} uspješno obrisan.");
+          TempData[Constants.Message] = $"Zapis {laborDiary.Date} - {laborDiary.Worker.FirstName} {laborDiary.Worker.LastName} uspješno obrisan.";
           TempData[Constants.ErrorOccurred] = false;
         }
         catch (Exception exc) {
@@ -172,7 +172,7 @@ namespace RPPP_WebApp.Controllers {
           ViewBag.Ascending = ascending;
           try {
             await ctx.SaveChangesAsync();
-            TempData[Constants.Message] = $"Zapis {laborDiary.Date} - {laborDiary.Worker} je ažuriran.";
+            TempData[Constants.Message] = $"Zapis {laborDiary.Date} - {laborDiary.Worker.FirstName} {laborDiary.Worker.LastName} je ažuriran.";
             TempData[Constants.ErrorOccurred] = false;
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
           }
