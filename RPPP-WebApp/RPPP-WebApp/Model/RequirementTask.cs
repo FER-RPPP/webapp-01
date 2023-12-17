@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RPPP_WebApp.Model;
 
@@ -19,9 +20,10 @@ public partial class RequirementTask
 
     public Guid ProjectRequirementId { get; set; }
 
-    public virtual ProjectWork IdNavigation { get; set; }
+    public virtual ProjectWork ProjectWork{ get; set; }
 
     public virtual ProjectRequirement ProjectRequirement { get; set; }
 
+    [ForeignKey("TaskStatusId")]
     public virtual TaskStatus TaskStatus { get; set; }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using RPPP_WebApp.Views;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RPPP_WebApp.Model;
 
@@ -7,14 +9,20 @@ public partial class Project
 {
     public Guid Id { get; set; }
 
+    [Required(ErrorMessage = "Please select a client.")]
     public Guid ClientId { get; set; }
 
+    [Required(ErrorMessage = "Name cannot be empty")]
     public string Name { get; set; }
 
+    [Required]
+    [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Type must contain only letters.")]
     public string Type { get; set; }
 
+    [Required(ErrorMessage = "Please select an Owner.")]
     public string OwnerId { get; set; }
 
+    [Required(ErrorMessage = "Please select a Card.")]
     public string CardId { get; set; }
 
     public virtual ProjectCard Card { get; set; }

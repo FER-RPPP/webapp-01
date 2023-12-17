@@ -80,7 +80,7 @@ namespace RPPP_WebApp.Controllers {
           return RedirectToAction(nameof(Index));
         }
         catch (Exception exc) {
-          logger.LogError("Pogreška prilikom dodavanja nove vrste: {0}", exc.CompleteExceptionMessage());
+          logger.LogError("Pogreška prilikom dodavanja nove vrste: " + exc.CompleteExceptionMessage());
           ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
           return View(laborType);
         }
@@ -92,8 +92,8 @@ namespace RPPP_WebApp.Controllers {
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Delete(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
-      var laborType = ctx.LaborType.Find(Id);
+    public IActionResult Delete(Guid id, int page = 1, int sort = 1, bool ascending = true) {
+      var laborType = ctx.LaborType.Find(id);
       if (laborType != null) {
         try {
           ctx.Remove(laborType);
@@ -109,8 +109,8 @@ namespace RPPP_WebApp.Controllers {
         }
       }
       else {
-        logger.LogWarning("Ne postoji vrsta");
-        TempData[Constants.Message] = "Ne postoji vrsta";
+        logger.LogWarning("Ne postoji vrsta: " + id);
+        TempData[Constants.Message] = "Ne postoji vrsta: " + id;
         TempData[Constants.ErrorOccurred] = true;
       }
       return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
@@ -118,11 +118,11 @@ namespace RPPP_WebApp.Controllers {
 
 
     [HttpGet]
-    public IActionResult Edit(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
-      var laborType = ctx.LaborType.AsNoTracking().Where(o => o.Id == Id).SingleOrDefault();
+    public IActionResult Edit(Guid id, int page = 1, int sort = 1, bool ascending = true) {
+      var laborType = ctx.LaborType.AsNoTracking().Where(o => o.Id == id).SingleOrDefault();
       if (laborType == null) {
-        logger.LogWarning("Ne postoji ta vrsta");
-        return NotFound("Ne postoji ta vrsta");
+        logger.LogWarning("Ne postoji vrsta: " + id);
+        return NotFound("Ne postoji vrsta: " + id);
       }
       else {
         ViewBag.Page = page;
@@ -134,13 +134,13 @@ namespace RPPP_WebApp.Controllers {
 
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Update(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
+    public async Task<IActionResult> Update(Guid id, int page = 1, int sort = 1, bool ascending = true) {
       try {
         LaborType laborType = await ctx.LaborType
-                          .Where(o => o.Id == Id)
+                          .Where(o => o.Id == id)
                           .FirstOrDefaultAsync();
         if (laborType == null) {
-          return NotFound("Neispravan id vrste");
+          return NotFound("Neispravan id vrste: " + id);
         }
 
         if (await TryUpdateModelAsync<LaborType>(laborType, "",
@@ -168,7 +168,7 @@ namespace RPPP_WebApp.Controllers {
       catch (Exception exc) {
         TempData[Constants.Message] = exc.CompleteExceptionMessage();
         TempData[Constants.ErrorOccurred] = true;
-        return RedirectToAction(nameof(Edit), Id);
+        return RedirectToAction(nameof(Edit), id);
       }
     }
   }
