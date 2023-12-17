@@ -80,7 +80,7 @@ namespace RPPP_WebApp.Controllers
             {
                 Id = o.Id,
                 Project = o.Project.Name,
-                Worker = o.Worker.LastName,
+                Worker = $"{o.Worker.FirstName} {o.Worker.LastName}",
                 Role = o.Role.Name
             })
             .Skip((page - 1) * pagesize)
