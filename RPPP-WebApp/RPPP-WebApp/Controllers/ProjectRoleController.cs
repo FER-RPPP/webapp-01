@@ -80,6 +80,7 @@ namespace RPPP_WebApp.Controllers
             {
                 try
                 {
+                    projectRole.Id = Guid.NewGuid();
                     ctx.Add(projectRole);
                     ctx.SaveChanges();
                     logger.LogInformation(new EventId(1000), $"Uloga {projectRole.Name} je dodana.");

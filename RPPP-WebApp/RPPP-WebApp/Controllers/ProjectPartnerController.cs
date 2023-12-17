@@ -114,6 +114,7 @@ namespace RPPP_WebApp.Controllers
             {
                 try
                 {
+                    partner.Id = Guid.NewGuid();
                     ctx.Add(partner);
                     await ctx.SaveChangesAsync();
 

@@ -100,7 +100,9 @@ namespace RPPP_WebApp.Controllers
             {
                 try
                 {
+                    worker.Id = Guid.NewGuid();
                     ctx.Add(worker);
+                  
                     await ctx.SaveChangesAsync();
 
                     TempData[Constants.Message] = $"Radnik je dodan.";
