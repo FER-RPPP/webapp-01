@@ -1,0 +1,16 @@
+﻿@model RPPP_WebApp.ViewModels.RequirementTaskFilter
+
+<form asp-action="Index" asp-controller="RequirementTasks" method="get">
+    <div class="form-group mt-3">
+        <label asp-for="ProjectWorkTitle">Filtriraj po <strong>imenu</strong> kartice rada:</label>
+        <input asp-for="ProjectWorkTitle" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="TaskStatus">Filtriraj po <strong>statusu</strong> zadatka:</label>
+        <input asp-for="TaskStatus" class="form-control" />
+    </div>
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Filtriraj</button>
+        <a asp-action="Index" asp-controller="RequirementTasks" class="btn btn-secondary">Očisti filter</a>
+    </div>
+</form>
