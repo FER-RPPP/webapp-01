@@ -1,0 +1,46 @@
+﻿@model RPPP_WebApp.Model.Worker
+
+@{
+	ViewData["Title"] = "Novi radnik";
+}
+
+<h2 class="mt-3">Unos novog radnika</h2>
+
+<form asp-action="Create" method="post">
+  <div asp-validation-summary="All"></div>
+  <div class="mt-3">
+    <label asp-for="Email" class="form-label">Email</label>
+    <input asp-for="Email" class="form-control" />
+    <div class="form-text"><span asp-validation-for="Email" class="text-danger"></span></div>
+  </div>
+  <div class="mt-3">
+    <label asp-for="FirstName" class="form-label">Ime</label>
+    <input asp-for="FirstName" class="form-control" />
+    <div class="form-text"><span asp-validation-for="FirstName" class="text-danger"></span></div>
+  </div>
+  <div class="mt-3">
+    <label asp-for="LastName" class="form-label">Prezime</label>
+    <input asp-for="LastName" class="form-control" />
+    <div class="form-text"><span asp-validation-for="LastName" class="text-danger"></span></div>
+  </div>
+    <div class="mt-3">
+    <label asp-for="PhoneNumber" class="form-label">Broj telefona</label>
+    <input asp-for="PhoneNumber" class="form-control" />
+    <div class="form-text"><span asp-validation-for="PhoneNumber" class="text-danger"></span></div>
+  </div>
+    <div class="mt-3">
+    <label asp-for="OrganizationId" class="form-label">Ime organizacije</label>
+    <select class="form-control" asp-for="OrganizationId" asp-items="ViewBag.Organizations">
+        <option disabled selected value="">Odaberite organizaciju</option>
+    </select>
+    <div class="form-text"><span asp-validation-for="OrganizationId" class="text-danger"></span></div>
+  </div>
+  <div class="text-center mt-3">
+    <button class="btn btn-primary" type="submit">Dodaj</button>
+    <a asp-action="Index" class="btn btn-secondary">Odustani</a>
+  </div>
+</form>
+
+@section scripts {
+  <partial name="IncludeValidation" />
+}

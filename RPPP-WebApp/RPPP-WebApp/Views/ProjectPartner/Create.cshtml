@@ -1,0 +1,40 @@
+﻿@model RPPP_WebApp.Model.ProjectPartner
+
+@{
+	ViewData["Title"] = "Novi suradnik";
+}
+
+<h2 class="mt-3">Unos novog suradnika</h2>
+
+<form asp-action="Create" method="post">
+  <div asp-validation-summary="All"></div>
+    <div class="mt-3">
+    <label asp-for="ProjectId" class="form-label">Ime projekta</label>
+    <select class="form-control" asp-for="ProjectId" asp-items="ViewBag.Projects">
+        <option disabled selected value="">Odaberite projekt</option>
+    </select>
+    <div class="form-text"><span asp-validation-for="ProjectId" class="text-danger"></span></div>
+  </div>
+   <div class="mt-3">
+    <label asp-for="WorkerId" class="form-label">Ime radnika</label>
+    <select class="form-control" asp-for="WorkerId" asp-items="ViewBag.Workers">
+        <option disabled selected value="">Odaberite radnika</option>
+    </select>
+    <div class="form-text"><span asp-validation-for="WorkerId" class="text-danger"></span></div>
+  </div>
+   <div class="mt-3">
+    <label asp-for="RoleId" class="form-label">Ime uloge</label>
+    <select class="form-control" asp-for="RoleId" asp-items="ViewBag.ProjectRoles">
+        <option disabled selected value="">Odaberite ulogu</option>
+    </select>
+    <div class="form-text"><span asp-validation-for="RoleId" class="text-danger"></span></div>
+  </div>
+  <div class="text-center mt-3">
+    <button class="btn btn-primary" type="submit">Dodaj</button>
+    <a asp-action="Index" class="btn btn-secondary">Odustani</a>
+  </div>
+</form>
+
+@section scripts {
+  <partial name="IncludeValidation" />
+}

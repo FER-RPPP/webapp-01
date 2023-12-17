@@ -1,0 +1,52 @@
+﻿@model RPPP_WebApp.Model.Worker
+
+@{
+  ViewData["Title"] = "Ažuriraj radnika";
+}
+
+<form asp-route-id="@Model.Id"
+      asp-route-page="@ViewBag.Page"
+      asp-route-sort="@ViewBag.Sort"
+      asp-route-ascending="@ViewBag.Ascending"
+      method="post">
+  <div asp-validation-summary="All"></div>
+  <div class="form-group mt-3">
+    <label asp-for="Email">Email</label>
+    <div><span asp-validation-for="Email" class="text-danger"></span></div>
+    <textarea asp-for="Email" class="form-control"></textarea>
+  </div>
+  <div class="form-group mt-3">
+    <label asp-for="FirstName">Ime</label>
+    <div><span asp-validation-for="FirstName" class="text-danger"></span></div>
+    <textarea asp-for="FirstName" class="form-control"></textarea>
+  </div>
+   <div class="form-group mt-3">
+    <label asp-for="LastName">Prezime</label>
+    <div><span asp-validation-for="LastName" class="text-danger"></span></div>
+    <textarea asp-for="LastName" class="form-control"></textarea>
+  </div>
+   <div class="form-group mt-3">
+    <label asp-for="PhoneNumber">Broj telefona</label>
+    <div><span asp-validation-for="PhoneNumber" class="text-danger"></span></div>
+    <textarea asp-for="PhoneNumber" class="form-control"></textarea>
+  </div>
+  <div class="form-group mt-3">
+    <label asp-for="OrganizationId" class="form-label">Naziv organizacije</label>
+    <select class="form-control" asp-for="OrganizationId" asp-items="ViewBag.Organizations">
+      <option disabled selected value="">Odaberite organizaciju</option>
+    </select>
+    <div class="form-text"><span asp-validation-for="OrganizationId" class="text-danger"></span></div>
+  </div>
+  <div class="text-center mt-3">
+    <button class="btn btn-primary" type="submit">Spremi</button>
+    <a asp-action="Index"
+       asp-route-page="@ViewBag.Page"
+       asp-route-sort="@ViewBag.Sort"
+       asp-route-ascending="@ViewBag.Ascending"
+       class="btn btn-secondary">Odustani</a>
+  </div>
+</form>
+
+@section scripts {
+  <partial name="IncludeValidation" />
+}
