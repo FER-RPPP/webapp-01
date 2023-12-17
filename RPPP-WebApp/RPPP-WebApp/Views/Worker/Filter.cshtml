@@ -1,0 +1,12 @@
+﻿@model RPPP_WebApp.ViewModels.WorkerFilter
+
+<form asp-action="Index" asp-controller="Worker" method="get">
+  <div class="form-group">
+    <label asp-for="Organization">Filtriraj po <strong>organizaciji</strong>:</label>
+    <input asp-for="Organization" class="form-control" />
+  </div>
+  <div class="mt-3">
+    <button type="submit" class="btn btn-primary">Filtriraj</button>
+    <a asp-action="Index" asp-controller="Worker" class="btn btn-secondary">Očisti filter</a>
+  </div>
+</form>

@@ -1,0 +1,30 @@
+﻿@model RPPP_WebApp.Model.ProjectRole
+
+@{
+    ViewData["Title"] = "Ažuriraj ulogu";
+}
+
+<form asp-route-id="@Model.Id"
+      asp-route-page="@ViewBag.Page"
+      asp-route-sort="@ViewBag.Sort"
+      asp-route-ascending="@ViewBag.Ascending"
+      method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group mt-3">
+        <label asp-for="Name">Uloga</label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <textarea asp-for="Name" class="form-control"></textarea>
+    </div>
+    <div class="text-center mt-3">
+        <button class="btn btn-primary" type="submit">Spremi</button>
+        <a asp-action="Index"
+           asp-route-page="@ViewBag.Page"
+           asp-route-sort="@ViewBag.Sort"
+           asp-route-ascending="@ViewBag.Ascending"
+           class="btn btn-secondary">Odustani</a>
+    </div>
+</form>
+
+@section scripts {
+    <partial name="IncludeValidation" />
+}

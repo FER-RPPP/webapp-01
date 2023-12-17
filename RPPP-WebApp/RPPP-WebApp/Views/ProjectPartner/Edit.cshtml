@@ -1,0 +1,56 @@
+﻿@model RPPP_WebApp.Model.ProjectPartner
+
+@{
+    ViewData["Title"] = "Ažuriraj suradnika";
+}
+
+<form asp-route-id="@Model.Id"
+      asp-route-page="@ViewBag.Page"
+      asp-route-sort="@ViewBag.Sort"
+      asp-route-ascending="@ViewBag.Ascending"
+      method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group mt-3">
+    <label asp-for="ProjectId" class="form-label">Projekt</label>
+    <select class="form-control" asp-for="ProjectId" asp-items="ViewBag.Projects">
+      <option disabled selected value="">Odaberite projekt</option>
+    </select>
+    <div class="form-text"><span asp-validation-for="ProjectId" class="text-danger"></span></div>
+  </div>
+      <div class="form-group mt-3">
+    <label asp-for="WorkerId" class="form-label">Radnik</label>
+    <select class="form-control" asp-for="WorkerId" asp-items="ViewBag.Workers">
+      <option disabled selected value="">Odaberite radnika</option>
+    </select>
+    <div class="form-text"><span asp-validation-for="WorkerId" class="text-danger"></span></div>
+  </div>
+      <div class="form-group mt-3">
+    <label asp-for="RoleId" class="form-label">Uloga</label>
+    <select class="form-control" asp-for="RoleId" asp-items="ViewBag.ProjectRoles">
+      <option disabled selected value="">Odaberite ulogu</option>
+    </select>
+    <div class="form-text"><span asp-validation-for="RoleId" class="text-danger"></span></div>
+  </div>
+        <div class="mt-3">
+        <label asp-for="DateFrom" class="form-label">Angažiran od</label>
+        <input asp-for="DateFrom" class="form-control" />
+        <div class="form-text"><span asp-validation-for="DateFrom" class="text-danger"></span></div>
+    </div>
+        <div class="mt-3">
+        <label asp-for="DateTo" class="form-label">Angažiran do</label>
+        <input asp-for="DateTo" class="form-control" />
+        <div class="form-text"><span asp-validation-for="DateTo" class="text-danger"></span></div>
+    </div>
+    <div class="text-center mt-3">
+        <button class="btn btn-primary" type="submit">Spremi</button>
+        <a asp-action="Index"
+           asp-route-page="@ViewBag.Page"
+           asp-route-sort="@ViewBag.Sort"
+           asp-route-ascending="@ViewBag.Ascending"
+           class="btn btn-secondary">Odustani</a>
+    </div>
+</form>
+
+@section scripts {
+    <partial name="IncludeValidation" />
+}

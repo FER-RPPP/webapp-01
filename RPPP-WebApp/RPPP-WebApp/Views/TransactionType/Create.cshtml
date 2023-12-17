@@ -1,0 +1,24 @@
+﻿@model RPPP_WebApp.Model.TransactionType
+
+@{
+  ViewData["Title"] = "Nova vrsta";
+}
+
+<h2 class="mt-3">Unos nove vrste</h2>
+
+<form asp-action="Create" method="post">
+  <div asp-validation-summary="All"></div>
+  <div class="mt-3">
+    <label asp-for="TypeName" class="form-label">Svrha</label>
+    <input asp-for="TypeName" class="form-control" />
+    <div class="form-text"><span asp-validation-for="TypeName" class="text-danger"></span></div>
+  </div>
+  <div class="text-center mt-3">
+    <button class="btn btn-primary" type="submit">Dodaj</button>
+    <a asp-action="Index" class="btn btn-secondary">Odustani</a>
+  </div>
+</form>
+
+@section scripts {
+  <partial name="IncludeValidation" />
+}

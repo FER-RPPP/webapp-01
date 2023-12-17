@@ -1,0 +1,56 @@
+﻿@using RPPP_WebApp
+
+@model RPPP_WebApp.ViewModels.TransactionsViewModel
+@{
+  ViewData["Title"] = "Transakcije projektne kartice";
+}
+
+@{
+  string iban = ViewData["Iban"]?.ToString() ?? "";
+  string ownerInfo = ViewData["Owner"]?.ToString() ?? "";
+  string balance = ViewData["Balance"]?.ToString() ?? "";
+  string date = ViewData["ActivationDate"]?.ToString() ?? "";
+
+  string pageTitle = $"Transakcije projektne kartice {iban}";
+  string pageOwnerInfo = $"Vlasnik - {ownerInfo}";
+  string pageBalance = $"Saldo - {balance}";
+  string pageDate = $"Datum aktivacije - {date}";
+}
+
+<h1 class="mt-3">@pageTitle</h1>
+<p>@pageOwnerInfo</p>
+<p>@pageBalance</p>
+<p>@pageDate</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        Primatelj
+      </th>
+      <th>
+        Iznos
+      </th>
+      <th>
+        Datum i vrijeme
+      </th>
+      <th>
+        Vrsta transakcije
+      </th>
+      <th>
+        Svrha transakcije
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var transaction in Model.Transaction) {
+      <tr>
+        <td class="text-left">@transaction.Recipient</td>
+        <td class="text-left">@transaction.Amount.ToString("C2")</td>
+        <td class="text-left">@transaction.Date.ToString("dd.MM.yyyy. HH:mm:ss")</td>
+        <td class="text-left">@transaction.Type</td>
+        <td class="text-left">@transaction.Purpose</td>
+      </tr>
+    }
+  </tbody>
+</table>

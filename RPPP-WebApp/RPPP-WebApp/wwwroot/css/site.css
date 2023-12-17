@@ -12,3 +12,11 @@
 .input-validation-error{
     border-color:red;
 }
+
+.pagebox {
+  width: 45px;
+}
+
+.pagebox::selection {
+  background-color: grey;
+}

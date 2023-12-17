@@ -1,0 +1,109 @@
+﻿@using RPPP_WebApp
+
+@model RPPP_WebApp.ViewModels.ProjectWorksViewModel
+@{
+  ViewData["Title"] = "Projektne aktivnosti";
+}
+
+<h1 class="mt-3">Projektne aktivnosti</h1>
+
+<a asp-action="Create">Unos nove projektne aktivnosti</a>
+
+<partial name="Filter" model="Model.Filter" />
+
+<pager page-info="@Model.PagingInfo" page-action="Index" page-title="Unesite željenu stranicu" class="float-end"></pager>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        <a asp-route-sort="1" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 1 ? !Model.PagingInfo.Ascending : true)">
+          Naslov
+        </a>
+      </th>
+      <th>
+        <a asp-route-sort="2" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 2 ? !Model.PagingInfo.Ascending : true)">
+          Projekt
+        </a>
+      </th>
+      <th>
+        <a asp-route-sort="3" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 3 ? !Model.PagingInfo.Ascending : true)">
+          Dodijeljeni radnik
+        </a>
+      </th>
+      <th>
+        <a asp-route-sort="4" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 4 ? !Model.PagingInfo.Ascending : true)">
+          Opis
+        </a>
+      </th>
+      <th>
+        <a asp-route-sort="5" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 5 ? !Model.PagingInfo.Ascending : true)">
+          Zapisi u evidenciji radnog vremena
+        </a>
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var projectWork in Model.ProjectWork) {
+      <tr>
+        <td class="text-left">
+          <a asp-action="Show"
+            asp-route-id="@projectWork.Id"
+            asp-route-page="@Model.PagingInfo.CurrentPage"
+            asp-route-sort="@Model.PagingInfo.Sort"
+            asp-route-ascending="@Model.PagingInfo.Ascending"
+            asp-route-filter="@Model.Filter">
+            @projectWork.Title
+          </a>
+        </td>
+        <td class="text-left">@projectWork.Project</td>
+        <td class="text-left">@projectWork.Assignee</td>
+        <td class="text-left">@projectWork.Description</td>
+        <td class="text-left">
+          <a asp-action="Show"
+             asp-route-id="@projectWork.Id"
+             asp-route-page="@Model.PagingInfo.CurrentPage"
+             asp-route-sort="@Model.PagingInfo.Sort"
+             asp-route-ascending="@Model.PagingInfo.Ascending"
+             asp-route-filter="@Model.Filter">
+            @projectWork.DiaryEntries
+          </a>
+          </td>
+        <td class="btn-toolbar gap-2 justify-content-end">
+          <a asp-action="Edit"
+             asp-route-id="@projectWork.Id"
+             asp-route-page="@Model.PagingInfo.CurrentPage"
+             asp-route-sort="@Model.PagingInfo.Sort"
+             asp-route-ascending="@Model.PagingInfo.Ascending"
+             asp-route-filter="@Model.Filter"
+             class="btn btn-sm btn-success" title="Ažuriraj"><i class="fas fa-edit"></i></a>
+
+          <form asp-action="Delete" method="post"
+            asp-route-page="@Model.PagingInfo.CurrentPage"
+            asp-route-sort="@Model.PagingInfo.Sort"
+            asp-route-ascending="@Model.PagingInfo.Ascending"
+            asp-route-filter="@Model.Filter">
+            <input type="hidden" name="Id" value="@projectWork.Id" />
+            <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši"><i class="fas fa-trash-alt"></i></button>
+          </form>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@section scripts{
+  <script src="~/js/pager.js" asp-append-version="true"></script>
+  <script src="~/lib/htmx/htmx.min.js" asp-append-version="true"></script>
+  <partial name="IncludeValidation" />
+
+  <script>
+    document.body.addEventListener("showMessage", function (evt) {
+      toastr[evt.detail.messageType](evt.detail.message);
+    })
+    document.body.addEventListener("htmx:responseError", function (evt) {
+      toastr["error"](evt.detail.error);
+    })
+  </script>
+}
