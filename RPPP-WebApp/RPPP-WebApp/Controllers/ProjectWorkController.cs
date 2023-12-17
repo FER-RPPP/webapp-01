@@ -33,14 +33,14 @@ namespace RPPP_WebApp.Controllers {
         errorMessage += $" gdje je naslov: {filter.Title}";
       }
 
-      if (!string.IsNullOrEmpty(filter.Assignee)) {
-        query = query.Where(p => p.Assignee.FirstName.Contains(filter.Assignee));
-        errorMessage += $" gdje je ime dodijeljenog radnika: {filter.Assignee}";
-      }
-
       if (!string.IsNullOrEmpty(filter.Project)) {
         query = query.Where(p => p.Project.Name.Contains(filter.Project));
         errorMessage += $" gdje je naziv projekta: {filter.Project}";
+      }
+
+      if (!string.IsNullOrEmpty(filter.Assignee)) {
+        query = query.Where(p => (p.Assignee.FirstName + p.Assignee.LastName).Contains(filter.Assignee));
+        errorMessage += $" gdje je ime dodijeljenog radnika: {filter.Assignee}";
       }
 
       int count = await query.CountAsync();
@@ -74,7 +74,7 @@ namespace RPPP_WebApp.Controllers {
                     Project = o.Project.Name,
                     Assignee = $"{o.Assignee.FirstName} {o.Assignee.LastName}",
                     Description = o.Description,
-                    DiaryEntries = MakeShorter(string.Join(", ", o.LaborDiary.Select(l => l.Date.ToString("dd.MM.yyyy."))), maxLength)
+                    DiaryEntries = MakeShorter(string.Join(", ", o.LaborDiary.OrderBy(l => l.Date).Select(l => l.Date.ToString("dd.MM.yyyy."))), maxLength)
                   })
                   .Skip((page - 1) * pagesize)
                   .Take(pagesize)
@@ -104,6 +104,7 @@ namespace RPPP_WebApp.Controllers {
       query = query.ApplySort(sort, ascending);
 
       var diaryEntry = await query
+                  .OrderBy(o => o.Date)
                   .Where(o => o.WorkId == id)
                   .Select(o => new LaborDiaryViewModel {
                     Work = o.Work.Title,
@@ -118,6 +119,7 @@ namespace RPPP_WebApp.Controllers {
       var projectWork = await ctx.ProjectWork
         .Where(o => o.Id == id)
         .Select(o => new ProjectWorkViewModel {
+            Id = o.Id,
             Title = o.Title,
             Project = o.Project.Name,
             Assignee = $"{o.Assignee.FirstName} {o.Assignee.LastName}",
@@ -128,14 +130,14 @@ namespace RPPP_WebApp.Controllers {
       var model = new LaborDiariesViewModel {
         LaborDiary = diaryEntry
       };
-
-      //ViewData["Id"] = id;
+        
+      ViewData["Id"] = id;
       ViewData["WorkTitle"] = projectWork.Title;
       ViewData["Project"] = projectWork.Project;
       ViewData["Assignee"] = projectWork.Assignee;
       ViewData["Description"] = projectWork.Description;
 
-            return View(model);
+      return View(model);
     }
 
 
@@ -153,8 +155,9 @@ namespace RPPP_WebApp.Controllers {
         try {
           ctx.Add(projectWork);
           await ctx.SaveChangesAsync();
+          logger.LogInformation(new EventId(1000), $"Projektna aktivnost {projectWork.Title} je dodana.");
 
-          TempData[Constants.Message] = $"Projektna aktivnost {projectWork.Title} dodana.";
+          TempData[Constants.Message] = $"Projektna aktivnost {projectWork.Title} je dodana.";
           TempData[Constants.ErrorOccurred] = false;
           return RedirectToAction(nameof(Index));
 
@@ -173,25 +176,25 @@ namespace RPPP_WebApp.Controllers {
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Delete(string Iban, int page = 1, int sort = 1, bool ascending = true) {
-      var projectWork = ctx.ProjectWork.Find(Iban);
+    public IActionResult Delete(Guid id, int page = 1, int sort = 1, bool ascending = true) {
+      var projectWork = ctx.ProjectWork.Find(id);
       if (projectWork != null) {
         try {
           ctx.Remove(projectWork);
           ctx.SaveChanges();
-          logger.LogInformation($"Projektna kartica IBAN = {Iban} uspješno obrisana.");
-          TempData[Constants.Message] = $"Projektna kartica IBAN = {Iban} uspješno obrisana.";
+          logger.LogInformation($"Projektna aktivnost {projectWork.Title} uspješno obrisana.");
+          TempData[Constants.Message] = $"Projektna aktivnost {projectWork.Title} uspješno obrisana.";
           TempData[Constants.ErrorOccurred] = false;
         }
         catch (Exception exc) {
-          TempData[Constants.Message] = "Pogreška prilikom brisanja projektne kartice: " + exc.CompleteExceptionMessage();
+          TempData[Constants.Message] = "Pogreška prilikom brisanja projektne aktivnosti: " + exc.CompleteExceptionMessage();
           TempData[Constants.ErrorOccurred] = true;
-          logger.LogError("Pogreška prilikom brisanja projektne kartice: " + exc.CompleteExceptionMessage());
+          logger.LogError("Pogreška prilikom brisanja projektne aktivnosti: " + exc.CompleteExceptionMessage());
         }
       }
       else {
-        logger.LogWarning("Ne postoji projektna kartica s IBAN-om: {0} ", Iban);
-        TempData[Constants.Message] = "Ne postoji projektna kartica s IBAN-om: " + Iban;
+        logger.LogWarning("Ne postoji projektna aktivnost: " + id);
+        TempData[Constants.Message] = "Ne postoji projektna aktivnost: " + id;
         TempData[Constants.ErrorOccurred] = true;
       }
 
@@ -202,8 +205,8 @@ namespace RPPP_WebApp.Controllers {
     public async Task<IActionResult> Edit(Guid id, int page = 1, int sort = 1, bool ascending = true) {
       var projectWork = ctx.ProjectWork.AsNoTracking().Where(o => o.Id == id).SingleOrDefault();
       if (projectWork == null) {
-        logger.LogWarning("Ne postoji projektna kartica s IBAN-om: " + id);
-        return NotFound("Ne postoji projektna kartica s IBAN-om: " + id);
+        logger.LogWarning("Ne postoji projektna aktivnost: " + id);
+        return NotFound("Ne postoji projektna aktivnost: " + id);
       }
       else {
         ViewBag.Page = page;
@@ -222,18 +225,18 @@ namespace RPPP_WebApp.Controllers {
                           .Where(o => o.Id == id)
                           .FirstOrDefaultAsync();
         if (projectWork == null) {
-          return NotFound("Neispravan IBAN projektne kartice: " + id);
+          return NotFound("Neispravan id projektne aktivnosti: " + id);
         }
 
         if (await TryUpdateModelAsync(projectWork, "",
-            o => o.Title, o => o.Project, o => o.Assignee, o => o.Description
+            o => o.Title, o => o.ProjectId, o => o.AssigneeId, o => o.Description
         )) {
           ViewBag.Page = page;
           ViewBag.Sort = sort;
           ViewBag.Ascending = ascending;
           try {
             await ctx.SaveChangesAsync();
-            TempData[Constants.Message] = $"Projektna kartica (IBAN = {id}) ažurirana.";
+            TempData[Constants.Message] = $"Projektna aktivnost {projectWork.Title} je ažurirana.";
             TempData[Constants.ErrorOccurred] = false;
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
           }
@@ -244,7 +247,7 @@ namespace RPPP_WebApp.Controllers {
           }
         }
         else {
-          ModelState.AddModelError(string.Empty, "Podatke o projektnoj kartici nije moguće povezati s forme");
+          ModelState.AddModelError(string.Empty, "Podatke o projektnoj aktivnosti nije moguće povezati s forme");
           await PrepareDropDownLists();
           return View(projectWork);
         }

@@ -90,13 +90,15 @@ namespace RPPP_WebApp.Controllers {
         try {
           ctx.Add(laborDiary);
           await ctx.SaveChangesAsync();
+          logger.LogInformation(new EventId(1000), $"Zapis {laborDiary.Date} - {laborDiary.Worker} je dodan.");
 
-          TempData[Constants.Message] = $"Transakcija je dodana.";
+          TempData[Constants.Message] = $"Zapis {laborDiary.Date} - {laborDiary.Worker} je dodan.";
           TempData[Constants.ErrorOccurred] = false;
           return RedirectToAction(nameof(Index));
 
         }
         catch (Exception exc) {
+          logger.LogError("Pogreška prilikom dodavanja novog zapisa: " + exc.CompleteExceptionMessage());
           ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
           await PrepareDropDownLists();
           return View(laborDiary);
@@ -110,25 +112,25 @@ namespace RPPP_WebApp.Controllers {
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Delete(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
-      var laborDiary = ctx.LaborDiary.Find(Id);
+    public IActionResult Delete(Guid id, int page = 1, int sort = 1, bool ascending = true) {
+      var laborDiary = ctx.LaborDiary.Find(id);
       if (laborDiary != null) {
         try {
           ctx.Remove(laborDiary);
           ctx.SaveChanges();
-          logger.LogInformation($"Transakcija uspješno obrisana.");
-          TempData[Constants.Message] = $"Transakcija uspješno obrisana.";
+          logger.LogInformation($"Zapis {laborDiary.Date} - {laborDiary.Worker} uspješno obrisan.");
+          TempData[Constants.Message] = $"Zapis {laborDiary.Date} - {laborDiary.Worker} uspješno obrisan.";
           TempData[Constants.ErrorOccurred] = false;
         }
         catch (Exception exc) {
-          TempData[Constants.Message] = "Pogreška prilikom brisanja transakcije: " + exc.CompleteExceptionMessage();
+          TempData[Constants.Message] = "Pogreška prilikom brisanja zapisa: " + exc.CompleteExceptionMessage();
           TempData[Constants.ErrorOccurred] = true;
-          logger.LogError("Pogreška prilikom brisanja transakcije: " + exc.CompleteExceptionMessage());
+          logger.LogError("Pogreška prilikom brisanja zapisa: " + exc.CompleteExceptionMessage());
         }
       }
       else {
-        logger.LogWarning("Ne postoji transakcija: ", Id);
-        TempData[Constants.Message] = "Ne postoji transakcija: " + Id;
+        logger.LogWarning("Ne postoji zapis: " + id);
+        TempData[Constants.Message] = "Ne postoji zapis: " + id;
         TempData[Constants.ErrorOccurred] = true;
       }
 
@@ -139,8 +141,8 @@ namespace RPPP_WebApp.Controllers {
     public async Task<IActionResult> Edit(Guid id, int page = 1, int sort = 1, bool ascending = true) {
       var laborDiary = ctx.LaborDiary.AsNoTracking().Where(o => o.Id == id).SingleOrDefault();
       if (laborDiary == null) {
-        logger.LogWarning("Ne postoji transakcija: " + id);
-        return NotFound("Ne postoji transakcija: " + id);
+        logger.LogWarning("Ne postoji zapis: " + id);
+        return NotFound("Ne postoji zapis: " + id);
       }
       else {
         ViewBag.Page = page;
@@ -159,7 +161,7 @@ namespace RPPP_WebApp.Controllers {
                           .Where(o => o.Id == id)
                           .FirstOrDefaultAsync();
         if (laborDiary == null) {
-          return NotFound("Neispravan id transakcije: " + id);
+          return NotFound("Neispravan id zapisa: " + id);
         }
 
         if (await TryUpdateModelAsync(laborDiary, "",
@@ -170,7 +172,7 @@ namespace RPPP_WebApp.Controllers {
           ViewBag.Ascending = ascending;
           try {
             await ctx.SaveChangesAsync();
-            TempData[Constants.Message] = $"Transakcija je ažurirana.";
+            TempData[Constants.Message] = $"Zapis {laborDiary.Date} - {laborDiary.Worker} je ažuriran.";
             TempData[Constants.ErrorOccurred] = false;
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
           }
@@ -181,7 +183,7 @@ namespace RPPP_WebApp.Controllers {
           }
         }
         else {
-          ModelState.AddModelError(string.Empty, "Podatke o transakciji nije moguće povezati s forme");
+          ModelState.AddModelError(string.Empty, "Podatke o zapisu nije moguće povezati s forme");
           await PrepareDropDownLists();
           return View(laborDiary);
         }
