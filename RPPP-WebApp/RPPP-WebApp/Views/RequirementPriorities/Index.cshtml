@@ -7,6 +7,7 @@
 
 <p>
     <a asp-action="Create"
+       class="btn btn-primary"
        asp-route-page="@Model.PagingInfo.CurrentPage"
        asp-route-sort="@Model.PagingInfo.Sort"
        asp-route-ascending="@Model.PagingInfo.Ascending">Create New</a>
@@ -31,17 +32,17 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id"
-                       asp-route-id="@item.Id"
+                       class="btn btn-primary"
                        asp-route-page="@Model.PagingInfo.CurrentPage"
                        asp-route-sort="@Model.PagingInfo.Sort"
-                       asp-route-ascending="@Model.PagingInfo.Ascending">Edit</a> |
+                       asp-route-ascending="@Model.PagingInfo.Ascending">Edit</a> 
                 <a asp-action="Details" asp-route-id="@item.Id"
-                       asp-route-id="@item.Id"
+                       class="btn btn-secondary"
                        asp-route-page="@Model.PagingInfo.CurrentPage"
                        asp-route-sort="@Model.PagingInfo.Sort"
-                       asp-route-ascending="@Model.PagingInfo.Ascending">Details</a> |
+                       asp-route-ascending="@Model.PagingInfo.Ascending">Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.Id"
-                       asp-route-id="@item.Id"
+                       class="btn btn-danger"
                        asp-route-page="@Model.PagingInfo.CurrentPage"
                        asp-route-sort="@Model.PagingInfo.Sort"
                        asp-route-ascending="@Model.PagingInfo.Ascending">Delete</a>

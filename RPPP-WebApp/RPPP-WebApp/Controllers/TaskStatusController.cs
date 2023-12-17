@@ -101,7 +101,14 @@ namespace RPPP_WebApp.Controllers
             {
                 taskStatus.Id = Guid.NewGuid();
                 _context.Add(taskStatus);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    TempData["ErrorMessage"] = "Unsuccessful add: An error occurred while saving the entity changes.";
+                }
                 return RedirectToAction(nameof(Index));
             }
             ViewBag.Page = page;
@@ -201,8 +208,19 @@ namespace RPPP_WebApp.Controllers
             {
                 _context.TaskStatus.Remove(taskStatus);
             }
-            
-            await _context.SaveChangesAsync();
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Unsuccessful deletion: An error occurred while deleting the entity.";
+                return View(taskStatus);
+            }
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
             return RedirectToAction(nameof(Index));
         }
 

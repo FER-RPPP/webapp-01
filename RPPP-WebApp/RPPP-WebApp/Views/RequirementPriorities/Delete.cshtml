@@ -3,6 +3,12 @@
 @{
     ViewData["Title"] = "Delete";
 }
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
 
 <h1>Delete</h1>
 
@@ -19,12 +25,23 @@
         </dd>
     </dl>
     
-    <form asp-action="Delete">
+    <form asp-action="Delete" id="deleteForm">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <button type="button" onclick="confirmDelete()" class="btn btn-danger">Delete</button> |
         <a asp-action="Index"
            asp-route-page="@ViewBag.Page"
            asp-route-sort="@ViewBag.Sort"
            asp-route-ascending="@ViewBag.Ascending">Back to List</a>
     </form>
 </div>
+
+@section Scripts {
+    <script type="text/javascript">
+        function confirmDelete() {
+            var result = confirm("Are you sure you want to delete?");
+            if (result) {
+                document.getElementById('deleteForm').submit();
+            }
+        }
+    </script>
+}

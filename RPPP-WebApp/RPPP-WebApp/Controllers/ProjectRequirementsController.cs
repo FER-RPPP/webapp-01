@@ -119,7 +119,14 @@ namespace RPPP_WebApp.Controllers
             {
                 projectRequirement.Id = Guid.NewGuid();
                 ctx.Add(projectRequirement);
-                await ctx.SaveChangesAsync();
+                try
+                {
+                    await ctx.SaveChangesAsync();
+                } catch(Exception ex)
+                {
+                    TempData["ErrorMessage"] = "Unsuccessful add: An error occurred while saving the entity changes.";
+                }
+               
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ProjectId"] = new SelectList(ctx.Project, "Id", "CardId", projectRequirement.ProjectId);
@@ -233,10 +240,18 @@ namespace RPPP_WebApp.Controllers
             var projectRequirement = await ctx.ProjectRequirement.FindAsync(id);
             if (projectRequirement != null)
             {
-                ctx.ProjectRequirement.Remove(projectRequirement);
+                           ctx.ProjectRequirement.Remove(projectRequirement);
             }
             
-            await ctx.SaveChangesAsync();
+            try
+            {
+                await ctx.SaveChangesAsync();
+            } catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Unsuccessful deletion: An error occurred while deleting the entity.";
+                return View(projectRequirement);
+            }
+           
 
             ViewBag.Page = page;
             ViewBag.Sort = sort;

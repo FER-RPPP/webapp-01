@@ -101,7 +101,14 @@ namespace RPPP_WebApp.Controllers
             {
                 requirementPriority.Id = Guid.NewGuid();
                 _context.Add(requirementPriority);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    TempData["ErrorMessage"] = "Unsuccessful add: An error occurred while saving the entity changes.";
+                }
                 return RedirectToAction(nameof(Index));
             }
 
@@ -209,8 +216,16 @@ namespace RPPP_WebApp.Controllers
             {
                 _context.RequirementPriority.Remove(requirementPriority);
             }
-            
-            await _context.SaveChangesAsync();
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Unsuccessful deletion: An error occurred while deleting the entity.";
+                return View(requirementPriority);
+            }
             ViewBag.Page = page;
             ViewBag.Sort = sort;
             ViewBag.Ascending = ascending;

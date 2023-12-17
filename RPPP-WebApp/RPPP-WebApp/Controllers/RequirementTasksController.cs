@@ -130,7 +130,14 @@ namespace RPPP_WebApp.Controllers
         public IActionResult Create(int page = 1, int sort = 1, bool ascending = true)
         {
             ViewData["ProjectRequirementId"] = new SelectList(ctx.ProjectRequirement, "Id", "Description");
-            ViewData["Id"] = new SelectList(ctx.ProjectWork, "Id", "Title");
+            ViewData["Id"] = new SelectList(ctx.ProjectWork
+                .Select(pw => new
+                {
+                    Id = pw.Id,
+                    Description = pw.Title + " - " + pw.Project.Name
+                }),
+                "Id",
+                "Description");
             ViewData["TaskStatusId"] = new SelectList(ctx.TaskStatus, "Id", "Type");
 
             ViewBag.Page = page;
@@ -278,8 +285,16 @@ namespace RPPP_WebApp.Controllers
             {
                 ctx.RequirementTask.Remove(requirementTask);
             }
-            
-            await ctx.SaveChangesAsync();
+
+            try
+            {
+                await ctx.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Unsuccessful deletion: An error occurred while deleting the entity.";
+                return View(requirementTask);
+            }
 
             ViewBag.Page = page;
             ViewBag.Sort = sort;

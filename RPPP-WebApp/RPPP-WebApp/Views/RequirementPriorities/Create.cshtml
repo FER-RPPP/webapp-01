@@ -4,6 +4,20 @@
     ViewData["Title"] = "Create";
 }
 
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var errorMessage = '@TempData["ErrorMessage"]';
+            if (errorMessage && errorMessage.length > 0) {
+                alert(errorMessage);
+            }
+        });
+    </script>
+}
+
 <h1>Create</h1>
 
 <h4>RequirementPriority</h4>
@@ -31,6 +45,3 @@
        asp-route-ascending="@ViewBag.Ascending">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
