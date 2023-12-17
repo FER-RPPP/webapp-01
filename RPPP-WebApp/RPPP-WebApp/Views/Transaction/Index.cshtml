@@ -28,7 +28,7 @@
       </th>
       <th>
         <a asp-route-sort="3" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 3 ? !Model.PagingInfo.Ascending : true)">
-          Iznos
+          Iznos (€)
         </a>
       </th>
       <th>
@@ -54,7 +54,7 @@
       <tr>
         <td class="text-left">@transaction.Iban</td>
         <td class="text-left">@transaction.Recipient</td>
-        <td class="text-left">@transaction.Amount.ToString("C2")</td>
+        <td class="text-left">@transaction.Amount.ToString()</td>
         <td class="text-left">@transaction.Date.ToString("dd.MM.yyyy. HH:mm:ss")</td>
         <td class="text-left">@transaction.Type</td>
         <td class="text-left">@transaction.Purpose</td>
@@ -65,7 +65,7 @@
              asp-route-sort="@Model.PagingInfo.Sort"
              asp-route-ascending="@Model.PagingInfo.Ascending"
              asp-route-filter="@Model.Filter"
-             class="btn btn-sm btn-success" title="Ažuriraj"><i class="fas fa-edit"></i></a>
+             class="btn btn-sm btn-success" title="Ažuriraj">Edit</a>
 
           <form asp-action="Delete" method="post"
                 asp-route-page="@Model.PagingInfo.CurrentPage"
@@ -73,7 +73,7 @@
                 asp-route-ascending="@Model.PagingInfo.Ascending"
                 asp-route-filter="@Model.Filter">
             <input type="hidden" name="Id" value="@transaction.Id" />
-            <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši"><i class="fas fa-trash-alt"></i></button>
+            <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši">Delete</button>
           </form>
         </td>
       </tr>

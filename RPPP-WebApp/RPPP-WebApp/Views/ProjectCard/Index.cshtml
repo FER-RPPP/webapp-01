@@ -23,7 +23,7 @@
       </th>
       <th>
         <a asp-route-sort="2" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 2 ? !Model.PagingInfo.Ascending : true)">
-          Saldo
+          Saldo (€)
         </a>
       </th>
       <th>
@@ -57,7 +57,7 @@
             @projectCard.Iban
           </a>
         </td>
-        <td class="text-left">@projectCard.Balance.ToString("C2")</td>
+        <td class="text-left">@projectCard.Balance.ToString()</td>
         <td class="text-left">@projectCard.ActivationDate.ToString("dd.MM.yyyy.")</td>
         <td class="text-left">@projectCard.Owner</td>
         <td class="text-left">
@@ -77,7 +77,7 @@
              asp-route-sort="@Model.PagingInfo.Sort"
              asp-route-ascending="@Model.PagingInfo.Ascending"
              asp-route-filter="@Model.Filter"
-             class="btn btn-sm btn-success" title="Ažuriraj"><i class="fas fa-edit"></i></a>
+             class="btn btn-sm btn-success" title="Ažuriraj">Edit</a>
 
           <form asp-action="Delete" method="post"
             asp-route-page="@Model.PagingInfo.CurrentPage"
@@ -85,7 +85,7 @@
             asp-route-ascending="@Model.PagingInfo.Ascending"
             asp-route-filter="@Model.Filter">
             <input type="hidden" name="Iban" value="@projectCard.Iban" />
-            <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši"><i class="fas fa-trash-alt"></i></button>
+            <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši">Delete</button>
           </form>
         </td>
       </tr>
