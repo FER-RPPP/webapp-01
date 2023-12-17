@@ -42,7 +42,43 @@
         </dd>
     </dl>
 </div>
+<h2>Requirement Tasks</h2>
+
+@if (Model.RequirementTask != null && Model.RequirementTask.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Task ID</th>
+                <th>Planned Start Date</th>
+                <th>Planned End Date</th>
+                <th>Actual Start Date</th>
+                <th>Actual End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model.RequirementTask)
+            {
+                <tr>
+                    <td>@task.Id</td>
+                    <td>@task.PlannedStartDate.ToString("d")</td>
+                    <td>@task.PlannedEndDate.ToString("d")</td>
+                    <td>@task.ActualStartDate?.ToString("d")</td>
+                    <td>@task.ActualEndDate?.ToString("d")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No tasks associated with this requirement.</p>
+}
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index"
+       asp-action="Index"
+       asp-route-page="@ViewBag.Page"
+       asp-route-sort="@ViewBag.Sort"
+       asp-route-ascending="@ViewBag.Ascending">Back to List</a>
 </div>

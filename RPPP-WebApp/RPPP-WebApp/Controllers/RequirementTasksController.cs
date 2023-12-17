@@ -94,11 +94,15 @@ namespace RPPP_WebApp.Controllers
                 Filter = filter
             };
 
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(model);
         }
 
         // GET: RequirementTasks/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Details(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             if (id == null || ctx.RequirementTask == null)
             {
@@ -115,15 +119,24 @@ namespace RPPP_WebApp.Controllers
                 return NotFound();
             }
 
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(requirementTask);
         }
 
         // GET: RequirementTasks/Create
-        public IActionResult Create()
+        public IActionResult Create(int page = 1, int sort = 1, bool ascending = true)
         {
             ViewData["ProjectRequirementId"] = new SelectList(ctx.ProjectRequirement, "Id", "Description");
             ViewData["Id"] = new SelectList(ctx.ProjectWork, "Id", "Title");
             ViewData["TaskStatusId"] = new SelectList(ctx.TaskStatus, "Id", "Type");
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View();
         }
 
@@ -132,7 +145,7 @@ namespace RPPP_WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,PlannedStartDate,PlannedEndDate,ActualStartDate,ActualEndDate,TaskStatusId,ProjectRequirementId")] RequirementTask requirementTask)
+        public async Task<IActionResult> Create([Bind("Id,PlannedStartDate,PlannedEndDate,ActualStartDate,ActualEndDate,TaskStatusId,ProjectRequirementId")] RequirementTask requirementTask, int page = 1, int sort = 1, bool ascending = true)
         {
             if (ModelState.IsValid)
             {
@@ -151,11 +164,16 @@ namespace RPPP_WebApp.Controllers
             ViewData["ProjectRequirementId"] = new SelectList(ctx.ProjectRequirement, "Id", "Description", requirementTask.ProjectRequirementId);
             ViewData["Id"] = new SelectList(ctx.ProjectWork, "Id", "Title", requirementTask.Id);
             ViewData["TaskStatusId"] = new SelectList(ctx.TaskStatus, "Id", "Type", requirementTask.TaskStatusId);
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(requirementTask);
         }
 
         // GET: RequirementTasks/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public async Task<IActionResult> Edit(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             if (id == null || ctx.RequirementTask == null)
             {
@@ -170,6 +188,11 @@ namespace RPPP_WebApp.Controllers
             ViewData["ProjectRequirementId"] = new SelectList(ctx.ProjectRequirement, "Id", "Description", requirementTask.ProjectRequirementId);
             ViewData["Id"] = new SelectList(ctx.ProjectWork, "Id", "Title", requirementTask.Id);
             ViewData["TaskStatusId"] = new SelectList(ctx.TaskStatus, "Id", "Type", requirementTask.TaskStatusId);
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(requirementTask);
         }
 
@@ -178,7 +201,7 @@ namespace RPPP_WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,PlannedStartDate,PlannedEndDate,ActualStartDate,ActualEndDate,TaskStatusId,ProjectRequirementId")] RequirementTask requirementTask)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,PlannedStartDate,PlannedEndDate,ActualStartDate,ActualEndDate,TaskStatusId,ProjectRequirementId")] RequirementTask requirementTask, int page = 1, int sort = 1, bool ascending = true)
         {
             if (id != requirementTask.Id)
             {
@@ -208,11 +231,16 @@ namespace RPPP_WebApp.Controllers
             ViewData["ProjectRequirementId"] = new SelectList(ctx.ProjectRequirement, "Id", "Description", requirementTask.ProjectRequirementId);
             ViewData["Id"] = new SelectList(ctx.ProjectWork, "Id", "Title", requirementTask.Id);
             ViewData["TaskStatusId"] = new SelectList(ctx.TaskStatus, "Id", "Type", requirementTask.TaskStatusId);
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(requirementTask);
         }
 
         // GET: RequirementTasks/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             if (id == null || ctx.RequirementTask == null)
             {
@@ -229,13 +257,17 @@ namespace RPPP_WebApp.Controllers
                 return NotFound();
             }
 
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(requirementTask);
         }
 
         // POST: RequirementTasks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public async Task<IActionResult> DeleteConfirmed(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
             if (ctx.RequirementTask == null)
             {
@@ -248,12 +280,22 @@ namespace RPPP_WebApp.Controllers
             }
             
             await ctx.SaveChangesAsync();
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RequirementTaskExists(Guid id)
+        private bool RequirementTaskExists(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
-          return ctx.RequirementTask.Any(e => e.Id == id);
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
+            return ctx.RequirementTask.Any(e => e.Id == id);
         }
     }
 }

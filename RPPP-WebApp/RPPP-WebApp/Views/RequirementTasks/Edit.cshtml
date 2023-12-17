@@ -51,7 +51,10 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index"
+       asp-route-page="@ViewBag.Page"
+       asp-route-sort="@ViewBag.Sort"
+       asp-route-ascending="@ViewBag.Ascending">Back to List</a>
 </div>
 
 @section Scripts {

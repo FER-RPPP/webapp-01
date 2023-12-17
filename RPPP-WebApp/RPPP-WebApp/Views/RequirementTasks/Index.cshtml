@@ -1,13 +1,16 @@
 ﻿@model RPPP_WebApp.ViewModels.RequirementTasksViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "RequirementTask";
 }
 
-<h1>Index</h1>
+<h1>RequirementTask</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"
+       asp-route-page="@Model.PagingInfo.CurrentPage"
+       asp-route-sort="@Model.PagingInfo.Sort"
+       asp-route-ascending="@Model.PagingInfo.Ascending">Create New</a>
 </p>
 
 <partial name="Filter" model="Model.Filter" />
@@ -51,6 +54,9 @@
                     Task Status
                 </a>
             </th>
+            <th>Requirement Tasks</th>
+
+            
             <th></th>
         </tr>
     </thead>
@@ -80,7 +86,11 @@
                     @(item.TaskStatus ?? "Unknown")
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Edit" 
+                       asp-route-id="@item.Id"
+                       asp-route-page="@Model.PagingInfo.CurrentPage"
+                       asp-route-sort="@Model.PagingInfo.Sort"
+                       asp-route-ascending="@Model.PagingInfo.Ascending">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>

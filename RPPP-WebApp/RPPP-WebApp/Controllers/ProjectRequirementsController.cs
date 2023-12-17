@@ -5,51 +5,106 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using RPPP_WebApp.Extensions.Selectors;
 using RPPP_WebApp.Model;
+using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers
 {
     public class ProjectRequirementsController : Controller
     {
-        private readonly Rppp01Context _context;
+        private readonly Rppp01Context ctx;
+        private readonly ILogger<ProjectRequirementsController> logger;
+        private readonly AppSettings appData;
 
-        public ProjectRequirementsController(Rppp01Context context)
+        public ProjectRequirementsController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<ProjectRequirementsController> logger)
         {
-            _context = context;
+            this.ctx = ctx;
+            this.logger = logger;
+            appData = options.Value;
         }
 
         // GET: ProjectRequirements
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true)
         {
-            var rppp01Context = _context.ProjectRequirement.Include(p => p.Project).Include(p => p.RequirementPriority);
-            return View(await rppp01Context.ToListAsync());
+            var query = ctx.ProjectRequirement
+                .Include(p => p.RequirementTask).ThenInclude(p => p.ProjectWork)
+                .Include(p => p.Project)
+                .Include(p => p.RequirementPriority)
+                .AsNoTracking();
+
+            int pagesize = appData.PageSize;
+            int count = await query.CountAsync();
+            var pagingInfo = new PagingInfo
+            {
+                CurrentPage = page,
+                Sort = sort,
+                Ascending = ascending,
+                ItemsPerPage = pagesize,
+                TotalItems = count
+            };
+
+            if (page < 1 || page > pagingInfo.TotalPages)
+            {
+                return RedirectToAction(nameof(Index), new { page = 1, sort, ascending });
+            }
+
+            query = query.ApplySort(sort, ascending);
+
+            var projectRequirements = await query
+                .Skip((page - 1) * pagesize)
+                .Take(pagesize)
+                .ToListAsync();
+
+            var model = new ProjectRequirementsViewModel
+            {
+                ProjectRequirement = projectRequirements,
+                PagingInfo = pagingInfo
+            };
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
+            return View(model);
         }
 
         // GET: ProjectRequirements/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Details(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
-            if (id == null || _context.ProjectRequirement == null)
+            if (id == null || ctx.ProjectRequirement == null)
             {
                 return NotFound();
             }
 
-            var projectRequirement = await _context.ProjectRequirement
+            var projectRequirement = await ctx.ProjectRequirement
                 .Include(p => p.Project)
                 .Include(p => p.RequirementPriority)
+                .Include(p => p.RequirementTask)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (projectRequirement == null)
             {
                 return NotFound();
             }
 
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(projectRequirement);
         }
 
         // GET: ProjectRequirements/Create
-        public IActionResult Create()
+        public IActionResult Create(int page = 1, int sort = 1, bool ascending = true)
         {
-            ViewData["ProjectId"] = new SelectList(_context.Project, "Id", "CardId");
-            ViewData["RequirementPriorityId"] = new SelectList(_context.RequirementPriority, "Id", "Type");
+            ViewData["ProjectId"] = new SelectList(ctx.Project, "Id", "CardId");
+            ViewData["RequirementPriorityId"] = new SelectList(ctx.RequirementPriority, "Id", "Type");
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View();
         }
 
@@ -58,35 +113,45 @@ namespace RPPP_WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Type,RequirementPriorityId,ProjectId,Description")] ProjectRequirement projectRequirement)
+        public async Task<IActionResult> Create([Bind("Id,Type,RequirementPriorityId,ProjectId,Description")] ProjectRequirement projectRequirement, int page = 1, int sort = 1, bool ascending = true)
         {
             if (ModelState.IsValid)
             {
                 projectRequirement.Id = Guid.NewGuid();
-                _context.Add(projectRequirement);
-                await _context.SaveChangesAsync();
+                ctx.Add(projectRequirement);
+                await ctx.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProjectId"] = new SelectList(_context.Project, "Id", "CardId", projectRequirement.ProjectId);
-            ViewData["RequirementPriorityId"] = new SelectList(_context.RequirementPriority, "Id", "Type", projectRequirement.RequirementPriorityId);
+            ViewData["ProjectId"] = new SelectList(ctx.Project, "Id", "CardId", projectRequirement.ProjectId);
+            ViewData["RequirementPriorityId"] = new SelectList(ctx.RequirementPriority, "Id", "Type", projectRequirement.RequirementPriorityId);
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(projectRequirement);
         }
 
         // GET: ProjectRequirements/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public async Task<IActionResult> Edit(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
-            if (id == null || _context.ProjectRequirement == null)
+            if (id == null || ctx.ProjectRequirement == null)
             {
                 return NotFound();
             }
 
-            var projectRequirement = await _context.ProjectRequirement.FindAsync(id);
+            var projectRequirement = await ctx.ProjectRequirement.FindAsync(id);
             if (projectRequirement == null)
             {
                 return NotFound();
             }
-            ViewData["ProjectId"] = new SelectList(_context.Project, "Id", "CardId", projectRequirement.ProjectId);
-            ViewData["RequirementPriorityId"] = new SelectList(_context.RequirementPriority, "Id", "Type", projectRequirement.RequirementPriorityId);
+            ViewData["ProjectId"] = new SelectList(ctx.Project, "Id", "CardId", projectRequirement.ProjectId);
+            ViewData["RequirementPriorityId"] = new SelectList(ctx.RequirementPriority, "Id", "Type", projectRequirement.RequirementPriorityId);
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(projectRequirement);
         }
 
@@ -95,7 +160,7 @@ namespace RPPP_WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Type,RequirementPriorityId,ProjectId,Description")] ProjectRequirement projectRequirement)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Type,RequirementPriorityId,ProjectId,Description")] ProjectRequirement projectRequirement, int page = 1, int sort = 1, bool ascending = true)
         {
             if (id != projectRequirement.Id)
             {
@@ -106,8 +171,8 @@ namespace RPPP_WebApp.Controllers
             {
                 try
                 {
-                    _context.Update(projectRequirement);
-                    await _context.SaveChangesAsync();
+                    ctx.Update(projectRequirement);
+                    await ctx.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -122,20 +187,25 @@ namespace RPPP_WebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProjectId"] = new SelectList(_context.Project, "Id", "CardId", projectRequirement.ProjectId);
-            ViewData["RequirementPriorityId"] = new SelectList(_context.RequirementPriority, "Id", "Type", projectRequirement.RequirementPriorityId);
+            ViewData["ProjectId"] = new SelectList(ctx.Project, "Id", "CardId", projectRequirement.ProjectId);
+            ViewData["RequirementPriorityId"] = new SelectList(ctx.RequirementPriority, "Id", "Type", projectRequirement.RequirementPriorityId);
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(projectRequirement);
         }
 
         // GET: ProjectRequirements/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
-            if (id == null || _context.ProjectRequirement == null)
+            if (id == null || ctx.ProjectRequirement == null)
             {
                 return NotFound();
             }
 
-            var projectRequirement = await _context.ProjectRequirement
+            var projectRequirement = await ctx.ProjectRequirement
                 .Include(p => p.Project)
                 .Include(p => p.RequirementPriority)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -144,31 +214,40 @@ namespace RPPP_WebApp.Controllers
                 return NotFound();
             }
 
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return View(projectRequirement);
         }
 
         // POST: ProjectRequirements/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public async Task<IActionResult> DeleteConfirmed(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
-            if (_context.ProjectRequirement == null)
+            if (ctx.ProjectRequirement == null)
             {
                 return Problem("Entity set 'Rppp01Context.ProjectRequirement'  is null.");
             }
-            var projectRequirement = await _context.ProjectRequirement.FindAsync(id);
+            var projectRequirement = await ctx.ProjectRequirement.FindAsync(id);
             if (projectRequirement != null)
             {
-                _context.ProjectRequirement.Remove(projectRequirement);
+                ctx.ProjectRequirement.Remove(projectRequirement);
             }
             
-            await _context.SaveChangesAsync();
+            await ctx.SaveChangesAsync();
+
+            ViewBag.Page = page;
+            ViewBag.Sort = sort;
+            ViewBag.Ascending = ascending;
+
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProjectRequirementExists(Guid id)
         {
-          return _context.ProjectRequirement.Any(e => e.Id == id);
+          return ctx.ProjectRequirement.Any(e => e.Id == id);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RPPP_WebApp.Model.TaskStatus>
+﻿@model RPPP_WebApp.ViewModels.TaskStatusesViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -7,27 +7,43 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"
+       asp-route-page="@Model.PagingInfo.CurrentPage"
+       asp-route-sort="@Model.PagingInfo.Sort"
+       asp-route-ascending="@Model.PagingInfo.Ascending">Create New</a>
 </p>
+<pager page-info="@Model.PagingInfo" page-action="Index" page-title="Unesite željenu stranicu" class="float-end"></pager>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                <a asp-route-sort="2" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 2 ? !Model.PagingInfo.Ascending : true)">
+                    Type
+                </a>
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.TaskStatuses) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id"
+                       asp-route-page="@Model.PagingInfo.CurrentPage"
+                       asp-route-sort="@Model.PagingInfo.Sort"
+                       asp-route-ascending="@Model.PagingInfo.Ascending">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id"
+                       asp-route-page="@Model.PagingInfo.CurrentPage"
+                       asp-route-sort="@Model.PagingInfo.Sort"
+                       asp-route-ascending="@Model.PagingInfo.Ascending">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"
+                       asp-route-page="@Model.PagingInfo.CurrentPage"
+                       asp-route-sort="@Model.PagingInfo.Sort"
+                       asp-route-ascending="@Model.PagingInfo.Ascending">Delete</a>
             </td>
         </tr>
 }

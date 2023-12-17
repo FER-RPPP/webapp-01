@@ -58,7 +58,10 @@
     <form asp-action="Delete" id="deleteForm">
         <input type="hidden" asp-for="Id" />
         <button type="button" onclick="confirmDelete()" class="btn btn-danger">Delete</button> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index"
+           asp-route-page="@ViewBag.Page"
+           asp-route-sort="@ViewBag.Sort"
+           asp-route-ascending="@ViewBag.Ascending">Back to List</a>
     </form>
 </div>
 
