@@ -12,6 +12,8 @@ namespace RPPP_WebApp.Extensions.Selectors
                 1 => o => o.Project,
                 2 => o => o.Worker,
                 3 => o => o.Role,
+                4 => o => o.DateFrom,
+                5 => o => o.DateTo,
                 _ => null
             };
 

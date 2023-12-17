@@ -81,7 +81,9 @@ namespace RPPP_WebApp.Controllers
                 Id = o.Id,
                 Project = o.Project.Name,
                 Worker = $"{o.Worker.FirstName} {o.Worker.LastName}",
-                Role = o.Role.Name
+                Role = o.Role.Name,
+                DateFrom = o.DateFrom,
+                DateTo = o.DateTo
             })
             .Skip((page - 1) * pagesize)
             .Take(pagesize)
@@ -166,7 +168,7 @@ namespace RPPP_WebApp.Controllers
                 }
 
                 if (await TryUpdateModelAsync(partner, "",
-                    o => o.Id, o => o.ProjectId, o => o.WorkerId, o => o.RoleId
+                    o => o.Id, o => o.ProjectId, o => o.WorkerId, o => o.RoleId, o => o.DateFrom, o => o.DateTo
                 ))
                 {
                     ViewBag.Page = page;
