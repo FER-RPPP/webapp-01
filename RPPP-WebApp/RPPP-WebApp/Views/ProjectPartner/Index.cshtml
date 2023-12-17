@@ -10,6 +10,8 @@
 
 <a asp-action="Create">Unos novog suradnika</a>
 
+<partial name="Filter" model="Model.Filter" />
+
 <pager page-info="@Model.PagingInfo" page-action="Index" page-title="Unesite željenu stranicu" class="float-end"></pager>
 
 <table class="table table-striped">

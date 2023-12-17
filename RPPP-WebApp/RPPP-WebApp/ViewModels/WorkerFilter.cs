@@ -2,6 +2,6 @@
 {
     public class WorkerFilter
     {
-        public Guid OrganizationId { get; set; }
+        public string Organization { get; set; }
     }
 }

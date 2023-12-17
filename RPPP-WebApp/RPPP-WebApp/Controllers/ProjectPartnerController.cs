@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using NLog.Filters;
 using RPPP_WebApp.Extensions;
 using RPPP_WebApp.Extensions.Selectors;
 using RPPP_WebApp.Model;
@@ -23,19 +24,39 @@ namespace RPPP_WebApp.Controllers
             appData = options.Value;
         }
 
-        public async Task <IActionResult> Index(int page = 1, int sort = 1, bool ascending = true)
+        public async Task <IActionResult> Index(ProjectPartnerFilter filter, int page = 1, int sort = 1, bool ascending = true)
         {
             var query = ctx.ProjectPartner
                            .AsNoTracking();
             int pagesize = appData.PageSize;
-            int count = query.Count();
+
+            string errorMessage = "Ne postoji niti jedan zapis";
+
+            if (!string.IsNullOrEmpty(filter.Project))
+            {
+                query = query.Where(p => p.Project.Name.Contains(filter.Project));
+                errorMessage += $" gdje je projekt: {filter.Project}";
+            }
+            if (!string.IsNullOrEmpty(filter.Worker))
+            {
+                query = query.Where(p => p.Worker.Email.Contains(filter.Worker));
+                errorMessage += $" gdje je radnik: {filter.Worker}";
+            }
+            if (!string.IsNullOrEmpty(filter.Role))
+            {
+                query = query.Where(p => p.Role.Name.Contains(filter.Role));
+                errorMessage += $" gdje je uloga: {filter.Role}";
+            }
+
+            int count = await query.CountAsync();
             if (count == 0)
             {
-                logger.LogInformation("Ne postoji niti jedan suradnik.");
-                TempData[Constants.Message] = "Ne postoji niti jedan suradnik.";
+                logger.LogInformation(errorMessage);
+                TempData[Constants.Message] = errorMessage;
                 TempData[Constants.ErrorOccurred] = false;
-                return RedirectToAction(nameof(Create));
+                return RedirectToAction(nameof(Index));
             }
+
 
             var pagingInfo = new PagingInfo
             {
@@ -69,7 +90,8 @@ namespace RPPP_WebApp.Controllers
             var model = new ProjectPartnersViewModel
             {
                 Partners = partners,
-                PagingInfo = pagingInfo
+                PagingInfo = pagingInfo,
+                Filter = filter
             };
 
             return View(model);

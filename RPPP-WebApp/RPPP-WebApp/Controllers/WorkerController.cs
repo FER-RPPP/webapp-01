@@ -28,14 +28,21 @@ namespace RPPP_WebApp.Controllers
                            .AsNoTracking();
             int pagesize = appData.PageSize;
 
+            string errorMessage = "Ne postoji niti jedan radnik";
 
-            int count = query.Count();
+            if (!string.IsNullOrEmpty(filter.Organization))
+            {
+                query = query.Where(p => p.Organization.Name.Contains(filter.Organization));
+                errorMessage += $" u organizaciji: {filter.Organization}";
+            }
+
+            int count = await query.CountAsync();
             if (count == 0)
             {
-                logger.LogInformation("Ne postoji niti jedan radnik.");
-                TempData[Constants.Message] = "Ne postoji niti jedan radnik.";
+                logger.LogInformation(errorMessage);
+                TempData[Constants.Message] = errorMessage;
                 TempData[Constants.ErrorOccurred] = false;
-                return RedirectToAction(nameof(Create));
+                return RedirectToAction(nameof(Index));
             }
 
             var pagingInfo = new PagingInfo

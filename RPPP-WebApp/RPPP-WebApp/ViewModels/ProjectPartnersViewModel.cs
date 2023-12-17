@@ -7,5 +7,7 @@ namespace RPPP_WebApp.ViewModels
         public IEnumerable<ProjectPartnerViewModel> Partners { get; set; }
 
         public PagingInfo PagingInfo { get; set; }
+
+        public ProjectPartnerFilter Filter { get; set; }
     }
 }
