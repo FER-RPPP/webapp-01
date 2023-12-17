@@ -100,6 +100,8 @@ namespace RPPP_WebApp.Controllers
         {
             ViewData["ProjectId"] = new SelectList(ctx.Project, "Id", "CardId");
             ViewData["RequirementPriorityId"] = new SelectList(ctx.RequirementPriority, "Id", "Type");
+            ViewBag.Type = new SelectList(new List<string> { "non_functional", "functional", "user", "business" });
+
 
             ViewBag.Page = page;
             ViewBag.Sort = sort;
@@ -135,6 +137,8 @@ namespace RPPP_WebApp.Controllers
             ViewBag.Page = page;
             ViewBag.Sort = sort;
             ViewBag.Ascending = ascending;
+            ViewBag.Type = new SelectList(new List<string> { "non_functional", "functional", "user", "business" });
+
 
             return View(projectRequirement);
         }
