@@ -1,0 +1,53 @@
+﻿@using RPPP_WebApp
+
+@model RPPP_WebApp.ViewModels.ProjectPartnersViewModel
+@{
+    ViewData["Title"] = "Suradnje s radnikom";
+}
+
+@{
+    string worker = ViewData["Worker"]?.ToString() ?? "";
+    string email = ViewData["Email"]?.ToString() ?? "";
+    string phone = ViewData["Phone"]?.ToString() ?? "";
+    string organization = ViewData["Organization"]?.ToString() ?? "";
+
+    string pageTitle = $"Suradnja na projektima s {worker}";
+    string emailInfo = $"Email - {email}";
+    string phoneInfo = $"Broj telefona - {phone}";
+    string orgInfo = $"Organizacija - {organization}";
+}
+
+<h1 class="mt-3">@pageTitle</h1>
+<p>@emailInfo</p>
+<p>@phoneInfo</p>
+<p>@orgInfo</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Projekt
+            </th>
+            <th>
+                Uloga
+            </th>
+            <th>
+                Od
+            </th>
+            <th>
+                Do
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var partners in Model.Partners)
+        {
+            <tr>
+                <td class="text-left">@partners.Project</td>
+                <td class="text-left">@partners.Role</td>
+                <td class="text-left">@partners.DateFrom</td>
+                <td class="text-left">@partners.DateTo</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -223,6 +223,51 @@ namespace RPPP_WebApp.Controllers
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
         }
 
+        public async Task<IActionResult> Details(Guid id, int page = 1, int sort = 1, bool ascending = true)
+        {
+
+            var query = ctx.ProjectPartner
+                           .AsNoTracking();
+            query = query.ApplySort(sort, ascending);
+
+            var projectEntry = await query
+              .Where(o => o.WorkerId == id)
+              .Select(o => new ProjectPartnerViewModel
+              {
+                  Id = o.Id,
+                  Project = o.Project.Name,
+                  Role = o.Role.Name,
+                  DateFrom = o.DateFrom,
+                  DateTo = o.DateTo
+              })
+              .ToListAsync();
+              
+
+            var worker = await ctx.Worker
+            .Where(o => o.Id == id)
+            .Select(o => new WorkerViewModel
+            {
+                Email = o.Email,
+                FirstName = o.FirstName,
+                LastName = o.LastName,
+                PhoneNumber = o.PhoneNumber,
+                Organization = o.Organization.Name
+            })
+            .FirstOrDefaultAsync();
+            var model = new ProjectPartnersViewModel
+            {
+                Partners = projectEntry
+            };
+
+            ViewData["Id"] = id;
+            ViewData["Worker"] = $"{worker.FirstName} {worker.LastName}";
+            ViewData["Email"] = worker.Email;
+            ViewData["Phone"] = worker.PhoneNumber;
+            ViewData["Organization"] = worker.Organization;
+
+            return View(model);
+        }
+
         private async Task PrepareDropDownLists()
         {
             var organizations = await ctx.Organization

@@ -49,7 +49,16 @@
         @foreach(var worker in Model.Workers)
         {
             <tr>
-                <td class="text-left">@worker.Email</td>
+                <td class="text-left">
+                    <a asp-action="Details"
+                       asp-route-id="@worker.Id"
+                       asp-route-page="@Model.PagingInfo.CurrentPage"
+                       asp-route-sort="@Model.PagingInfo.Sort"
+                       asp-route-ascending="@Model.PagingInfo.Ascending"
+                       asp-route-filter="@Model.Filter">
+                        @worker.Email
+                    </a>
+                </td>
                 <td class="text-left">@worker.FirstName</td>
                 <td class="text-left">@worker.LastName</td>
                 <td class="text-left">@worker.PhoneNumber</td>

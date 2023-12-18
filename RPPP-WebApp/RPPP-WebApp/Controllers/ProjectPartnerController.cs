@@ -234,6 +234,7 @@ namespace RPPP_WebApp.Controllers
 
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
         }
+
         private async Task PrepareDropDownLists()
         {
             var projects = await ctx.Project

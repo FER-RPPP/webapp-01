@@ -19,12 +19,12 @@
         <tr>
             <th>
                 <a asp-route-sort="1" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 1 ? !Model.PagingInfo.Ascending : true)">
-                    Projekt
+                    Suradnik
                 </a>
             </th>
             <th>
                 <a asp-route-sort="2" asp-route-page="@Model.PagingInfo.CurrentPage" asp-route-ascending="@(Model.PagingInfo.Sort == 2 ? !Model.PagingInfo.Ascending : true)">
-                    Radnik
+                    Projekt
                 </a>
             </th>
             <th>
@@ -49,8 +49,10 @@
         @foreach (var partner in Model.Partners)
         {
             <tr>
-                <td class="text-left">@partner.Project</td>
+
+                
                 <td class="text-left">@partner.Worker</td>
+                <td class="text-left">@partner.Project</td>
                 <td class="text-left">@partner.Role</td>
                 <td class="text-left">@partner.DateFrom</td>
                 <td class="text-left">@partner.DateTo</td>
