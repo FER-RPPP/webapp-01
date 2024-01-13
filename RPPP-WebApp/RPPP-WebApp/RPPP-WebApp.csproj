@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.0.6" />
     <PackageReference Include="FluentValidation" Version="11.8.1" />
 		<PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.13" />
@@ -23,6 +24,11 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.7" />
+    <PackageReference Include="PdfRpt.Core" Version="1.5.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\ProjectCardMaster\" />
   </ItemGroup>
 
 </Project>

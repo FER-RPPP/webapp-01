@@ -1,0 +1,10 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.ViewModels.ProjectCardViewModel
+
+<div hx-target="this" hx-swap="outerHTML">
+  <h1 class="mt-3">Transakcije projektne kartice @Model.Iban</h1>
+  <p>Vlasnik - @Model.Owner</p>
+  <p>Saldo - @Model.Balance</p>
+  <p>Datum aktivacije - @Model.ActivationDate.ToShortDateString()</p>
+  <a class="btn btn-sm btn-primary mb-3" hx-get="@Url.Action(nameof(ProjectCardController.Editt), new { id = Model.Iban })" title="Ažuriraj"><i class="fas fa-edit"></i></a>
+</div>

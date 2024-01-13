@@ -1,0 +1,47 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.ViewModels.ProjectCardViewModel
+
+<h1 class="mt-3">Transakcije projektne kartice @Model.Iban</h1>
+
+<form asp-action="Editt" method="post">
+  <input type="hidden" asp-for="Iban" />
+  <table>
+    <tr>
+      <td>
+        <label>Vlasnik</label>
+        <!--<input class="form-control" id="Owner" name="Owner" data-autocomplete="Owner" />
+        <input type="hidden" id="OwnerID" name="OwnerID" data-autocomplete-placeholder="Owner" />
+             -->
+        <select class="form-control" asp-for="Owner" asp-items="ViewBag.Owners">
+          <option selected value="@Model.Owner">@Model.Owner</option>
+        </select>
+        
+      </td>
+      <td>
+        <label>Saldo</label>
+        <input asp-for="Balance" type="number" class="form-control" placeholder="Balance" />
+      </td>
+      <td>
+        <label>Datum aktivacije</label>
+        <input asp-for="ActivationDate" type="date" class="form-control" placeholder="ActivationDate" />
+      </td>
+    </tr>
+  </table>
+
+  <button type="submit" class="btn btn-sm btn-primary mt-3 mb-3" title="Spremi"><i class="fas fa-save"></i></button>
+  <a class="btn btn-sm cancel mt-3 mb-3"
+     asp-action="Show"
+     asp-route-id="@Model.Iban"
+     title="Odustani">
+    <i class="fas fa-undo-alt"></i>
+  </a>
+  <div asp-validation-summary="All"></div>
+</form>
+
+@section styles {
+  <link rel="stylesheet" href="~/lib/jqueryui/themes/base/jquery-ui.css" /> 
+}
+@section scripts {
+  <script src="~/lib/jqueryui/jquery-ui.js"></script>
+  <script src="~/js/autocomplete.js"></script>
+}

@@ -1,0 +1,44 @@
+﻿@{
+  ViewData["Title"] = "Izvještaji";
+}
+
+<h1>Izvještaji</h1>
+<p>PDF:</p>
+<ul>
+  <li>
+    <a target="_blank" asp-action="Owner">Popis svih vlasnika</a>
+  </li>
+  <li>
+    <a target="_blank" asp-action="ProjectCard">Popis svih projektnih kartica</a>
+  </li>
+  <li>
+    <a target="_blank" asp-action="Transaction">Popis svih transakcija</a>
+  </li>
+  <li>
+    <a target="_blank" asp-action="TransactionType">Popis svih vrsta transakcija</a>
+  </li>
+  <li>
+    <a target="_blank" asp-action="TransactionPurpose">Popis svih svrha transakcija</a>
+  </li>
+  <li>
+    <a target="_blank" asp-action="MasterDetailCardTransactions">Popis svih transakcija po projektnoj kartici (master-detail)</a>
+  </li>
+</ul>
+<p>Excel:</p>
+<ul>
+  <li>
+    <a asp-action="OwnersExcel">Popis svih vlasnika</a>
+  </li>
+  <li>
+    <a asp-action="ProjectCardExcel">Popis svih projektnih kartica</a>
+  </li>
+  <li>
+    <a asp-action="TransactionsExcel">Popis svih transakcija</a>
+  </li>
+  <li>
+    <a asp-action="TypesAndPurposesExcel">Popis svih vrsta i svrha transakcija</a>
+  </li>
+  <li>
+    <a asp-action="MasterDetailExcel">Popis svih projektnih kartica i njihovih transakcija (master-detail)</a>
+  </li>
+</ul>

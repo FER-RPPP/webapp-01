@@ -1,0 +1,31 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.Model.Transaction;
+
+<tr hx-target="this" hx-swap="outerHTML">
+  <input asp-for="Iban" type="hidden" value="@Model.Iban" />
+  <td>
+    <input asp-for="Recipient" class="form-control" placeholder="Recipient" />
+  </td>
+  <td>
+    <input asp-for="Amount" type="number" class="form-control" placeholder="Amount" />
+  </td>
+  <td>
+    <input asp-for="Date" class="form-control" placeholder="Date" value="" />
+  </td>
+  <td>
+    <select class="form-control" asp-for="TypeId" asp-items="ViewBag.Types">
+    </select>
+  </td>
+  <td>
+    <select class="form-control" asp-for="PurposeId" asp-items="ViewBag.Purposes">
+    </select>
+  </td>
+  <td>
+    <button hx-include="closest tr"
+            hx-post="@Url.Action(nameof(ProjectCardController.NewTransaction))"
+            class="btn btn-sm btn-primary" title="Spremi">
+      <i class="fas fa-save"></i>
+    </button>
+    <div asp-validation-summary="All"></div>
+  </td>
+</tr>

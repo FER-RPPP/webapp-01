@@ -1,0 +1,35 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.ViewModels.TransactionViewModel
+
+<tr hx-target="this" hx-swap="outerHTML">
+    <td>
+      <input asp-for="Recipient" class="form-control" placeholder="Recipient" />
+    </td>
+    <td>
+      <input asp-for="Amount" type="number" class="form-control" placeholder="Amount" />
+    </td>
+    <td>
+      <input asp-for="Date" class="form-control" placeholder="Date" />
+    </td>
+    <td>
+    <select class="form-control" asp-for="Type" asp-items="ViewBag.Types">
+    </select>
+    </td>
+    <td>
+    <select class="form-control" asp-for="Purpose" asp-items="ViewBag.Purposes">
+    </select>
+    </td>
+    <td>
+      <button hx-include="closest tr"
+              hx-post="@Url.Action(nameof(ProjectCardController.EditTransaction))"
+              class="btn btn-sm btn-primary" title="Spremi">
+              <i class="fas fa-save"></i>
+      </button>
+      <button class="btn btn-sm cancel"
+              hx-get="@Url.Action(nameof(ProjectCardController.GetTransaction), new { id = Model.Id })"
+              title="Odustani">
+              <i class="fas fa-undo-alt"></i>
+      </button>
+      <div asp-validation-summary="All"></div>
+    </td>
+</tr>

@@ -52,8 +52,7 @@ public partial class Rppp01Context : DbContext
 
     public virtual DbSet<Worker> Worker { get; set; }
 
-  
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+  protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Client>(entity =>
         {
