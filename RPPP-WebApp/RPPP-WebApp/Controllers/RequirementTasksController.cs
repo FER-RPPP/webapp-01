@@ -207,16 +207,20 @@ namespace RPPP_WebApp.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,PlannedStartDate,PlannedEndDate,ActualStartDate,ActualEndDate,TaskStatusId,ProjectRequirementId")] RequirementTask requirementTask, int page = 1, int sort = 1, bool ascending = true)
         {
+           
             if (id != requirementTask.Id)
             {
                 return NotFound();
             }
-
+            logger.LogInformation("HERE");
+            logger.LogInformation(requirementTask.ToString());
+            Console.WriteLine("Hello World!");
+            
             if (ModelState.IsValid)
             {
+                logger.LogInformation("IT IS VALID!");
                 try
                 {
                     ctx.Update(requirementTask);
@@ -244,6 +248,53 @@ namespace RPPP_WebApp.Controllers
             ViewBag.Ascending = ascending;
 
             return View(requirementTask);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditTask(RequirementTaskViewModel taskViewModel)
+        {
+            logger.LogInformation("HERE");
+            if (taskViewModel == null)
+            {
+                return NotFound("Task data not provided.");
+            }
+
+
+
+            var dbTask = await ctx.RequirementTask.FindAsync(taskViewModel.Id);
+            logger.LogInformation("Got it from db!");
+            if (dbTask == null)
+            {
+                logger.LogInformation("NOT FOUND!");
+                return NotFound($"Invalid task ID: {taskViewModel.Id}");
+            }
+
+            logger.LogInformation("Checking if it'l be valid");
+            if (ModelState.IsValid)
+            {
+                logger.LogInformation("IT IS VALID!");
+                try
+                {
+                    dbTask.Id = taskViewModel.Id;
+                    dbTask.PlannedStartDate = taskViewModel.PlannedStartDate;
+                    dbTask.PlannedEndDate = taskViewModel.PlannedEndDate;
+                    dbTask.ActualStartDate = taskViewModel.ActualStartDate;
+                    dbTask.ActualEndDate = taskViewModel.ActualEndDate;
+                    // Add other properties as needed
+
+                    await ctx.SaveChangesAsync();
+                    return RedirectToAction("Details", new { id = taskViewModel.Id }); // Redirect to the details page of the parent ProjectRequirement
+                }
+                catch (Exception exc)
+                {
+                    ModelState.AddModelError(string.Empty, "An error occurred while updating the task: " + exc.Message); // Replace with your error handling
+                    return View(taskViewModel); // You might need to adjust this return statement based on your view structure
+                }
+            }
+            else
+            {
+                return View(taskViewModel); // Return the view with validation errors
+            }
         }
 
         // GET: RequirementTasks/Delete/5

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using RPPP_WebApp.Extensions;
 using RPPP_WebApp.Extensions.Selectors;
 using RPPP_WebApp.Model;
 using RPPP_WebApp.ViewModels;
@@ -208,6 +210,141 @@ namespace RPPP_WebApp.Controllers
             return View(projectRequirement);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetRequirementTask(Guid id)
+        {
+            logger.LogInformation($"Getting task with id: {id}");
+            var requirementTask = await ctx.RequirementTask
+                                       .Where(o => o.Id == id)
+                                       .Select(o => new RequirementTaskViewModel
+                                       {
+                                           Id = o.Id,
+                                           PlannedStartDate = o.PlannedStartDate,
+                                           PlannedEndDate = o.PlannedEndDate,
+                                           ActualStartDate = o.ActualStartDate,
+                                           ActualEndDate = o.ActualEndDate,
+                                           TaskStatus = o.TaskStatus.ToString(),
+                                           RequirementDescription = o.ProjectRequirement.Description,
+                                           ProjectWork = o.ProjectWork.Description
+
+                                       })
+                                       .FirstOrDefaultAsync();
+
+            if (requirementTask != null)
+            {
+                return PartialView(requirementTask);
+            }
+            else
+            {
+                return NotFound($"Unknown task id!: {id}");
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditRequirementTask(Guid id)
+        {
+            var requirementTask = await ctx.RequirementTask
+                                       .Where(o => o.Id == id)
+                                       .Select(o => new RequirementTaskViewModel
+                                       {
+                                           Id = o.Id,
+                                           PlannedStartDate = o.PlannedStartDate,
+                                           PlannedEndDate = o.PlannedEndDate,
+                                           ActualStartDate = o.ActualStartDate,
+                                           ActualEndDate = o.ActualEndDate,
+                                           TaskStatus = o.TaskStatus.ToString(),
+                                           RequirementDescription = o.ProjectRequirement.Description,
+                                           ProjectWork = o.ProjectWork.Description
+                                       })
+                                       .FirstOrDefaultAsync();
+
+            await PrepareDropDownLists();
+            if (requirementTask != null)
+            {
+                return PartialView(requirementTask);
+            }
+            else
+            {
+                return NotFound($"Unknown Task id: {id}");
+            }
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditRequirementTask(RequirementTaskViewModel requirementTask)
+        {
+            if (requirementTask == null)
+            {
+                return NotFound("No data found");
+            }
+            RequirementTask dbRequirementTask = await ctx.RequirementTask.FindAsync(requirementTask.Id);
+            if (dbRequirementTask == null)
+            {
+                return NotFound($"Unknown task id: {requirementTask.Id}");
+            }
+
+            logger.LogInformation($"Checking if the state is valid...");
+
+            if (ModelState.IsValid)
+            {
+
+                logger.LogInformation($"State valid... Updating...");
+                try
+                {
+                    dbRequirementTask.Id = requirementTask.Id;
+                    dbRequirementTask.PlannedStartDate = requirementTask.PlannedStartDate;
+                    dbRequirementTask.PlannedEndDate = requirementTask.PlannedEndDate;
+                    dbRequirementTask.ActualStartDate = requirementTask.ActualStartDate;
+                   
+                  
+                    await ctx.SaveChangesAsync();
+                    return RedirectToAction(nameof(GetRequirementTask), new { id = requirementTask.Id });
+                }
+                catch (Exception exc)
+                {
+                    ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
+                    return PartialView(requirementTask);
+                }
+            }
+            else
+            {
+                logger.LogInformation($"State invalid...");
+                return PartialView(requirementTask);
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteRequirementTask(Guid Id)
+        {
+            ActionResponseMessage responseMessage;
+
+            var requirementTask = ctx.RequirementTask.AsNoTracking().Where(o => o.Id == Id).SingleOrDefault();
+            if (requirementTask != null)
+            {
+                try
+                {
+                    ctx.Remove(requirementTask);
+                    await ctx.SaveChangesAsync();
+                    responseMessage = new ActionResponseMessage(MessageType.Success, $"Task successfully deleted!");
+                }
+                catch (Exception exc)
+                {
+                    responseMessage = new ActionResponseMessage(MessageType.Error, $"Error during task deletion: {exc.CompleteExceptionMessage()}");
+                }
+            }
+            else
+            {
+                responseMessage = new ActionResponseMessage(MessageType.Error, $"Task with id: '{Id}' does not exist!");
+            }
+
+            Response.Headers["HX-Trigger"] = JsonSerializer.Serialize(new { showMessage = responseMessage });
+            return responseMessage.MessageType == MessageType.Success ?
+             new EmptyResult() : await GetRequirementTask(Id);
+
+        }
+
+
+
         // GET: ProjectRequirements/Delete/5
         public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
@@ -268,5 +405,41 @@ namespace RPPP_WebApp.Controllers
         {
           return ctx.ProjectRequirement.Any(e => e.Id == id);
         }
+
+        private async Task PrepareDropDownLists()
+        {
+            var owners = await ctx.Owner
+                                  .ToListAsync();
+
+            var types = await ctx.TransactionType
+                                .ToListAsync();
+
+            var purposes = await ctx.TransactionPurpose
+                                .ToListAsync();
+
+            var ownersList = owners.Select(owner => new SelectListItem
+            {
+                Text = $"{owner.Name} {owner.Surname} ({owner.Oib})",
+                Value = owner.Oib.ToString()
+            }).ToList();
+
+            var typeList = types.Select(type => new SelectListItem
+            {
+                Text = $"{type.TypeName}",
+                Value = type.Id.ToString()
+            }).ToList();
+
+            var purposeList = purposes.Select(purpose => new SelectListItem
+            {
+                Text = $"{purpose.PurposeName}",
+                Value = purpose.Id.ToString()
+            }).ToList();
+
+            ViewBag.Types = typeList;
+            ViewBag.Purposes = purposeList;
+            ViewBag.Owners = ownersList;
+        }
     }
+
+    
 }
