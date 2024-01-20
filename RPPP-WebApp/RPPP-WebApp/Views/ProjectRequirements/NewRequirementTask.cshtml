@@ -1,0 +1,34 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.Model.RequirementTask;
+
+<tr hx-target="this" hx-swap="outerHTML">
+    <input asp-for="ProjectRequirementId" type="hidden" value="@ViewBag.ProjectRequirementId" />
+    <td>
+        <input asp-for="PlannedStartDate" class="form-control" placeholder="PlannedStartDate" value="" />
+    </td>
+    <td>
+        <input asp-for="PlannedEndDate" class="form-control" placeholder="PlannedEndDate" value="" />
+    </td>
+    <td>
+        <input asp-for="ActualStartDate" class="form-control" placeholder="ActualStartDate" value="" />
+    </td>
+    <td>
+        <input asp-for="ActualEndDate" class="form-control" placeholder="ActualEndDate" value="" />
+    </td>
+    <td>
+        <select class="form-control" asp-for="TaskStatusId" asp-items="ViewBag.TaskStatuses">
+        </select>
+    </td>
+    <td>
+        <select class="form-control" asp-for="ProjectWork.Id" asp-items="ViewBag.ProjectWorks">
+        </select>
+    </td>
+    <td>
+        <button hx-include="closest tr"
+                hx-post="@Url.Action(nameof(ProjectRequirementsController.NewRequirementTask))"
+                class="btn btn-sm btn-primary" title="Spremi">
+            <i class="fas fa-save"></i>
+        </button>
+        <div asp-validation-summary="All"></div>
+    </td>
+</tr>

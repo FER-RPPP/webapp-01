@@ -1,0 +1,30 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.ViewModels.RequirementTaskViewModel
+
+<tr hx-target="this" hx-swap="outerHTML">
+    <td>
+        <input asp-for="PlannedStartDate" class="form-control" placeholder="Recipient" />
+    </td>
+    <td>
+        <input asp-for="PlannedEndDate" class="form-control" placeholder="PlannedEndDate" />
+    </td>
+    <td>
+        <input asp-for="ActualStartDate" class="form-control" placeholder="Date" />
+    </td>
+    <td>
+        <input asp-for="ActualEndDate" class="form-control" placeholder="Date" />
+    </td>
+    <td>
+        <button hx-include="closest tr"
+                hx-post="@Url.Action(nameof(ProjectRequirementsController.EditRequirementTask))"
+                class="btn btn-sm btn-primary" title="Spremi">
+            <i class="fas fa-save"></i>
+        </button>
+        <button class="btn btn-sm cancel"
+                hx-get="@Url.Action(nameof(ProjectRequirementsController.GetRequirementTask), new { id = Model.Id })"
+                title="Odustani">
+            <i class="fas fa-undo-alt"></i>
+        </button>
+        <div asp-validation-summary="All"></div>
+    </td>
+</tr>

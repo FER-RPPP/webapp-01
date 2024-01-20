@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using RPPP_WebApp.Extensions;
 using RPPP_WebApp.Extensions.Selectors;
 using RPPP_WebApp.Model;
 using RPPP_WebApp.ViewModels;
@@ -354,14 +357,17 @@ namespace RPPP_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        
+
         private bool RequirementTaskExists(Guid id, int page = 1, int sort = 1, bool ascending = true)
-        {
+         {
 
-            ViewBag.Page = page;
-            ViewBag.Sort = sort;
-            ViewBag.Ascending = ascending;
+                ViewBag.Page = page;
+                ViewBag.Sort = sort;
+                ViewBag.Ascending = ascending;
 
-            return ctx.RequirementTask.Any(e => e.Id == id);
-        }
+                return ctx.RequirementTask.Any(e => e.Id == id);
+         }
+
     }
 }

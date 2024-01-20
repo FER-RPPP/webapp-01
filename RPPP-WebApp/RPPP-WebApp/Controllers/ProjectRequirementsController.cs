@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -258,7 +259,6 @@ namespace RPPP_WebApp.Controllers
                                        })
                                        .FirstOrDefaultAsync();
 
-            await PrepareDropDownLists();
             if (requirementTask != null)
             {
                 return PartialView(requirementTask);
@@ -401,45 +401,136 @@ namespace RPPP_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> NewRequirementTask(Guid projectRequirementId)
+        {
+            logger.LogInformation("NewRequirementTask GET");
+            await PrepareDropDownLists(projectRequirementId);
+
+            ViewBag.projectRequirementId = projectRequirementId;
+            logger.LogInformation($"ProjectRequirementId: {projectRequirementId}");
+            return PartialView();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> NewRequirementTask(RequirementTask requirementTask)
+        {
+            ActionResponseMessage responseMessage;
+            logger.LogInformation("NewRequirementTask POST");
+            logger.LogInformation("Checking if model is valid...");
+
+            if (ModelState.IsValid)
+            {
+                logger.LogInformation("Model is valid!");
+                try
+                {
+                    // Generate a new GUID for the RequirementTask
+                    requirementTask.Id = Guid.NewGuid();
+
+                    var existingProjectWork = await ctx.ProjectWork
+                            .AsNoTracking()
+                            .FirstOrDefaultAsync(pw => pw.Id == requirementTask.ProjectWork.Id);
+
+                    if (requirementTask.ProjectWork != null && requirementTask.ProjectWork.Id != Guid.Empty)
+                    {
+                        logger.LogInformation("ProjectWork is not null and has an Id");
+
+                        // Retrieve existing ProjectWork from the context or database
+                        
+
+                        if (existingProjectWork == null)
+                        {
+                            throw new InvalidOperationException("Specified ProjectWork does not exist.");
+                        }
+
+                        // Attach the existing ProjectWork to the context
+                        ctx.Attach(existingProjectWork);
+                        requirementTask.ProjectWork = existingProjectWork;
+                    }
+
+                    logger.LogInformation($"Adding new task: '{requirementTask.ProjectWork?.Id}', '{requirementTask.ProjectWork?.Title}', '{requirementTask.ProjectRequirementId}'");
+                    ctx.Add(requirementTask);
+                    requirementTask.Id = existingProjectWork.Id;
+                    await ctx.SaveChangesAsync();
+
+                    responseMessage = new ActionResponseMessage(MessageType.Success, $"Task with id: '{requirementTask.Id}' successfully added!.");
+                }
+                catch (Exception exc)
+                {
+                    responseMessage = new ActionResponseMessage(MessageType.Error, $"Error during task creation: {exc.Message}");
+                    ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
+
+                    await PrepareDropDownLists(requirementTask.ProjectRequirement.Id);
+                }
+            }
+            else
+            {
+                logger.LogInformation("Model is not valid!");
+                responseMessage = new ActionResponseMessage(MessageType.Error, $"Error during task creation!");
+
+                await PrepareDropDownLists(requirementTask.ProjectRequirement.Id);
+            }
+
+            Response.Headers["HX-Trigger"] = JsonSerializer.Serialize(new { showMessage = responseMessage });
+            return responseMessage.MessageType == MessageType.Success ?
+            Content($"<script>setTimeout(function() {{ window.location.href='/ProjectRequirements/Details/{requirementTask.ProjectRequirementId}?page=1&sort=1&ascending=True'; }}, 1000);</script>", "text/html") : PartialView(requirementTask);
+        }
+
+
         private bool ProjectRequirementExists(Guid id)
         {
           return ctx.ProjectRequirement.Any(e => e.Id == id);
         }
 
-        private async Task PrepareDropDownLists()
+
+
+
+        private async Task PrepareDropDownLists(Guid projectRequirementId)
         {
-            var owners = await ctx.Owner
+            logger.LogInformation($"Preparing drop down lists for project requirement id: {projectRequirementId}");
+            var currentProjectId = await ctx.ProjectRequirement
+                .Where(pr => pr.Id == projectRequirementId)
+                .Select(pr => pr.ProjectId)
+                .FirstOrDefaultAsync();
+
+            logger.LogInformation($"Preparing drop down lists for project id: {currentProjectId}");
+            var taskStatuses = await ctx.TaskStatus
                                   .ToListAsync();
 
-            var types = await ctx.TransactionType
+            var projectWorks = await ctx.ProjectWork
+                                .Where(pw => pw.ProjectId == currentProjectId)
                                 .ToListAsync();
 
-            var purposes = await ctx.TransactionPurpose
-                                .ToListAsync();
+            logger.LogInformation($"ProjectWorks: {projectWorks.Count}");
 
-            var ownersList = owners.Select(owner => new SelectListItem
+            var requirementTaskIds = await ctx.RequirementTask
+                            .Where(rt => rt.ProjectRequirement.ProjectId == currentProjectId)                    
+                            .Select(rt => rt.Id).ToListAsync();
+
+            logger.LogInformation($"RequirementTaskIds: {requirementTaskIds.Count}");
+
+            var availableProjectWorks = projectWorks.Where(pw => !requirementTaskIds.Contains(pw.Id)).ToList();
+
+            logger.LogInformation($"AvailableProjectWorks: {availableProjectWorks.Count}");
+            var statusesList = taskStatuses.Select(status => new SelectListItem
             {
-                Text = $"{owner.Name} {owner.Surname} ({owner.Oib})",
-                Value = owner.Oib.ToString()
+                Text = $"{status.Type}",
+                Value = status.Id.ToString()
             }).ToList();
 
-            var typeList = types.Select(type => new SelectListItem
+            var projectWorksList = availableProjectWorks.Select(projectWork => new SelectListItem
             {
-                Text = $"{type.TypeName}",
-                Value = type.Id.ToString()
+                Text = $"{projectWork.Title}",
+                Value = projectWork.Id.ToString()
             }).ToList();
 
-            var purposeList = purposes.Select(purpose => new SelectListItem
-            {
-                Text = $"{purpose.PurposeName}",
-                Value = purpose.Id.ToString()
-            }).ToList();
 
-            ViewBag.Types = typeList;
-            ViewBag.Purposes = purposeList;
-            ViewBag.Owners = ownersList;
+            ViewBag.ProjectWorks = projectWorksList;
+            ViewBag.TaskStatuses = statusesList;
         }
+
+
     }
 
-    
+
 }
