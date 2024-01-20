@@ -52,7 +52,9 @@ public partial class Rppp01Context : DbContext
 
     public virtual DbSet<Worker> Worker { get; set; }
 
-  protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public virtual DbSet<Product> Product { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Client>(entity =>
         {
@@ -584,6 +586,21 @@ public partial class Rppp01Context : DbContext
                 .HasForeignKey(d => d.OrganizationId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("worker_FK");
+        });
+
+        modelBuilder.Entity<Product>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("product_PK");
+
+            entity.ToTable("product");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(50)
+                .HasColumnName("name");
         });
 
         OnModelCreatingPartial(modelBuilder);
