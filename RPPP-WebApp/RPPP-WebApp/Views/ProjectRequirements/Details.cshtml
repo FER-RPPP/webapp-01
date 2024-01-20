@@ -1,6 +1,7 @@
 ﻿@using RPPP_WebApp
 @using RPPP_WebApp.Controllers;
 @using RPPP_WebApp.ViewModels;
+@using RPPP_WebApp.Model
 @model RPPP_WebApp.Model.ProjectRequirement
 
 @{
@@ -47,6 +48,14 @@
 </div>
 <h2>Requirement Tasks</h2>
 
+<button hx-get="@Url.Action(nameof(ProjectRequirementsController.NewRequirementTask), new { projectRequirementId = Model.Id })"
+        hx-target="#newRequirementTaskContainer"
+        hx-swap="innerHTML"
+        class="btn btn-primary">
+    Add New Requirement Task
+</button>
+<div id="newRequirementTaskContainer"></div>
+
 @if (Model.RequirementTask != null && Model.RequirementTask.Any())
 {
     <table class="table">
@@ -60,6 +69,7 @@
             </tr>
         </thead>
         <tbody>
+            
             @foreach (var task in Model.RequirementTask)
             {
                 var viewModel = RequirementTaskViewModel.FromRequirementTask(task);

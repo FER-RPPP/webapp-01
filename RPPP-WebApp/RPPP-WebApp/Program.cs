@@ -1,17 +1,20 @@
 using NLog.Web;
 using NLog;
 using RPPP_WebApp;
+using RPPP_WebApp.Services.Impl;
+using RPPP_WebApp.Services;
 
 //NOTE: Add dependencies/services in StartupExtensions.cs and keep this file as-is
 
 var builder = WebApplication.CreateBuilder(args);
+
 var logger = LogManager.Setup().GetCurrentClassLogger();
 
 try
 {
   logger.Debug("init main");
   builder.Host.UseNLog(new NLogAspNetCoreOptions() { RemoveLoggerFactoryFilter = false });
-
+  builder.Services.AddScoped<IProductService, ProductService>();
   var app = builder.ConfigureServices().ConfigurePipeline();
   app.Run();
 }
