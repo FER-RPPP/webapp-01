@@ -3,6 +3,7 @@ using NLog;
 using RPPP_WebApp;
 using RPPP_WebApp.Services.Impl;
 using RPPP_WebApp.Services;
+using RPPP_WebApp.Controllers;
 
 //NOTE: Add dependencies/services in StartupExtensions.cs and keep this file as-is
 
@@ -12,11 +13,13 @@ var logger = LogManager.Setup().GetCurrentClassLogger();
 
 try
 {
-  logger.Debug("init main");
-  builder.Host.UseNLog(new NLogAspNetCoreOptions() { RemoveLoggerFactoryFilter = false });
-  builder.Services.AddScoped<IProductService, ProductService>();
-  var app = builder.ConfigureServices().ConfigurePipeline();
-  app.Run();
+
+    builder.Services.AddTransient<ProductController>();
+
+    logger.Debug("init main");
+    builder.Host.UseNLog(new NLogAspNetCoreOptions() { RemoveLoggerFactoryFilter = false });
+    var app = builder.ConfigureServices().ConfigurePipeline();
+    app.Run();
 }
 catch (Exception exception)
 {

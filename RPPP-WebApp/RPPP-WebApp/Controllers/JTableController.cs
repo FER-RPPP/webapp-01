@@ -29,7 +29,7 @@ namespace RPPP_WebApp.Controllers
             return new TableRecords<TModel>(count, list);
         }
 
-        [HttpPost("create")]
+        [HttpPost]
         public virtual async Task<JTableAjaxResult> Create([FromForm] TModel model)
         {
             if (model == null)
@@ -52,8 +52,7 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
-        [HttpPost("update")]
-        public virtual async Task<JTableAjaxResult> UpdateItem(TKey id, TModel model)
+        protected async Task<JTableAjaxResult> UpdateItem(TKey id, TModel model)
         {
 
             if (model == null)
@@ -77,8 +76,7 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
-        [HttpDelete("delete")]
-        public virtual async Task<JTableAjaxResult> DeleteItem(TKey id)
+        protected async Task<JTableAjaxResult> DeleteItem(TKey id)
         {
             var result = await controller.Delete(id);
             if (result is NoContentResult)
