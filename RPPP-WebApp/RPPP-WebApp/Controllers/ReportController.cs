@@ -44,10 +44,10 @@ namespace RPPP_WebApp.Controllers
                 int currentRow = 1;
                 worksheet.Cells[currentRow, 1].Value = "#";
                 worksheet.Cells[currentRow, 2].Value = "Id";
-                worksheet.Cells[currentRow, 3].Value = "PlannedStartDate";
-                worksheet.Cells[currentRow, 4].Value = "PlannedEndDate";
-                worksheet.Cells[currentRow, 5].Value = "ActualStartDate";
-                worksheet.Cells[currentRow, 6].Value = "ActualEndDate";
+                worksheet.Cells[currentRow, 3].Value = "Planned Start Date";
+                worksheet.Cells[currentRow, 4].Value = "Planned End Date";
+                worksheet.Cells[currentRow, 5].Value = "Actual Start Date";
+                worksheet.Cells[currentRow, 6].Value = "Actual End Date";
                 worksheet.Cells[currentRow, 7].Value = "Task Status";
                 worksheet.Cells[currentRow, 8].Value = "Project Work Title";
                 worksheet.Row(currentRow).Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
