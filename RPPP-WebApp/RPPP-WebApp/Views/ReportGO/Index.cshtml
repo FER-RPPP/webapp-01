@@ -42,3 +42,14 @@
     <a asp-action="MasterDetailExcel">Popis svih projektnih kartica i njihovih transakcija (master-detail)</a>
   </li>
 </ul>
+
+<h1>Unesite projektne kartice</h1>
+<form asp-action="ImportProjectCard" method="post" enctype="multipart/form-data">
+  <div>
+    <label for="file">Choose file to upload:</label>
+    <input type="file" id="file" name="file" required>
+  </div>
+  <div>
+    <button type="submit">Upload and Import</button>
+  </div>
+</form>

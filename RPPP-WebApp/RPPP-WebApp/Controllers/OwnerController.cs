@@ -120,7 +120,7 @@ namespace RPPP_WebApp.Controllers {
     public IActionResult Edit(string id, int page = 1, int sort = 1, bool ascending = true) {
       var owner = ctx.Owner.AsNoTracking().Where(o => o.Oib == id).SingleOrDefault();
       if (owner == null) {
-        logger.LogWarning("Ne postoji vlasnik s OIB-om: " + id);
+        logger.LogWarning($"Ne postoji vlasnik s OIB-om: {id}");
         return NotFound("Ne postoji vlasnik s OIB-om: " + id);
       }
       else {
@@ -139,6 +139,7 @@ namespace RPPP_WebApp.Controllers {
                           .Where(o => o.Oib == id)
                           .FirstOrDefaultAsync();
         if (owner == null) {
+          logger.LogWarning($"Neispravan OIB vlasnika: {id}");
           return NotFound("Neispravan OIB vlasnika: " + id);
         }
 
@@ -150,6 +151,7 @@ namespace RPPP_WebApp.Controllers {
           ViewBag.Ascending = ascending;
           try {
             await ctx.SaveChangesAsync();
+            logger.LogInformation($"Vlasnik (OIB = {id}) ažuriran.");
             TempData[Constants.Message] = $"Vlasnik (OIB = {id}) ažuriran.";
             TempData[Constants.ErrorOccurred] = false;
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });

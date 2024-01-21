@@ -147,7 +147,7 @@ namespace RPPP_WebApp.Controllers {
         try {
           ctx.Add(projectCard);
           await ctx.SaveChangesAsync();
-
+          logger.LogInformation($"Projektna kartica {projectCard.Iban} dodana.");
           TempData[Constants.Message] = $"Projektna kartica {projectCard.Iban} dodana.";
           TempData[Constants.ErrorOccurred] = false;
           return RedirectToAction(nameof(Index));
@@ -216,6 +216,7 @@ namespace RPPP_WebApp.Controllers {
                           .Where(o => o.Iban == id)
                           .FirstOrDefaultAsync();
         if (projectCard == null) {
+          logger.LogWarning($"Neispravan IBAN projektne kartice: {id})");
           return NotFound("Neispravan IBAN projektne kartice: " + id);
         }
 
@@ -227,6 +228,7 @@ namespace RPPP_WebApp.Controllers {
           ViewBag.Ascending = ascending;
           try {
             await ctx.SaveChangesAsync();
+            logger.LogInformation($"Projektna kartica (IBAN = {id}) ažurirana.");
             TempData[Constants.Message] = $"Projektna kartica (IBAN = {id}) ažurirana.";
             TempData[Constants.ErrorOccurred] = false;
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
@@ -341,7 +343,7 @@ namespace RPPP_WebApp.Controllers {
           else {
             dbProjectCard.Oib = projectCard.Owner;
           }
-
+          logger.LogInformation($"Projektna kartica (IBAN = {projectCard.Iban} ažurirana.");
           await ctx.SaveChangesAsync();
           return RedirectToAction(nameof(Show), new { id = projectCard.Iban });
         }
@@ -424,6 +426,7 @@ namespace RPPP_WebApp.Controllers {
           Guid purposeId = new Guid(transaction.Purpose);
           dbTransaction.PurposeId = purposeId;
 
+          logger.LogInformation($"Transakcija (id = {transaction.Id} ažurirana.");
           await ctx.SaveChangesAsync();
           return RedirectToAction(nameof(GetTransaction), new { id = transaction.Id });
         }
@@ -446,13 +449,16 @@ namespace RPPP_WebApp.Controllers {
         try {
           ctx.Remove(transaction);
           await ctx.SaveChangesAsync();
+          logger.LogInformation($"Transakcija s id = {Id} uspješno obrisana.");
           responseMessage = new ActionResponseMessage(MessageType.Success, $"Transakcija uspješno obrisana.");
         }
         catch (Exception exc) {
+          logger.LogError($"Pogreška prilikom brisanja transakcije.");
           responseMessage = new ActionResponseMessage(MessageType.Error, $"Pogreška prilikom brisanja transakcije: {exc.CompleteExceptionMessage()}");
         }
       }
       else {
+        logger.LogError($"Transakcija s Id-om {Id} ne postoji");
         responseMessage = new ActionResponseMessage(MessageType.Error, $"Transakcija s Id-om {Id} ne postoji");
       }
 
@@ -489,6 +495,7 @@ namespace RPPP_WebApp.Controllers {
 
       try {
         ctx.Add(newTransaction);
+        logger.LogInformation($"Transakcija s id = {transactionVM.NewTransaction.Id} uspješno dodana.");
         await ctx.SaveChangesAsync();
         TempData["Message"] = "Transakcija je dodana.";
         TempData["ErrorOccurred"] = false;
@@ -517,13 +524,14 @@ namespace RPPP_WebApp.Controllers {
           Debug.WriteLine($"{transaction.Iban} {transaction.Recipient} {transaction.Amount} {transaction.Date} {transaction.TypeId} {transaction.PurposeId})");
           ctx.Add(transaction);
           await ctx.SaveChangesAsync();
-
+          logger.LogInformation($"Transakcija {transaction.Id} dodana.");
           responseMessage = new ActionResponseMessage(MessageType.Success, $"Transakcija {transaction.Iban} dodana.");
          // return RedirectToAction(nameof(Show));
 
         }
         catch (Exception exc) {
-          responseMessage = new ActionResponseMessage(MessageType.Error, $"Pogreška prilikom dodavanja transakcije {transaction.Iban}. {transaction.Recipient} {transaction.Amount} {transaction.Date} {transaction.TypeId} {transaction.PurposeId}");
+          logger.LogError($"Pogreška prilikom dodavanja transakcije {transaction.Id}.");
+          responseMessage = new ActionResponseMessage(MessageType.Error, $"Pogreška prilikom dodavanja transakcije {transaction.Iban}.");
           ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
 
           await PrepareDropDownLists();
@@ -531,7 +539,8 @@ namespace RPPP_WebApp.Controllers {
         }
       }
       else {
-        responseMessage = new ActionResponseMessage(MessageType.Error, $"Pogreška prilikom dodavanja transakcije {transaction.Iban}. {transaction.Recipient} {transaction.Amount} {transaction.Date} {transaction.TypeId} {transaction.PurposeId}");
+        logger.LogError($"Pogreška prilikom dodavanja transakcije {transaction.Id}.");
+        responseMessage = new ActionResponseMessage(MessageType.Error, $"Pogreška prilikom dodavanja transakcije {transaction.Iban}.");
 
         await PrepareDropDownLists();
        // return PartialView(transaction);
@@ -539,7 +548,7 @@ namespace RPPP_WebApp.Controllers {
 
       Response.Headers["HX-Trigger"] = JsonSerializer.Serialize(new { showMessage = responseMessage });
       return responseMessage.MessageType == MessageType.Success ?
-       Content($"<script>setTimeout(function() {{ window.location.href='/ProjectCard/Show/{transaction.Iban}'; }}, 1000);</script>", "text/html") : PartialView(transaction);
+       Content($"<script>setTimeout(function() {{ window.location.href='/rppp/01/ProjectCard/Show/{transaction.Iban}'; }}, 1000);</script>", "text/html") : PartialView(transaction);
     }
   }
 }
