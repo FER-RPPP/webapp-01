@@ -25,6 +25,61 @@ namespace RPPP_WebApp.Controllers
             this.environment = environment;
         }
 
+        public async Task<IActionResult> RequirementTasksExcel()
+        {
+            var requirementTasks = await ctx.RequirementTask
+                .Include(rt => rt.ProjectRequirement)
+                .Include(rt => rt.ProjectWork)
+                .Include(rt => rt.ProjectWork.Project)
+                .Include(rt => rt.TaskStatus)
+                .OrderBy(rt => rt.ProjectRequirement.Id)
+                .ToListAsync();
+
+            byte[] content;
+            using (ExcelPackage excel = new ExcelPackage())
+            {
+                excel.Workbook.Properties.Title = "Requirement Tasks Report";
+                var worksheet = excel.Workbook.Worksheets.Add("Requirement Tasks");
+
+                int currentRow = 1;
+                worksheet.Cells[currentRow, 1].Value = "#";
+                worksheet.Cells[currentRow, 2].Value = "Id";
+                worksheet.Cells[currentRow, 3].Value = "PlannedStartDate";
+                worksheet.Cells[currentRow, 4].Value = "PlannedEndDate";
+                worksheet.Cells[currentRow, 5].Value = "ActualStartDate";
+                worksheet.Cells[currentRow, 6].Value = "ActualEndDate";
+                worksheet.Cells[currentRow, 7].Value = "Task Status";
+                worksheet.Cells[currentRow, 8].Value = "Project Work Title";
+                worksheet.Row(currentRow).Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+
+                currentRow++;
+
+                foreach (var pr in requirementTasks)
+                {
+
+                    worksheet.Cells[currentRow, 1].Value = currentRow - 1;
+                    worksheet.Cells[currentRow, 2].Value = pr.Id;
+                    worksheet.Cells[currentRow, 3].Value = pr.PlannedStartDate.ToString("dd.MM.yyyy");
+                    worksheet.Cells[currentRow, 4].Value = pr.PlannedEndDate.ToString("dd.MM.yyyy");
+                    worksheet.Cells[currentRow, 5].Value = pr.ActualStartDate?.ToString("dd.MM.yyyy");
+                    worksheet.Cells[currentRow, 6].Value = pr.ActualEndDate?.ToString("dd.MM.yyyy");
+                    worksheet.Cells[currentRow, 7].Value = pr.TaskStatus.Type;
+                    worksheet.Cells[currentRow, 8].Value = pr.ProjectWork.Title;
+                    worksheet.Row(currentRow).Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    currentRow++; 
+
+                
+
+                }
+
+                worksheet.Cells.AutoFitColumns();
+
+
+                content = excel.GetAsByteArray();
+            }
+            return File(content, ExcelContentType, "RequirementTasks.xlsx");
+        }
+
         public async Task<IActionResult> ProjectRequirementsExcel()
         {
             var projectRequirements = await ctx.ProjectRequirement
