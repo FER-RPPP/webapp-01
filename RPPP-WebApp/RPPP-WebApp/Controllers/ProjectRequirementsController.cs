@@ -31,6 +31,7 @@ namespace RPPP_WebApp.Controllers
         // GET: ProjectRequirements
         public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("GET Project Requirements called...");
             var query = ctx.ProjectRequirement
                 .Include(p => p.RequirementTask).ThenInclude(p => p.ProjectWork)
                 .Include(p => p.Project)
@@ -76,6 +77,7 @@ namespace RPPP_WebApp.Controllers
         // GET: ProjectRequirements/Details/5
         public async Task<IActionResult> Details(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("GET Project Requirements Details called...");
             if (id == null || ctx.ProjectRequirement == null)
             {
                 return NotFound();
@@ -101,6 +103,7 @@ namespace RPPP_WebApp.Controllers
         // GET: ProjectRequirements/Create
         public IActionResult Create(int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("GET Project Requirements Create called...");
             ViewData["ProjectId"] = new SelectList(ctx.Project, "Id", "CardId");
             ViewData["RequirementPriorityId"] = new SelectList(ctx.RequirementPriority, "Id", "Type");
             ViewBag.Type = new SelectList(new List<string> { "non_functional", "functional", "user", "business" });
@@ -120,6 +123,7 @@ namespace RPPP_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Type,RequirementPriorityId,ProjectId,Description")] ProjectRequirement projectRequirement, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Inserting a Project Requirement...");
             if (ModelState.IsValid)
             {
                 projectRequirement.Id = Guid.NewGuid();
@@ -149,6 +153,7 @@ namespace RPPP_WebApp.Controllers
         // GET: ProjectRequirements/Edit/5
         public async Task<IActionResult> Edit(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Get a Project Requirement Edit page called...");
             if (id == null || ctx.ProjectRequirement == null)
             {
                 return NotFound();
@@ -176,6 +181,7 @@ namespace RPPP_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Type,RequirementPriorityId,ProjectId,Description")] ProjectRequirement projectRequirement, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Updating a Project Requirement...");
             if (id != projectRequirement.Id)
             {
                 return NotFound();
@@ -244,6 +250,7 @@ namespace RPPP_WebApp.Controllers
         [HttpGet]
         public async Task<IActionResult> EditRequirementTask(Guid id)
         {
+            logger.LogInformation("Get Reqirement Task called...");
             var requirementTask = await ctx.RequirementTask
                                        .Where(o => o.Id == id)
                                        .Select(o => new RequirementTaskViewModel
@@ -273,6 +280,7 @@ namespace RPPP_WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> EditRequirementTask(RequirementTaskViewModel requirementTask)
         {
+            logger.LogInformation("Inserting a Requirement Task...");
             if (requirementTask == null)
             {
                 return NotFound("No data found");
@@ -316,6 +324,7 @@ namespace RPPP_WebApp.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteRequirementTask(Guid Id)
         {
+            logger.LogInformation("Deleting a Requirement Task...");
             ActionResponseMessage responseMessage;
 
             var requirementTask = ctx.RequirementTask.AsNoTracking().Where(o => o.Id == Id).SingleOrDefault();
@@ -348,6 +357,7 @@ namespace RPPP_WebApp.Controllers
         // GET: ProjectRequirements/Delete/5
         public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Get a Project Requirement Delete page called...");
             if (id == null || ctx.ProjectRequirement == null)
             {
                 return NotFound();
@@ -374,6 +384,7 @@ namespace RPPP_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Deleting a Project Requirement...");
             if (ctx.ProjectRequirement == null)
             {
                 return Problem("Entity set 'Rppp01Context.ProjectRequirement'  is null.");
@@ -403,7 +414,7 @@ namespace RPPP_WebApp.Controllers
 
         [HttpGet]
         public async Task<IActionResult> NewRequirementTask(Guid projectRequirementId)
-        {
+        { 
             logger.LogInformation("NewRequirementTask GET");
             await PrepareDropDownLists(projectRequirementId);
 

@@ -16,16 +16,19 @@ namespace RPPP_WebApp.Controllers
     {
         private readonly Rppp01Context _context;
         private readonly AppSettings appData;
+        private readonly ILogger<TaskStatusController> logger;
 
-        public TaskStatusController(Rppp01Context context, IOptionsSnapshot<AppSettings> options)
+        public TaskStatusController(Rppp01Context context, IOptionsSnapshot<AppSettings> options, ILogger<TaskStatusController> logger)
         {
             _context = context;
             appData = options.Value;
+            this.logger = logger;
         }
 
         // GET: TaskStatus
         public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Task Status Index called.");
             var query = _context.TaskStatus
                          .AsNoTracking();
 
@@ -63,6 +66,7 @@ namespace RPPP_WebApp.Controllers
         // GET: TaskStatus/Details/5
         public async Task<IActionResult> Details(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Task Status Details called.");
             if (id == null || _context.TaskStatus == null)
             {
                 return NotFound();
@@ -84,6 +88,7 @@ namespace RPPP_WebApp.Controllers
         // GET: TaskStatus/Create
         public IActionResult Create(int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Task Status Create called.");
             ViewBag.Page = page;
             ViewBag.Sort = sort;
             ViewBag.Ascending = ascending;
@@ -97,6 +102,7 @@ namespace RPPP_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Type")] Model.TaskStatus taskStatus, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Inserting new Task Status");
             if (ModelState.IsValid)
             {
                 taskStatus.Id = Guid.NewGuid();
@@ -120,6 +126,7 @@ namespace RPPP_WebApp.Controllers
         // GET: TaskStatus/Edit/5
         public async Task<IActionResult> Edit(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Task Status Edit page called.");
             if (id == null || _context.TaskStatus == null)
             {
                 return NotFound();
@@ -143,6 +150,7 @@ namespace RPPP_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Type")] Model.TaskStatus taskStatus, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Updating Task Status...");
             if (id != taskStatus.Id)
             {
                 return NotFound();
@@ -177,6 +185,7 @@ namespace RPPP_WebApp.Controllers
         // GET: TaskStatus/Delete/5
         public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Task Status Delete page called.");
             if (id == null || _context.TaskStatus == null)
             {
                 return NotFound();
@@ -199,6 +208,7 @@ namespace RPPP_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Deleting Task Status...");
             if (_context.TaskStatus == null)
             {
                 return Problem("Entity set 'Rppp01Context.TaskStatus'  is null.");

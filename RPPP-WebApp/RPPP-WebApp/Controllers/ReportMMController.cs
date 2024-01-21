@@ -29,11 +29,13 @@ namespace RPPP_WebApp.Controllers
 
         public IActionResult Index()
         {
+            logger.LogInformation("Index called");
             return View();
         }
 
         public async Task<IActionResult> ImportRequirementTasks(IFormFile file)
         {
+            logger.LogInformation("Importing Requirement Tasks...");
             if (file == null || file.Length == 0)
                 return Content("file not selected");
 
@@ -144,6 +146,7 @@ namespace RPPP_WebApp.Controllers
 
         public async Task<IActionResult> RequirementTasksExcel()
         {
+            logger.LogInformation("Exporting Requirement Tasks in Pdf...");
             var requirementTasks = await ctx.RequirementTask
                 .Include(rt => rt.ProjectRequirement)
                 .Include(rt => rt.ProjectWork)
@@ -201,6 +204,7 @@ namespace RPPP_WebApp.Controllers
 
         public async Task<IActionResult> TaskStatusesExcel()
         {
+            logger.LogInformation("Exporting Task Statuses in Excel...");
             var taskStatuses = await ctx.TaskStatus
                 .ToListAsync();
 
@@ -239,6 +243,7 @@ namespace RPPP_WebApp.Controllers
 
         public async Task<IActionResult> ProjectRequirementsExcel()
         {
+            logger.LogInformation("Exporting Project Requirements in Excel...");
             var projectRequirements = await ctx.ProjectRequirement
                         .Include(pr => pr.Project)
                         .Include(pr => pr.RequirementPriority)
@@ -313,6 +318,7 @@ namespace RPPP_WebApp.Controllers
 
         public async Task<IActionResult> ProjectRequirementsPdf()
         {
+            logger.LogInformation("Exporting Project Requirement in Pdf...");
             string title = "Project Requirements Report";
             var requirementTasks = await ctx.RequirementTask
                                                   .Include(rt => rt.ProjectRequirement)

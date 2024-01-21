@@ -17,17 +17,19 @@ namespace RPPP_WebApp.Controllers
     {
         private readonly Rppp01Context _context;
         private readonly AppSettings appData;
+        private readonly ILogger<RequirementPrioritiesController> logger;
 
-        public RequirementPrioritiesController(Rppp01Context context, IOptionsSnapshot<AppSettings> options)
+        public RequirementPrioritiesController(Rppp01Context context, IOptionsSnapshot<AppSettings> options, ILogger<RequirementPrioritiesController> logger)
         {
             _context = context;
             appData = options.Value;
+            this.logger = logger;
         }
 
         // GET: RequirementPriorities
         public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true)
         {
-
+            logger.LogInformation("Get Requirement Priorities called...");
             var query = _context.RequirementPriority
                            .AsNoTracking();
 
@@ -65,6 +67,7 @@ namespace RPPP_WebApp.Controllers
         // GET: RequirementPriorities/Details/5
         public async Task<IActionResult> Details(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Get Requirement Priorities details called...");
             if (id == null || _context.RequirementPriority == null)
             {
                 return NotFound();
@@ -87,6 +90,7 @@ namespace RPPP_WebApp.Controllers
         // GET: RequirementPriorities/Create
         public IActionResult Create()
         {
+            logger.LogInformation("Get Requirement Priorities create page called...");
             return View();
         }
 
@@ -97,6 +101,7 @@ namespace RPPP_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Type")] RequirementPriority requirementPriority, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Inserting a Requirement Prioritiy...");
             if (ModelState.IsValid)
             {
                 requirementPriority.Id = Guid.NewGuid();
@@ -122,6 +127,7 @@ namespace RPPP_WebApp.Controllers
         // GET: RequirementPriorities/Edit/5
         public async Task<IActionResult> Edit(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Get Requirement Priorities Edit page called...");
             if (id == null || _context.RequirementPriority == null)
             {
                 return NotFound();
@@ -147,6 +153,7 @@ namespace RPPP_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Type")] RequirementPriority requirementPriority, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Updating Requirement Prioritiy...");
             if (id != requirementPriority.Id)
             {
                 return NotFound();
@@ -183,6 +190,7 @@ namespace RPPP_WebApp.Controllers
         // GET: RequirementPriorities/Delete/5
         public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Get Requirement Priorities Delete page called...");
             if (id == null || _context.RequirementPriority == null)
             {
                 return NotFound();
@@ -207,6 +215,7 @@ namespace RPPP_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
+            logger.LogInformation("Deleting Requirement Prioritiy...");
             if (_context.RequirementPriority == null)
             {
                 return Problem("Entity set 'Rppp01Context.RequirementPriority'  is null.");
