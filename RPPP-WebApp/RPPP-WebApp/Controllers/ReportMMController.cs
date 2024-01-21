@@ -183,7 +183,7 @@ namespace RPPP_WebApp.Controllers
                     worksheet.Cells[currentRow, 6].Value = pr.ActualEndDate?.ToString("dd.MM.yyyy");
                     worksheet.Cells[currentRow, 7].Value = pr.TaskStatus.Type;
                     worksheet.Cells[currentRow, 8].Value = pr.ProjectWork.Title;
-                    worksheet.Cells[currentRow, 8].Value = pr.ProjectRequirement.Id;
+                    worksheet.Cells[currentRow, 9].Value = pr.ProjectRequirement.Id;
                     worksheet.Row(currentRow).Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                     currentRow++; 
 
