@@ -17,17 +17,129 @@ namespace RPPP_WebApp.Controllers
     {
         private readonly Rppp01Context ctx;
         private readonly IWebHostEnvironment environment;
+        private readonly ILogger<ReportMMController> logger;
         private const string ExcelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
-        public ReportMMController(Rppp01Context ctx, IWebHostEnvironment environment)
+        public ReportMMController(Rppp01Context ctx, IWebHostEnvironment environment, ILogger<ReportMMController> logger)
         {
             this.ctx = ctx;
             this.environment = environment;
+            this.logger = logger;
         }
 
         public IActionResult Index()
         {
             return View();
+        }
+
+        public async Task<IActionResult> ImportRequirementTasks(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return Content("file not selected");
+
+            var requirementTasks = new List<RequirementTask>();
+
+            using (var stream = new MemoryStream())
+            {
+                await file.CopyToAsync(stream);
+                using (var package = new ExcelPackage(stream))
+                {
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                    int rowCount = worksheet.Dimension.Rows;
+
+                    for (int row = 2; row <= rowCount; row++)
+                    {
+                        var id = Guid.Parse(worksheet.Cells[row, 2].Value?.ToString());
+                        var plannedStartDate = DateTime.Parse(worksheet.Cells[row, 3].Value?.ToString());
+                        var plannedEndDate = DateTime.Parse(worksheet.Cells[row, 4].Value?.ToString());
+                        var actualStartDate = string.IsNullOrWhiteSpace(worksheet.Cells[row, 5].Value?.ToString()) ? (DateTime?)null : DateTime.Parse(worksheet.Cells[row, 5].Value.ToString());
+                        var actualEndDate = string.IsNullOrWhiteSpace(worksheet.Cells[row, 6].Value?.ToString()) ? (DateTime?)null : DateTime.Parse(worksheet.Cells[row, 6].Value.ToString());
+                        var taskStatusType = worksheet.Cells[row, 7].Value?.ToString();
+                        var projectWorkTitle = worksheet.Cells[row, 8].Value?.ToString();
+                        var projectRequirementId = Guid.Parse(worksheet.Cells[row, 9].Value?.ToString());
+
+                        logger.LogInformation($"Importing PR: {projectRequirementId}");
+
+                        var taskStatus = ctx.TaskStatus.FirstOrDefault(ts => ts.Type == taskStatusType);
+                        var projectWork = ctx.ProjectWork.FirstOrDefault(pw => pw.Title == projectWorkTitle);
+                        var projectRequirement = await ctx.ProjectRequirement.FindAsync(projectRequirementId);
+
+                        logger.LogInformation($"Importing TS: {taskStatus.Type}");
+                        logger.LogInformation($"Importing PR: {projectRequirement.Id}");
+
+                        var requirementTask = new RequirementTask
+                        {
+                            Id = id,
+                            PlannedStartDate = plannedStartDate,
+                            PlannedEndDate = plannedEndDate,
+                            ActualStartDate = actualStartDate,
+                            ActualEndDate = actualEndDate,
+                            TaskStatus = taskStatus,
+                            ProjectWork = projectWork,
+                            ProjectRequirement = projectRequirement
+                        };
+
+                        requirementTasks.Add(requirementTask);
+                    }
+                }
+            }
+
+            foreach (var task in requirementTasks)
+            {
+                var existingTask = await ctx.RequirementTask.FindAsync(task.Id);
+                if (existingTask != null)
+                {
+                    ctx.Entry(existingTask).CurrentValues.SetValues(task);
+                }
+                else
+                {
+                    ctx.RequirementTask.Add(task);
+                }
+            }
+
+            await ctx.SaveChangesAsync();
+
+            byte[] content;
+            using (ExcelPackage excel = new ExcelPackage())
+            {
+                excel.Workbook.Properties.Title = "Requirement Tasks Import Report";
+                var worksheet = excel.Workbook.Worksheets.Add("Imported Requirement Tasks");
+
+                // Adding Headers
+                worksheet.Cells[1, 1].Value = "#";
+                worksheet.Cells[1, 2].Value = "Id";
+                worksheet.Cells[1, 3].Value = "Planned Start Date";
+                worksheet.Cells[1, 4].Value = "Planned End Date";
+                worksheet.Cells[1, 5].Value = "Actual Start Date";
+                worksheet.Cells[1, 6].Value = "Actual End Date";
+                worksheet.Cells[1, 7].Value = "Task Status";
+                worksheet.Cells[1, 8].Value = "Project Work Title";
+                worksheet.Cells[1, 9].Value = "Project Work Title";
+                worksheet.Cells[1, 10].Value = "Import Status"; 
+
+                int currentRow = 2;
+                foreach (var task in requirementTasks)
+                {
+                    worksheet.Cells[currentRow, 1].Value = currentRow - 1;
+                    worksheet.Cells[currentRow, 2].Value = task.Id.ToString();
+                    worksheet.Cells[currentRow, 3].Value = task.PlannedStartDate.ToString("dd.MM.yyyy");
+                    worksheet.Cells[currentRow, 4].Value = task.PlannedEndDate.ToString("dd.MM.yyyy");
+                    worksheet.Cells[currentRow, 5].Value = task.ActualStartDate?.ToString("dd.MM.yyyy");
+                    worksheet.Cells[currentRow, 6].Value = task.ActualEndDate?.ToString("dd.MM.yyyy");
+                    worksheet.Cells[currentRow, 7].Value = task.TaskStatus?.Type;
+                    worksheet.Cells[currentRow, 8].Value = task.ProjectWork?.Title;
+                    worksheet.Cells[currentRow, 9].Value = task.ProjectRequirement?.Id;
+                    worksheet.Cells[currentRow, 10].Value = "Successful"; 
+
+                    currentRow++;
+                }
+
+                worksheet.Cells.AutoFitColumns();
+
+                content = excel.GetAsByteArray();
+            }
+
+            return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "ImportedRequirementTasks.xlsx");
         }
 
         public async Task<IActionResult> RequirementTasksExcel()
@@ -55,6 +167,7 @@ namespace RPPP_WebApp.Controllers
                 worksheet.Cells[currentRow, 6].Value = "Actual End Date";
                 worksheet.Cells[currentRow, 7].Value = "Task Status";
                 worksheet.Cells[currentRow, 8].Value = "Project Work Title";
+                worksheet.Cells[currentRow, 9].Value = "Project Requirement Id";
                 worksheet.Row(currentRow).Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
 
                 currentRow++;
@@ -70,6 +183,7 @@ namespace RPPP_WebApp.Controllers
                     worksheet.Cells[currentRow, 6].Value = pr.ActualEndDate?.ToString("dd.MM.yyyy");
                     worksheet.Cells[currentRow, 7].Value = pr.TaskStatus.Type;
                     worksheet.Cells[currentRow, 8].Value = pr.ProjectWork.Title;
+                    worksheet.Cells[currentRow, 8].Value = pr.ProjectRequirement.Id;
                     worksheet.Row(currentRow).Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                     currentRow++; 
 
