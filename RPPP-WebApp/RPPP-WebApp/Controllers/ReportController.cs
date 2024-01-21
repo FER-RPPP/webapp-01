@@ -80,6 +80,44 @@ namespace RPPP_WebApp.Controllers
             return File(content, ExcelContentType, "RequirementTasks.xlsx");
         }
 
+        public async Task<IActionResult> TaskStatusesExcel()
+        {
+            var taskStatuses = await ctx.TaskStatus
+                .ToListAsync();
+
+            byte[] content;
+            using (ExcelPackage excel = new ExcelPackage())
+            {
+                excel.Workbook.Properties.Title = "Task Statuses Report";
+                var worksheet = excel.Workbook.Worksheets.Add("Task Statuses");
+
+                int currentRow = 1;
+                worksheet.Cells[currentRow, 1].Value = "#";
+                worksheet.Cells[currentRow, 2].Value = "Id";
+                worksheet.Cells[currentRow, 3].Value = "Type";
+
+                worksheet.Row(currentRow).Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+
+                currentRow++;
+
+                foreach (var pr in taskStatuses)
+                {
+
+                    worksheet.Cells[currentRow, 1].Value = currentRow - 1;
+                    worksheet.Cells[currentRow, 2].Value = pr.Id;
+                    worksheet.Cells[currentRow, 3].Value = pr.Type;
+                  
+                    worksheet.Row(currentRow).Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    currentRow++;
+                }
+
+                worksheet.Cells.AutoFitColumns();
+
+                content = excel.GetAsByteArray();
+            }
+            return File(content, ExcelContentType, "TaskStatuses.xlsx");
+        }
+
         public async Task<IActionResult> ProjectRequirementsExcel()
         {
             var projectRequirements = await ctx.ProjectRequirement
