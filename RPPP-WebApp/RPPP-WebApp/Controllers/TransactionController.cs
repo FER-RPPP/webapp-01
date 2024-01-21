@@ -95,6 +95,7 @@ namespace RPPP_WebApp.Controllers {
           ctx.Add(transaction);
           await ctx.SaveChangesAsync();
 
+          logger.LogInformation($"Transakcija {transaction.Id} dodana.");
           TempData[Constants.Message] = $"Transakcija je dodana.";
           TempData[Constants.ErrorOccurred] = false;
           return RedirectToAction(nameof(Index));
@@ -120,7 +121,7 @@ namespace RPPP_WebApp.Controllers {
         try {
           ctx.Remove(transaction);
           ctx.SaveChanges();
-          logger.LogInformation($"Transakcija uspješno obrisana.");
+          logger.LogInformation($"Transakcija {Id} uspješno obrisana.");
           TempData[Constants.Message] = $"Transakcija uspješno obrisana.";
           TempData[Constants.ErrorOccurred] = false;
         }
@@ -174,6 +175,7 @@ namespace RPPP_WebApp.Controllers {
           ViewBag.Ascending = ascending;
           try {
             await ctx.SaveChangesAsync();
+            logger.LogInformation($"Transakcija {id} ažurirana.");
             TempData[Constants.Message] = $"Transakcija je ažurirana.";
             TempData[Constants.ErrorOccurred] = false;
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });

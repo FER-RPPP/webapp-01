@@ -18,20 +18,96 @@ using Microsoft.AspNetCore.Hosting;
 using OfficeOpenXml;
 using RPPP_WebApp.ViewModels;
 using RPPP_WebApp.Extensions;
+using System.Security.Cryptography;
 
 namespace RPPP_WebApp.Controllers {
   public class ReportGOController : Controller {
     private readonly Rppp01Context ctx;
     private readonly IWebHostEnvironment environment;
+    private readonly ILogger<ReportGOController> logger;
     private const string ExcelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
-    public ReportGOController(Rppp01Context ctx, IWebHostEnvironment environment) {
+    public ReportGOController(Rppp01Context ctx, IWebHostEnvironment environment, ILogger<ReportGOController> logger) {
       this.ctx = ctx;
       this.environment = environment;
+      this.logger = logger;
     }
 
     public IActionResult Index() {
       return View();
+    }
+
+    public async Task<IActionResult> ImportProjectCard(IFormFile file) {
+      logger.LogInformation("Importing Project Card.");
+      if (file == null || file.Length == 0)
+        return Content("File not selected.");
+
+      var projectCards = new List<ProjectCard>();
+
+      using (var stream = new MemoryStream()) {
+        await file.CopyToAsync(stream);
+        using (var package = new ExcelPackage(stream)) {
+          ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+          int rowCount = worksheet.Dimension.Rows;
+
+          for (int row = 2; row <= rowCount; row++) {
+
+            var iban = worksheet.Cells[row, 1].Value?.ToString();
+            var oib = worksheet.Cells[row, 2].Value?.ToString().Split("(")[1].Split(")")[0];
+            var balance = decimal.TryParse(worksheet.Cells[row, 3].Value?.ToString(), out var balanceValue) ? balanceValue : 0.0m;
+            var activationDate = DateTime.TryParse(worksheet.Cells[row, 4].Value?.ToString(), out var activationDateValue) ? activationDateValue : DateTime.MinValue;
+
+            if (!string.IsNullOrEmpty(iban) &&  
+                !string.IsNullOrEmpty(oib)
+                ) {
+              var projectCard = new ProjectCard {
+                Iban = iban,
+                Balance = balance,
+                Oib = oib,
+                ActivationDate = activationDate,
+              };
+
+              projectCards.Add(projectCard);
+            }
+            
+          }
+        }
+      }
+
+      foreach (var projectCard in projectCards) {
+        ctx.ProjectCard.Add(projectCard);
+      }
+
+      await ctx.SaveChangesAsync();
+
+      byte[] content;
+      using (ExcelPackage excel = new ExcelPackage()) {
+        excel.Workbook.Properties.Title = "Project Card Import Report";
+        var worksheet = excel.Workbook.Worksheets.Add("Imported Project Cards");
+
+        worksheet.Cells[1, 1].Value = "Iban";
+        worksheet.Cells[1, 2].Value = "Owner";
+        worksheet.Cells[1, 3].Value = "Balance (€)";
+        worksheet.Cells[1, 4].Value = "ActivationDate";
+
+        int currentRow = 2;
+        foreach (var projectCard in projectCards) {
+          worksheet.Cells[currentRow, 1].Value = projectCard.Iban.ToString();
+          var owner = ctx.Owner.FirstOrDefault(o => o.Oib == projectCard.Oib);
+          worksheet.Cells[currentRow, 2].Value = owner.Name + " " + owner.Surname + " (" + owner.Oib + ")";
+          worksheet.Cells[currentRow, 3].Value = projectCard.Balance;
+          worksheet.Cells[currentRow, 4].Value = projectCard.ActivationDate.ToString("dd.MM.yyyy");
+          worksheet.Cells[currentRow, 5].Value = "Successful";
+
+          currentRow++;
+        }
+
+        worksheet.Cells.AutoFitColumns();
+
+        content = excel.GetAsByteArray();
+      }
+
+      return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "ImportedProjectCards.xlsx");
     }
 
     public async Task<IActionResult> Owner() {
@@ -657,7 +733,7 @@ namespace RPPP_WebApp.Controllers {
           var owner = ctx.Owner.FirstOrDefault(o => o.Oib == projectCard[i].Oib);
           worksheet.Cells[i + 2, 2].Value = owner.Name + " " + owner.Surname + " (" + owner.Oib + ")";
           worksheet.Cells[i + 2, 3].Value = projectCard[i].Balance;
-          worksheet.Cells[i + 2, 4].Value = projectCard[i].ActivationDate.ToLongDateString();
+          worksheet.Cells[i + 2, 4].Value = projectCard[i].ActivationDate.ToString("dd.MM.yyyy");
         }
 
         worksheet.Cells[1, 1, projectCard.Count + 1, 4].AutoFitColumns();

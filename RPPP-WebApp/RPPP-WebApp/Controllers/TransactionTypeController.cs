@@ -151,6 +151,7 @@ namespace RPPP_WebApp.Controllers {
           ViewBag.Ascending = ascending;
           try {
             await ctx.SaveChangesAsync();
+            logger.LogInformation($"Vrsta {transactionType.TypeName} ažurirana.");
             TempData[Constants.Message] = $"Vrsta {transactionType.TypeName} ažurirana.";
             TempData[Constants.ErrorOccurred] = false;
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
