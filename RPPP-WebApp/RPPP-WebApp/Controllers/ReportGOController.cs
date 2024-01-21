@@ -182,8 +182,7 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        Response.Headers.Add("content-disposition", "attachment; filename=vlasnici.pdf");
-        return File(pdf, "application/pdf");
+        return File(pdf, "application/pdf", "vlasnici.pdf");
       }
       else {
         return NotFound();
@@ -261,8 +260,7 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        Response.Headers.Add("content-disposition", "attachment; filename=projektne-kartice.pdf");
-        return File(pdf, "application/pdf");
+        return File(pdf, "application/pdf", "projektne-kartice.pdf");
       }
       else {
         return NotFound();
@@ -368,8 +366,7 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        Response.Headers.Add("content-disposition", "attachment; filename=transakcije.pdf");
-        return File(pdf, "application/pdf");
+        return File(pdf, "application/pdf", "transakcije.pdf");
       }
       else {
         return NotFound();
@@ -420,8 +417,7 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        Response.Headers.Add("content-disposition", "attachment; filename=vrste.pdf");
-        return File(pdf, "application/pdf");
+        return File(pdf, "application/pdf", "vrste.pdf");
       }
       else {
         return NotFound();
@@ -472,8 +468,7 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        Response.Headers.Add("content-disposition", "attachment; filename=svrhe.pdf");
-        return File(pdf, "application/pdf");
+        return File(pdf, "application/pdf", "svrhe.pdf");
       }
       else {
         return NotFound();
@@ -632,8 +627,7 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        Response.Headers.Add("content-disposition", "attachment; filename=transakcije-po-projektnim-karticama.pdf");
-        return File(pdf, "application/pdf");
+        return File(pdf, "application/pdf", "transakcije-po-projektnim-karticama.pdf");
       }
       else
         return NotFound();
