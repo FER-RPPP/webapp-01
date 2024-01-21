@@ -548,7 +548,7 @@ namespace RPPP_WebApp.Controllers {
 
       Response.Headers["HX-Trigger"] = JsonSerializer.Serialize(new { showMessage = responseMessage });
       return responseMessage.MessageType == MessageType.Success ?
-       Content($"<script>setTimeout(function() {{ window.location.href='/ProjectCard/Show/{transaction.Iban}'; }}, 1000);</script>", "text/html") : PartialView(transaction);
+       Content($"<script>setTimeout(function() {{ window.location.href='/rppp/01/ProjectCard/Show/{transaction.Iban}'; }}, 1000);</script>", "text/html") : PartialView(transaction);
     }
   }
 }
