@@ -19,7 +19,6 @@ using OfficeOpenXml;
 using RPPP_WebApp.ViewModels;
 using RPPP_WebApp.Extensions;
 using System.Security.Cryptography;
-using System.Globalization;
 
 namespace RPPP_WebApp.Controllers {
   public class ReportGOController : Controller {
@@ -56,16 +55,7 @@ namespace RPPP_WebApp.Controllers {
             var iban = worksheet.Cells[row, 1].Value?.ToString();
             var oib = worksheet.Cells[row, 2].Value?.ToString().Split("(")[1].Split(")")[0];
             var balance = decimal.TryParse(worksheet.Cells[row, 3].Value?.ToString(), out var balanceValue) ? balanceValue : 0.0m;
-            var activationDateString = worksheet.Cells[row, 4].Value?.ToString();
-            var activationDate = DateTime.TryParseExact(
-                activationDateString,
-                "dd.MM.yyyy",
-                CultureInfo.InvariantCulture,
-                DateTimeStyles.None,
-                out var activationDateValue
-            )
-                ? activationDateValue
-                : DateTime.MinValue;
+            var activationDate = DateTime.TryParse(worksheet.Cells[row, 4].Value?.ToString(), out var activationDateValue) ? activationDateValue : DateTime.MinValue;
 
             if (!string.IsNullOrEmpty(iban) &&  
                 !string.IsNullOrEmpty(oib)
@@ -182,7 +172,8 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        return File(pdf, "application/pdf", "vlasnici.pdf");
+        Response.Headers.Add("content-disposition", "inline; filename=vlasnici.pdf");
+        return File(pdf, "application/pdf");
       }
       else {
         return NotFound();
@@ -260,7 +251,8 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        return File(pdf, "application/pdf", "projektne-kartice.pdf");
+        Response.Headers.Add("content-disposition", "inline; filename=projektne-kartice.pdf");
+        return File(pdf, "application/pdf");
       }
       else {
         return NotFound();
@@ -366,7 +358,8 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        return File(pdf, "application/pdf", "transakcije.pdf");
+        Response.Headers.Add("content-disposition", "inline; filename=transakcije.pdf");
+        return File(pdf, "application/pdf");
       }
       else {
         return NotFound();
@@ -417,7 +410,8 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        return File(pdf, "application/pdf", "vrste.pdf");
+        Response.Headers.Add("content-disposition", "inline; filename=vrste.pdf");
+        return File(pdf, "application/pdf");
       }
       else {
         return NotFound();
@@ -468,7 +462,8 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        return File(pdf, "application/pdf", "svrhe.pdf");
+        Response.Headers.Add("content-disposition", "inline; filename=svrhe.pdf");
+        return File(pdf, "application/pdf");
       }
       else {
         return NotFound();
@@ -627,7 +622,8 @@ namespace RPPP_WebApp.Controllers {
       byte[] pdf = report.GenerateAsByteArray();
 
       if (pdf != null) {
-        return File(pdf, "application/pdf", "transakcije-po-projektnim-karticama.pdf");
+        Response.Headers.Add("content-disposition", "inline; filename=transakcije-po-projektnim-karticama.pdf");
+        return File(pdf, "application/pdf");
       }
       else
         return NotFound();
