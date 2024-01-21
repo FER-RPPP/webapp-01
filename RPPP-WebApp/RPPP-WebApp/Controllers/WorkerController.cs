@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using NuGet.Common;
 using RPPP_WebApp.Extensions;
 using RPPP_WebApp.Extensions.Selectors;
 using RPPP_WebApp.Model;
@@ -104,7 +105,7 @@ namespace RPPP_WebApp.Controllers
                     ctx.Add(worker);
                   
                     await ctx.SaveChangesAsync();
-
+                    logger.LogInformation("Radnik je dodan.");
                     TempData[Constants.Message] = $"Radnik je dodan.";
                     TempData[Constants.ErrorOccurred] = false;
                     return RedirectToAction(nameof(Index));
@@ -112,6 +113,7 @@ namespace RPPP_WebApp.Controllers
                 }
                 catch (Exception exc)
                 {
+                    logger.LogInformation("Pogreška pri dodavanju radnika.");
                     ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
                     await PrepareDropDownLists();
                     return View(worker);
@@ -123,7 +125,7 @@ namespace RPPP_WebApp.Controllers
                 return View(worker);
             }
         }
-
+        [HttpGet]
         public async Task<IActionResult> Edit(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
             var worker = ctx.Worker.AsNoTracking().Where(o => o.Id == id).SingleOrDefault();
@@ -153,6 +155,7 @@ namespace RPPP_WebApp.Controllers
                                   .FirstOrDefaultAsync();
                 if (worker == null)
                 {
+                    logger.LogWarning("Neispravan id radnika: " + id);
                     return NotFound("Neispravan id radnika: " + id);
                 }
 
@@ -166,6 +169,7 @@ namespace RPPP_WebApp.Controllers
                     try
                     {
                         await ctx.SaveChangesAsync();
+                        logger.LogInformation("Radnik je ažuriran.");
                         TempData[Constants.Message] = $"Radnik je ažuriran.";
                         TempData[Constants.ErrorOccurred] = false;
                         return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
@@ -215,7 +219,7 @@ namespace RPPP_WebApp.Controllers
             }
             else
             {
-                logger.LogWarning("Ne postoji radnik: ", Id);
+                logger.LogWarning("Ne postoji radnik: " + Id);
                 TempData[Constants.Message] = "Ne postoji radnik: " + Id;
                 TempData[Constants.ErrorOccurred] = true;
             }
@@ -267,6 +271,183 @@ namespace RPPP_WebApp.Controllers
 
             return View(model);
         }
+        public async Task<IActionResult> GetProjectPartner(Guid id)
+        {
+            var partner = await ctx.ProjectPartner
+                                       .Where(o => o.Id == id)
+                                       .Select(o => new ProjectPartnerViewModel
+                                       {
+                                           Id = o.Id,
+                                           Project = o.Project.Name,
+                                           Role = o.Role.Name,
+                                           DateFrom = o.DateFrom,
+                                           DateTo = o.DateTo
+
+                                       })
+                                       .FirstOrDefaultAsync();
+
+            if (partner != null)
+            {
+                logger.LogWarning("Nema poslanih podataka");
+                return PartialView(partner);
+            }
+            else
+            {
+                logger.LogWarning("Neispravan id suradnika" + id);
+                return NotFound($"Neispravan id suradnika!: {id}");
+            }
+
+        }
+
+
+
+        public async Task<IActionResult> EditProjectPartner(Guid id)
+        {
+            var partner = await ctx.ProjectPartner
+                           .Where(o => o.Id == id)
+                           .Select(o => new ProjectPartnerViewModel
+                           {
+                               Id = o.Id,
+                               Project = o.Project.Name,
+                               Role = o.Role.Name,
+                               DateFrom = o.DateFrom,
+                               DateTo = o.DateTo
+
+                           })
+                           .FirstOrDefaultAsync();
+
+            await PrepareDropDownLists();
+            if (partner != null)
+            {
+                logger.LogWarning("Nema poslanih podataka");
+                return PartialView(partner);
+            }
+            else
+            {
+                logger.LogWarning("Neispravan id suradnika" + id);
+                return NotFound($"Neispravan id suradnika: {id}");
+            }
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditProjectPartner(ProjectPartnerViewModel partner)
+        {
+            if (partner == null)
+            {
+                logger.LogWarning("Nema poslanih podataka");
+                return NotFound("Nema poslanih podataka");
+            }
+            ProjectPartner dbPartner = await ctx.ProjectPartner.FindAsync(partner.Id);
+            if (dbPartner == null)
+            {
+                logger.LogWarning("Neispravan id suradnika");
+                return NotFound($"Neispravan id suradnika: {partner.Id}");
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    dbPartner.Id = partner.Id;
+                    Guid roleId = new Guid(partner.Role);
+                    dbPartner.RoleId = roleId;
+                    dbPartner.DateFrom = partner.DateFrom;
+                    dbPartner.DateTo = partner.DateTo;
+
+
+                    await ctx.SaveChangesAsync();
+
+                    logger.LogWarning("Uspješna izmjena podataka o suradnji");
+                    return RedirectToAction(nameof(GetProjectPartner), new { id = partner.Id });
+                }
+                catch (Exception exc)
+                {
+                    logger.LogWarning("Pogreška pri izmjeni podataka o suradnji");
+                    ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
+                    return PartialView(partner);
+                }
+            }
+            else
+            {
+                return PartialView(partner);
+            }
+        }
+        public async Task<IActionResult> DeleteProjectPartner(Guid id)
+        {
+
+            var partner = ctx.ProjectPartner.Find(id);
+            if (partner != null)
+            {
+                try
+                {
+                    ctx.Remove(partner);
+                    ctx.SaveChanges();
+                    logger.LogInformation($"Suradnik uspješno obrisan s projekta.");
+                    TempData[Constants.Message] = $"Suradnik uspješno obrisan s projekta.";
+                    TempData[Constants.ErrorOccurred] = false;
+                }
+                catch (Exception exc)
+                {
+                    TempData[Constants.Message] = "Pogreška prilikom brisanja suradnika s projekta: " + exc.CompleteExceptionMessage();
+                    TempData[Constants.ErrorOccurred] = true;
+                    logger.LogError("Pogreška prilikom brisanja suradnika s projekta: " + exc.CompleteExceptionMessage());
+                }
+            }
+            else
+            {
+                logger.LogWarning("Ne postoji traženi suradnik na odabranom projektu: ", id);
+                TempData[Constants.Message] = "Ne postoji traženi suradnik na odabranom projektu: " + id;
+                TempData[Constants.ErrorOccurred] = true;
+            }
+
+            return TempData[Constants.ErrorOccurred].Equals(false) ? new EmptyResult() : await GetProjectPartner(id);
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> AddProjectPartner()
+        {
+            await PrepareDropDownLists();
+            return PartialView();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddProjectPartner(ProjectPartner partner)
+        {
+            if (!ModelState.IsValid)
+            {
+                await PrepareDropDownLists();
+                return PartialView();
+            }
+
+            var newPartner = new ProjectPartner
+            {
+                Id = Guid.NewGuid(),
+                Project = partner.Project,
+                Role = partner.Role,
+                DateFrom = partner.DateFrom,
+                DateTo = partner.DateTo,
+                Worker = partner.Worker
+                
+            };
+
+            try
+            {
+                ctx.Add(newPartner);
+                await ctx.SaveChangesAsync();
+                logger.LogInformation("Suradnja je dodana.");
+                TempData["Message"] = "Suradnja je dodana.";
+                TempData["ErrorOccurred"] = false;
+                return RedirectToAction(nameof(Details));
+            }
+            catch (Exception exc)
+            {
+                logger.LogInformation("Pogreška pri dodavanju suradnje.");
+                ModelState.AddModelError(string.Empty, exc.Message);
+                await PrepareDropDownLists();
+                return PartialView(partner);
+            }
+
+        }
 
         private async Task PrepareDropDownLists()
         {
@@ -282,6 +463,28 @@ namespace RPPP_WebApp.Controllers
 
 
             ViewBag.Organizations = organizationList;
+
+            var projects = await ctx.Project
+                     .ToListAsync();
+            var roles = await ctx.ProjectRole
+                                 .ToListAsync();
+
+
+            var projectList = projects.Select(project => new SelectListItem
+            {
+                Text = $"{project.Name}",
+                Value = project.Id.ToString()
+            }).ToList();
+
+            var roleList = roles.Select(role => new SelectListItem
+            {
+                Text = $"{role.Name}",
+                Value = role.Id.ToString()
+            }).ToList();
+
+
+            ViewBag.Projects = projectList;
+            ViewBag.ProjectRoles = roleList;
         }
     }
 }

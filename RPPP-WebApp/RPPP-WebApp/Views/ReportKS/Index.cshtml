@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Izvještaji";
+}
+
+<h1>Izvještaji</h1>
+<p>PDF:</p>
+<ul>
+    <li>
+        <a target="_blank" asp-action="Workers">Popis svih radnika</a>
+    </li>
+
+</ul>
+<p>Excel:</p>
+<ul>
+    <li>
+        <a target="_blank" asp-action="WorkersExcel">Popis svih radnika</a>
+    </li>
+    <li>
+        <a target="_blank" asp-action="WorkersByProjectExcel">Popis svih suradnji sa svakim radnikom (MD)</a>
+    </li>
+</ul>
+
+<h1>Unesite radnike</h1>
+<form asp-action="ImportWorkers" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="file">Choose file to upload:</label>
+        <input type="file" id="file" name="file" required>
+    </div>
+    <div>
+        <button type="submit">Upload and Import</button>
+    </div>
+</form>

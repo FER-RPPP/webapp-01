@@ -1,4 +1,7 @@
 ﻿@using RPPP_WebApp
+@using RPPP_WebApp.Controllers
+@using RPPP_WebApp.Model
+@using RPPP_WebApp.ViewModels
 
 @model RPPP_WebApp.ViewModels.ProjectPartnersViewModel
 @{
@@ -22,6 +25,8 @@
 <p>@phoneInfo</p>
 <p>@orgInfo</p>
 
+
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -40,14 +45,27 @@
         </tr>
     </thead>
     <tbody>
+
+        <partial name="AddProjectPartner" model="@new ProjectPartner{Id = new Guid()}" />
         @foreach (var partners in Model.Partners)
         {
-            <tr>
-                <td class="text-left">@partners.Project</td>
-                <td class="text-left">@partners.Role</td>
-                <td class="text-left">@partners.DateFrom</td>
-                <td class="text-left">@partners.DateTo</td>
-            </tr>
+            <partial name="GetProjectPartner" model="@partners" />
         }
     </tbody>
+
 </table>
+
+ @section scripts{
+    <script src="~/js/pager.js" asp-append-version="true"></script>
+    <script src="~/lib/htmx/htmx.min.js" asp-append-version="true"></script>
+    <partial name="IncludeValidation" />
+
+    <script>
+        document.body.addEventListener("showMessage", function (evt) {
+            toastr[evt.detail.messageType](evt.detail.message);
+        })
+        document.body.addEventListener("htmx:responseError", function (evt) {
+            toastr["error"](evt.detail.error);
+        })
+    </script>
+    }
