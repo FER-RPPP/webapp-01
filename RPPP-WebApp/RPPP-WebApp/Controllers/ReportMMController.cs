@@ -13,16 +13,21 @@ using PdfRpt.Core.Helper;
 
 namespace RPPP_WebApp.Controllers
 {
-    public class ReportController : Controller
+    public class ReportMMController : Controller
     {
         private readonly Rppp01Context ctx;
         private readonly IWebHostEnvironment environment;
         private const string ExcelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
-        public ReportController(Rppp01Context ctx, IWebHostEnvironment environment)
+        public ReportMMController(Rppp01Context ctx, IWebHostEnvironment environment)
         {
             this.ctx = ctx;
             this.environment = environment;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
         }
 
         public async Task<IActionResult> RequirementTasksExcel()
