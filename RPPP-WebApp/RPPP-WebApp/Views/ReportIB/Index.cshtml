@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Izvještaji";
+}
+
+<h1>Izvještaji</h1>
+<p>PDF:</p>
+<ul>
+    <li>
+        <a target="_blank" asp-action="Client">Client list</a>
+    </li>
+    <li>
+        <a target="_blank" asp-action="Project">Project list</a>
+    </li>
+    <li>
+        <a target="_blank" asp-action="Document">Document List</a>
+    </li>
+    <li>
+        <a target="_blank" asp-action="DocumentType">Types of Documents</a>
+    </li>
+    <li>
+        <a target="_blank" asp-action="MdProjectDocuments">Project documents (master-detail)</a>
+    </li>
+</ul>
+<p>Excel:</p>
+<ul>
+    <li>
+        <a asp-action="ClientExcel">Client list</a>
+    </li>
+    <li>
+        <a asp-action="ProjectExcel">Project list</a>
+    </li>
+    <li>
+        <a asp-action="DocumentsExcel">Document List</a>
+    </li>
+    <li>
+        <a asp-action="DocumentTypeExcel">Types of Documents</a>
+    </li>
+    <li>
+        <a asp-action="MasterDetailExcel">Project documents (master-detail)</a>
+    </li>
+</ul>
+
+<h1>Unesite projektne kartice</h1>
+<form asp-action="ImportProject" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="file">Choose file to upload:</label>
+        <input type="file" id="file" name="file" required>
+    </div>
+    <div>
+        <button type="submit">Upload and Import</button>
+    </div>
+</form>

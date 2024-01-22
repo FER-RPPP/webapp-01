@@ -1,7 +1,21 @@
-﻿@model RPPP_WebApp.Model.Project
+﻿@using RPPP_WebApp.Model
+@model RPPP_WebApp.ViewModels.ProjectDocumentsViewModel
 
 @{
     ViewData["Title"] = "Details";
+}
+
+@if (TempData["StatusMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["StatusMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
 }
 
 <h1>Details</h1>
@@ -11,34 +25,34 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Project.Name)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.Project.Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Type)
+            @Html.DisplayNameFor(model => model.Project.Type)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Type)
+            @Html.DisplayFor(model => model.Project.Type)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Card)
+            @Html.DisplayNameFor(model => model.Project.Card)
         </dt>
         <dd class="col-sm-10">
-            @Model.Card.Iban (@Model.Card.Balance €)
+            @Model.Project.Card.Iban (@Model.Project.Card.Balance €)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Client)
+            @Html.DisplayNameFor(model => model.Project.Client)
         </dt>
         <dd class="col-sm-10">
-            @Model.Client.FirstName @Model.Client.LastName @Model.Client.Email (@Model.Client.Oib)
+            @Model.Project.Client.FirstName @Model.Project.Client.LastName @Model.Project.Client.Email (@Model.Project.Client.Oib)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Owner)
+            @Html.DisplayNameFor(model => model.Project.Owner)
         </dt>
         <dd class="col-sm-10">
-            @Model.Owner.Name @Model.Owner.Surname (@Model.Owner.Oib)
+            @Model.Project.Owner.Name @Model.Project.Owner.Surname (@Model.Project.Owner.Oib)
         </dd>
     </dl>
 </div>
@@ -53,13 +67,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var task in Model.Document)
+            <partial name="NewDocument" model="@new Document { ProjectId = Model.Project.Id }" />
+            @foreach (var document in Model.Document)
             {
-                <tr>
-                    <td>@task.Name</td>
-                    <td>@task.Format</td>
-                    <td>@task.DocumentType.Name</td>
-                </tr>
+                <partial name="GetDocument" model="@document" />
             }
         </tbody>
     </table>
@@ -70,7 +81,20 @@ else
     <p>No tasks associated with this requirement.</p>
 }
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.Project.Id" class="btn btn-primary">Edit</a> |
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
 
+
+@section Scripts {
+    <script src="~/js/pager.js" asp-append-version="true"></script>
+    <script src="~/lib/htmx/htmx.min.js" asp-append-version="true"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".alert").fadeOut('slow');
+            }, 2500);
+        });
+    </script>
+}
