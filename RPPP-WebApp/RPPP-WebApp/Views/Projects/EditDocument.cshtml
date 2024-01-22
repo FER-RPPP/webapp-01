@@ -1,0 +1,29 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.ViewModels.DocumentViewModel
+
+
+<tr hx-target="this" hx-swap="outerHTML">
+    <td>
+        <input asp-for="Name" class="form-control" placeholder="Name" />
+    </td>
+    <td>
+        <input asp-for="Format" class="form-control" placeholder="Format" />
+    </td>
+    <td>
+        <select class="form-control" asp-for="DocumentType" asp-items="ViewBag.DocumentTypes">
+        </select>
+    </td>
+    <td>
+        <button hx-include="closest tr"
+                hx-post="@Url.Action(nameof(ProjectsController.EditDocument))"
+                class="btn btn-sm btn-primary" title="Save">
+            <i class="fas fa-save"></i>
+        </button>
+        <button class="btn btn-sm cancel"
+                hx-get="@Url.Action(nameof(ProjectsController.GetDocument), new { id = Model.Id })"
+                title="Cancel">
+            <i class="fas fa-undo-alt"></i>
+        </button>
+        <div asp-validation-summary="All"></div>
+    </td>
+</tr>

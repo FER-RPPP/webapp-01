@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -8,18 +9,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using RPPP_WebApp.Extensions;
 using RPPP_WebApp.Model;
+using RPPP_WebApp.ViewModels;
 using RPPP_WebApp.Views;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace RPPP_WebApp.Controllers
 {
     public class ProjectsController : Controller
     {
         private readonly Rppp01Context _context;
+        private readonly ILogger<ProjectsController> logger;
 
-        public ProjectsController(Rppp01Context context)
+
+        public ProjectsController(Rppp01Context context, ILogger<ProjectsController> logger)
         {
             _context = context;
+            this.logger = logger;
         }
 
         // GET: Projects
@@ -96,6 +103,8 @@ namespace RPPP_WebApp.Controllers
         // GET: Projects/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
+            await PrepareDropDownLists();
+
             if (id == null || _context.Project == null)
             {
                 return NotFound();
@@ -113,7 +122,27 @@ namespace RPPP_WebApp.Controllers
                 return NotFound();
             }
 
-            return View(project);
+            var query = _context.Document
+               .AsNoTracking();
+
+            var document = await query
+            .Where(o => o.Project == project)
+            .Select(o => new DocumentViewModel
+            {
+                Id = o.Id,
+                Name = o.Name,
+                Format = o.Format,
+                DocumentType = o.DocumentType.Name
+            })
+            .ToListAsync();
+
+            var model = new ProjectDocumentsViewModel
+            {
+                Project = project,
+                Document = document
+            };
+
+            return View(model);
         }
 
         // GET: Projects/Create
@@ -367,7 +396,169 @@ namespace RPPP_WebApp.Controllers
                 return View(project);
             }
         }
-        
 
+        private async Task PrepareDropDownLists()
+        {
+            var documentTypes = await _context.DocumentType
+                                  .ToListAsync();
+
+
+            var documentTypesList = documentTypes.Select(documentType => new SelectListItem
+            {
+                Text = $"{documentType.Name}",
+                Value = documentType.Id.ToString()
+            }).ToList();
+
+            ViewBag.DocumentTypes = documentTypesList;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetDocument(Guid id)
+        {
+            var document = await _context.Document
+                                       .Where(o => o.Id == id)
+                                       .Select(o => new DocumentViewModel
+                                       {
+                                           Id = o.Id,
+                                           Name = o.Name,
+                                           Format = o.Format,
+                                           DocumentType = o.DocumentType.Name,
+                                       })
+                                       .FirstOrDefaultAsync();
+
+            if (document != null)
+            {
+                return PartialView(document);
+            }
+            else
+            {
+                return NotFound($"Invalid Document Id: {id}");
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteDocument(Guid Id)
+        {
+
+            var document = _context.Document.AsNoTracking().Where(o => o.Id == Id).SingleOrDefault();
+            if (document != null)
+            {
+                try
+                {
+                    _context.Remove(document);
+                    await _context.SaveChangesAsync();
+                    TempData["StatusMessage"] = "Document has been successfully deleted.";
+                }
+                catch (Exception exc)
+                {
+                    TempData["StatusMessage"] = "Document has been successfully deleted.";
+                }
+            }
+            else
+            {
+                TempData["ErrorMessage"] = $"Document with id: {Id} does not exist";
+            }
+
+            return PartialView(document);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditDocument(Guid id)
+        {
+            var document = await _context.Document
+                                       .Where(o => o.Id == id)
+                                       .Select(o => new DocumentViewModel
+                                       {
+                                           Id = o.Id,
+                                           Name = o.Name,
+                                           Format = o.Format,
+                                           DocumentType = o.DocumentType.Name
+
+                                       })
+                                       .FirstOrDefaultAsync();
+
+            await PrepareDropDownLists();
+            if (document != null)
+            {
+                return PartialView(document);
+            }
+            else
+            {
+                return NotFound($"Invalid Document Id: {id}");
+            }
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditDocument(DocumentViewModel document)
+        {
+            if (document == null)
+            {
+                return NotFound("No data sent");
+            }
+            Document dbDocument = await _context.Document.FindAsync(document.Id);
+            if (dbDocument == null)
+            {
+                return NotFound($"Invalid Document Id: {document.Id}");
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    dbDocument.Id = document.Id;
+                    dbDocument.Name = document.Name;
+                    dbDocument.Format = document.Format;
+                    Guid documentType = new Guid(document.DocumentType);
+                    dbDocument.DocumentTypeId = documentType;
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(GetDocument), new { id = document.Id });
+                }
+                catch (Exception exc)
+                {
+                    ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
+                    return PartialView(document);
+                }
+            }
+            else
+            {
+                return PartialView(document);
+            }
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> NewDocument(Document document)
+        {
+            Debug.WriteLine(document.Name + " " + document.Id + " " + document.Format + " " + document.ProjectId + " " + document.DocumentTypeId);
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    document.Id = Guid.NewGuid();
+                    _context.Add(document);
+                    await _context.SaveChangesAsync();
+
+                    TempData["StatusMessage"] = "Document has been successfully created.";
+                }
+                catch (Exception exc)
+                {
+                    TempData["ErrorMessage"] = "There was a problem creating a document.";
+                    ModelState.AddModelError(string.Empty, exc.CompleteExceptionMessage());
+
+                    await PrepareDropDownLists();
+                }
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Document is not valid.";
+
+                await PrepareDropDownLists();
+            }
+
+            return Content($"<script>setTimeout(function() {{ window.location.href='/rppp/01/Projects/Details/{document.ProjectId}'; }}, 500);</script>", "text/html");
+        }
     }
+
 }
