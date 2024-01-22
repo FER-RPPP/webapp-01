@@ -1,0 +1,29 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.Model.ProjectPartner;
+
+<tr hx-target="this" hx-swap="outerHTML">
+    <input asp-for="Id" type="hidden" value="@Model.Id" />
+    <input asp-for="WorkerId" type="hidden" value="@Model.WorkerId" />
+    <td>
+        <select class="form-control" asp-for="Project" asp-items="ViewBag.Projects">
+        </select>
+    </td>
+    <td>
+        <select class="form-control" asp-for="Role" asp-items="ViewBag.ProjectRoles">
+        </select>
+    </td>
+    <td>
+        <input asp-for="DateFrom" class="form-control" placeholder="DateFrom" />
+    </td>
+    <td>
+        <input asp-for="DateTo" class="form-control" placeholder="DateTo" />
+    </td>
+    <td>
+        <button hx-include="closest tr"
+                hx-post="@Url.Action(nameof(WorkerController.AddProjectPartner))"
+                class="btn btn-sm btn-primary" title="Spremi">
+            <i class="fas fa-save"></i>
+        </button>
+        <div asp-validation-summary="All"></div>
+    </td>
+</tr>
