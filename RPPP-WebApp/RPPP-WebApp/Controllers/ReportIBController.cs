@@ -148,14 +148,6 @@ namespace RPPP_WebApp.Controllers
                                   .ToListAsync();
             PdfReport report = CreateReport(naslov);
 
-            report
-            .PagesHeader(header => {
-                header.CacheHeader(cache: true);
-                header.DefaultHeader(defaultHeader => {
-                    defaultHeader.RunDirection(PdfRunDirection.LeftToRight);
-                    defaultHeader.Message(naslov);
-                });
-            });
 
             report.MainTableDataSource(dataSource => dataSource.StronglyTypedList(clients));
 
