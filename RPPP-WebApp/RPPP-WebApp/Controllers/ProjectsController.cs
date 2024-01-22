@@ -196,6 +196,7 @@ namespace RPPP_WebApp.Controllers
                 project.Id = Guid.NewGuid();
                 _context.Add(project);
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Created new project");
                 TempData["StatusMessage"] = "Project has been successfully created.";
                 return RedirectToAction(nameof(Index));
             }
@@ -285,6 +286,7 @@ namespace RPPP_WebApp.Controllers
             {
                 _context.Update(project);
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Edited project");
                 TempData["StatusMessage"] = "Project has been successfully updated.";
                 return RedirectToAction(nameof(Index));
             }
@@ -366,6 +368,7 @@ namespace RPPP_WebApp.Controllers
                     _context.Project.Remove(project);
                 }
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Deleted project");
                 TempData["StatusMessage"] = "Project has been successfully deleted.";
                 return RedirectToAction(nameof(Index));
             }
@@ -447,6 +450,7 @@ namespace RPPP_WebApp.Controllers
                 {
                     _context.Remove(document);
                     await _context.SaveChangesAsync();
+                    logger.LogInformation("Deleted projects document");
                     TempData["StatusMessage"] = "Document has been successfully deleted.";
                 }
                 catch (Exception exc)
@@ -512,6 +516,7 @@ namespace RPPP_WebApp.Controllers
                     Guid documentType = new Guid(document.DocumentType);
                     dbDocument.DocumentTypeId = documentType;
                     await _context.SaveChangesAsync();
+                    logger.LogInformation("Edited projects document");
                     return RedirectToAction(nameof(GetDocument), new { id = document.Id });
                 }
                 catch (Exception exc)
@@ -539,6 +544,7 @@ namespace RPPP_WebApp.Controllers
                     document.Id = Guid.NewGuid();
                     _context.Add(document);
                     await _context.SaveChangesAsync();
+                    logger.LogInformation("Created new projects document");
 
                     TempData["StatusMessage"] = "Document has been successfully created.";
                 }
