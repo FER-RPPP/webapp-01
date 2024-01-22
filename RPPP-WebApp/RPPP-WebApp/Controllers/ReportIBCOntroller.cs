@@ -28,14 +28,12 @@ namespace RPPP_WebApp.Controllers
     public class ReportIBController : Controller
     {
         private readonly Rppp01Context ctx;
-        private readonly IWebHostEnvironment environment;
         private readonly ILogger<ReportIBController> logger;
         private const string ExcelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
-        public ReportIBController(Rppp01Context ctx, IWebHostEnvironment environment, ILogger<ReportIBController> logger)
+        public ReportIBController(Rppp01Context ctx, ILogger<ReportIBController> logger)
         {
             this.ctx = ctx;
-            this.environment = environment;
             this.logger = logger;
         }
 
@@ -150,9 +148,7 @@ namespace RPPP_WebApp.Controllers
                                   .ToListAsync();
             PdfReport report = CreateReport(naslov);
 
-            report.PagesFooter(footer => {
-                footer.DefaultFooter(DateTime.Now.ToString("dd.MM.yyyy."));
-            })
+            report
             .PagesHeader(header => {
                 header.CacheHeader(cache: true);
                 header.DefaultHeader(defaultHeader => {
