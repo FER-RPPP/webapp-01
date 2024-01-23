@@ -6,7 +6,16 @@ using FluentValidation;
 using RPPP_WebApp.ModelsValidation;
 
 namespace RPPP_WebApp {
+  /// <summary>
+  /// Extension methods for configuring the startup of the web application.
+  /// </summary>
   public static class StartupExtensions {
+
+    /// <summary>
+    /// Configures services for the web application.
+    /// </summary>
+    /// <param name="builder">The <see cref="WebApplicationBuilder"/> used to configure the application.</param>
+    /// <returns>The configured <see cref="WebApplication"/>.</returns>
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder) {
       builder.Services.AddControllersWithViews();
 
@@ -25,6 +34,11 @@ namespace RPPP_WebApp {
       return builder.Build();
     }
 
+    /// <summary>
+    /// Configures the middleware pipeline for the web application.
+    /// </summary>
+    /// <param name="app">The <see cref="WebApplication"/> instance.</param>
+    /// <returns>The configured <see cref="WebApplication"/>.</returns>
     public static WebApplication ConfigurePipeline(this WebApplication app) {
       #region Needed for nginx and Kestrel (do not remove or change this region)
       app.UseForwardedHeaders(new ForwardedHeadersOptions {

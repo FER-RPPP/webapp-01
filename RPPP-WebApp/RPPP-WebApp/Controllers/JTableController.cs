@@ -14,12 +14,6 @@ namespace RPPP_WebApp.Controllers
             this.controller = controller;
         }
 
-        /// <summary>
-        /// Wrapper za učitavanje podataka koristeći jTable 
-        /// </summary>
-        /// <param name="loadParams"></param>
-        /// <param name="search"></param>
-        /// <returns></returns>
         [HttpPost]
         public virtual async Task<TableRecords<TModel>> GetAll([FromQuery] LoadParams loadParams, [FromForm] string search)
         {

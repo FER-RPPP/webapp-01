@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EPPlus" Version="7.0.6" />
+    <PackageReference Include="EPPlus" Version="4.5.3.3" />
     <PackageReference Include="FluentValidation" Version="11.8.1" />
 		<PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.13" />
@@ -30,5 +30,9 @@
   <ItemGroup>
     <Folder Include="Views\ProjectCardMaster\" />
   </ItemGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
 
 </Project>

@@ -10,17 +10,34 @@ using System.Text.Json;
 using System.Diagnostics;
 
 namespace RPPP_WebApp.Controllers {
+  /// <summary>
+  /// Controller for managing project cards.
+  /// </summary>
   public class ProjectCardController : Controller {
     private readonly Rppp01Context ctx;
     private readonly ILogger<ProjectCardController> logger;
     private readonly AppSettings appData;
 
+    /// <summary>
+    /// Constructor for the ProjectCardController.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
+    /// <param name="options">Snapshot of application settings.</param>
+    /// <param name="logger">Logger for logging messages.</param>
     public ProjectCardController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<ProjectCardController> logger) {
       this.ctx = ctx;
       this.logger = logger;
       appData = options.Value;
     }
 
+    /// <summary>
+    /// Displays the index page for project cards.
+    /// </summary>
+    /// <param name="filter">Filter parameters.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Index view.</returns>
     public async Task<IActionResult> Index(ProjectCardFilter filter, int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.ProjectCard
@@ -87,6 +104,12 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
     }
 
+    /// <summary>
+    /// Truncates a string to the specified maximum length.
+    /// </summary>
+    /// <param name="value">The input string to be truncated.</param>
+    /// <param name="maxLength">The maximum length of the truncated string.</param>
+    /// <returns>Truncated string with an ellipsis if needed.</returns>
     public static string MakeShorter(string value, int maxLength) {
       if (value.Length <= maxLength)
         return value;
@@ -94,7 +117,14 @@ namespace RPPP_WebApp.Controllers {
         return value.Substring(0, maxLength) + "...";
     }
 
-
+    /// <summary>
+    /// Displays the details of a project card including its transactions.
+    /// </summary>
+    /// <param name="id">The IBAN of the project card.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Details view.</returns>
     public async Task<IActionResult> Show(string id, int page = 1, int sort = 1, bool ascending = true) {
       await PrepareDropDownLists();
 
@@ -132,14 +162,21 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
     }
 
-
-
+    /// <summary>
+    /// Displays the form for creating a new project card.
+    /// </summary>
+    /// <returns>Create view.</returns>
     [HttpGet]
     public async Task<IActionResult> Create() {
       await PrepareDropDownLists();
       return View();
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for creating a new project card.
+    /// </summary>
+    /// <param name="projectCard">The project card data to be created.</param>
+    /// <returns>Redirects to the index view if successful, otherwise returns the create view with error messages.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(ProjectCard projectCard) {
@@ -165,6 +202,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Deletes a project card with the specified IBAN.
+    /// </summary>
+    /// <param name="Iban">The IBAN of the project card to be deleted.</param>
+    /// <param name="page">The current page number.</param>
+    /// <param name="sort">The sort order.</param>
+    /// <param name="ascending">Whether the sorting is in ascending order.</param>
+    /// <returns>Redirects to the index view with updated data.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(string Iban, int page = 1, int sort = 1, bool ascending = true) {
@@ -192,6 +237,14 @@ namespace RPPP_WebApp.Controllers {
       return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
     }
 
+    /// <summary>
+    /// Displays the form for editing an existing project card.
+    /// </summary>
+    /// <param name="id">The IBAN of the project card to be edited.</param>
+    /// <param name="page">The current page number.</param>
+    /// <param name="sort">The sort order.</param>
+    /// <param name="ascending">Whether the sorting is in ascending order.</param>
+    /// <returns>Edit view if successful, otherwise returns a not found response.</returns>
     [HttpGet]
     public async Task<IActionResult> Edit(string id, int page = 1, int sort = 1, bool ascending = true) {
       var projectCard = ctx.ProjectCard.AsNoTracking().Where(o => o.Iban == id).SingleOrDefault();
@@ -208,6 +261,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for updating an existing project card.
+    /// </summary>
+    /// <param name="id">The IBAN of the project card to be updated.</param>
+    /// <param name="page">The current page number.</param>
+    /// <param name="sort">The sort order.</param>
+    /// <param name="ascending">Whether the sorting is in ascending order.</param>
+    /// <returns>Redirects to the index view if successful, otherwise returns the edit view with error messages.</returns>
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(string id, int page = 1, int sort = 1, bool ascending = true) {
@@ -281,6 +342,11 @@ namespace RPPP_WebApp.Controllers {
       ViewBag.Owners = ownersList;
     }
 
+    /// <summary>
+    /// Gets details of a project card with the specified IBAN.
+    /// </summary>
+    /// <param name="id">The IBAN of the project card.</param>
+    /// <returns>Partial view with details of the project card.</returns>
     [HttpGet]
     public async Task<IActionResult> Get(string id) {
       var projectCard = await ctx.ProjectCard
@@ -300,6 +366,11 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Displays the form for editing a project card.
+    /// </summary>
+    /// <param name="id">The IBAN of the project card to edit.</param>
+    /// <returns>Edit view with the form for editing the project card.</returns>
     [HttpGet]
     public async Task<IActionResult> Editt(string id) {
       var projectCard = await ctx.ProjectCard
@@ -321,6 +392,11 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for editing a project card.
+    /// </summary>
+    /// <param name="projectCard">The view model containing the edited project card data.</param>
+    /// <returns>Redirects to the project card details view if successful, otherwise returns the edit view with error messages.</returns>
     [HttpPost]
     public async Task<IActionResult> Editt(ProjectCardViewModel projectCard) {
       if (projectCard == null) {
@@ -357,6 +433,11 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Gets details of a transaction with the specified ID.
+    /// </summary>
+    /// <param name="id">The ID of the transaction.</param>
+    /// <returns>Partial view with details of the transaction.</returns>
     [HttpGet]
     public async Task<IActionResult> GetTransaction(Guid id) {
       var transaction = await ctx.Transaction
@@ -380,6 +461,11 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Displays the form for editing an existing transaction.
+    /// </summary>
+    /// <param name="id">The ID of the transaction to be edited.</param>
+    /// <returns>EditTransaction partial view if successful, otherwise returns a not found response.</returns>
     [HttpGet]
     public async Task<IActionResult> EditTransaction(Guid id) {
       var transaction = await ctx.Transaction
@@ -404,7 +490,11 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
-
+    /// <summary>
+    /// Handles the HTTP POST request for updating an existing transaction.
+    /// </summary>
+    /// <param name="transaction">The updated transaction data.</param>
+    /// <returns>Redirects to the transaction details view if successful, otherwise returns the edit transaction partial view with error messages.</returns>
     [HttpPost]
     public async Task<IActionResult> EditTransaction(TransactionViewModel transaction) {
       if (transaction == null) {
@@ -440,6 +530,11 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the HTTP Delete for deleting a transaction.
+    /// </summary>
+    /// <param name="id">The ID of the transaction to be deleted.</param>
+    /// <returns>DeleteTransaction partial view if successful, otherwise returns a not found response.</returns>
     [HttpDelete]
     public async Task<IActionResult> DeleteTransaction(Guid Id) {
       ActionResponseMessage responseMessage;
@@ -468,13 +563,21 @@ namespace RPPP_WebApp.Controllers {
 
     }
 
-
+    /// <summary>
+    /// Displays the form for adding a new transaction to a project card.
+    /// </summary>
+    /// <returns>AddTransaction partial view with the form for adding a new transaction.</returns>
     [HttpGet]
     public async Task<IActionResult> AddTransaction() {
       await PrepareDropDownLists();
       return PartialView();
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for adding a new transaction to a project card.
+    /// </summary>
+    /// <param name="transactionVM">The view model containing the new transaction data.</param>
+    /// <returns>Redirects to the project card details view if successful, otherwise returns the add transaction partial view with error messages.</returns>
     [HttpPost]
     public async Task<IActionResult> AddTransaction(ProjectCardTransactionsViewModel transactionVM) {
       if (!ModelState.IsValid) {
@@ -509,13 +612,21 @@ namespace RPPP_WebApp.Controllers {
 
     }
 
-
+    /// <summary>
+    /// Displays the form for adding a new transaction.
+    /// </summary>
+    /// <returns>NewTransaction partial view with the form for adding a new transaction.</returns>
     [HttpGet]
     public async Task<IActionResult> NewTransaction() {
       await PrepareDropDownLists();
       return PartialView();
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for adding a new transaction.
+    /// </summary>
+    /// <param name="transaction">The new transaction data.</param>
+    /// <returns>Redirects to the project card details view if successful, otherwise returns the new transaction partial view with error messages.</returns>
     [HttpPost]
     public async Task<IActionResult> NewTransaction(Transaction transaction) {
       ActionResponseMessage responseMessage;

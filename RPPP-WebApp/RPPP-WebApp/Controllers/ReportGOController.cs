@@ -19,24 +19,43 @@ using OfficeOpenXml;
 using RPPP_WebApp.ViewModels;
 using RPPP_WebApp.Extensions;
 using System.Security.Cryptography;
+using PdfRpt;
 
 namespace RPPP_WebApp.Controllers {
+  /// <summary>
+  /// Controller for managing reports related to the Project Card entity.
+  /// </summary>
   public class ReportGOController : Controller {
     private readonly Rppp01Context ctx;
     private readonly IWebHostEnvironment environment;
     private readonly ILogger<ReportGOController> logger;
     private const string ExcelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
+    // <summary>
+    /// Initializes a new instance of the <see cref="ReportGOController"/> class.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
+    /// <param name="environment">The hosting environment.</param>
+    /// <param name="logger">The logger.</param>
     public ReportGOController(Rppp01Context ctx, IWebHostEnvironment environment, ILogger<ReportGOController> logger) {
       this.ctx = ctx;
       this.environment = environment;
       this.logger = logger;
     }
 
+    /// <summary>
+    /// Displays the index view.
+    /// </summary>
+    /// <returns>The index view.</returns>
     public IActionResult Index() {
       return View();
     }
 
+    /// <summary>
+    /// Imports project cards from an Excel file.
+    /// </summary>
+    /// <param name="file">The Excel file containing project card data.</param>
+    /// <returns>The result of the import operation.</returns>
     public async Task<IActionResult> ImportProjectCard(IFormFile file) {
       logger.LogInformation("Importing Project Card.");
       if (file == null || file.Length == 0)
@@ -110,13 +129,24 @@ namespace RPPP_WebApp.Controllers {
       return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "ImportedProjectCards.xlsx");
     }
 
+    /// <summary>
+    /// Generates a PDF report containing a list of owners.
+    /// </summary>
+    /// <returns>The generated PDF file.</returns>
     public async Task<IActionResult> Owner() {
+      var mainFontPath = "../wwwroot/fonts/tahoma.ttf";
+
+
       string naslov = "Popis vlasnika";
       var vlasnici = await ctx.Owner
                             .AsNoTracking()
                             .OrderBy(o => o.Name)
                             .ToListAsync();
       PdfReport report = CreateReport(naslov);
+
+      if (!Directory.Exists(mainFontPath)) {
+        Directory.CreateDirectory(mainFontPath);
+      }
 
       report.PagesFooter(footer => {
         footer.DefaultFooter(DateTime.Now.ToString("dd.MM.yyyy."));
@@ -180,6 +210,10 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Generates a PDF report containing a list of project cards.
+    /// </summary>
+    /// <returns>The generated PDF file.</returns>
     public async Task<IActionResult> ProjectCard() {
       string naslov = "Popis projektnih kartica";
       var projektneKartice = await ctx.ProjectCard
@@ -259,6 +293,10 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Generates a PDF report containing a list of transactions.
+    /// </summary>
+    /// <returns>The generated PDF file.</returns>
     public async Task<IActionResult> Transaction() {
       string naslov = "Popis transakcija";
       var transakcije = await ctx.Transaction
@@ -366,6 +404,10 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Generates a PDF report containing a list of transaction types.
+    /// </summary>
+    /// <returns>The generated PDF file.</returns>
     public async Task<IActionResult> TransactionType() {
       string naslov = "Popis vrsta transakcija";
       var vrste = await ctx.TransactionType
@@ -418,6 +460,10 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Generates a PDF report containing a list of transaction purposes.
+    /// </summary>
+    /// <returns>The generated PDF file.</returns>
     public async Task<IActionResult> TransactionPurpose() {
       string naslov = "Popis svrha transakcija";
       var svrhe = await ctx.TransactionPurpose
@@ -470,6 +516,11 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Creates a PDF report with specified document preferences and main table template.
+    /// </summary>
+    /// <param name="naslov">The title of the PDF document.</param>
+    /// <returns>An instance of the PdfReport class.</returns>
     private PdfReport CreateReport(string naslov) {
       var pdf = new PdfReport();
 
@@ -504,6 +555,10 @@ namespace RPPP_WebApp.Controllers {
       return pdf;
     }
 
+    /// <summary>
+    /// Generates a PDF report containing transactions for project cards.
+    /// </summary>
+    /// <returns>A PDF file or a not found response.</returns>
     public async Task<IActionResult> MasterDetailCardTransactions() {
       string naslov = "Transakcije projektnih kartica";
       var stavke = await ctx.Transaction
@@ -629,13 +684,33 @@ namespace RPPP_WebApp.Controllers {
         return NotFound();
     }
 
+    /// <summary>
+    /// Implementation of the <see cref="IPageHeader"/> interface for rendering customized headers in a PDF report with master-detail information.
+    /// </summary>
     public class MasterDetailsHeaders : IPageHeader {
       private string naslov;
+
+      /// <summary>
+      /// Initializes a new instance of the <see cref="MasterDetailsHeaders"/> class with the specified title.
+      /// </summary>
+      /// <param name="naslov">The title to be displayed in the headers.</param>
       public MasterDetailsHeaders(string naslov) {
         this.naslov = naslov;
       }
+
+      /// <summary>
+      /// Gets or sets the <see cref="IPdfFont"/> for rendering the header.
+      /// </summary>
       public IPdfFont PdfRptFont { set; get; }
 
+      /// <summary>
+      /// Renders the group header for a specific group of data in the PDF report.
+      /// </summary>
+      /// <param name="pdfDoc">The PDF document.</param>
+      /// <param name="pdfWriter">The PDF writer.</param>
+      /// <param name="newGroupInfo">Information about the new group.</param>
+      /// <param name="summaryData">Summary data for the group.</param>
+      /// <returns>A <see cref="PdfGrid"/> representing the rendered group header.</returns>
       public PdfGrid RenderingGroupHeader(iTextSharp.text.Document pdfDoc, PdfWriter pdfWriter, IList<CellData> newGroupInfo, IList<SummaryCellData> summaryData) {
         var iban = newGroupInfo.GetSafeStringValueOf(nameof(RPPP_WebApp.Model.ProjectCard.Iban));
         var oib = newGroupInfo.GetValueOf(nameof(RPPP_WebApp.Model.ProjectCard.Oib));
@@ -695,6 +770,14 @@ namespace RPPP_WebApp.Controllers {
 
         return table.AddBorderToTable(borderColor: BaseColor.LightGray, spacingBefore: 5f);
       }
+
+      /// <summary>
+      /// Renders the report header for the entire PDF report.
+      /// </summary>
+      /// <param name="pdfDoc">The PDF document.</param>
+      /// <param name="pdfWriter">The PDF writer.</param>
+      /// <param name="summaryData">Summary data for the report.</param>
+      /// <returns>A <see cref="PdfGrid"/> representing the rendered report header.</returns>
       public PdfGrid RenderingReportHeader(iTextSharp.text.Document pdfDoc, PdfWriter pdfWriter, IList<SummaryCellData> summaryData) {
         var table = new PdfGrid(numColumns: 1) { WidthPercentage = 100 };
         table.AddSimpleRow(
@@ -709,8 +792,10 @@ namespace RPPP_WebApp.Controllers {
 
     }
 
-
-
+    /// <summary>
+    /// Generates an Excel file containing a list of project cards and their details.
+    /// </summary>
+    /// <returns>An <see cref="IActionResult"/> representing the Excel file.</returns>
     public async Task<IActionResult> ProjectCardExcel() {
       var projectCard = await ctx.ProjectCard
                             .AsNoTracking()
@@ -743,6 +828,10 @@ namespace RPPP_WebApp.Controllers {
       return File(content, ExcelContentType, "projekne-kartice.xlsx");
     }
 
+    /// <summary>
+    /// Generates an Excel file containing a list of transactions and their details.
+    /// </summary>
+    /// <returns>An <see cref="IActionResult"/> representing the Excel file.</returns>
     public async Task<IActionResult> TransactionsExcel() {
       var transaction = await ctx.Transaction
                             .AsNoTracking()
@@ -780,6 +869,10 @@ namespace RPPP_WebApp.Controllers {
       return File(content, ExcelContentType, "transakcije.xlsx");
     }
 
+    /// <summary>
+    /// Generates an Excel file containing a list of types and purposes and their details.
+    /// </summary>
+    /// <returns>An <see cref="IActionResult"/> representing the Excel file.</returns>
     public async Task<IActionResult> TypesAndPurposesExcel() {
       byte[] content;
       using (ExcelPackage excel = new ExcelPackage()) {
@@ -807,6 +900,10 @@ namespace RPPP_WebApp.Controllers {
       return File(content, ExcelContentType, "vrste-i-svrhe.xlsx");
     }
 
+    /// <summary>
+    /// Generates an Excel file containing a list of owners and their details.
+    /// </summary>
+    /// <returns>An <see cref="IActionResult"/> representing the Excel file.</returns>
     public async Task<IActionResult> OwnersExcel() {
       var owner = await ctx.Owner
                             .AsNoTracking()
@@ -837,6 +934,10 @@ namespace RPPP_WebApp.Controllers {
       return File(content, ExcelContentType, "vlasnici.xlsx");
     }
 
+    /// <summary>
+    /// Generates an Excel file containing a list of transactions for each project card.
+    /// </summary>
+    /// <returns>An <see cref="IActionResult"/> representing the Excel file.</returns>
     public async Task<IActionResult> MasterDetailExcel() {
       var projectCards = await ctx.ProjectCard
                                   .AsNoTracking()

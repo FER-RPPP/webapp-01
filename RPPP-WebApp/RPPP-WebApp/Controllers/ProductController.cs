@@ -34,11 +34,6 @@ namespace RPPP_WebApp.Controllers
         }
 
 
-        // <summary>
-        /// Vraća broj svih produkta filtriran prema nazivu mjesta 
-        /// </summary>
-        /// <param name="filter">Opcionalni filter za naziv produkta</param>
-        /// <returns></returns>
         [HttpGet("count", Name = "BrojProdukta")]
         public async Task<int> Count([FromQuery] string filter)
         {
@@ -52,12 +47,6 @@ namespace RPPP_WebApp.Controllers
         }
 
 
-        /// <summary>
-        /// Dohvat produkta (opcionalno filtrirano po nazivu produkta).
-        /// Broj produkta, poredak, početna pozicija određeni s loadParams.
-        /// </summary>
-        /// <param name="loadParams">Postavke za straničenje i filter</param>
-        /// <returns></returns>
         [HttpGet(Name = "DohvatiMjesta")]
         public async Task<List<ProductViewModel>> GetAll([FromQuery] LoadParams loadParams)
         {
@@ -83,11 +72,6 @@ namespace RPPP_WebApp.Controllers
             return list;
         }
 
-        /// <summary>
-        /// Vraća produkt čiji je id jednak vrijednosti parametra id
-        /// </summary>
-        /// <param name="id">IdProdukta</param>
-        /// <returns></returns>
         [HttpGet("{id}", Name = "DohvatiProdukt")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -107,13 +91,6 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
-        /// <summary>
-        /// Brisanje produkta određenog s id
-        /// </summary>
-        /// <param name="id">Vrijednost primarnog ključa (Id produkta)</param>
-        /// <returns></returns>
-        /// <response code="204">Ako je produkt uspješno obrisan</response>
-        /// <response code="404">Ako produkt s poslanim id-om ne postoji</response>      
         [HttpDelete("{id}", Name = "ObrisiProdukt")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -132,12 +109,6 @@ namespace RPPP_WebApp.Controllers
             };
         }
 
-        // <summary>
-        /// Ažurira produkt
-        /// </summary>
-        /// <param name="id">parametar čija vrijednost jednoznačno identificira produkt</param>
-        /// <param name="model">Podaci o produktu. Id mora se podudarati s parametrom id</param>
-        /// <returns></returns>
         [HttpPut("{id}", Name = "AzurirajMjesto")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -163,11 +134,7 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
-        /// <summary>
-        /// Stvara novi produkt opisanim poslanim modelom
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        
         [HttpPost(Name = "DodajProdukt")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -3,8 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using RPPP_WebApp.Model;
 
 namespace RPPP_WebApp.ModelsValidation {
+  /// <summary>
+  /// Validator class for the <see cref="Owner"/> entity using FluentValidation.
+  /// </summary>
   public class OwnerValidator : AbstractValidator<Owner> {
     private readonly Rppp01Context ctx;
+    /// <summary>
+    /// Initializes a new instance of the <see cref="OwnerValidator"/> class.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
     public OwnerValidator(Rppp01Context ctx) {
       this.ctx = ctx;
 

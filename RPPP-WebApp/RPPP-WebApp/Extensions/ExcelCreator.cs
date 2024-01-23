@@ -6,7 +6,17 @@ using System.Collections.Generic;
 using RPPP_WebApp.Util;
 
 namespace RPPP_WebApp.Extensions {
+  /// <summary>
+  /// Extension class for creating Excel files from IEnumerable data.
+  /// </summary>
   public static class ExcelCreator {
+    /// <summary>
+    /// Creates an ExcelPackage containing data from an IEnumerable collection.
+    /// </summary>
+    /// <typeparam name="T">Type of elements in the collection.</typeparam>
+    /// <param name="data">IEnumerable collection containing the data.</param>
+    /// <param name="worksheetName">Name of the worksheet to be created.</param>
+    /// <returns>An ExcelPackage containing the data.</returns>
     public static ExcelPackage CreateExcel<T>(this IEnumerable<T> data, string worksheetName) {
       ExcelPackage excel = new ExcelPackage();
       var worksheet = excel.Workbook.Worksheets.Add(worksheetName);
