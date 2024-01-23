@@ -484,7 +484,7 @@ namespace RPPP_WebApp.Controllers
 
             Response.Headers["HX-Trigger"] = JsonSerializer.Serialize(new { showMessage = responseMessage });
             return responseMessage.MessageType == MessageType.Success ?
-            Content($"<script>setTimeout(function() {{ window.location.href='/ProjectRequirements/Details/{requirementTask.ProjectRequirementId}?page=1&sort=1&ascending=True'; }}, 1000);</script>", "text/html") : PartialView(requirementTask);
+            Content($"<script>setTimeout(function() {{ window.location.href='/rppp/01/ProjectRequirements/Details/{requirementTask.ProjectRequirementId}?page=1&sort=1&ascending=True'; }}, 1000);</script>", "text/html") : PartialView(requirementTask);
         }
 
 

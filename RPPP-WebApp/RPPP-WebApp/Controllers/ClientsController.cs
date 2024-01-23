@@ -15,9 +15,11 @@ namespace RPPP_WebApp.Controllers
     public class ClientsController : Controller
     {
         private readonly Rppp01Context _context;
+        private readonly ILogger<ClientsController> logger;
 
-        public ClientsController(Rppp01Context context)
+        public ClientsController(Rppp01Context context, ILogger<ClientsController> logger)
         {
+            this.logger = logger;
             _context = context;
         }
 
@@ -117,6 +119,7 @@ namespace RPPP_WebApp.Controllers
                 client.Id = Guid.NewGuid();
                 _context.Add(client);
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Created new client");
                 TempData["StatusMessage"] = "Client has been successfully added.";
                 return RedirectToAction(nameof(Index));
 
@@ -183,6 +186,7 @@ namespace RPPP_WebApp.Controllers
             {
                 _context.Update(client);
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Edited client");
                 TempData["StatusMessage"] = "Client has been successfully updated.";
                 return RedirectToAction(nameof(Index));
             }
@@ -259,6 +263,7 @@ namespace RPPP_WebApp.Controllers
                     _context.Client.Remove(client);
                 }
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Deleted client");
                 TempData["StatusMessage"] = "Client has been successfully deleted.";
                 return RedirectToAction(nameof(Index));
             }

@@ -15,9 +15,12 @@ namespace RPPP_WebApp.Controllers
     public class DocumentTypesController : Controller
     {
         private readonly Rppp01Context _context;
+        private readonly ILogger<ClientsController> logger;
 
-        public DocumentTypesController(Rppp01Context context)
+
+        public DocumentTypesController(Rppp01Context context, ILogger<ClientsController> logger)
         {
+            this.logger = logger;
             _context = context;
         }
 
@@ -90,6 +93,7 @@ namespace RPPP_WebApp.Controllers
                 documentType.Id = Guid.NewGuid();
                 _context.Add(documentType);
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Created new document type");
                 TempData["StatusMessage"] = "Document type created successfully.";
                 return RedirectToAction(nameof(Index));
             }
@@ -154,6 +158,7 @@ namespace RPPP_WebApp.Controllers
             {
                 _context.Update(documentType);
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Edited document type");
                 TempData["StatusMessage"] = "Document type updated successfully.";
                 return RedirectToAction(nameof(Index));
             }
@@ -228,6 +233,7 @@ namespace RPPP_WebApp.Controllers
                 }
 
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Deleted document type");
                 TempData["StatusMessage"] = "Document type deleted successfully.";
                 return RedirectToAction(nameof(Index));
             }

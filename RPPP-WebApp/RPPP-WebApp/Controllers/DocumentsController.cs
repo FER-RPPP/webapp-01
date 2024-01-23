@@ -16,9 +16,12 @@ namespace RPPP_WebApp.Controllers
     public class DocumentsController : Controller
     {
         private readonly Rppp01Context _context;
+        private readonly ILogger<ClientsController> logger;
 
-        public DocumentsController(Rppp01Context context)
+
+        public DocumentsController(Rppp01Context context, ILogger<ClientsController> logger)
         {
+            this.logger = logger;
             _context = context;
         }
 
@@ -128,6 +131,7 @@ namespace RPPP_WebApp.Controllers
                 document.Id = Guid.NewGuid();
                 _context.Add(document);
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Created new document");
                 TempData["StatusMessage"] = "Document has been successfully added.";
                 return RedirectToAction(nameof(Index));
 
@@ -201,6 +205,7 @@ namespace RPPP_WebApp.Controllers
             {
                 _context.Update(document);
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Edited document");
                 TempData["StatusMessage"] = "Document has been successfully updated.";
                 return RedirectToAction(nameof(Index));
             }
@@ -281,6 +286,7 @@ namespace RPPP_WebApp.Controllers
                     _context.Document.Remove(document);
                 }
                 await _context.SaveChangesAsync();
+                logger.LogInformation("Deleted document");
                 TempData["StatusMessage"] = "Document has been successfully deleted.";
                 return RedirectToAction(nameof(Index));
             }

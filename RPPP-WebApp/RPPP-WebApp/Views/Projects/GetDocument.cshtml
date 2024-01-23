@@ -1,0 +1,35 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.ViewModels.DocumentViewModel;
+
+<tr hx-target="this" hx-swap="outerHTML">
+    <td class="text-left">@Model.Name</td>
+    <td class="text-left">@Model.Format<td>
+    <td class="text-left">@Model.DocumentType</td>
+    <td>
+        <a class="btn btn-sm btn-primary"
+           hx-get="@Url.Action(nameof(ProjectsController.EditDocument), new { id = Model.Id })"
+           title="Save">
+            <i class="fas fa-edit"></i>
+        </a>
+        <button class="btn btn-sm btn-danger"
+                hx-confirm="Delete document?"
+                hx-delete="@Url.Action(nameof(ProjectsController.DeleteDocument), new { Id = Model.Id })"
+                title="Delete">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+    </td>
+</tr>
+
+@section scripts {
+    <script src="~/js/pager.js" asp-append-version="true"></script>
+    <script src="~/lib/htmx/htmx.min.js" asp-append-version="true"></script>
+    <partial name="IncludeValidation" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".alert").fadeOut('slow');
+            }, 2500);
+        });
+    </script>
+}

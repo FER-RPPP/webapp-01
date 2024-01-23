@@ -1,0 +1,25 @@
+﻿@using RPPP_WebApp.Controllers;
+@model RPPP_WebApp.Model.Document;
+
+<tr hx-target="this" hx-swap="outerHTML">
+    <input asp-for="ProjectId" type="hidden" value="@Model.ProjectId" />
+    <td>
+        <input asp-for="Name" class="form-control" placeholder="Name" />
+    </td>
+    <td>
+        <input asp-for="Format" class="form-control" placeholder="Format" />
+    </td>
+    <td>
+        <select class="form-control" asp-for="DocumentTypeId" asp-items="ViewBag.DocumentTypes" placeholder="hoose Document Typ">
+            <option disabled selected value="">Choose Document Type</option>
+        </select>
+    </td>
+    <td>
+        <button hx-include="closest tr"
+                hx-post="@Url.Action(nameof(ProjectsController.NewDocument))"
+                class="btn btn-sm btn-primary" title="Save">
+            <i class="fas fa-save"></i>
+        </button>
+        <div asp-validation-summary="All"></div>
+    </td>
+</tr>
