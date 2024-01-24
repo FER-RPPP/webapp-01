@@ -13,6 +13,11 @@ using System.Data.Common;
 
 namespace RPPP_WebApp.Controllers
 {
+
+    /// <summary>
+    /// The DocumentsController class is responsible for managing actions related to documents,
+    /// including listing, viewing details, creating, editing, and deleting documents.
+    /// </summary>
     public class DocumentsController : Controller
     {
         private readonly Rppp01Context _context;
@@ -25,6 +30,10 @@ namespace RPPP_WebApp.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// The DocumentsController class is responsible for managing actions related to documents,
+        /// including listing, viewing details, creating, editing, and deleting documents.
+        /// </summary>
         // GET: Documents
         public async Task<IActionResult> Index(string sortOrder, string searchString, int? pageNumber)
         {
@@ -84,6 +93,11 @@ namespace RPPP_WebApp.Controllers
         }
 
 
+        /// <summary>
+        /// Shows the details of a specific document.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document.</param>
+        /// <returns>A view displaying the document details if found; otherwise, a NotFound view.</returns>
         // GET: Documents/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
@@ -104,6 +118,10 @@ namespace RPPP_WebApp.Controllers
             return View(document);
         }
 
+        /// <summary>
+        /// Returns the view for creating a new document.
+        /// </summary>
+        /// <returns>A view for document creation.</returns>
         // GET: Documents/Create
         public IActionResult Create()
         {
@@ -112,6 +130,11 @@ namespace RPPP_WebApp.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Processes the creation of a new document.
+        /// </summary>
+        /// <param name="document">The document data to be added.</param>
+        /// <returns>A redirect to the Index view if successful; otherwise, returns to the Create view with error messages.</returns>
         // POST: Documents/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -168,6 +191,12 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Returns the edit view for a specific document.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document to be edited.</param>
+        /// <returns>An edit view for the specified document if found; otherwise, a NotFound view.</returns>
         // GET: Documents/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -186,6 +215,13 @@ namespace RPPP_WebApp.Controllers
             return View(document);
         }
 
+
+        /// <summary>
+        /// Processes the editing of a specific document.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document being edited.</param>
+        /// <param name="document">The updated document data.</param>
+        /// <returns>A redirect to the Index view if successful; otherwise, returns to the Edit view with error messages.</returns>
         // POST: Documents/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -241,6 +277,12 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Returns the delete confirmation view for a specific document.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document to be deleted.</param>
+        /// <returns>A delete confirmation view for the specified document if found; otherwise, a NotFound view.</returns>
         // GET: Documents/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
@@ -261,6 +303,12 @@ namespace RPPP_WebApp.Controllers
             return View(document);
         }
 
+
+        /// <summary>
+        /// Processes the deletion of a specified document.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document to be deleted.</param>
+        /// <returns>A redirect to the Index view if successful; otherwise, returns to the Delete view with error messages.</returns>
         // POST: Documents/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -318,6 +366,12 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Checks if a document exists in the database.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document.</param>
+        /// <returns>True if the document exists; otherwise, false.</returns>
         private bool DocumentExists(Guid id)
         {
           return _context.Document.Any(e => e.Id == id);

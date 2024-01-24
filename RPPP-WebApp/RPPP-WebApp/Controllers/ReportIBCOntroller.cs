@@ -25,25 +25,36 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace RPPP_WebApp.Controllers
 {
+    /// <summary>
+    /// Manages report generation and data import for projects, documents, and clients.
+    /// </summary>
     public class ReportIBController : Controller
     {
         private readonly Rppp01Context ctx;
-        private readonly IWebHostEnvironment environment;
         private readonly ILogger<ReportIBController> logger;
         private const string ExcelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
-        public ReportIBController(Rppp01Context ctx, IWebHostEnvironment environment, ILogger<ReportIBController> logger)
+
+        public ReportIBController(Rppp01Context ctx, ILogger<ReportIBController> logger)
         {
             this.ctx = ctx;
-            this.environment = environment;
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Displays the index view of the report controller.
+        /// </summary>
+        /// <returns>The index view.</returns>
         public IActionResult Index()
         {
             return View();
         }
 
+        /// <summary>
+        /// Imports project data from an Excel file and generates a report.
+        /// </summary>
+        /// <param name="file">The uploaded Excel file containing project data.</param>
+        /// <returns>An asynchronous task that returns a file download result.</returns>
         public async Task<IActionResult> ImportProject(IFormFile file)
         {
             logger.LogInformation("Importing Project.");
@@ -141,6 +152,10 @@ namespace RPPP_WebApp.Controllers
             return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "ImportedProjects.xlsx");
         }
 
+        /// <summary>
+        /// Generates a PDF report of all clients.
+        /// </summary>
+        /// <returns>An asynchronous task that returns a PDF file download result.</returns>
         public async Task<IActionResult> Client()
         {
             string naslov = "Clients list";
@@ -150,9 +165,7 @@ namespace RPPP_WebApp.Controllers
                                   .ToListAsync();
             PdfReport report = CreateReport(naslov);
 
-            report.PagesFooter(footer => {
-                footer.DefaultFooter(DateTime.Now.ToString("dd.MM.yyyy."));
-            })
+            report
             .PagesHeader(header => {
                 header.CacheHeader(cache: true);
                 header.DefaultHeader(defaultHeader => {
@@ -224,6 +237,10 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Generates a PDF report of all projects.
+        /// </summary>
+        /// <returns>An asynchronous task that returns a PDF file download result.</returns>
         public async Task<IActionResult> Project()
         {
             string title = "Project List";
@@ -308,6 +325,10 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Generates a PDF report of all documents.
+        /// </summary>
+        /// <returns>An asynchronous task that returns a PDF file download result.</returns>
         public async Task<IActionResult> Document()
         {
             string title = "Documents list";
@@ -383,6 +404,10 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Generates a PDF report of all document types.
+        /// </summary>
+        /// <returns>An asynchronous task that returns a PDF file download result.</returns>
         public async Task<IActionResult> DocumentType()
         {
             string title = "Document Type List";
@@ -439,6 +464,11 @@ namespace RPPP_WebApp.Controllers
         }
 
 
+        /// <summary>
+        /// Creates a basic PDF report setup with a given title.
+        /// </summary>
+        /// <param name="naslov">The title of the report.</param>
+        /// <returns>A configured PdfReport object.</returns>
         private PdfReport CreateReport(string naslov)
         {
             var pdf = new PdfReport();
@@ -477,6 +507,10 @@ namespace RPPP_WebApp.Controllers
             return pdf;
         }
 
+        /// <summary>
+        /// Generates a master-detail PDF report for project documents.
+        /// </summary>
+        /// <returns>An asynchronous task that returns a PDF file download result.</returns>
         public async Task<IActionResult> MdProjectDocuments()
         {
             string title = "Project Documents";
@@ -578,6 +612,9 @@ namespace RPPP_WebApp.Controllers
                 return NotFound();
         }
 
+        /// <summary>
+        /// Custom class for master-details headers in PDF reports.
+        /// </summary>
         public class MasterDetailsHeaders : IPageHeader
         {
             private string naslov;
@@ -637,7 +674,10 @@ namespace RPPP_WebApp.Controllers
         }
 
 
-
+        /// <summary>
+        /// Generates an Excel report of all projects.
+        /// </summary>
+        /// <returns>An asynchronous task that returns an Excel file download result.</returns>
         public async Task<IActionResult> ProjectExcel()
         {
             var project = await ctx.Project
@@ -679,6 +719,10 @@ namespace RPPP_WebApp.Controllers
             return File(content, ExcelContentType, "projects.xlsx");
         }
 
+        /// <summary>
+        /// Generates an Excel report of all documents.
+        /// </summary>
+        /// <returns>An asynchronous task that returns an Excel file download result.</returns>
         public async Task<IActionResult> DocumentsExcel()
         {
             var documents = await ctx.Document
@@ -712,6 +756,10 @@ namespace RPPP_WebApp.Controllers
             return File(content, ExcelContentType, "documents.xlsx");
         }
 
+        /// <summary>
+        /// Generates an Excel report of all document types.
+        /// </summary>
+        /// <returns>An asynchronous task that returns an Excel file download result.</returns>
         public async Task<IActionResult> DocumentTypeExcel()
         {
             byte[] content;
@@ -735,6 +783,10 @@ namespace RPPP_WebApp.Controllers
             return File(content, ExcelContentType, "document-types.xlsx");
         }
 
+        /// <summary>
+        /// Generates an Excel report of all clients.
+        /// </summary>
+        /// <returns>An asynchronous task that returns an Excel file download result.</returns>
         public async Task<IActionResult> ClientExcel()
         {
             var clients = await ctx.Client
@@ -769,6 +821,11 @@ namespace RPPP_WebApp.Controllers
             return File(content, ExcelContentType, "clients.xlsx");
         }
 
+
+        /// <summary>
+        /// Generates a master-detail Excel report for project documents.
+        /// </summary>
+        /// <returns>An asynchronous task that returns an Excel file download result.</returns>
         public async Task<IActionResult> MasterDetailExcel()
         {
             var projects = await ctx.Project
