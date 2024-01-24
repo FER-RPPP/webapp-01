@@ -9,18 +9,34 @@ using RPPP_WebApp.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace RPPP_WebApp.Controllers {
-	public class ProjectMD4Controller : Controller {
+    /// <summary>
+    /// Controller for managing projects (domain 4 version).
+    /// </summary>
+    public class ProjectMD4Controller : Controller {
 		private readonly Rppp01Context ctx;
     private readonly ILogger<ProjectMD4Controller> logger;
     private readonly AppSettings appData;
 
-		public ProjectMD4Controller(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<ProjectMD4Controller> logger) {
-			this.ctx = ctx;
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProjectMD4Controller"/> class.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
+    /// <param name="options">The application settings options.</param>
+    /// <param name="logger">The logger.</param>
+    public ProjectMD4Controller(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<ProjectMD4Controller> logger) {
+	        this.ctx = ctx;
       this.logger = logger;
       appData = options.Value;
 		}
 
-		public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true) {
+    /// <summary>
+    /// Displays a paginated list of projects.
+    /// </summary>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>The view displaying the paginated list of projects.</returns>
+    public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.Project
                      .AsNoTracking();
@@ -68,13 +84,22 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
 		}
 
+    /// <summary>
+    /// Displays the view for creating a new project.
+    /// </summary>
+    /// <returns>The result of the action.</returns>
     [HttpGet]
     public async Task<IActionResult> Create() {
       await PrepareDropDownLists();
       return View();
     }
 
-        [HttpPost]
+    /// <summary>
+    /// Handles the HTTP POST request for creating a new project.
+    /// </summary>
+    /// <param name="project">The project to be created.</param>
+    /// <returns>The result of the action.</returns>
+    [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Project project) {
       logger.LogTrace(JsonSerializer.Serialize(project));
@@ -102,6 +127,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for deleting a project.
+    /// </summary>
+    /// <param name="id">The ID of the project to be deleted.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sort">The sort option.</param>
+    /// <param name="ascending">The sort direction.</param>
+    /// <returns>The result of the action.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(Guid id, int page = 1, int sort = 1, bool ascending = true) {
@@ -128,7 +161,14 @@ namespace RPPP_WebApp.Controllers {
       return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
     }
 
-
+    /// <summary>
+    /// Displays the view for editing an existing project.
+    /// </summary>
+    /// <param name="id">The ID of the project to be edited.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sort">The sort option.</param>
+    /// <param name="ascending">The sort direction.</param>
+    /// <returns>The result of the action.</returns>
     [HttpGet]
     public async Task<IActionResult> Edit(Guid id, int page = 1, int sort = 1, bool ascending = true) {
       var project = ctx.Project.AsNoTracking().Where(o => o.Id == id).SingleOrDefault();
@@ -145,6 +185,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for updating an existing project.
+    /// </summary>
+    /// <param name="id">The ID of the project to be updated.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sort">The sort option.</param>
+    /// <param name="ascending">The sort direction.</param>
+    /// <returns>The result of the action.</returns>
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(Guid id, int page = 1, int sort = 1, bool ascending = true) {
@@ -187,8 +235,12 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Prepares dropdown lists for form fields.
+    /// </summary>
+    /// <returns>Task representing the asynchronous operation.</returns>
     private async Task PrepareDropDownLists() {
-    var owners = await ctx.Owner
+    var projects = await ctx.Owner
                             .ToListAsync();
 
     var clients = await ctx.Client
@@ -197,9 +249,9 @@ namespace RPPP_WebApp.Controllers {
     var cards = await ctx.ProjectCard
                       .ToListAsync();
 
-    var ownerList = owners.Select(owner => new SelectListItem {
-        Text = $"{owner.Name} {owner.Surname} ({owner.Oib})",
-        Value = owner.Oib
+    var projectList = projects.Select(project => new SelectListItem {
+        Text = $"{project.Name} {project.Surname} ({project.Oib})",
+        Value = project.Oib
     }).ToList();
 
     var clientList = clients.Select(client => new SelectListItem {
@@ -212,7 +264,7 @@ namespace RPPP_WebApp.Controllers {
         Value = card.Iban
     }).ToList();
 
-    ViewBag.Owners = ownerList;
+    ViewBag.Owners = projectList;
     ViewBag.Clients = clientList;
     ViewBag.Cards = cardList;
     }

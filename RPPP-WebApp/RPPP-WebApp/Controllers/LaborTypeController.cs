@@ -8,17 +8,33 @@ using RPPP_WebApp.Model;
 using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers {
-  public class LaborTypeController : Controller {
+    /// <summary>
+    /// Controller for managing labor types.
+    /// </summary>
+    public class LaborTypeController : Controller {
     private readonly Rppp01Context ctx;
     private readonly ILogger<LaborTypeController> logger;
     private readonly AppSettings appData;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="LaborTypeController"/> class.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
+    /// <param name="options">Application settings.</param>
+    /// <param name="logger">Logger instance.</param>
     public LaborTypeController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<LaborTypeController> logger) {
       this.ctx = ctx;
       this.logger = logger;
       appData = options.Value;
     }
 
+    /// <summary>
+    /// Displays a paginated list of labor types.
+    /// </summary>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>The view displaying the paginated list of labor types.</returns>
     public IActionResult Index(int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.LaborType
@@ -59,12 +75,20 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
     }
 
-
+    /// <summary>
+    /// Displays the form for creating a new labor type.
+    /// </summary>
+    /// <returns>The view for creating a new labor type.</returns>
     [HttpGet]
     public IActionResult Create() {
       return View();
     }
 
+    /// <summary>
+    /// Handles the submission of the new labor type form.
+    /// </summary>
+    /// <param name="laborType">The labor type data from the form.</param>
+    /// <returns>Redirects to the labor type index on success; returns the form on failure.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create(LaborType laborType) {
@@ -90,6 +114,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Deletes a labor type based on its ID.
+    /// </summary>
+    /// <param name="id">The ID of the labor type to be deleted.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Redirects to the labor type index after deletion.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(Guid id, int page = 1, int sort = 1, bool ascending = true) {
@@ -116,7 +148,14 @@ namespace RPPP_WebApp.Controllers {
       return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
     }
 
-
+    /// <summary>
+    /// Displays the form for editing an existing labor type.
+    /// </summary>
+    /// <param name="id">The ID of the labor type to be edited.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>The view for editing an existing labor type.</returns>
     [HttpGet]
     public IActionResult Edit(Guid id, int page = 1, int sort = 1, bool ascending = true) {
       var laborType = ctx.LaborType.AsNoTracking().Where(o => o.Id == id).SingleOrDefault();
@@ -132,6 +171,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the submission of the edited labor type form.
+    /// </summary>
+    /// <param name="id">The ID of the labor type to be updated.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Redirects to the labor type index on success; returns the form on failure.</returns>
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(Guid id, int page = 1, int sort = 1, bool ascending = true) {

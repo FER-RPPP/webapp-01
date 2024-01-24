@@ -2,7 +2,17 @@
 using System.Linq.Expressions;
 
 namespace RPPP_WebApp.Extensions.Selectors {
-  public static class ProjectMD4Sort {
+    /// <summary>
+    /// Extension class for sorting operations on IQueryable of Project entities.
+    /// </summary>
+    public static class ProjectMD4Sort {
+    /// <summary>
+    /// Applies sorting to the IQueryable of Project entities based on the specified sort order and direction.
+    /// </summary>
+    /// <param name="query">The IQueryable of Project entities.</param>
+    /// <param name="sort">The sort order.</param>
+    /// <param name="ascending">True for ascending order, false for descending order.</param>
+    /// <returns>The sorted IQueryable of Project entities.</returns>
     public static IQueryable<Project> ApplySort(this IQueryable<Project> query, int sort, bool ascending) {
       Expression<Func<Project, object>> orderSelector = sort switch {
         1 => o => o.Name,
