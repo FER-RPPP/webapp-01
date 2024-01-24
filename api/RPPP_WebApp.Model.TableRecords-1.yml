@@ -1,0 +1,596 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Model.TableRecords`1
+  commentId: T:RPPP_WebApp.Model.TableRecords`1
+  id: TableRecords`1
+  parent: RPPP_WebApp.Model
+  children:
+  - RPPP_WebApp.Model.TableRecords`1.#ctor(System.Int32,System.Collections.Generic.List{`0})
+  - RPPP_WebApp.Model.TableRecords`1.Records
+  - RPPP_WebApp.Model.TableRecords`1.TotalRecordCount
+  langs:
+  - csharp
+  - vb
+  name: TableRecords<T>
+  nameWithType: TableRecords<T>
+  fullName: RPPP_WebApp.Model.TableRecords<T>
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/TableRecords.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: TableRecords
+    path: RPPP-WebApp/RPPP-WebApp/Model/TableRecords.cs
+    startLine: 2
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: 'public class TableRecords<T> : JTableAjaxResult'
+    typeParameters:
+    - id: T
+    content.vb: Public Class TableRecords(Of T) Inherits JTableAjaxResult
+  inheritance:
+  - System.Object
+  - RPPP_WebApp.Model.JTableAjaxResult
+  inheritedMembers:
+  - RPPP_WebApp.Model.JTableAjaxResult.Result
+  - RPPP_WebApp.Model.JTableAjaxResult.Message
+  - RPPP_WebApp.Model.JTableAjaxResult.OK
+  - RPPP_WebApp.Model.JTableAjaxResult.Error(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: TableRecords(Of T)
+  fullName.vb: RPPP_WebApp.Model.TableRecords(Of T)
+  name.vb: TableRecords(Of T)
+- uid: RPPP_WebApp.Model.TableRecords`1.Records
+  commentId: P:RPPP_WebApp.Model.TableRecords`1.Records
+  id: Records
+  parent: RPPP_WebApp.Model.TableRecords`1
+  langs:
+  - csharp
+  - vb
+  name: Records
+  nameWithType: TableRecords<T>.Records
+  fullName: RPPP_WebApp.Model.TableRecords<T>.Records
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/TableRecords.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Records
+    path: RPPP-WebApp/RPPP-WebApp/Model/TableRecords.cs
+    startLine: 4
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public List<T> Records { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Public Property Records As List(Of T)
+  overload: RPPP_WebApp.Model.TableRecords`1.Records*
+  nameWithType.vb: TableRecords(Of T).Records
+  fullName.vb: RPPP_WebApp.Model.TableRecords(Of T).Records
+- uid: RPPP_WebApp.Model.TableRecords`1.TotalRecordCount
+  commentId: P:RPPP_WebApp.Model.TableRecords`1.TotalRecordCount
+  id: TotalRecordCount
+  parent: RPPP_WebApp.Model.TableRecords`1
+  langs:
+  - csharp
+  - vb
+  name: TotalRecordCount
+  nameWithType: TableRecords<T>.TotalRecordCount
+  fullName: RPPP_WebApp.Model.TableRecords<T>.TotalRecordCount
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/TableRecords.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: TotalRecordCount
+    path: RPPP-WebApp/RPPP-WebApp/Model/TableRecords.cs
+    startLine: 5
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public int TotalRecordCount { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TotalRecordCount As Integer
+  overload: RPPP_WebApp.Model.TableRecords`1.TotalRecordCount*
+  nameWithType.vb: TableRecords(Of T).TotalRecordCount
+  fullName.vb: RPPP_WebApp.Model.TableRecords(Of T).TotalRecordCount
+- uid: RPPP_WebApp.Model.TableRecords`1.#ctor(System.Int32,System.Collections.Generic.List{`0})
+  commentId: M:RPPP_WebApp.Model.TableRecords`1.#ctor(System.Int32,System.Collections.Generic.List{`0})
+  id: '#ctor(System.Int32,System.Collections.Generic.List{`0})'
+  parent: RPPP_WebApp.Model.TableRecords`1
+  langs:
+  - csharp
+  - vb
+  name: TableRecords(int, List<T>)
+  nameWithType: TableRecords<T>.TableRecords(int, List<T>)
+  fullName: RPPP_WebApp.Model.TableRecords<T>.TableRecords(int, System.Collections.Generic.List<T>)
+  type: Constructor
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/TableRecords.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: .ctor
+    path: RPPP-WebApp/RPPP-WebApp/Model/TableRecords.cs
+    startLine: 6
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public TableRecords(int totalCount, List<T> records)
+    parameters:
+    - id: totalCount
+      type: System.Int32
+    - id: records
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Public Sub New(totalCount As Integer, records As List(Of T))
+  overload: RPPP_WebApp.Model.TableRecords`1.#ctor*
+  nameWithType.vb: TableRecords(Of T).New(Integer, List(Of T))
+  fullName.vb: RPPP_WebApp.Model.TableRecords(Of T).New(Integer, System.Collections.Generic.List(Of T))
+  name.vb: New(Integer, List(Of T))
+references:
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: RPPP_WebApp.Model.JTableAjaxResult
+  commentId: T:RPPP_WebApp.Model.JTableAjaxResult
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.JTableAjaxResult.html
+  name: JTableAjaxResult
+  nameWithType: JTableAjaxResult
+  fullName: RPPP_WebApp.Model.JTableAjaxResult
+- uid: RPPP_WebApp.Model.JTableAjaxResult.Result
+  commentId: P:RPPP_WebApp.Model.JTableAjaxResult.Result
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_Result
+  name: Result
+  nameWithType: JTableAjaxResult.Result
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.Result
+- uid: RPPP_WebApp.Model.JTableAjaxResult.Message
+  commentId: P:RPPP_WebApp.Model.JTableAjaxResult.Message
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_Message
+  name: Message
+  nameWithType: JTableAjaxResult.Message
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.Message
+- uid: RPPP_WebApp.Model.JTableAjaxResult.OK
+  commentId: P:RPPP_WebApp.Model.JTableAjaxResult.OK
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_OK
+  name: OK
+  nameWithType: JTableAjaxResult.OK
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.OK
+- uid: RPPP_WebApp.Model.JTableAjaxResult.Error(System.String)
+  commentId: M:RPPP_WebApp.Model.JTableAjaxResult.Error(System.String)
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  isExternal: true
+  href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_Error_System_String_
+  name: Error(string)
+  nameWithType: JTableAjaxResult.Error(string)
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.Error(string)
+  nameWithType.vb: JTableAjaxResult.Error(String)
+  fullName.vb: RPPP_WebApp.Model.JTableAjaxResult.Error(String)
+  name.vb: Error(String)
+  spec.csharp:
+  - uid: RPPP_WebApp.Model.JTableAjaxResult.Error(System.String)
+    name: Error
+    href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_Error_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Model.JTableAjaxResult.Error(System.String)
+    name: Error
+    href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_Error_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RPPP_WebApp.Model.TableRecords`1.Records*
+  commentId: Overload:RPPP_WebApp.Model.TableRecords`1.Records
+  href: RPPP_WebApp.Model.TableRecords-1.html#RPPP_WebApp_Model_TableRecords_1_Records
+  name: Records
+  nameWithType: TableRecords<T>.Records
+  fullName: RPPP_WebApp.Model.TableRecords<T>.Records
+  nameWithType.vb: TableRecords(Of T).Records
+  fullName.vb: RPPP_WebApp.Model.TableRecords(Of T).Records
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: RPPP_WebApp.Model.TableRecords`1.TotalRecordCount*
+  commentId: Overload:RPPP_WebApp.Model.TableRecords`1.TotalRecordCount
+  href: RPPP_WebApp.Model.TableRecords-1.html#RPPP_WebApp_Model_TableRecords_1_TotalRecordCount
+  name: TotalRecordCount
+  nameWithType: TableRecords<T>.TotalRecordCount
+  fullName: RPPP_WebApp.Model.TableRecords<T>.TotalRecordCount
+  nameWithType.vb: TableRecords(Of T).TotalRecordCount
+  fullName.vb: RPPP_WebApp.Model.TableRecords(Of T).TotalRecordCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: RPPP_WebApp.Model.TableRecords`1.#ctor*
+  commentId: Overload:RPPP_WebApp.Model.TableRecords`1.#ctor
+  href: RPPP_WebApp.Model.TableRecords-1.html#RPPP_WebApp_Model_TableRecords_1__ctor_System_Int32_System_Collections_Generic_List__0__
+  name: TableRecords
+  nameWithType: TableRecords<T>.TableRecords
+  fullName: RPPP_WebApp.Model.TableRecords<T>.TableRecords
+  nameWithType.vb: TableRecords(Of T).New
+  fullName.vb: RPPP_WebApp.Model.TableRecords(Of T).New
+  name.vb: New

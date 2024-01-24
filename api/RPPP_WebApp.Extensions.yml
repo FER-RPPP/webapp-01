@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Extensions
+  commentId: N:RPPP_WebApp.Extensions
+  id: RPPP_WebApp.Extensions
+  children:
+  - RPPP_WebApp.Extensions.ExcelCreator
+  - RPPP_WebApp.Extensions.ExceptionExtensions
+  langs:
+  - csharp
+  - vb
+  name: RPPP_WebApp.Extensions
+  nameWithType: RPPP_WebApp.Extensions
+  fullName: RPPP_WebApp.Extensions
+  type: Namespace
+  assemblies:
+  - RPPP-WebApp
+references:
+- uid: RPPP_WebApp.Extensions.ExcelCreator
+  commentId: T:RPPP_WebApp.Extensions.ExcelCreator
+  parent: RPPP_WebApp.Extensions
+  href: RPPP_WebApp.Extensions.ExcelCreator.html
+  name: ExcelCreator
+  nameWithType: ExcelCreator
+  fullName: RPPP_WebApp.Extensions.ExcelCreator
+- uid: RPPP_WebApp.Extensions.ExceptionExtensions
+  commentId: T:RPPP_WebApp.Extensions.ExceptionExtensions
+  href: RPPP_WebApp.Extensions.ExceptionExtensions.html
+  name: ExceptionExtensions
+  nameWithType: ExceptionExtensions
+  fullName: RPPP_WebApp.Extensions.ExceptionExtensions
+- uid: RPPP_WebApp.Extensions
+  commentId: N:RPPP_WebApp.Extensions
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Extensions
+  nameWithType: RPPP_WebApp.Extensions
+  fullName: RPPP_WebApp.Extensions
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Extensions
+    name: Extensions
+    href: RPPP_WebApp.Extensions.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Extensions
+    name: Extensions
+    href: RPPP_WebApp.Extensions.html

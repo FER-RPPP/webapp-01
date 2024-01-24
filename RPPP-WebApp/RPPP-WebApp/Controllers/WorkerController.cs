@@ -11,11 +11,22 @@ using System.Text.Json;
 
 namespace RPPP_WebApp.Controllers
 {
+    /// <summary>
+    /// Controller for managing workers.
+    /// </summary>
     public class WorkerController : Controller
     {
         private readonly Rppp01Context ctx;
         private readonly ILogger<TransactionTypeController> logger;
         private readonly AppSettings appData;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkerController"/> class.
+        /// </summary>
+        /// <param name="ctx">The database context.</param>
+        /// <param name="options">Application settings.</param>
+        /// <param name="logger">The logger.</param>
+        /// <returns>A new instance of the <see cref="WorkerController"/> class.</returns>
         public WorkerController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<TransactionTypeController> logger)
         {
             this.ctx = ctx;
@@ -23,6 +34,14 @@ namespace RPPP_WebApp.Controllers
             appData = options.Value;
         }
 
+        /// <summary>
+        /// Displays the index page for workers.
+        /// </summary>
+        /// <param name="filter">Filter parameters.</param>
+        /// <param name="page">Page number.</param>
+        /// <param name="sort">Sorting option.</param>
+        /// <param name="ascending">Sort order.</param>
+        /// <returns>Worker Index view.</returns>
         public async Task<IActionResult> Index(WorkerFilter filter, int page = 1, int sort = 1, bool ascending = true)
         {
             var query = ctx.Worker
@@ -86,13 +105,22 @@ namespace RPPP_WebApp.Controllers
 
             return View(model);
         }
+
+        /// <summary>
+        /// Displays the view for adding a new worker.
+        /// </summary>
+        /// <returns>Worker Create view.</returns>
         [HttpGet]
         public async Task<IActionResult> Create()
         {
             await PrepareDropDownLists();
             return View();
         }
-
+        /// <summary>
+        /// Handles the HTTP POST request for adding a new worker.
+        /// </summary>
+        /// <param name="worker">The data of the worker to be added.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns the create view with error messages.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Worker worker)
@@ -124,7 +152,15 @@ namespace RPPP_WebApp.Controllers
                 await PrepareDropDownLists();
                 return View(worker);
             }
-        }
+        }       
+        /// <summary>
+        /// Opens the form for editing data about an existing worker.
+        /// </summary>
+        /// <param name="id">The unique identifier of the worker to edit.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Worker edit view.</returns>
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
@@ -144,8 +180,18 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+
+
+        /// <summary>
+        /// Handles the HTTP POST request for updating data about an existing worker.
+        /// </summary>
+        /// <param name="id">The unique identifier of the worker to be updated.</param>
+        /// <param name="page">The current page number.</param>
+        /// <param name="sort">The sort order.</param>
+        /// <param name="ascending">Whether the sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns the edit view with error messages.</returns>
         [HttpPost, ActionName("Edit")]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken] 
         public async Task<IActionResult> Update(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
             try
@@ -195,6 +241,14 @@ namespace RPPP_WebApp.Controllers
                 return RedirectToAction(nameof(Edit), new { id = id, page = page, sort = sort, ascending = ascending });
             }
         }
+        /// <summary>
+        /// Deletes a worker with the specified id.
+        /// </summary>
+        /// <param name="Id">The unique identifier of the worker to remove.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to an updated index view.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(Guid Id, int page = 1, int sort = 1, bool ascending = true)
@@ -227,6 +281,14 @@ namespace RPPP_WebApp.Controllers
             return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
         }
 
+        /// <summary>
+        /// Displays details of a specific worker.
+        /// </summary>
+        /// <param name="id">The unique identifier of the worker.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The details view for a worker.</returns>
         public async Task<IActionResult> Details(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
 
@@ -271,6 +333,11 @@ namespace RPPP_WebApp.Controllers
 
             return View(model);
         }
+        /// <summary>
+        /// Gets details of a partnership with the specified ID.
+        /// </summary>
+        /// <param name="id">The unique id of the partnership.</param>
+        /// <returns>Partial view with details of the partnership.</returns>
         public async Task<IActionResult> GetProjectPartner(Guid id)
         {
             var partner = await ctx.ProjectPartner
@@ -300,7 +367,11 @@ namespace RPPP_WebApp.Controllers
         }
 
 
-
+        /// <summary>
+        /// Opens the form for editing an existing partnership.
+        /// </summary>
+        /// <param name="id">The unique identifier of the partnership to edit.</param>
+        /// <returns>The edit view for a partnership.</returns>
         public async Task<IActionResult> EditProjectPartner(Guid id)
         {
             var partner = await ctx.ProjectPartner
@@ -329,6 +400,11 @@ namespace RPPP_WebApp.Controllers
             }
 
         }
+        /// <summary>
+        /// Handles the HTTP POST request for updating an existing partnership.
+        /// </summary>
+        /// <param name="partner">The updated partnership data.</param>
+        /// <returns>Redirects to the get partnership view if successful, otherwise returns to the edit partnership view.</returns>
         [HttpPost]
         public async Task<IActionResult> EditProjectPartner(ProjectPartnerViewModel partner)
         {
@@ -372,6 +448,12 @@ namespace RPPP_WebApp.Controllers
                 return PartialView(partner);
             }
         }
+
+        /// <summary>
+        /// Deletes a specific partnership.
+        /// </summary>
+        /// <param name="id">The unique identifier of the partnership to delete.</param>
+        /// <returns>An empty result if successful, otherwise redirects to the get partnership view.</returns>
         public async Task<IActionResult> DeleteProjectPartner(Guid id)
         {
 
@@ -403,13 +485,21 @@ namespace RPPP_WebApp.Controllers
             return TempData[Constants.ErrorOccurred].Equals(false) ? new EmptyResult() : await GetProjectPartner(id);
 
         }
+        /// <summary>
+        /// Displays the form for adding a new partnership.
+        /// </summary>
+        /// <returns>AddProjectPartner partial view with the form for adding a new partnership.</returns>
         [HttpGet]
         public async Task<IActionResult> AddProjectPartner()
         {
             await PrepareDropDownLists();
             return PartialView();
         }
-
+        /// <summary>
+        /// Handles the HTTP POST request for adding a new partnership.
+        /// </summary>
+        /// <param name="partner">The data about the new partnership.</param>
+        /// <returns>Redirects to the workers details view if successful, otherwise returns the AddProjectPartner partial view with error messages.</returns>
         [HttpPost]
         public async Task<IActionResult> AddProjectPartner(ProjectPartner partner)
         {

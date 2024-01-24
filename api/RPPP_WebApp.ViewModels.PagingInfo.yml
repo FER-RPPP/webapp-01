@@ -1,0 +1,550 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.ViewModels.PagingInfo
+  commentId: T:RPPP_WebApp.ViewModels.PagingInfo
+  id: PagingInfo
+  parent: RPPP_WebApp.ViewModels
+  children:
+  - RPPP_WebApp.ViewModels.PagingInfo.Ascending
+  - RPPP_WebApp.ViewModels.PagingInfo.CurrentPage
+  - RPPP_WebApp.ViewModels.PagingInfo.ItemsPerPage
+  - RPPP_WebApp.ViewModels.PagingInfo.Sort
+  - RPPP_WebApp.ViewModels.PagingInfo.TotalItems
+  - RPPP_WebApp.ViewModels.PagingInfo.TotalPages
+  langs:
+  - csharp
+  - vb
+  name: PagingInfo
+  nameWithType: PagingInfo
+  fullName: RPPP_WebApp.ViewModels.PagingInfo
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: PagingInfo
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+    startLine: 4
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Represents paging information for a collection of items.
+  example: []
+  syntax:
+    content: public class PagingInfo
+    content.vb: Public Class PagingInfo
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RPPP_WebApp.ViewModels.PagingInfo.TotalItems
+  commentId: P:RPPP_WebApp.ViewModels.PagingInfo.TotalItems
+  id: TotalItems
+  parent: RPPP_WebApp.ViewModels.PagingInfo
+  langs:
+  - csharp
+  - vb
+  name: TotalItems
+  nameWithType: PagingInfo.TotalItems
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.TotalItems
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: TotalItems
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+    startLine: 8
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the total number of items.
+  example: []
+  syntax:
+    content: public int TotalItems { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TotalItems As Integer
+  overload: RPPP_WebApp.ViewModels.PagingInfo.TotalItems*
+- uid: RPPP_WebApp.ViewModels.PagingInfo.ItemsPerPage
+  commentId: P:RPPP_WebApp.ViewModels.PagingInfo.ItemsPerPage
+  id: ItemsPerPage
+  parent: RPPP_WebApp.ViewModels.PagingInfo
+  langs:
+  - csharp
+  - vb
+  name: ItemsPerPage
+  nameWithType: PagingInfo.ItemsPerPage
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.ItemsPerPage
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ItemsPerPage
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+    startLine: 12
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the number of items displayed per page.
+  example: []
+  syntax:
+    content: public int ItemsPerPage { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ItemsPerPage As Integer
+  overload: RPPP_WebApp.ViewModels.PagingInfo.ItemsPerPage*
+- uid: RPPP_WebApp.ViewModels.PagingInfo.CurrentPage
+  commentId: P:RPPP_WebApp.ViewModels.PagingInfo.CurrentPage
+  id: CurrentPage
+  parent: RPPP_WebApp.ViewModels.PagingInfo
+  langs:
+  - csharp
+  - vb
+  name: CurrentPage
+  nameWithType: PagingInfo.CurrentPage
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.CurrentPage
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: CurrentPage
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+    startLine: 16
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the current page number.
+  example: []
+  syntax:
+    content: public int CurrentPage { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CurrentPage As Integer
+  overload: RPPP_WebApp.ViewModels.PagingInfo.CurrentPage*
+- uid: RPPP_WebApp.ViewModels.PagingInfo.Ascending
+  commentId: P:RPPP_WebApp.ViewModels.PagingInfo.Ascending
+  id: Ascending
+  parent: RPPP_WebApp.ViewModels.PagingInfo
+  langs:
+  - csharp
+  - vb
+  name: Ascending
+  nameWithType: PagingInfo.Ascending
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.Ascending
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Ascending
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+    startLine: 20
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets a value indicating whether the sort order is ascending.
+  example: []
+  syntax:
+    content: public bool Ascending { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Ascending As Boolean
+  overload: RPPP_WebApp.ViewModels.PagingInfo.Ascending*
+- uid: RPPP_WebApp.ViewModels.PagingInfo.TotalPages
+  commentId: P:RPPP_WebApp.ViewModels.PagingInfo.TotalPages
+  id: TotalPages
+  parent: RPPP_WebApp.ViewModels.PagingInfo
+  langs:
+  - csharp
+  - vb
+  name: TotalPages
+  nameWithType: PagingInfo.TotalPages
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.TotalPages
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: TotalPages
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+    startLine: 24
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets the total number of pages based on the total items and items per page.
+  example: []
+  syntax:
+    content: public int TotalPages { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property TotalPages As Integer
+  overload: RPPP_WebApp.ViewModels.PagingInfo.TotalPages*
+- uid: RPPP_WebApp.ViewModels.PagingInfo.Sort
+  commentId: P:RPPP_WebApp.ViewModels.PagingInfo.Sort
+  id: Sort
+  parent: RPPP_WebApp.ViewModels.PagingInfo
+  langs:
+  - csharp
+  - vb
+  name: Sort
+  nameWithType: PagingInfo.Sort
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.Sort
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Sort
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/PagingInfo.cs
+    startLine: 32
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the sort order.
+  example: []
+  syntax:
+    content: public int Sort { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Sort As Integer
+  overload: RPPP_WebApp.ViewModels.PagingInfo.Sort*
+references:
+- uid: RPPP_WebApp.ViewModels
+  commentId: N:RPPP_WebApp.ViewModels
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.ViewModels
+  nameWithType: RPPP_WebApp.ViewModels
+  fullName: RPPP_WebApp.ViewModels
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.ViewModels
+    name: ViewModels
+    href: RPPP_WebApp.ViewModels.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.ViewModels
+    name: ViewModels
+    href: RPPP_WebApp.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RPPP_WebApp.ViewModels.PagingInfo.TotalItems*
+  commentId: Overload:RPPP_WebApp.ViewModels.PagingInfo.TotalItems
+  href: RPPP_WebApp.ViewModels.PagingInfo.html#RPPP_WebApp_ViewModels_PagingInfo_TotalItems
+  name: TotalItems
+  nameWithType: PagingInfo.TotalItems
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.TotalItems
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: RPPP_WebApp.ViewModels.PagingInfo.ItemsPerPage*
+  commentId: Overload:RPPP_WebApp.ViewModels.PagingInfo.ItemsPerPage
+  href: RPPP_WebApp.ViewModels.PagingInfo.html#RPPP_WebApp_ViewModels_PagingInfo_ItemsPerPage
+  name: ItemsPerPage
+  nameWithType: PagingInfo.ItemsPerPage
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.ItemsPerPage
+- uid: RPPP_WebApp.ViewModels.PagingInfo.CurrentPage*
+  commentId: Overload:RPPP_WebApp.ViewModels.PagingInfo.CurrentPage
+  href: RPPP_WebApp.ViewModels.PagingInfo.html#RPPP_WebApp_ViewModels_PagingInfo_CurrentPage
+  name: CurrentPage
+  nameWithType: PagingInfo.CurrentPage
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.CurrentPage
+- uid: RPPP_WebApp.ViewModels.PagingInfo.Ascending*
+  commentId: Overload:RPPP_WebApp.ViewModels.PagingInfo.Ascending
+  href: RPPP_WebApp.ViewModels.PagingInfo.html#RPPP_WebApp_ViewModels_PagingInfo_Ascending
+  name: Ascending
+  nameWithType: PagingInfo.Ascending
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.Ascending
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: RPPP_WebApp.ViewModels.PagingInfo.TotalPages*
+  commentId: Overload:RPPP_WebApp.ViewModels.PagingInfo.TotalPages
+  href: RPPP_WebApp.ViewModels.PagingInfo.html#RPPP_WebApp_ViewModels_PagingInfo_TotalPages
+  name: TotalPages
+  nameWithType: PagingInfo.TotalPages
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.TotalPages
+- uid: RPPP_WebApp.ViewModels.PagingInfo.Sort*
+  commentId: Overload:RPPP_WebApp.ViewModels.PagingInfo.Sort
+  href: RPPP_WebApp.ViewModels.PagingInfo.html#RPPP_WebApp_ViewModels_PagingInfo_Sort
+  name: Sort
+  nameWithType: PagingInfo.Sort
+  fullName: RPPP_WebApp.ViewModels.PagingInfo.Sort

@@ -1,0 +1,759 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  commentId: T:RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  id: CardTransactionsViewModel
+  parent: RPPP_WebApp.ViewModels
+  children:
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.ActivationDate
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Amount
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Balance
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Date
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Iban
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Id
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Oib
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Owner
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Purpose
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Recipient
+  - RPPP_WebApp.ViewModels.CardTransactionsViewModel.Type
+  langs:
+  - csharp
+  - vb
+  name: CardTransactionsViewModel
+  nameWithType: CardTransactionsViewModel
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: CardTransactionsViewModel
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 4
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Represents a view model for card transactions.
+  example: []
+  syntax:
+    content: public class CardTransactionsViewModel
+    content.vb: Public Class CardTransactionsViewModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Id
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Id
+  id: Id
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: CardTransactionsViewModel.Id
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Id
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Id
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 8
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the unique identifier of the transaction.
+  example: []
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Id*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Iban
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Iban
+  id: Iban
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Iban
+  nameWithType: CardTransactionsViewModel.Iban
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Iban
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Iban
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 12
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the IBAN (International Bank Account Number) associated with the transaction.
+  example: []
+  syntax:
+    content: public string Iban { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Iban As String
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Iban*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Oib
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Oib
+  id: Oib
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Oib
+  nameWithType: CardTransactionsViewModel.Oib
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Oib
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Oib
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 16
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the OIB (Personal Identification Number) associated with the transaction.
+  example: []
+  syntax:
+    content: public string Oib { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Oib As String
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Oib*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Balance
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Balance
+  id: Balance
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Balance
+  nameWithType: CardTransactionsViewModel.Balance
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Balance
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Balance
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 20
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the balance associated with the transaction.
+  example: []
+  syntax:
+    content: public decimal Balance { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: Public Property Balance As Decimal
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Balance*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.ActivationDate
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.ActivationDate
+  id: ActivationDate
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: ActivationDate
+  nameWithType: CardTransactionsViewModel.ActivationDate
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.ActivationDate
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ActivationDate
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 24
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the activation date of the card.
+  example: []
+  syntax:
+    content: public DateTime ActivationDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property ActivationDate As Date
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.ActivationDate*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Recipient
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Recipient
+  id: Recipient
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Recipient
+  nameWithType: CardTransactionsViewModel.Recipient
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Recipient
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Recipient
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 28
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the recipient of the transaction.
+  example: []
+  syntax:
+    content: public string Recipient { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Recipient As String
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Recipient*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Amount
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Amount
+  id: Amount
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: CardTransactionsViewModel.Amount
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Amount
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Amount
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 32
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the amount of the transaction.
+  example: []
+  syntax:
+    content: public decimal Amount { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: Public Property Amount As Decimal
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Amount*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Date
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Date
+  id: Date
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Date
+  nameWithType: CardTransactionsViewModel.Date
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Date
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Date
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 36
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the date of the transaction.
+  example: []
+  syntax:
+    content: public DateTime Date { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property [Date] As Date
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Date*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Type
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Type
+  id: Type
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: CardTransactionsViewModel.Type
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Type
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Type
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 40
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the type of the transaction.
+  example: []
+  syntax:
+    content: public string Type { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Type As String
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Type*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Purpose
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Purpose
+  id: Purpose
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Purpose
+  nameWithType: CardTransactionsViewModel.Purpose
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Purpose
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Purpose
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 44
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the purpose of the transaction.
+  example: []
+  syntax:
+    content: public string Purpose { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Purpose As String
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Purpose*
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Owner
+  commentId: P:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Owner
+  id: Owner
+  parent: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: CardTransactionsViewModel.Owner
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Owner
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Owner
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/CardTransactionsViewModel.cs
+    startLine: 48
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  summary: Gets or sets the owner of the card associated with the transaction.
+  example: []
+  syntax:
+    content: public string Owner { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Owner As String
+  overload: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Owner*
+references:
+- uid: RPPP_WebApp.ViewModels
+  commentId: N:RPPP_WebApp.ViewModels
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.ViewModels
+  nameWithType: RPPP_WebApp.ViewModels
+  fullName: RPPP_WebApp.ViewModels
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.ViewModels
+    name: ViewModels
+    href: RPPP_WebApp.ViewModels.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.ViewModels
+    name: ViewModels
+    href: RPPP_WebApp.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Id*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Id
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Id
+  name: Id
+  nameWithType: CardTransactionsViewModel.Id
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Iban*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Iban
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Iban
+  name: Iban
+  nameWithType: CardTransactionsViewModel.Iban
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Iban
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Oib*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Oib
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Oib
+  name: Oib
+  nameWithType: CardTransactionsViewModel.Oib
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Oib
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Balance*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Balance
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Balance
+  name: Balance
+  nameWithType: CardTransactionsViewModel.Balance
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Balance
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.ActivationDate*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.ActivationDate
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_ActivationDate
+  name: ActivationDate
+  nameWithType: CardTransactionsViewModel.ActivationDate
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.ActivationDate
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Recipient*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Recipient
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Recipient
+  name: Recipient
+  nameWithType: CardTransactionsViewModel.Recipient
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Recipient
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Amount*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Amount
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Amount
+  name: Amount
+  nameWithType: CardTransactionsViewModel.Amount
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Amount
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Date*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Date
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Date
+  name: Date
+  nameWithType: CardTransactionsViewModel.Date
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Date
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Type*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Type
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Type
+  name: Type
+  nameWithType: CardTransactionsViewModel.Type
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Type
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Purpose*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Purpose
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Purpose
+  name: Purpose
+  nameWithType: CardTransactionsViewModel.Purpose
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Purpose
+- uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Owner*
+  commentId: Overload:RPPP_WebApp.ViewModels.CardTransactionsViewModel.Owner
+  href: RPPP_WebApp.ViewModels.CardTransactionsViewModel.html#RPPP_WebApp_ViewModels_CardTransactionsViewModel_Owner
+  name: Owner
+  nameWithType: CardTransactionsViewModel.Owner
+  fullName: RPPP_WebApp.ViewModels.CardTransactionsViewModel.Owner

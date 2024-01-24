@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace RPPP_WebApp.Controllers
 {
+    /// <summary>
+    /// Controller for managing reports related to the Worker entity.
+    /// </summary>
     public class ReportKSController : Controller
     {
         private readonly Rppp01Context ctx;
@@ -16,6 +19,12 @@ namespace RPPP_WebApp.Controllers
         private readonly ILogger<ReportMMController> logger;
         private const string ExcelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReportKSController"/> class.
+        /// </summary>
+        /// <param name="ctx">The database context.</param>
+        /// <param name="environment">The hosting environment.</param>
+        /// <param name="logger">The logger.</param>
         public ReportKSController(Rppp01Context ctx, IWebHostEnvironment environment, ILogger<ReportMMController> logger)
         {
             this.ctx = ctx;
@@ -23,10 +32,20 @@ namespace RPPP_WebApp.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Displays the index view.
+        /// </summary>
+        /// <returns>The index view.</returns>
         public IActionResult Index()
         {
             return View();
         }
+
+        /// <summary>
+        /// Imports workers from an Excel file.
+        /// </summary>
+        /// <param name="file">The Excel file containing worker data.</param>
+        /// <returns>The result of the import operation.</returns>
         public async Task<IActionResult> ImportWorkers(IFormFile file)
         {
             logger.LogInformation("Importing workers...");
@@ -114,6 +133,10 @@ namespace RPPP_WebApp.Controllers
             return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "ImportedWorkers.xlsx");
         }
 
+        /// <summary>
+        /// Exports workers to a PDF file.
+        /// </summary>
+        /// <returns>A PDF file containing workers or not found response.</returns>
         public async Task<IActionResult> Workers()
         {
             logger.LogInformation("Exporting Workers in PDF...");
@@ -207,6 +230,10 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Exports workers to an Excel file.
+        /// </summary>
+        /// <returns>An Excel file containing workers.</returns>
         public async Task<IActionResult> WorkersExcel()
         {
             logger.LogInformation("Exporting Workers in Excel...");
@@ -253,6 +280,10 @@ namespace RPPP_WebApp.Controllers
 
 
 
+        /// <summary>
+        /// Exports partners to an Excel file.
+        /// </summary>
+        /// <returns>An Excel file containing partners.</returns>
         public async Task<IActionResult> WorkersByProjectExcel()
         {
             logger.LogInformation("Exporting Workers By Project in Excel...");
@@ -323,11 +354,15 @@ namespace RPPP_WebApp.Controllers
             return File(content, ExcelContentType, "WorkersByProject.xlsx");
         }
 
-    
 
 
 
-    private PdfReport CreateReport(string naslov)
+        /// <summary>
+        /// Creates a PDF report with specified document preferences and main table template.
+        /// </summary>
+        /// <param name="naslov">The title of the PDF document.</param>
+        /// <returns>An instance of the PdfReport class.</returns>
+        private PdfReport CreateReport(string naslov)
         {
             var pdf = new PdfReport();
 

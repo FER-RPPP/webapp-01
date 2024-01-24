@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp
+  commentId: N:RPPP_WebApp
+  id: RPPP_WebApp
+  children:
+  - RPPP_WebApp.AppSettings
+  - RPPP_WebApp.Constants
+  - RPPP_WebApp.StartupExtensions
+  langs:
+  - csharp
+  - vb
+  name: RPPP_WebApp
+  nameWithType: RPPP_WebApp
+  fullName: RPPP_WebApp
+  type: Namespace
+  assemblies:
+  - RPPP-WebApp
+references:
+- uid: RPPP_WebApp.AppSettings
+  commentId: T:RPPP_WebApp.AppSettings
+  href: RPPP_WebApp.AppSettings.html
+  name: AppSettings
+  nameWithType: AppSettings
+  fullName: RPPP_WebApp.AppSettings
+- uid: RPPP_WebApp.Constants
+  commentId: T:RPPP_WebApp.Constants
+  href: RPPP_WebApp.Constants.html
+  name: Constants
+  nameWithType: Constants
+  fullName: RPPP_WebApp.Constants
+- uid: RPPP_WebApp.StartupExtensions
+  commentId: T:RPPP_WebApp.StartupExtensions
+  href: RPPP_WebApp.StartupExtensions.html
+  name: StartupExtensions
+  nameWithType: StartupExtensions
+  fullName: RPPP_WebApp.StartupExtensions

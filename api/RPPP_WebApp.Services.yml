@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Services
+  commentId: N:RPPP_WebApp.Services
+  id: RPPP_WebApp.Services
+  children:
+  - RPPP_WebApp.Services.IProductService
+  langs:
+  - csharp
+  - vb
+  name: RPPP_WebApp.Services
+  nameWithType: RPPP_WebApp.Services
+  fullName: RPPP_WebApp.Services
+  type: Namespace
+  assemblies:
+  - RPPP-WebApp
+references:
+- uid: RPPP_WebApp.Services.IProductService
+  commentId: T:RPPP_WebApp.Services.IProductService
+  parent: RPPP_WebApp.Services
+  href: RPPP_WebApp.Services.IProductService.html
+  name: IProductService
+  nameWithType: IProductService
+  fullName: RPPP_WebApp.Services.IProductService
+- uid: RPPP_WebApp.Services
+  commentId: N:RPPP_WebApp.Services
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Services
+  nameWithType: RPPP_WebApp.Services
+  fullName: RPPP_WebApp.Services
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Services
+    name: Services
+    href: RPPP_WebApp.Services.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Services
+    name: Services
+    href: RPPP_WebApp.Services.html

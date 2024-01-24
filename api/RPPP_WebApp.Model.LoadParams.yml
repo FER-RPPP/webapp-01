@@ -1,0 +1,673 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Model.LoadParams
+  commentId: T:RPPP_WebApp.Model.LoadParams
+  id: LoadParams
+  parent: RPPP_WebApp.Model
+  children:
+  - RPPP_WebApp.Model.LoadParams.Descending
+  - RPPP_WebApp.Model.LoadParams.Filter
+  - RPPP_WebApp.Model.LoadParams.Rows
+  - RPPP_WebApp.Model.LoadParams.Sort
+  - RPPP_WebApp.Model.LoadParams.SortColumn
+  - RPPP_WebApp.Model.LoadParams.StartIndex
+  langs:
+  - csharp
+  - vb
+  name: LoadParams
+  nameWithType: LoadParams
+  fullName: RPPP_WebApp.Model.LoadParams
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: LoadParams
+    path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+    startLine: 9
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  summary: Map lazy loading parameters
+  example: []
+  syntax:
+    content: public class LoadParams
+    content.vb: Public Class LoadParams
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RPPP_WebApp.Model.LoadParams.StartIndex
+  commentId: P:RPPP_WebApp.Model.LoadParams.StartIndex
+  id: StartIndex
+  parent: RPPP_WebApp.Model.LoadParams
+  langs:
+  - csharp
+  - vb
+  name: StartIndex
+  nameWithType: LoadParams.StartIndex
+  fullName: RPPP_WebApp.Model.LoadParams.StartIndex
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: StartIndex
+    path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+    startLine: 14
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  summary: Starting row index (i.e. how many rows to skip)
+  example: []
+  syntax:
+    content: >-
+      [FromQuery(Name = "jtStartIndex")]
+
+      [Required]
+
+      [Range(0, 2147483647)]
+
+      public int StartIndex { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <FromQuery(Name:="jtStartIndex")>
+
+      <Required>
+
+      <Range(0, 2147483647)>
+
+      Public Property StartIndex As Integer
+  overload: RPPP_WebApp.Model.LoadParams.StartIndex*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.FromQueryAttribute
+    ctor: Microsoft.AspNetCore.Mvc.FromQueryAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: jtStartIndex
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 2147483647
+- uid: RPPP_WebApp.Model.LoadParams.Rows
+  commentId: P:RPPP_WebApp.Model.LoadParams.Rows
+  id: Rows
+  parent: RPPP_WebApp.Model.LoadParams
+  langs:
+  - csharp
+  - vb
+  name: Rows
+  nameWithType: LoadParams.Rows
+  fullName: RPPP_WebApp.Model.LoadParams.Rows
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Rows
+    path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+    startLine: 22
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  summary: Number of elements to return
+  example: []
+  syntax:
+    content: >-
+      [FromQuery(Name = "jtPageSize")]
+
+      [Required]
+
+      [Range(1, 2147483647, ErrorMessage = "jtPageSize must be positiive number")]
+
+      public int Rows { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <FromQuery(Name:="jtPageSize")>
+
+      <Required>
+
+      <Range(1, 2147483647, ErrorMessage:="jtPageSize must be positiive number")>
+
+      Public Property Rows As Integer
+  overload: RPPP_WebApp.Model.LoadParams.Rows*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.FromQueryAttribute
+    ctor: Microsoft.AspNetCore.Mvc.FromQueryAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: jtPageSize
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 2147483647
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: jtPageSize must be positiive number
+- uid: RPPP_WebApp.Model.LoadParams.Sort
+  commentId: P:RPPP_WebApp.Model.LoadParams.Sort
+  id: Sort
+  parent: RPPP_WebApp.Model.LoadParams
+  langs:
+  - csharp
+  - vb
+  name: Sort
+  nameWithType: LoadParams.Sort
+  fullName: RPPP_WebApp.Model.LoadParams.Sort
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Sort
+    path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+    startLine: 31
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  summary: Name of a column. Must be same as in corresponding DTO object, case insensitive
+  example: []
+  syntax:
+    content: >-
+      [FromQuery(Name = "jtSorting")]
+
+      public string Sort { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <FromQuery(Name:="jtSorting")>
+
+      Public Property Sort As String
+  overload: RPPP_WebApp.Model.LoadParams.Sort*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.FromQueryAttribute
+    ctor: Microsoft.AspNetCore.Mvc.FromQueryAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: jtSorting
+- uid: RPPP_WebApp.Model.LoadParams.Filter
+  commentId: P:RPPP_WebApp.Model.LoadParams.Filter
+  id: Filter
+  parent: RPPP_WebApp.Model.LoadParams
+  langs:
+  - csharp
+  - vb
+  name: Filter
+  nameWithType: LoadParams.Filter
+  fullName: RPPP_WebApp.Model.LoadParams.Filter
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Filter
+    path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+    startLine: 37
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  summary: Global filter parameter
+  example: []
+  syntax:
+    content: >-
+      [FromQuery(Name = "filter")]
+
+      public string Filter { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <FromQuery(Name:="filter")>
+
+      Public Property Filter As String
+  overload: RPPP_WebApp.Model.LoadParams.Filter*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.FromQueryAttribute
+    ctor: Microsoft.AspNetCore.Mvc.FromQueryAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: filter
+- uid: RPPP_WebApp.Model.LoadParams.Descending
+  commentId: P:RPPP_WebApp.Model.LoadParams.Descending
+  id: Descending
+  parent: RPPP_WebApp.Model.LoadParams
+  langs:
+  - csharp
+  - vb
+  name: Descending
+  nameWithType: LoadParams.Descending
+  fullName: RPPP_WebApp.Model.LoadParams.Descending
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Descending
+    path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+    startLine: 40
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: >-
+      [BindNever]
+
+      public bool Descending { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <BindNever>
+
+      Public ReadOnly Property Descending As Boolean
+  overload: RPPP_WebApp.Model.LoadParams.Descending*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.ModelBinding.BindNeverAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ModelBinding.BindNeverAttribute.#ctor
+    arguments: []
+- uid: RPPP_WebApp.Model.LoadParams.SortColumn
+  commentId: P:RPPP_WebApp.Model.LoadParams.SortColumn
+  id: SortColumn
+  parent: RPPP_WebApp.Model.LoadParams
+  langs:
+  - csharp
+  - vb
+  name: SortColumn
+  nameWithType: LoadParams.SortColumn
+  fullName: RPPP_WebApp.Model.LoadParams.SortColumn
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: SortColumn
+    path: RPPP-WebApp/RPPP-WebApp/Model/LoadParams.cs
+    startLine: 43
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: >-
+      [BindNever]
+
+      public string SortColumn { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <BindNever>
+
+      Public ReadOnly Property SortColumn As String
+  overload: RPPP_WebApp.Model.LoadParams.SortColumn*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.ModelBinding.BindNeverAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ModelBinding.BindNeverAttribute.#ctor
+    arguments: []
+references:
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RPPP_WebApp.Model.LoadParams.StartIndex*
+  commentId: Overload:RPPP_WebApp.Model.LoadParams.StartIndex
+  href: RPPP_WebApp.Model.LoadParams.html#RPPP_WebApp_Model_LoadParams_StartIndex
+  name: StartIndex
+  nameWithType: LoadParams.StartIndex
+  fullName: RPPP_WebApp.Model.LoadParams.StartIndex
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: RPPP_WebApp.Model.LoadParams.Rows*
+  commentId: Overload:RPPP_WebApp.Model.LoadParams.Rows
+  href: RPPP_WebApp.Model.LoadParams.html#RPPP_WebApp_Model_LoadParams_Rows
+  name: Rows
+  nameWithType: LoadParams.Rows
+  fullName: RPPP_WebApp.Model.LoadParams.Rows
+- uid: RPPP_WebApp.Model.LoadParams.Sort*
+  commentId: Overload:RPPP_WebApp.Model.LoadParams.Sort
+  href: RPPP_WebApp.Model.LoadParams.html#RPPP_WebApp_Model_LoadParams_Sort
+  name: Sort
+  nameWithType: LoadParams.Sort
+  fullName: RPPP_WebApp.Model.LoadParams.Sort
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: RPPP_WebApp.Model.LoadParams.Filter*
+  commentId: Overload:RPPP_WebApp.Model.LoadParams.Filter
+  href: RPPP_WebApp.Model.LoadParams.html#RPPP_WebApp_Model_LoadParams_Filter
+  name: Filter
+  nameWithType: LoadParams.Filter
+  fullName: RPPP_WebApp.Model.LoadParams.Filter
+- uid: RPPP_WebApp.Model.LoadParams.Descending*
+  commentId: Overload:RPPP_WebApp.Model.LoadParams.Descending
+  href: RPPP_WebApp.Model.LoadParams.html#RPPP_WebApp_Model_LoadParams_Descending
+  name: Descending
+  nameWithType: LoadParams.Descending
+  fullName: RPPP_WebApp.Model.LoadParams.Descending
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: RPPP_WebApp.Model.LoadParams.SortColumn*
+  commentId: Overload:RPPP_WebApp.Model.LoadParams.SortColumn
+  href: RPPP_WebApp.Model.LoadParams.html#RPPP_WebApp_Model_LoadParams_SortColumn
+  name: SortColumn
+  nameWithType: LoadParams.SortColumn
+  fullName: RPPP_WebApp.Model.LoadParams.SortColumn

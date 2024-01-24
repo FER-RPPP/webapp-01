@@ -1,0 +1,760 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Model.ProjectWork
+  commentId: T:RPPP_WebApp.Model.ProjectWork
+  id: ProjectWork
+  parent: RPPP_WebApp.Model
+  children:
+  - RPPP_WebApp.Model.ProjectWork.Assignee
+  - RPPP_WebApp.Model.ProjectWork.AssigneeId
+  - RPPP_WebApp.Model.ProjectWork.Description
+  - RPPP_WebApp.Model.ProjectWork.Id
+  - RPPP_WebApp.Model.ProjectWork.LaborDiary
+  - RPPP_WebApp.Model.ProjectWork.Project
+  - RPPP_WebApp.Model.ProjectWork.ProjectId
+  - RPPP_WebApp.Model.ProjectWork.RequirementTask
+  - RPPP_WebApp.Model.ProjectWork.Title
+  langs:
+  - csharp
+  - vb
+  name: ProjectWork
+  nameWithType: ProjectWork
+  fullName: RPPP_WebApp.Model.ProjectWork
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ProjectWork
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 5
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public class ProjectWork
+    content.vb: Public Class ProjectWork
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RPPP_WebApp.Model.ProjectWork.Id
+  commentId: P:RPPP_WebApp.Model.ProjectWork.Id
+  id: Id
+  parent: RPPP_WebApp.Model.ProjectWork
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ProjectWork.Id
+  fullName: RPPP_WebApp.Model.ProjectWork.Id
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Id
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 7
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: RPPP_WebApp.Model.ProjectWork.Id*
+- uid: RPPP_WebApp.Model.ProjectWork.AssigneeId
+  commentId: P:RPPP_WebApp.Model.ProjectWork.AssigneeId
+  id: AssigneeId
+  parent: RPPP_WebApp.Model.ProjectWork
+  langs:
+  - csharp
+  - vb
+  name: AssigneeId
+  nameWithType: ProjectWork.AssigneeId
+  fullName: RPPP_WebApp.Model.ProjectWork.AssigneeId
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: AssigneeId
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 9
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public Guid AssigneeId { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property AssigneeId As Guid
+  overload: RPPP_WebApp.Model.ProjectWork.AssigneeId*
+- uid: RPPP_WebApp.Model.ProjectWork.Title
+  commentId: P:RPPP_WebApp.Model.ProjectWork.Title
+  id: Title
+  parent: RPPP_WebApp.Model.ProjectWork
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: ProjectWork.Title
+  fullName: RPPP_WebApp.Model.ProjectWork.Title
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Title
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 11
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public string Title { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Title As String
+  overload: RPPP_WebApp.Model.ProjectWork.Title*
+- uid: RPPP_WebApp.Model.ProjectWork.Description
+  commentId: P:RPPP_WebApp.Model.ProjectWork.Description
+  id: Description
+  parent: RPPP_WebApp.Model.ProjectWork
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ProjectWork.Description
+  fullName: RPPP_WebApp.Model.ProjectWork.Description
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Description
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 13
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public string Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: RPPP_WebApp.Model.ProjectWork.Description*
+- uid: RPPP_WebApp.Model.ProjectWork.ProjectId
+  commentId: P:RPPP_WebApp.Model.ProjectWork.ProjectId
+  id: ProjectId
+  parent: RPPP_WebApp.Model.ProjectWork
+  langs:
+  - csharp
+  - vb
+  name: ProjectId
+  nameWithType: ProjectWork.ProjectId
+  fullName: RPPP_WebApp.Model.ProjectWork.ProjectId
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ProjectId
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 15
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public Guid ProjectId { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property ProjectId As Guid
+  overload: RPPP_WebApp.Model.ProjectWork.ProjectId*
+- uid: RPPP_WebApp.Model.ProjectWork.Assignee
+  commentId: P:RPPP_WebApp.Model.ProjectWork.Assignee
+  id: Assignee
+  parent: RPPP_WebApp.Model.ProjectWork
+  langs:
+  - csharp
+  - vb
+  name: Assignee
+  nameWithType: ProjectWork.Assignee
+  fullName: RPPP_WebApp.Model.ProjectWork.Assignee
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Assignee
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 17
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual Worker Assignee { get; set; }
+    parameters: []
+    return:
+      type: RPPP_WebApp.Model.Worker
+    content.vb: Public Overridable Property Assignee As Worker
+  overload: RPPP_WebApp.Model.ProjectWork.Assignee*
+- uid: RPPP_WebApp.Model.ProjectWork.LaborDiary
+  commentId: P:RPPP_WebApp.Model.ProjectWork.LaborDiary
+  id: LaborDiary
+  parent: RPPP_WebApp.Model.ProjectWork
+  langs:
+  - csharp
+  - vb
+  name: LaborDiary
+  nameWithType: ProjectWork.LaborDiary
+  fullName: RPPP_WebApp.Model.ProjectWork.LaborDiary
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: LaborDiary
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 19
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual ICollection<LaborDiary> LaborDiary { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{RPPP_WebApp.Model.LaborDiary}
+    content.vb: Public Overridable Property LaborDiary As ICollection(Of LaborDiary)
+  overload: RPPP_WebApp.Model.ProjectWork.LaborDiary*
+- uid: RPPP_WebApp.Model.ProjectWork.Project
+  commentId: P:RPPP_WebApp.Model.ProjectWork.Project
+  id: Project
+  parent: RPPP_WebApp.Model.ProjectWork
+  langs:
+  - csharp
+  - vb
+  name: Project
+  nameWithType: ProjectWork.Project
+  fullName: RPPP_WebApp.Model.ProjectWork.Project
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Project
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 21
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual Project Project { get; set; }
+    parameters: []
+    return:
+      type: RPPP_WebApp.Model.Project
+    content.vb: Public Overridable Property Project As Project
+  overload: RPPP_WebApp.Model.ProjectWork.Project*
+- uid: RPPP_WebApp.Model.ProjectWork.RequirementTask
+  commentId: P:RPPP_WebApp.Model.ProjectWork.RequirementTask
+  id: RequirementTask
+  parent: RPPP_WebApp.Model.ProjectWork
+  langs:
+  - csharp
+  - vb
+  name: RequirementTask
+  nameWithType: ProjectWork.RequirementTask
+  fullName: RPPP_WebApp.Model.ProjectWork.RequirementTask
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: RequirementTask
+    path: RPPP-WebApp/RPPP-WebApp/Model/ProjectWork.cs
+    startLine: 23
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual RequirementTask RequirementTask { get; set; }
+    parameters: []
+    return:
+      type: RPPP_WebApp.Model.RequirementTask
+    content.vb: Public Overridable Property RequirementTask As RequirementTask
+  overload: RPPP_WebApp.Model.ProjectWork.RequirementTask*
+references:
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RPPP_WebApp.Model.ProjectWork.Id*
+  commentId: Overload:RPPP_WebApp.Model.ProjectWork.Id
+  href: RPPP_WebApp.Model.ProjectWork.html#RPPP_WebApp_Model_ProjectWork_Id
+  name: Id
+  nameWithType: ProjectWork.Id
+  fullName: RPPP_WebApp.Model.ProjectWork.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: RPPP_WebApp.Model.ProjectWork.AssigneeId*
+  commentId: Overload:RPPP_WebApp.Model.ProjectWork.AssigneeId
+  href: RPPP_WebApp.Model.ProjectWork.html#RPPP_WebApp_Model_ProjectWork_AssigneeId
+  name: AssigneeId
+  nameWithType: ProjectWork.AssigneeId
+  fullName: RPPP_WebApp.Model.ProjectWork.AssigneeId
+- uid: RPPP_WebApp.Model.ProjectWork.Title*
+  commentId: Overload:RPPP_WebApp.Model.ProjectWork.Title
+  href: RPPP_WebApp.Model.ProjectWork.html#RPPP_WebApp_Model_ProjectWork_Title
+  name: Title
+  nameWithType: ProjectWork.Title
+  fullName: RPPP_WebApp.Model.ProjectWork.Title
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: RPPP_WebApp.Model.ProjectWork.Description*
+  commentId: Overload:RPPP_WebApp.Model.ProjectWork.Description
+  href: RPPP_WebApp.Model.ProjectWork.html#RPPP_WebApp_Model_ProjectWork_Description
+  name: Description
+  nameWithType: ProjectWork.Description
+  fullName: RPPP_WebApp.Model.ProjectWork.Description
+- uid: RPPP_WebApp.Model.ProjectWork.ProjectId*
+  commentId: Overload:RPPP_WebApp.Model.ProjectWork.ProjectId
+  href: RPPP_WebApp.Model.ProjectWork.html#RPPP_WebApp_Model_ProjectWork_ProjectId
+  name: ProjectId
+  nameWithType: ProjectWork.ProjectId
+  fullName: RPPP_WebApp.Model.ProjectWork.ProjectId
+- uid: RPPP_WebApp.Model.ProjectWork.Assignee*
+  commentId: Overload:RPPP_WebApp.Model.ProjectWork.Assignee
+  href: RPPP_WebApp.Model.ProjectWork.html#RPPP_WebApp_Model_ProjectWork_Assignee
+  name: Assignee
+  nameWithType: ProjectWork.Assignee
+  fullName: RPPP_WebApp.Model.ProjectWork.Assignee
+- uid: RPPP_WebApp.Model.Worker
+  commentId: T:RPPP_WebApp.Model.Worker
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Worker.html
+  name: Worker
+  nameWithType: Worker
+  fullName: RPPP_WebApp.Model.Worker
+- uid: RPPP_WebApp.Model.ProjectWork.LaborDiary*
+  commentId: Overload:RPPP_WebApp.Model.ProjectWork.LaborDiary
+  href: RPPP_WebApp.Model.ProjectWork.html#RPPP_WebApp_Model_ProjectWork_LaborDiary
+  name: LaborDiary
+  nameWithType: ProjectWork.LaborDiary
+  fullName: RPPP_WebApp.Model.ProjectWork.LaborDiary
+- uid: System.Collections.Generic.ICollection{RPPP_WebApp.Model.LaborDiary}
+  commentId: T:System.Collections.Generic.ICollection{RPPP_WebApp.Model.LaborDiary}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<LaborDiary>
+  nameWithType: ICollection<LaborDiary>
+  fullName: System.Collections.Generic.ICollection<RPPP_WebApp.Model.LaborDiary>
+  nameWithType.vb: ICollection(Of LaborDiary)
+  fullName.vb: System.Collections.Generic.ICollection(Of RPPP_WebApp.Model.LaborDiary)
+  name.vb: ICollection(Of LaborDiary)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: RPPP_WebApp.Model.LaborDiary
+    name: LaborDiary
+    href: RPPP_WebApp.Model.LaborDiary.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.LaborDiary
+    name: LaborDiary
+    href: RPPP_WebApp.Model.LaborDiary.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: RPPP_WebApp.Model.ProjectWork.Project*
+  commentId: Overload:RPPP_WebApp.Model.ProjectWork.Project
+  href: RPPP_WebApp.Model.ProjectWork.html#RPPP_WebApp_Model_ProjectWork_Project
+  name: Project
+  nameWithType: ProjectWork.Project
+  fullName: RPPP_WebApp.Model.ProjectWork.Project
+- uid: RPPP_WebApp.Model.Project
+  commentId: T:RPPP_WebApp.Model.Project
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Project.html
+  name: Project
+  nameWithType: Project
+  fullName: RPPP_WebApp.Model.Project
+- uid: RPPP_WebApp.Model.ProjectWork.RequirementTask*
+  commentId: Overload:RPPP_WebApp.Model.ProjectWork.RequirementTask
+  href: RPPP_WebApp.Model.ProjectWork.html#RPPP_WebApp_Model_ProjectWork_RequirementTask
+  name: RequirementTask
+  nameWithType: ProjectWork.RequirementTask
+  fullName: RPPP_WebApp.Model.ProjectWork.RequirementTask
+- uid: RPPP_WebApp.Model.RequirementTask
+  commentId: T:RPPP_WebApp.Model.RequirementTask
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.RequirementTask.html
+  name: RequirementTask
+  nameWithType: RequirementTask
+  fullName: RPPP_WebApp.Model.RequirementTask

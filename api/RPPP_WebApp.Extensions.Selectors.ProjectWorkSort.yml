@@ -1,0 +1,462 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort
+  commentId: T:RPPP_WebApp.Extensions.Selectors.ProjectWorkSort
+  id: ProjectWorkSort
+  parent: RPPP_WebApp.Extensions.Selectors
+  children:
+  - RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.ApplySort(System.Linq.IQueryable{RPPP_WebApp.Model.ProjectWork},System.Int32,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: ProjectWorkSort
+  nameWithType: ProjectWorkSort
+  fullName: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Extensions/Selectors/ProjectWorkSort.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ProjectWorkSort
+    path: RPPP-WebApp/RPPP-WebApp/Extensions/Selectors/ProjectWorkSort.cs
+    startLine: 4
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Extensions.Selectors
+  syntax:
+    content: public static class ProjectWorkSort
+    content.vb: Public Module ProjectWorkSort
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.ApplySort(System.Linq.IQueryable{RPPP_WebApp.Model.ProjectWork},System.Int32,System.Boolean)
+  commentId: M:RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.ApplySort(System.Linq.IQueryable{RPPP_WebApp.Model.ProjectWork},System.Int32,System.Boolean)
+  id: ApplySort(System.Linq.IQueryable{RPPP_WebApp.Model.ProjectWork},System.Int32,System.Boolean)
+  isExtensionMethod: true
+  parent: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort
+  langs:
+  - csharp
+  - vb
+  name: ApplySort(IQueryable<ProjectWork>, int, bool)
+  nameWithType: ProjectWorkSort.ApplySort(IQueryable<ProjectWork>, int, bool)
+  fullName: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.ApplySort(System.Linq.IQueryable<RPPP_WebApp.Model.ProjectWork>, int, bool)
+  type: Method
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Extensions/Selectors/ProjectWorkSort.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ApplySort
+    path: RPPP-WebApp/RPPP-WebApp/Extensions/Selectors/ProjectWorkSort.cs
+    startLine: 6
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Extensions.Selectors
+  syntax:
+    content: public static IQueryable<ProjectWork> ApplySort(this IQueryable<ProjectWork> query, int sort, bool ascending)
+    parameters:
+    - id: query
+      type: System.Linq.IQueryable{RPPP_WebApp.Model.ProjectWork}
+    - id: sort
+      type: System.Int32
+    - id: ascending
+      type: System.Boolean
+    return:
+      type: System.Linq.IQueryable{RPPP_WebApp.Model.ProjectWork}
+    content.vb: Public Shared Function ApplySort(query As IQueryable(Of ProjectWork), sort As Integer, ascending As Boolean) As IQueryable(Of ProjectWork)
+  overload: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.ApplySort*
+  nameWithType.vb: ProjectWorkSort.ApplySort(IQueryable(Of ProjectWork), Integer, Boolean)
+  fullName.vb: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.ApplySort(System.Linq.IQueryable(Of RPPP_WebApp.Model.ProjectWork), Integer, Boolean)
+  name.vb: ApplySort(IQueryable(Of ProjectWork), Integer, Boolean)
+references:
+- uid: RPPP_WebApp.Extensions.Selectors
+  commentId: N:RPPP_WebApp.Extensions.Selectors
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Extensions.Selectors
+  nameWithType: RPPP_WebApp.Extensions.Selectors
+  fullName: RPPP_WebApp.Extensions.Selectors
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Extensions
+    name: Extensions
+    href: RPPP_WebApp.Extensions.html
+  - name: .
+  - uid: RPPP_WebApp.Extensions.Selectors
+    name: Selectors
+    href: RPPP_WebApp.Extensions.Selectors.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Extensions
+    name: Extensions
+    href: RPPP_WebApp.Extensions.html
+  - name: .
+  - uid: RPPP_WebApp.Extensions.Selectors
+    name: Selectors
+    href: RPPP_WebApp.Extensions.Selectors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.ApplySort*
+  commentId: Overload:RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.ApplySort
+  href: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.html#RPPP_WebApp_Extensions_Selectors_ProjectWorkSort_ApplySort_System_Linq_IQueryable_RPPP_WebApp_Model_ProjectWork__System_Int32_System_Boolean_
+  name: ApplySort
+  nameWithType: ProjectWorkSort.ApplySort
+  fullName: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort.ApplySort
+- uid: System.Linq.IQueryable{RPPP_WebApp.Model.ProjectWork}
+  commentId: T:System.Linq.IQueryable{RPPP_WebApp.Model.ProjectWork}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<ProjectWork>
+  nameWithType: IQueryable<ProjectWork>
+  fullName: System.Linq.IQueryable<RPPP_WebApp.Model.ProjectWork>
+  nameWithType.vb: IQueryable(Of ProjectWork)
+  fullName.vb: System.Linq.IQueryable(Of RPPP_WebApp.Model.ProjectWork)
+  name.vb: IQueryable(Of ProjectWork)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - uid: RPPP_WebApp.Model.ProjectWork
+    name: ProjectWork
+    href: RPPP_WebApp.Model.ProjectWork.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.ProjectWork
+    name: ProjectWork
+    href: RPPP_WebApp.Model.ProjectWork.html
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Linq
+  commentId: N:System.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq
+  nameWithType: System.Linq
+  fullName: System.Linq
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq

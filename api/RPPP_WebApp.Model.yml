@@ -1,0 +1,299 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  id: RPPP_WebApp.Model
+  children:
+  - RPPP_WebApp.Model.CardTransaction
+  - RPPP_WebApp.Model.Client
+  - RPPP_WebApp.Model.CreateResult
+  - RPPP_WebApp.Model.Document
+  - RPPP_WebApp.Model.DocumentType
+  - RPPP_WebApp.Model.ErrorStatusTo200WithErrorMessage
+  - RPPP_WebApp.Model.JTableAjaxResult
+  - RPPP_WebApp.Model.LaborDiary
+  - RPPP_WebApp.Model.LaborType
+  - RPPP_WebApp.Model.LoadParams
+  - RPPP_WebApp.Model.ModelStateExtensions
+  - RPPP_WebApp.Model.OptionsResult
+  - RPPP_WebApp.Model.Organization
+  - RPPP_WebApp.Model.Owner
+  - RPPP_WebApp.Model.Product
+  - RPPP_WebApp.Model.Project
+  - RPPP_WebApp.Model.ProjectCard
+  - RPPP_WebApp.Model.ProjectPartner
+  - RPPP_WebApp.Model.ProjectRequirement
+  - RPPP_WebApp.Model.ProjectRole
+  - RPPP_WebApp.Model.ProjectWork
+  - RPPP_WebApp.Model.RequirementPriority
+  - RPPP_WebApp.Model.RequirementTask
+  - RPPP_WebApp.Model.Rppp01Context
+  - RPPP_WebApp.Model.TableRecords`1
+  - RPPP_WebApp.Model.TaskStatus
+  - RPPP_WebApp.Model.TextValue
+  - RPPP_WebApp.Model.Transaction
+  - RPPP_WebApp.Model.TransactionPurpose
+  - RPPP_WebApp.Model.TransactionType
+  - RPPP_WebApp.Model.Worker
+  langs:
+  - csharp
+  - vb
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  type: Namespace
+  assemblies:
+  - RPPP-WebApp
+references:
+- uid: RPPP_WebApp.Model.CardTransaction
+  commentId: T:RPPP_WebApp.Model.CardTransaction
+  href: RPPP_WebApp.Model.CardTransaction.html
+  name: CardTransaction
+  nameWithType: CardTransaction
+  fullName: RPPP_WebApp.Model.CardTransaction
+- uid: RPPP_WebApp.Model.Client
+  commentId: T:RPPP_WebApp.Model.Client
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Client.html
+  name: Client
+  nameWithType: Client
+  fullName: RPPP_WebApp.Model.Client
+- uid: RPPP_WebApp.Model.CreateResult
+  commentId: T:RPPP_WebApp.Model.CreateResult
+  href: RPPP_WebApp.Model.CreateResult.html
+  name: CreateResult
+  nameWithType: CreateResult
+  fullName: RPPP_WebApp.Model.CreateResult
+- uid: RPPP_WebApp.Model.Document
+  commentId: T:RPPP_WebApp.Model.Document
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Document.html
+  name: Document
+  nameWithType: Document
+  fullName: RPPP_WebApp.Model.Document
+- uid: RPPP_WebApp.Model.DocumentType
+  commentId: T:RPPP_WebApp.Model.DocumentType
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.DocumentType.html
+  name: DocumentType
+  nameWithType: DocumentType
+  fullName: RPPP_WebApp.Model.DocumentType
+- uid: RPPP_WebApp.Model.ErrorStatusTo200WithErrorMessage
+  commentId: T:RPPP_WebApp.Model.ErrorStatusTo200WithErrorMessage
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.ErrorStatusTo200WithErrorMessage.html
+  name: ErrorStatusTo200WithErrorMessage
+  nameWithType: ErrorStatusTo200WithErrorMessage
+  fullName: RPPP_WebApp.Model.ErrorStatusTo200WithErrorMessage
+- uid: RPPP_WebApp.Model.JTableAjaxResult
+  commentId: T:RPPP_WebApp.Model.JTableAjaxResult
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.JTableAjaxResult.html
+  name: JTableAjaxResult
+  nameWithType: JTableAjaxResult
+  fullName: RPPP_WebApp.Model.JTableAjaxResult
+- uid: RPPP_WebApp.Model.LaborDiary
+  commentId: T:RPPP_WebApp.Model.LaborDiary
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.LaborDiary.html
+  name: LaborDiary
+  nameWithType: LaborDiary
+  fullName: RPPP_WebApp.Model.LaborDiary
+- uid: RPPP_WebApp.Model.LaborType
+  commentId: T:RPPP_WebApp.Model.LaborType
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.LaborType.html
+  name: LaborType
+  nameWithType: LaborType
+  fullName: RPPP_WebApp.Model.LaborType
+- uid: RPPP_WebApp.Model.LoadParams
+  commentId: T:RPPP_WebApp.Model.LoadParams
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.LoadParams.html
+  name: LoadParams
+  nameWithType: LoadParams
+  fullName: RPPP_WebApp.Model.LoadParams
+- uid: RPPP_WebApp.Model.ModelStateExtensions
+  commentId: T:RPPP_WebApp.Model.ModelStateExtensions
+  href: RPPP_WebApp.Model.ModelStateExtensions.html
+  name: ModelStateExtensions
+  nameWithType: ModelStateExtensions
+  fullName: RPPP_WebApp.Model.ModelStateExtensions
+- uid: RPPP_WebApp.Model.OptionsResult
+  commentId: T:RPPP_WebApp.Model.OptionsResult
+  href: RPPP_WebApp.Model.OptionsResult.html
+  name: OptionsResult
+  nameWithType: OptionsResult
+  fullName: RPPP_WebApp.Model.OptionsResult
+- uid: RPPP_WebApp.Model.Organization
+  commentId: T:RPPP_WebApp.Model.Organization
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Organization.html
+  name: Organization
+  nameWithType: Organization
+  fullName: RPPP_WebApp.Model.Organization
+- uid: RPPP_WebApp.Model.Owner
+  commentId: T:RPPP_WebApp.Model.Owner
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Owner.html
+  name: Owner
+  nameWithType: Owner
+  fullName: RPPP_WebApp.Model.Owner
+- uid: RPPP_WebApp.Model.Product
+  commentId: T:RPPP_WebApp.Model.Product
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: RPPP_WebApp.Model.Product
+- uid: RPPP_WebApp.Model.Project
+  commentId: T:RPPP_WebApp.Model.Project
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Project.html
+  name: Project
+  nameWithType: Project
+  fullName: RPPP_WebApp.Model.Project
+- uid: RPPP_WebApp.Model.ProjectCard
+  commentId: T:RPPP_WebApp.Model.ProjectCard
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.ProjectCard.html
+  name: ProjectCard
+  nameWithType: ProjectCard
+  fullName: RPPP_WebApp.Model.ProjectCard
+- uid: RPPP_WebApp.Model.ProjectPartner
+  commentId: T:RPPP_WebApp.Model.ProjectPartner
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.ProjectPartner.html
+  name: ProjectPartner
+  nameWithType: ProjectPartner
+  fullName: RPPP_WebApp.Model.ProjectPartner
+- uid: RPPP_WebApp.Model.ProjectRequirement
+  commentId: T:RPPP_WebApp.Model.ProjectRequirement
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.ProjectRequirement.html
+  name: ProjectRequirement
+  nameWithType: ProjectRequirement
+  fullName: RPPP_WebApp.Model.ProjectRequirement
+- uid: RPPP_WebApp.Model.ProjectRole
+  commentId: T:RPPP_WebApp.Model.ProjectRole
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.ProjectRole.html
+  name: ProjectRole
+  nameWithType: ProjectRole
+  fullName: RPPP_WebApp.Model.ProjectRole
+- uid: RPPP_WebApp.Model.ProjectWork
+  commentId: T:RPPP_WebApp.Model.ProjectWork
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.ProjectWork.html
+  name: ProjectWork
+  nameWithType: ProjectWork
+  fullName: RPPP_WebApp.Model.ProjectWork
+- uid: RPPP_WebApp.Model.RequirementPriority
+  commentId: T:RPPP_WebApp.Model.RequirementPriority
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.RequirementPriority.html
+  name: RequirementPriority
+  nameWithType: RequirementPriority
+  fullName: RPPP_WebApp.Model.RequirementPriority
+- uid: RPPP_WebApp.Model.RequirementTask
+  commentId: T:RPPP_WebApp.Model.RequirementTask
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.RequirementTask.html
+  name: RequirementTask
+  nameWithType: RequirementTask
+  fullName: RPPP_WebApp.Model.RequirementTask
+- uid: RPPP_WebApp.Model.Rppp01Context
+  commentId: T:RPPP_WebApp.Model.Rppp01Context
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Rppp01Context.html
+  name: Rppp01Context
+  nameWithType: Rppp01Context
+  fullName: RPPP_WebApp.Model.Rppp01Context
+- uid: RPPP_WebApp.Model.TableRecords`1
+  commentId: T:RPPP_WebApp.Model.TableRecords`1
+  href: RPPP_WebApp.Model.TableRecords-1.html
+  name: TableRecords<T>
+  nameWithType: TableRecords<T>
+  fullName: RPPP_WebApp.Model.TableRecords<T>
+  nameWithType.vb: TableRecords(Of T)
+  fullName.vb: RPPP_WebApp.Model.TableRecords(Of T)
+  name.vb: TableRecords(Of T)
+  spec.csharp:
+  - uid: RPPP_WebApp.Model.TableRecords`1
+    name: TableRecords
+    href: RPPP_WebApp.Model.TableRecords-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: RPPP_WebApp.Model.TableRecords`1
+    name: TableRecords
+    href: RPPP_WebApp.Model.TableRecords-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: RPPP_WebApp.Model.TaskStatus
+  commentId: T:RPPP_WebApp.Model.TaskStatus
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.TaskStatus.html
+  name: TaskStatus
+  nameWithType: TaskStatus
+  fullName: RPPP_WebApp.Model.TaskStatus
+- uid: RPPP_WebApp.Model.TextValue
+  commentId: T:RPPP_WebApp.Model.TextValue
+  href: RPPP_WebApp.Model.TextValue.html
+  name: TextValue
+  nameWithType: TextValue
+  fullName: RPPP_WebApp.Model.TextValue
+- uid: RPPP_WebApp.Model.Transaction
+  commentId: T:RPPP_WebApp.Model.Transaction
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Transaction.html
+  name: Transaction
+  nameWithType: Transaction
+  fullName: RPPP_WebApp.Model.Transaction
+- uid: RPPP_WebApp.Model.TransactionPurpose
+  commentId: T:RPPP_WebApp.Model.TransactionPurpose
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.TransactionPurpose.html
+  name: TransactionPurpose
+  nameWithType: TransactionPurpose
+  fullName: RPPP_WebApp.Model.TransactionPurpose
+- uid: RPPP_WebApp.Model.TransactionType
+  commentId: T:RPPP_WebApp.Model.TransactionType
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.TransactionType.html
+  name: TransactionType
+  nameWithType: TransactionType
+  fullName: RPPP_WebApp.Model.TransactionType
+- uid: RPPP_WebApp.Model.Worker
+  commentId: T:RPPP_WebApp.Model.Worker
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Worker.html
+  name: Worker
+  nameWithType: Worker
+  fullName: RPPP_WebApp.Model.Worker
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
