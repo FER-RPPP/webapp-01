@@ -13,6 +13,10 @@ using PdfRpt.Core.Helper;
 
 namespace RPPP_WebApp.Controllers
 {
+
+    /// <summary>
+    /// Controller for generating and managing reports.
+    /// </summary>
     public class ReportMMController : Controller
     {
         private readonly Rppp01Context ctx;
@@ -27,12 +31,21 @@ namespace RPPP_WebApp.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Display the index view of the report management.
+        /// </summary>
+        /// <returns>The index view.</returns>
         public IActionResult Index()
         {
             logger.LogInformation("Index called");
             return View();
         }
 
+        /// <summary>
+        /// Imports requirement tasks from an uploaded Excel file.
+        /// </summary>
+        /// <param name="file">The Excel file containing requirement tasks to be imported.</param>
+        /// <returns>A view showing the import results.</returns>
         public async Task<IActionResult> ImportRequirementTasks(IFormFile file)
         {
             logger.LogInformation("Importing Requirement Tasks...");
@@ -144,6 +157,10 @@ namespace RPPP_WebApp.Controllers
             return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "ImportedRequirementTasks.xlsx");
         }
 
+        /// <summary>
+        /// Exports requirement tasks to an Excel file.
+        /// </summary>
+        /// <returns>An Excel file containing requirement tasks.</returns>
         public async Task<IActionResult> RequirementTasksExcel()
         {
             logger.LogInformation("Exporting Requirement Tasks in Pdf...");
@@ -202,6 +219,10 @@ namespace RPPP_WebApp.Controllers
             return File(content, ExcelContentType, "RequirementTasks.xlsx");
         }
 
+        /// <summary>
+        /// Exports task statuses to an Excel file.
+        /// </summary>
+        /// <returns>An Excel file containing task statuses.</returns>
         public async Task<IActionResult> TaskStatusesExcel()
         {
             logger.LogInformation("Exporting Task Statuses in Excel...");
@@ -241,6 +262,10 @@ namespace RPPP_WebApp.Controllers
             return File(content, ExcelContentType, "TaskStatuses.xlsx");
         }
 
+        /// <summary>
+        /// Exports project requirements to an Excel file.
+        /// </summary>
+        /// <returns>An Excel file containing project requirements.</returns>
         public async Task<IActionResult> ProjectRequirementsExcel()
         {
             logger.LogInformation("Exporting Project Requirements in Excel...");
@@ -314,8 +339,10 @@ namespace RPPP_WebApp.Controllers
             return File(content, ExcelContentType, "ProjectRequirements.xlsx");
         }
 
-
-
+        /// <summary>
+        /// Exports project requirements to a PDF file.
+        /// </summary>
+        /// <returns>A PDF file containing project requirements.</returns>
         public async Task<IActionResult> ProjectRequirementsPdf()
         {
             logger.LogInformation("Exporting Project Requirement in Pdf...");
@@ -460,7 +487,11 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Creates a configured PDF report with specified title.
+        /// </summary>
+        /// <param name="title">The title of the report.</param>
+        /// <returns>A configured PdfReport object for further customization and data binding.</returns>
         private PdfReport CreateReport(string naslov)
         {
             var pdf = new PdfReport();
@@ -507,21 +538,31 @@ namespace RPPP_WebApp.Controllers
         }
     }
 
-
-
-
-
-
-
+    /// <summary>
+    /// Custom implementation of IPageHeader used in PDF reporting for rendering headers.
+    /// </summary>
     public class MasterDetailsHeaders : IPageHeader
     {
         private string naslov;
+
+        /// <summary>
+        /// Constructor for MasterDetailsHeaders.
+        /// </summary>
+        /// <param name="title">Title to be displayed in the header.</param>
         public MasterDetailsHeaders(string naslov)
         {
             this.naslov = naslov;
         }
         public IPdfFont PdfRptFont { set; get; }
 
+        /// <summary>
+        /// Renders the group header in the PDF document.
+        /// </summary>
+        /// <param name="pdfDoc">Current PDF document.</param>
+        /// <param name="pdfWriter">PDF writer associated with the document.</param>
+        /// <param name="newGroupInfo">Information about the new group.</param>
+        /// <param name="summaryData">Summary data for the group.</param>
+        /// <returns>A PdfGrid representing the group header.</returns>
         public PdfGrid RenderingGroupHeader(iTextSharp.text.Document pdfDoc, PdfWriter pdfWriter, IList<CellData> newGroupInfo, IList<SummaryCellData> summaryData)
         {
             var projectRequirementId = newGroupInfo.GetSafeStringValueOf(nameof(RequirementTaskDenorm.ProjectRequirementId));
@@ -574,8 +615,13 @@ namespace RPPP_WebApp.Controllers
             return table.AddBorderToTable(borderColor: BaseColor.LightGray, spacingBefore: 5f);
         }
 
-
-
+        /// <summary>
+        /// Renders the report header in the PDF document.
+        /// </summary>
+        /// <param name="pdfDoc">Current PDF document.</param>
+        /// <param name="pdfWriter">PDF writer associated with the document.</param>
+        /// <param name="summaryData">Summary data for the header.</param>
+        /// <returns>A PdfGrid representing the report header.</returns>
         public PdfGrid RenderingReportHeader(iTextSharp.text.Document pdfDoc, PdfWriter pdfWriter, IList<SummaryCellData> summaryData)
         {
             var table = new PdfGrid(numColumns: 1) { WidthPercentage = 100 };

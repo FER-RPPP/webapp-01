@@ -10,6 +10,10 @@ using System.Linq.Expressions;
 namespace RPPP_WebApp.Controllers
 {
 
+    /// <summary>
+    /// Web API controller for handling CRUD operations on Product entities.
+    /// </summary>
+
     [ApiController]
     [Route("[controller]")]
     public class ProductController : ControllerBase, ICustomController<Guid, ProductViewModel>
@@ -33,7 +37,11 @@ namespace RPPP_WebApp.Controllers
             this.ctx = ctx;
         }
 
-
+        /// <summary>
+        /// Gets the count of Product entities optionally filtered by a query.
+        /// </summary>
+        /// <param name="filter">Query string to filter the Product entities.</param>
+        /// <returns>The count of filtered or all Product entities.</returns>
         [HttpGet("count", Name = "BrojProdukta")]
         public async Task<int> Count([FromQuery] string filter)
         {
@@ -45,8 +53,11 @@ namespace RPPP_WebApp.Controllers
             int count = await query.CountAsync();
             return count;
         }
-
-
+        /// <summary>
+        /// Retrieves a list of Product entities based on provided load parameters.
+        /// </summary>
+        /// <param name="loadParams">Parameters for loading data such as filtering, sorting, paging, etc.</param>
+        /// <returns>A list of Product entities.</returns>
         [HttpGet(Name = "DohvatiMjesta")]
         public async Task<List<ProductViewModel>> GetAll([FromQuery] LoadParams loadParams)
         {
@@ -72,6 +83,11 @@ namespace RPPP_WebApp.Controllers
             return list;
         }
 
+        /// <summary>
+        /// Retrieves a specific Product entity by its identifier.
+        /// </summary>
+        /// <param name="id">The unique identifier of the Product entity.</param>
+        /// <returns>The Product entity if found, otherwise a 404 Not Found status.</returns>
         [HttpGet("{id}", Name = "DohvatiProdukt")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -91,6 +107,11 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a specific Product entity by its identifier.
+        /// </summary>
+        /// <param name="id">The unique identifier of the Product entity to delete.</param>
+        /// <returns>A 204 No Content status if successful, otherwise a 404 Not Found status.</returns>
         [HttpDelete("{id}", Name = "ObrisiProdukt")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -109,6 +130,12 @@ namespace RPPP_WebApp.Controllers
             };
         }
 
+        /// <summary>
+        /// Updates a specific Product entity identified by the provided id with the data in the provided model.
+        /// </summary>
+        /// <param name="id">The unique identifier of the Product entity to update.</param>
+        /// <param name="model">The model containing updated data for the Product entity.</param>
+        /// <returns>A 204 No Content status if successful, otherwise a 404 Not Found or 400 Bad Request status.</returns>
         [HttpPut("{id}", Name = "AzurirajMjesto")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -134,7 +161,11 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
-        
+        /// <summary>
+        /// Creates a new Product entity based on the provided model.
+        /// </summary>
+        /// <param name="model">The model to create a new Product entity from.</param>
+        /// <returns>A 201 Created status with the newly created Product entity, otherwise a 400 Bad Request status.</returns>
         [HttpPost(Name = "DodajProdukt")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
