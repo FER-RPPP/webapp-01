@@ -1,0 +1,4457 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.ModelsValidation.WorkerValidator
+  commentId: T:RPPP_WebApp.ModelsValidation.WorkerValidator
+  id: WorkerValidator
+  parent: RPPP_WebApp.ModelsValidation
+  children:
+  - RPPP_WebApp.ModelsValidation.WorkerValidator.#ctor(RPPP_WebApp.Model.Rppp01Context)
+  langs:
+  - csharp
+  - vb
+  name: WorkerValidator
+  nameWithType: WorkerValidator
+  fullName: RPPP_WebApp.ModelsValidation.WorkerValidator
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ModelsValidation/WorkerValidator.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: WorkerValidator
+    path: RPPP-WebApp/RPPP-WebApp/ModelsValidation/WorkerValidator.cs
+    startLine: 7
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ModelsValidation
+  summary: Validator class for the <xref href="RPPP_WebApp.ModelsValidation.WorkerValidator" data-throw-if-not-resolved="false"></xref> entity using FluentValidation.
+  example: []
+  syntax:
+    content: 'public class WorkerValidator : AbstractValidator<Worker>, IValidator<Worker>, IValidator, IEnumerable<IValidationRule>, IEnumerable'
+    content.vb: Public Class WorkerValidator Inherits AbstractValidator(Of Worker) Implements IValidator(Of Worker), IValidator, IEnumerable(Of IValidationRule), IEnumerable
+  inheritance:
+  - System.Object
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  implements:
+  - FluentValidation.IValidator{RPPP_WebApp.Model.Worker}
+  - FluentValidation.IValidator
+  - System.Collections.Generic.IEnumerable{FluentValidation.IValidationRule}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(RPPP_WebApp.Model.Worker)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(RPPP_WebApp.Model.Worker,System.Threading.CancellationToken)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.CreateDescriptor
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleFor``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,{TProperty}}})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,{TProperty}}},System.Func{{TProperty},{TTransformed}})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,{TProperty}}},System.Func{RPPP_WebApp.Model.Worker,{TProperty},{TTransformed}})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{{TElement}}}})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{{TElement}}}},System.Func{{TElement},{TTransformed}})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{{TElement}}}},System.Func{RPPP_WebApp.Model.Worker,{TElement},{TTransformed}})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleSet(System.String,System.Action)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include(FluentValidation.IValidator{RPPP_WebApp.Model.Worker})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include``1(System.Func{RPPP_WebApp.Model.Worker,{TValidator}})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.GetEnumerator
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.EnsureInstanceNotNull(System.Object)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.PreValidate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RaiseValidationException(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.OnRuleAdded(FluentValidation.IValidationRule{RPPP_WebApp.Model.Worker})
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.CascadeMode
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ClassLevelCascadeMode
+  - FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleLevelCascadeMode
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - System.Collections.Generic.IEnumerable{FluentValidation.IValidationRule}.RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.String)
+- uid: RPPP_WebApp.ModelsValidation.WorkerValidator.#ctor(RPPP_WebApp.Model.Rppp01Context)
+  commentId: M:RPPP_WebApp.ModelsValidation.WorkerValidator.#ctor(RPPP_WebApp.Model.Rppp01Context)
+  id: '#ctor(RPPP_WebApp.Model.Rppp01Context)'
+  parent: RPPP_WebApp.ModelsValidation.WorkerValidator
+  langs:
+  - csharp
+  - vb
+  name: WorkerValidator(Rppp01Context)
+  nameWithType: WorkerValidator.WorkerValidator(Rppp01Context)
+  fullName: RPPP_WebApp.ModelsValidation.WorkerValidator.WorkerValidator(RPPP_WebApp.Model.Rppp01Context)
+  type: Constructor
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ModelsValidation/WorkerValidator.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: .ctor
+    path: RPPP-WebApp/RPPP-WebApp/ModelsValidation/WorkerValidator.cs
+    startLine: 13
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ModelsValidation
+  summary: Initializes a new instance of the <xref href="RPPP_WebApp.ModelsValidation.WorkerValidator" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public WorkerValidator(Rppp01Context ctx)
+    parameters:
+    - id: ctx
+      type: RPPP_WebApp.Model.Rppp01Context
+    content.vb: Public Sub New(ctx As Rppp01Context)
+  overload: RPPP_WebApp.ModelsValidation.WorkerValidator.#ctor*
+  nameWithType.vb: WorkerValidator.New(Rppp01Context)
+  fullName.vb: RPPP_WebApp.ModelsValidation.WorkerValidator.New(RPPP_WebApp.Model.Rppp01Context)
+  name.vb: New(Rppp01Context)
+references:
+- uid: RPPP_WebApp.ModelsValidation.WorkerValidator
+  commentId: T:RPPP_WebApp.ModelsValidation.WorkerValidator
+  href: RPPP_WebApp.ModelsValidation.WorkerValidator.html
+  name: WorkerValidator
+  nameWithType: WorkerValidator
+  fullName: RPPP_WebApp.ModelsValidation.WorkerValidator
+- uid: RPPP_WebApp.ModelsValidation
+  commentId: N:RPPP_WebApp.ModelsValidation
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.ModelsValidation
+  nameWithType: RPPP_WebApp.ModelsValidation
+  fullName: RPPP_WebApp.ModelsValidation
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.ModelsValidation
+    name: ModelsValidation
+    href: RPPP_WebApp.ModelsValidation.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.ModelsValidation
+    name: ModelsValidation
+    href: RPPP_WebApp.ModelsValidation.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  commentId: T:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  parent: FluentValidation
+  definition: FluentValidation.AbstractValidator`1
+  href: RPPP_WebApp.Model.Worker.html
+  name: AbstractValidator<Worker>
+  nameWithType: AbstractValidator<Worker>
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>
+  nameWithType.vb: AbstractValidator(Of Worker)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker)
+  name.vb: AbstractValidator(Of Worker)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1
+    name: AbstractValidator
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1
+    name: AbstractValidator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+- uid: FluentValidation.IValidator{RPPP_WebApp.Model.Worker}
+  commentId: T:FluentValidation.IValidator{RPPP_WebApp.Model.Worker}
+  parent: FluentValidation
+  definition: FluentValidation.IValidator`1
+  href: RPPP_WebApp.Model.Worker.html
+  name: IValidator<Worker>
+  nameWithType: IValidator<Worker>
+  fullName: FluentValidation.IValidator<RPPP_WebApp.Model.Worker>
+  nameWithType.vb: IValidator(Of Worker)
+  fullName.vb: FluentValidation.IValidator(Of RPPP_WebApp.Model.Worker)
+  name.vb: IValidator(Of Worker)
+  spec.csharp:
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  spec.vb:
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+- uid: FluentValidation.IValidator
+  commentId: T:FluentValidation.IValidator
+  parent: FluentValidation
+  isExternal: true
+  name: IValidator
+  nameWithType: IValidator
+  fullName: FluentValidation.IValidator
+- uid: System.Collections.Generic.IEnumerable{FluentValidation.IValidationRule}
+  commentId: T:System.Collections.Generic.IEnumerable{FluentValidation.IValidationRule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<IValidationRule>
+  nameWithType: IEnumerable<IValidationRule>
+  fullName: System.Collections.Generic.IEnumerable<FluentValidation.IValidationRule>
+  nameWithType.vb: IEnumerable(Of IValidationRule)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of FluentValidation.IValidationRule)
+  name.vb: IEnumerable(Of IValidationRule)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: FluentValidation.IValidationRule
+    name: IValidationRule
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: FluentValidation.IValidationRule
+    name: IValidationRule
+    isExternal: true
+  - name: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(RPPP_WebApp.Model.Worker)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(RPPP_WebApp.Model.Worker)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.Validate(`0)
+  href: RPPP_WebApp.Model.Worker.html
+  name: Validate(Worker)
+  nameWithType: AbstractValidator<Worker>.Validate(Worker)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.Validate(RPPP_WebApp.Model.Worker)
+  nameWithType.vb: AbstractValidator(Of Worker).Validate(Worker)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).Validate(RPPP_WebApp.Model.Worker)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(RPPP_WebApp.Model.Worker)
+    name: Validate
+    isExternal: true
+  - name: (
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(RPPP_WebApp.Model.Worker)
+    name: Validate
+    isExternal: true
+  - name: (
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(RPPP_WebApp.Model.Worker,System.Threading.CancellationToken)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(RPPP_WebApp.Model.Worker,System.Threading.CancellationToken)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.ValidateAsync(`0,System.Threading.CancellationToken)
+  href: RPPP_WebApp.Model.Worker.html
+  name: ValidateAsync(Worker, CancellationToken)
+  nameWithType: AbstractValidator<Worker>.ValidateAsync(Worker, CancellationToken)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.ValidateAsync(RPPP_WebApp.Model.Worker, System.Threading.CancellationToken)
+  nameWithType.vb: AbstractValidator(Of Worker).ValidateAsync(Worker, CancellationToken)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).ValidateAsync(RPPP_WebApp.Model.Worker, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(RPPP_WebApp.Model.Worker,System.Threading.CancellationToken)
+    name: ValidateAsync
+    isExternal: true
+  - name: (
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(RPPP_WebApp.Model.Worker,System.Threading.CancellationToken)
+    name: ValidateAsync
+    isExternal: true
+  - name: (
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.Validate(FluentValidation.ValidationContext{`0})
+  href: RPPP_WebApp.Model.Worker.html
+  name: Validate(ValidationContext<Worker>)
+  nameWithType: AbstractValidator<Worker>.Validate(ValidationContext<Worker>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.Validate(FluentValidation.ValidationContext<RPPP_WebApp.Model.Worker>)
+  nameWithType.vb: AbstractValidator(Of Worker).Validate(ValidationContext(Of Worker))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).Validate(FluentValidation.ValidationContext(Of RPPP_WebApp.Model.Worker))
+  name.vb: Validate(ValidationContext(Of Worker))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker})
+    name: Validate
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Validate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker})
+    name: Validate
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.ValidateAsync(FluentValidation.ValidationContext{`0},System.Threading.CancellationToken)
+  href: RPPP_WebApp.Model.Worker.html
+  name: ValidateAsync(ValidationContext<Worker>, CancellationToken)
+  nameWithType: AbstractValidator<Worker>.ValidateAsync(ValidationContext<Worker>, CancellationToken)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.ValidateAsync(FluentValidation.ValidationContext<RPPP_WebApp.Model.Worker>, System.Threading.CancellationToken)
+  nameWithType.vb: AbstractValidator(Of Worker).ValidateAsync(ValidationContext(Of Worker), CancellationToken)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).ValidateAsync(FluentValidation.ValidationContext(Of RPPP_WebApp.Model.Worker), System.Threading.CancellationToken)
+  name.vb: ValidateAsync(ValidationContext(Of Worker), CancellationToken)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken)
+    name: ValidateAsync
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ValidateAsync(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken)
+    name: ValidateAsync
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.CreateDescriptor
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.CreateDescriptor
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.CreateDescriptor
+  name: CreateDescriptor()
+  nameWithType: AbstractValidator<Worker>.CreateDescriptor()
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.CreateDescriptor()
+  nameWithType.vb: AbstractValidator(Of Worker).CreateDescriptor()
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).CreateDescriptor()
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.CreateDescriptor
+    name: CreateDescriptor
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.CreateDescriptor
+    name: CreateDescriptor
+    isExternal: true
+  - name: (
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleFor``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,{TProperty}}})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleFor``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,``0}})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.RuleFor``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: RuleFor<TProperty>(Expression<Func<Worker, TProperty>>)
+  nameWithType: AbstractValidator<Worker>.RuleFor<TProperty>(Expression<Func<Worker, TProperty>>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.RuleFor<TProperty>(System.Linq.Expressions.Expression<System.Func<RPPP_WebApp.Model.Worker, TProperty>>)
+  nameWithType.vb: AbstractValidator(Of Worker).RuleFor(Of TProperty)(Expression(Of Func(Of Worker, TProperty)))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).RuleFor(Of TProperty)(System.Linq.Expressions.Expression(Of System.Func(Of RPPP_WebApp.Model.Worker, TProperty)))
+  name.vb: RuleFor(Of TProperty)(Expression(Of Func(Of Worker, TProperty)))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleFor``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,``0}})
+    name: RuleFor
+    isExternal: true
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleFor``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,``0}})
+    name: RuleFor
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,{TProperty}}},System.Func{{TProperty},{TTransformed}})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,``0}},System.Func{``0,``1})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{``0,``1})
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Transform<TProperty, TTransformed>(Expression<Func<Worker, TProperty>>, Func<TProperty, TTransformed>)
+  nameWithType: AbstractValidator<Worker>.Transform<TProperty, TTransformed>(Expression<Func<Worker, TProperty>>, Func<TProperty, TTransformed>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.Transform<TProperty, TTransformed>(System.Linq.Expressions.Expression<System.Func<RPPP_WebApp.Model.Worker, TProperty>>, System.Func<TProperty, TTransformed>)
+  nameWithType.vb: AbstractValidator(Of Worker).Transform(Of TProperty, TTransformed)(Expression(Of Func(Of Worker, TProperty)), Func(Of TProperty, TTransformed))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).Transform(Of TProperty, TTransformed)(System.Linq.Expressions.Expression(Of System.Func(Of RPPP_WebApp.Model.Worker, TProperty)), System.Func(Of TProperty, TTransformed))
+  name.vb: Transform(Of TProperty, TTransformed)(Expression(Of Func(Of Worker, TProperty)), Func(Of TProperty, TTransformed))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,``0}},System.Func{``0,``1})
+    name: Transform
+    isExternal: true
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,``0}},System.Func{``0,``1})
+    name: Transform
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,{TProperty}}},System.Func{RPPP_WebApp.Model.Worker,{TProperty},{TTransformed}})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,``0}},System.Func{RPPP_WebApp.Model.Worker,``0,``1})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{`0,``0,``1})
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Transform<TProperty, TTransformed>(Expression<Func<Worker, TProperty>>, Func<Worker, TProperty, TTransformed>)
+  nameWithType: AbstractValidator<Worker>.Transform<TProperty, TTransformed>(Expression<Func<Worker, TProperty>>, Func<Worker, TProperty, TTransformed>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.Transform<TProperty, TTransformed>(System.Linq.Expressions.Expression<System.Func<RPPP_WebApp.Model.Worker, TProperty>>, System.Func<RPPP_WebApp.Model.Worker, TProperty, TTransformed>)
+  nameWithType.vb: AbstractValidator(Of Worker).Transform(Of TProperty, TTransformed)(Expression(Of Func(Of Worker, TProperty)), Func(Of Worker, TProperty, TTransformed))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).Transform(Of TProperty, TTransformed)(System.Linq.Expressions.Expression(Of System.Func(Of RPPP_WebApp.Model.Worker, TProperty)), System.Func(Of RPPP_WebApp.Model.Worker, TProperty, TTransformed))
+  name.vb: Transform(Of TProperty, TTransformed)(Expression(Of Func(Of Worker, TProperty)), Func(Of Worker, TProperty, TTransformed))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,``0}},System.Func{RPPP_WebApp.Model.Worker,``0,``1})
+    name: Transform
+    isExternal: true
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Transform``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,``0}},System.Func{RPPP_WebApp.Model.Worker,``0,``1})
+    name: Transform
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{{TElement}}}})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{``0}}})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}})
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: RuleForEach<TElement>(Expression<Func<Worker, IEnumerable<TElement>>>)
+  nameWithType: AbstractValidator<Worker>.RuleForEach<TElement>(Expression<Func<Worker, IEnumerable<TElement>>>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.RuleForEach<TElement>(System.Linq.Expressions.Expression<System.Func<RPPP_WebApp.Model.Worker, System.Collections.Generic.IEnumerable<TElement>>>)
+  nameWithType.vb: AbstractValidator(Of Worker).RuleForEach(Of TElement)(Expression(Of Func(Of Worker, IEnumerable(Of TElement))))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).RuleForEach(Of TElement)(System.Linq.Expressions.Expression(Of System.Func(Of RPPP_WebApp.Model.Worker, System.Collections.Generic.IEnumerable(Of TElement))))
+  name.vb: RuleForEach(Of TElement)(Expression(Of Func(Of Worker, IEnumerable(Of TElement))))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{``0}}})
+    name: RuleForEach
+    isExternal: true
+  - name: <
+  - name: TElement
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TElement
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{``0}}})
+    name: RuleForEach
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: )
+  - name: )
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{{TElement}}}},System.Func{{TElement},{TTransformed}})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{``0}}},System.Func{``0,``1})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{``0,``1})
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: TransformForEach<TElement, TTransformed>(Expression<Func<Worker, IEnumerable<TElement>>>, Func<TElement, TTransformed>)
+  nameWithType: AbstractValidator<Worker>.TransformForEach<TElement, TTransformed>(Expression<Func<Worker, IEnumerable<TElement>>>, Func<TElement, TTransformed>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.TransformForEach<TElement, TTransformed>(System.Linq.Expressions.Expression<System.Func<RPPP_WebApp.Model.Worker, System.Collections.Generic.IEnumerable<TElement>>>, System.Func<TElement, TTransformed>)
+  nameWithType.vb: AbstractValidator(Of Worker).TransformForEach(Of TElement, TTransformed)(Expression(Of Func(Of Worker, IEnumerable(Of TElement))), Func(Of TElement, TTransformed))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).TransformForEach(Of TElement, TTransformed)(System.Linq.Expressions.Expression(Of System.Func(Of RPPP_WebApp.Model.Worker, System.Collections.Generic.IEnumerable(Of TElement))), System.Func(Of TElement, TTransformed))
+  name.vb: TransformForEach(Of TElement, TTransformed)(Expression(Of Func(Of Worker, IEnumerable(Of TElement))), Func(Of TElement, TTransformed))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{``0}}},System.Func{``0,``1})
+    name: TransformForEach
+    isExternal: true
+  - name: <
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TElement
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{``0}}},System.Func{``0,``1})
+    name: TransformForEach
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: )
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{{TElement}}}},System.Func{RPPP_WebApp.Model.Worker,{TElement},{TTransformed}})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{``0}}},System.Func{RPPP_WebApp.Model.Worker,``0,``1})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{`0,``0,``1})
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: TransformForEach<TElement, TTransformed>(Expression<Func<Worker, IEnumerable<TElement>>>, Func<Worker, TElement, TTransformed>)
+  nameWithType: AbstractValidator<Worker>.TransformForEach<TElement, TTransformed>(Expression<Func<Worker, IEnumerable<TElement>>>, Func<Worker, TElement, TTransformed>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.TransformForEach<TElement, TTransformed>(System.Linq.Expressions.Expression<System.Func<RPPP_WebApp.Model.Worker, System.Collections.Generic.IEnumerable<TElement>>>, System.Func<RPPP_WebApp.Model.Worker, TElement, TTransformed>)
+  nameWithType.vb: AbstractValidator(Of Worker).TransformForEach(Of TElement, TTransformed)(Expression(Of Func(Of Worker, IEnumerable(Of TElement))), Func(Of Worker, TElement, TTransformed))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).TransformForEach(Of TElement, TTransformed)(System.Linq.Expressions.Expression(Of System.Func(Of RPPP_WebApp.Model.Worker, System.Collections.Generic.IEnumerable(Of TElement))), System.Func(Of RPPP_WebApp.Model.Worker, TElement, TTransformed))
+  name.vb: TransformForEach(Of TElement, TTransformed)(Expression(Of Func(Of Worker, IEnumerable(Of TElement))), Func(Of Worker, TElement, TTransformed))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{``0}}},System.Func{RPPP_WebApp.Model.Worker,``0,``1})
+    name: TransformForEach
+    isExternal: true
+  - name: <
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TElement
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{RPPP_WebApp.Model.Worker,System.Collections.Generic.IEnumerable{``0}}},System.Func{RPPP_WebApp.Model.Worker,``0,``1})
+    name: TransformForEach
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: )
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleSet(System.String,System.Action)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleSet(System.String,System.Action)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.RuleSet(System.String,System.Action)
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: RuleSet(string, Action)
+  nameWithType: AbstractValidator<Worker>.RuleSet(string, Action)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.RuleSet(string, System.Action)
+  nameWithType.vb: AbstractValidator(Of Worker).RuleSet(String, Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).RuleSet(String, System.Action)
+  name.vb: RuleSet(String, Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleSet(System.String,System.Action)
+    name: RuleSet
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleSet(System.String,System.Action)
+    name: RuleSet
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.When(System.Func{`0,System.Boolean},System.Action)
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: When(Func<Worker, bool>, Action)
+  nameWithType: AbstractValidator<Worker>.When(Func<Worker, bool>, Action)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.When(System.Func<RPPP_WebApp.Model.Worker, bool>, System.Action)
+  nameWithType.vb: AbstractValidator(Of Worker).When(Func(Of Worker, Boolean), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).When(System.Func(Of RPPP_WebApp.Model.Worker, Boolean), System.Action)
+  name.vb: When(Func(Of Worker, Boolean), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+    name: When
+    isExternal: true
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+    name: When
+    isExternal: true
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.When(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: When(Func<Worker, ValidationContext<Worker>, bool>, Action)
+  nameWithType: AbstractValidator<Worker>.When(Func<Worker, ValidationContext<Worker>, bool>, Action)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.When(System.Func<RPPP_WebApp.Model.Worker, FluentValidation.ValidationContext<RPPP_WebApp.Model.Worker>, bool>, System.Action)
+  nameWithType.vb: AbstractValidator(Of Worker).When(Func(Of Worker, ValidationContext(Of Worker), Boolean), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).When(System.Func(Of RPPP_WebApp.Model.Worker, FluentValidation.ValidationContext(Of RPPP_WebApp.Model.Worker), Boolean), System.Action)
+  name.vb: When(Func(Of Worker, ValidationContext(Of Worker), Boolean), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+    name: When
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.When(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+    name: When
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.Unless(System.Func{`0,System.Boolean},System.Action)
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Unless(Func<Worker, bool>, Action)
+  nameWithType: AbstractValidator<Worker>.Unless(Func<Worker, bool>, Action)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.Unless(System.Func<RPPP_WebApp.Model.Worker, bool>, System.Action)
+  nameWithType.vb: AbstractValidator(Of Worker).Unless(Func(Of Worker, Boolean), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).Unless(System.Func(Of RPPP_WebApp.Model.Worker, Boolean), System.Action)
+  name.vb: Unless(Func(Of Worker, Boolean), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+    name: Unless
+    isExternal: true
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,System.Boolean},System.Action)
+    name: Unless
+    isExternal: true
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.Unless(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Unless(Func<Worker, ValidationContext<Worker>, bool>, Action)
+  nameWithType: AbstractValidator<Worker>.Unless(Func<Worker, ValidationContext<Worker>, bool>, Action)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.Unless(System.Func<RPPP_WebApp.Model.Worker, FluentValidation.ValidationContext<RPPP_WebApp.Model.Worker>, bool>, System.Action)
+  nameWithType.vb: AbstractValidator(Of Worker).Unless(Func(Of Worker, ValidationContext(Of Worker), Boolean), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).Unless(System.Func(Of RPPP_WebApp.Model.Worker, FluentValidation.ValidationContext(Of RPPP_WebApp.Model.Worker), Boolean), System.Action)
+  name.vb: Unless(Func(Of Worker, ValidationContext(Of Worker), Boolean), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+    name: Unless
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Unless(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Boolean},System.Action)
+    name: Unless
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: WhenAsync(Func<Worker, CancellationToken, Task<bool>>, Action)
+  nameWithType: AbstractValidator<Worker>.WhenAsync(Func<Worker, CancellationToken, Task<bool>>, Action)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.WhenAsync(System.Func<RPPP_WebApp.Model.Worker, System.Threading.CancellationToken, System.Threading.Tasks.Task<bool>>, System.Action)
+  nameWithType.vb: AbstractValidator(Of Worker).WhenAsync(Func(Of Worker, CancellationToken, Task(Of Boolean)), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).WhenAsync(System.Func(Of RPPP_WebApp.Model.Worker, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of Boolean)), System.Action)
+  name.vb: WhenAsync(Func(Of Worker, CancellationToken, Task(Of Boolean)), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: WhenAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: WhenAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  href: https://learn.microsoft.com/dotnet/api/system.func-4
+  name: WhenAsync(Func<Worker, ValidationContext<Worker>, CancellationToken, Task<bool>>, Action)
+  nameWithType: AbstractValidator<Worker>.WhenAsync(Func<Worker, ValidationContext<Worker>, CancellationToken, Task<bool>>, Action)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.WhenAsync(System.Func<RPPP_WebApp.Model.Worker, FluentValidation.ValidationContext<RPPP_WebApp.Model.Worker>, System.Threading.CancellationToken, System.Threading.Tasks.Task<bool>>, System.Action)
+  nameWithType.vb: AbstractValidator(Of Worker).WhenAsync(Func(Of Worker, ValidationContext(Of Worker), CancellationToken, Task(Of Boolean)), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).WhenAsync(System.Func(Of RPPP_WebApp.Model.Worker, FluentValidation.ValidationContext(Of RPPP_WebApp.Model.Worker), System.Threading.CancellationToken, System.Threading.Tasks.Task(Of Boolean)), System.Action)
+  name.vb: WhenAsync(Func(Of Worker, ValidationContext(Of Worker), CancellationToken, Task(Of Boolean)), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: WhenAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`4
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-4
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.WhenAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: WhenAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`4
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-4
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: UnlessAsync(Func<Worker, CancellationToken, Task<bool>>, Action)
+  nameWithType: AbstractValidator<Worker>.UnlessAsync(Func<Worker, CancellationToken, Task<bool>>, Action)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.UnlessAsync(System.Func<RPPP_WebApp.Model.Worker, System.Threading.CancellationToken, System.Threading.Tasks.Task<bool>>, System.Action)
+  nameWithType.vb: AbstractValidator(Of Worker).UnlessAsync(Func(Of Worker, CancellationToken, Task(Of Boolean)), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).UnlessAsync(System.Func(Of RPPP_WebApp.Model.Worker, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of Boolean)), System.Action)
+  name.vb: UnlessAsync(Func(Of Worker, CancellationToken, Task(Of Boolean)), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: UnlessAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: UnlessAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  href: https://learn.microsoft.com/dotnet/api/system.func-4
+  name: UnlessAsync(Func<Worker, ValidationContext<Worker>, CancellationToken, Task<bool>>, Action)
+  nameWithType: AbstractValidator<Worker>.UnlessAsync(Func<Worker, ValidationContext<Worker>, CancellationToken, Task<bool>>, Action)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.UnlessAsync(System.Func<RPPP_WebApp.Model.Worker, FluentValidation.ValidationContext<RPPP_WebApp.Model.Worker>, System.Threading.CancellationToken, System.Threading.Tasks.Task<bool>>, System.Action)
+  nameWithType.vb: AbstractValidator(Of Worker).UnlessAsync(Func(Of Worker, ValidationContext(Of Worker), CancellationToken, Task(Of Boolean)), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).UnlessAsync(System.Func(Of RPPP_WebApp.Model.Worker, FluentValidation.ValidationContext(Of RPPP_WebApp.Model.Worker), System.Threading.CancellationToken, System.Threading.Tasks.Task(Of Boolean)), System.Action)
+  name.vb: UnlessAsync(Func(Of Worker, ValidationContext(Of Worker), CancellationToken, Task(Of Boolean)), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: UnlessAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`4
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-4
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.UnlessAsync(System.Func{RPPP_WebApp.Model.Worker,FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: UnlessAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`4
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-4
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include(FluentValidation.IValidator{RPPP_WebApp.Model.Worker})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include(FluentValidation.IValidator{RPPP_WebApp.Model.Worker})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.Include(FluentValidation.IValidator{`0})
+  href: RPPP_WebApp.Model.Worker.html
+  name: Include(IValidator<Worker>)
+  nameWithType: AbstractValidator<Worker>.Include(IValidator<Worker>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.Include(FluentValidation.IValidator<RPPP_WebApp.Model.Worker>)
+  nameWithType.vb: AbstractValidator(Of Worker).Include(IValidator(Of Worker))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).Include(FluentValidation.IValidator(Of RPPP_WebApp.Model.Worker))
+  name.vb: Include(IValidator(Of Worker))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include(FluentValidation.IValidator{RPPP_WebApp.Model.Worker})
+    name: Include
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include(FluentValidation.IValidator{RPPP_WebApp.Model.Worker})
+    name: Include
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include``1(System.Func{RPPP_WebApp.Model.Worker,{TValidator}})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include``1(System.Func{RPPP_WebApp.Model.Worker,``0})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.Include``1(System.Func{`0,``0})
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Include<TValidator>(Func<Worker, TValidator>)
+  nameWithType: AbstractValidator<Worker>.Include<TValidator>(Func<Worker, TValidator>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.Include<TValidator>(System.Func<RPPP_WebApp.Model.Worker, TValidator>)
+  nameWithType.vb: AbstractValidator(Of Worker).Include(Of TValidator)(Func(Of Worker, TValidator))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).Include(Of TValidator)(System.Func(Of RPPP_WebApp.Model.Worker, TValidator))
+  name.vb: Include(Of TValidator)(Func(Of Worker, TValidator))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include``1(System.Func{RPPP_WebApp.Model.Worker,``0})
+    name: Include
+    isExternal: true
+  - name: <
+  - name: TValidator
+  - name: '>'
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TValidator
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.Include``1(System.Func{RPPP_WebApp.Model.Worker,``0})
+    name: Include
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValidator
+  - name: )
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: ','
+  - name: " "
+  - name: TValidator
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.GetEnumerator
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.GetEnumerator
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: AbstractValidator<Worker>.GetEnumerator()
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.GetEnumerator()
+  nameWithType.vb: AbstractValidator(Of Worker).GetEnumerator()
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).GetEnumerator()
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+  - name: (
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.EnsureInstanceNotNull(System.Object)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.EnsureInstanceNotNull(System.Object)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.EnsureInstanceNotNull(System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: EnsureInstanceNotNull(object)
+  nameWithType: AbstractValidator<Worker>.EnsureInstanceNotNull(object)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.EnsureInstanceNotNull(object)
+  nameWithType.vb: AbstractValidator(Of Worker).EnsureInstanceNotNull(Object)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).EnsureInstanceNotNull(Object)
+  name.vb: EnsureInstanceNotNull(Object)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.EnsureInstanceNotNull(System.Object)
+    name: EnsureInstanceNotNull
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.EnsureInstanceNotNull(System.Object)
+    name: EnsureInstanceNotNull
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.PreValidate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.PreValidate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.PreValidate(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+  href: RPPP_WebApp.Model.Worker.html
+  name: PreValidate(ValidationContext<Worker>, ValidationResult)
+  nameWithType: AbstractValidator<Worker>.PreValidate(ValidationContext<Worker>, ValidationResult)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.PreValidate(FluentValidation.ValidationContext<RPPP_WebApp.Model.Worker>, FluentValidation.Results.ValidationResult)
+  nameWithType.vb: AbstractValidator(Of Worker).PreValidate(ValidationContext(Of Worker), ValidationResult)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).PreValidate(FluentValidation.ValidationContext(Of RPPP_WebApp.Model.Worker), FluentValidation.Results.ValidationResult)
+  name.vb: PreValidate(ValidationContext(Of Worker), ValidationResult)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.PreValidate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+    name: PreValidate
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.Results.ValidationResult
+    name: ValidationResult
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.PreValidate(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+    name: PreValidate
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.Results.ValidationResult
+    name: ValidationResult
+    isExternal: true
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RaiseValidationException(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RaiseValidationException(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.RaiseValidationException(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+  href: RPPP_WebApp.Model.Worker.html
+  name: RaiseValidationException(ValidationContext<Worker>, ValidationResult)
+  nameWithType: AbstractValidator<Worker>.RaiseValidationException(ValidationContext<Worker>, ValidationResult)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.RaiseValidationException(FluentValidation.ValidationContext<RPPP_WebApp.Model.Worker>, FluentValidation.Results.ValidationResult)
+  nameWithType.vb: AbstractValidator(Of Worker).RaiseValidationException(ValidationContext(Of Worker), ValidationResult)
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).RaiseValidationException(FluentValidation.ValidationContext(Of RPPP_WebApp.Model.Worker), FluentValidation.Results.ValidationResult)
+  name.vb: RaiseValidationException(ValidationContext(Of Worker), ValidationResult)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RaiseValidationException(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+    name: RaiseValidationException
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.Results.ValidationResult
+    name: ValidationResult
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RaiseValidationException(FluentValidation.ValidationContext{RPPP_WebApp.Model.Worker},FluentValidation.Results.ValidationResult)
+    name: RaiseValidationException
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.Results.ValidationResult
+    name: ValidationResult
+    isExternal: true
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.OnRuleAdded(FluentValidation.IValidationRule{RPPP_WebApp.Model.Worker})
+  commentId: M:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.OnRuleAdded(FluentValidation.IValidationRule{RPPP_WebApp.Model.Worker})
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.OnRuleAdded(FluentValidation.IValidationRule{`0})
+  href: RPPP_WebApp.Model.Worker.html
+  name: OnRuleAdded(IValidationRule<Worker>)
+  nameWithType: AbstractValidator<Worker>.OnRuleAdded(IValidationRule<Worker>)
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.OnRuleAdded(FluentValidation.IValidationRule<RPPP_WebApp.Model.Worker>)
+  nameWithType.vb: AbstractValidator(Of Worker).OnRuleAdded(IValidationRule(Of Worker))
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).OnRuleAdded(FluentValidation.IValidationRule(Of RPPP_WebApp.Model.Worker))
+  name.vb: OnRuleAdded(IValidationRule(Of Worker))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.OnRuleAdded(FluentValidation.IValidationRule{RPPP_WebApp.Model.Worker})
+    name: OnRuleAdded
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.IValidationRule`1
+    name: IValidationRule
+    isExternal: true
+  - name: <
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.OnRuleAdded(FluentValidation.IValidationRule{RPPP_WebApp.Model.Worker})
+    name: OnRuleAdded
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.IValidationRule`1
+    name: IValidationRule
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+    href: RPPP_WebApp.Model.Worker.html
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.CascadeMode
+  commentId: P:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.CascadeMode
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.CascadeMode
+  name: CascadeMode
+  nameWithType: AbstractValidator<Worker>.CascadeMode
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.CascadeMode
+  nameWithType.vb: AbstractValidator(Of Worker).CascadeMode
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).CascadeMode
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ClassLevelCascadeMode
+  commentId: P:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.ClassLevelCascadeMode
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.ClassLevelCascadeMode
+  name: ClassLevelCascadeMode
+  nameWithType: AbstractValidator<Worker>.ClassLevelCascadeMode
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.ClassLevelCascadeMode
+  nameWithType.vb: AbstractValidator(Of Worker).ClassLevelCascadeMode
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).ClassLevelCascadeMode
+- uid: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleLevelCascadeMode
+  commentId: P:FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}.RuleLevelCascadeMode
+  parent: FluentValidation.AbstractValidator{RPPP_WebApp.Model.Worker}
+  definition: FluentValidation.AbstractValidator`1.RuleLevelCascadeMode
+  name: RuleLevelCascadeMode
+  nameWithType: AbstractValidator<Worker>.RuleLevelCascadeMode
+  fullName: FluentValidation.AbstractValidator<RPPP_WebApp.Model.Worker>.RuleLevelCascadeMode
+  nameWithType.vb: AbstractValidator(Of Worker).RuleLevelCascadeMode
+  fullName.vb: FluentValidation.AbstractValidator(Of RPPP_WebApp.Model.Worker).RuleLevelCascadeMode
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{FluentValidation.IValidationRule}.RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.String)
+  commentId: M:RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.Collections.Generic.IEnumerable{``0},System.String)
+  parent: RPPP_WebApp.Extensions.ExcelCreator
+  definition: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.Collections.Generic.IEnumerable{``0},System.String)
+  href: RPPP_WebApp.Extensions.ExcelCreator.html#RPPP_WebApp_Extensions_ExcelCreator_CreateExcel__1_System_Collections_Generic_IEnumerable___0__System_String_
+  name: CreateExcel<IValidationRule>(IEnumerable<IValidationRule>, string)
+  nameWithType: ExcelCreator.CreateExcel<IValidationRule>(IEnumerable<IValidationRule>, string)
+  fullName: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel<FluentValidation.IValidationRule>(System.Collections.Generic.IEnumerable<FluentValidation.IValidationRule>, string)
+  nameWithType.vb: ExcelCreator.CreateExcel(Of IValidationRule)(IEnumerable(Of IValidationRule), String)
+  fullName.vb: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel(Of FluentValidation.IValidationRule)(System.Collections.Generic.IEnumerable(Of FluentValidation.IValidationRule), String)
+  name.vb: CreateExcel(Of IValidationRule)(IEnumerable(Of IValidationRule), String)
+  spec.csharp:
+  - uid: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.Collections.Generic.IEnumerable{FluentValidation.IValidationRule},System.String)
+    name: CreateExcel
+    href: RPPP_WebApp.Extensions.ExcelCreator.html#RPPP_WebApp_Extensions_ExcelCreator_CreateExcel__1_System_Collections_Generic_IEnumerable___0__System_String_
+  - name: <
+  - uid: FluentValidation.IValidationRule
+    name: IValidationRule
+    isExternal: true
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: FluentValidation.IValidationRule
+    name: IValidationRule
+    isExternal: true
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.Collections.Generic.IEnumerable{FluentValidation.IValidationRule},System.String)
+    name: CreateExcel
+    href: RPPP_WebApp.Extensions.ExcelCreator.html#RPPP_WebApp_Extensions_ExcelCreator_CreateExcel__1_System_Collections_Generic_IEnumerable___0__System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: FluentValidation.IValidationRule
+    name: IValidationRule
+    isExternal: true
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: FluentValidation.IValidationRule
+    name: IValidationRule
+    isExternal: true
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: FluentValidation.AbstractValidator`1
+  commentId: T:FluentValidation.AbstractValidator`1
+  isExternal: true
+  name: AbstractValidator<T>
+  nameWithType: AbstractValidator<T>
+  fullName: FluentValidation.AbstractValidator<T>
+  nameWithType.vb: AbstractValidator(Of T)
+  fullName.vb: FluentValidation.AbstractValidator(Of T)
+  name.vb: AbstractValidator(Of T)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1
+    name: AbstractValidator
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1
+    name: AbstractValidator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: FluentValidation
+  commentId: N:FluentValidation
+  isExternal: true
+  name: FluentValidation
+  nameWithType: FluentValidation
+  fullName: FluentValidation
+- uid: FluentValidation.IValidator`1
+  commentId: T:FluentValidation.IValidator`1
+  isExternal: true
+  name: IValidator<T>
+  nameWithType: IValidator<T>
+  fullName: FluentValidation.IValidator<T>
+  nameWithType.vb: IValidator(Of T)
+  fullName.vb: FluentValidation.IValidator(Of T)
+  name.vb: IValidator(Of T)
+  spec.csharp:
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: FluentValidation.AbstractValidator`1.Validate(`0)
+  commentId: M:FluentValidation.AbstractValidator`1.Validate(`0)
+  isExternal: true
+  name: Validate(T)
+  nameWithType: AbstractValidator<T>.Validate(T)
+  fullName: FluentValidation.AbstractValidator<T>.Validate(T)
+  nameWithType.vb: AbstractValidator(Of T).Validate(T)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).Validate(T)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.Validate(`0)
+    name: Validate
+    isExternal: true
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.Validate(`0)
+    name: Validate
+    isExternal: true
+  - name: (
+  - name: T
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.ValidateAsync(`0,System.Threading.CancellationToken)
+  commentId: M:FluentValidation.AbstractValidator`1.ValidateAsync(`0,System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: ValidateAsync(T, CancellationToken)
+  nameWithType: AbstractValidator<T>.ValidateAsync(T, CancellationToken)
+  fullName: FluentValidation.AbstractValidator<T>.ValidateAsync(T, System.Threading.CancellationToken)
+  nameWithType.vb: AbstractValidator(Of T).ValidateAsync(T, CancellationToken)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).ValidateAsync(T, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.ValidateAsync(`0,System.Threading.CancellationToken)
+    name: ValidateAsync
+    isExternal: true
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.ValidateAsync(`0,System.Threading.CancellationToken)
+    name: ValidateAsync
+    isExternal: true
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.Validate(FluentValidation.ValidationContext{`0})
+  commentId: M:FluentValidation.AbstractValidator`1.Validate(FluentValidation.ValidationContext{`0})
+  isExternal: true
+  name: Validate(ValidationContext<T>)
+  nameWithType: AbstractValidator<T>.Validate(ValidationContext<T>)
+  fullName: FluentValidation.AbstractValidator<T>.Validate(FluentValidation.ValidationContext<T>)
+  nameWithType.vb: AbstractValidator(Of T).Validate(ValidationContext(Of T))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).Validate(FluentValidation.ValidationContext(Of T))
+  name.vb: Validate(ValidationContext(Of T))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.Validate(FluentValidation.ValidationContext{`0})
+    name: Validate
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.Validate(FluentValidation.ValidationContext{`0})
+    name: Validate
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.ValidateAsync(FluentValidation.ValidationContext{`0},System.Threading.CancellationToken)
+  commentId: M:FluentValidation.AbstractValidator`1.ValidateAsync(FluentValidation.ValidationContext{`0},System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: ValidateAsync(ValidationContext<T>, CancellationToken)
+  nameWithType: AbstractValidator<T>.ValidateAsync(ValidationContext<T>, CancellationToken)
+  fullName: FluentValidation.AbstractValidator<T>.ValidateAsync(FluentValidation.ValidationContext<T>, System.Threading.CancellationToken)
+  nameWithType.vb: AbstractValidator(Of T).ValidateAsync(ValidationContext(Of T), CancellationToken)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).ValidateAsync(FluentValidation.ValidationContext(Of T), System.Threading.CancellationToken)
+  name.vb: ValidateAsync(ValidationContext(Of T), CancellationToken)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.ValidateAsync(FluentValidation.ValidationContext{`0},System.Threading.CancellationToken)
+    name: ValidateAsync
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.ValidateAsync(FluentValidation.ValidationContext{`0},System.Threading.CancellationToken)
+    name: ValidateAsync
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.CreateDescriptor
+  commentId: M:FluentValidation.AbstractValidator`1.CreateDescriptor
+  isExternal: true
+  name: CreateDescriptor()
+  nameWithType: AbstractValidator<T>.CreateDescriptor()
+  fullName: FluentValidation.AbstractValidator<T>.CreateDescriptor()
+  nameWithType.vb: AbstractValidator(Of T).CreateDescriptor()
+  fullName.vb: FluentValidation.AbstractValidator(Of T).CreateDescriptor()
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.CreateDescriptor
+    name: CreateDescriptor
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.CreateDescriptor
+    name: CreateDescriptor
+    isExternal: true
+  - name: (
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.RuleFor``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})
+  commentId: M:FluentValidation.AbstractValidator`1.RuleFor``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: RuleFor<TProperty>(Expression<Func<T, TProperty>>)
+  nameWithType: AbstractValidator<T>.RuleFor<TProperty>(Expression<Func<T, TProperty>>)
+  fullName: FluentValidation.AbstractValidator<T>.RuleFor<TProperty>(System.Linq.Expressions.Expression<System.Func<T, TProperty>>)
+  nameWithType.vb: AbstractValidator(Of T).RuleFor(Of TProperty)(Expression(Of Func(Of T, TProperty)))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).RuleFor(Of TProperty)(System.Linq.Expressions.Expression(Of System.Func(Of T, TProperty)))
+  name.vb: RuleFor(Of TProperty)(Expression(Of Func(Of T, TProperty)))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.RuleFor``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})
+    name: RuleFor
+    isExternal: true
+  - name: <
+  - name: TProperty
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.RuleFor``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})
+    name: RuleFor
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{``0,``1})
+  commentId: M:FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{``0,``1})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Transform<TProperty, TTransformed>(Expression<Func<T, TProperty>>, Func<TProperty, TTransformed>)
+  nameWithType: AbstractValidator<T>.Transform<TProperty, TTransformed>(Expression<Func<T, TProperty>>, Func<TProperty, TTransformed>)
+  fullName: FluentValidation.AbstractValidator<T>.Transform<TProperty, TTransformed>(System.Linq.Expressions.Expression<System.Func<T, TProperty>>, System.Func<TProperty, TTransformed>)
+  nameWithType.vb: AbstractValidator(Of T).Transform(Of TProperty, TTransformed)(Expression(Of Func(Of T, TProperty)), Func(Of TProperty, TTransformed))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).Transform(Of TProperty, TTransformed)(System.Linq.Expressions.Expression(Of System.Func(Of T, TProperty)), System.Func(Of TProperty, TTransformed))
+  name.vb: Transform(Of TProperty, TTransformed)(Expression(Of Func(Of T, TProperty)), Func(Of TProperty, TTransformed))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{``0,``1})
+    name: Transform
+    isExternal: true
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{``0,``1})
+    name: Transform
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{`0,``0,``1})
+  commentId: M:FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{`0,``0,``1})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Transform<TProperty, TTransformed>(Expression<Func<T, TProperty>>, Func<T, TProperty, TTransformed>)
+  nameWithType: AbstractValidator<T>.Transform<TProperty, TTransformed>(Expression<Func<T, TProperty>>, Func<T, TProperty, TTransformed>)
+  fullName: FluentValidation.AbstractValidator<T>.Transform<TProperty, TTransformed>(System.Linq.Expressions.Expression<System.Func<T, TProperty>>, System.Func<T, TProperty, TTransformed>)
+  nameWithType.vb: AbstractValidator(Of T).Transform(Of TProperty, TTransformed)(Expression(Of Func(Of T, TProperty)), Func(Of T, TProperty, TTransformed))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).Transform(Of TProperty, TTransformed)(System.Linq.Expressions.Expression(Of System.Func(Of T, TProperty)), System.Func(Of T, TProperty, TTransformed))
+  name.vb: Transform(Of TProperty, TTransformed)(Expression(Of Func(Of T, TProperty)), Func(Of T, TProperty, TTransformed))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{`0,``0,``1})
+    name: Transform
+    isExternal: true
+  - name: <
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.Transform``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Func{`0,``0,``1})
+    name: Transform
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TProperty
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}})
+  commentId: M:FluentValidation.AbstractValidator`1.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: RuleForEach<TElement>(Expression<Func<T, IEnumerable<TElement>>>)
+  nameWithType: AbstractValidator<T>.RuleForEach<TElement>(Expression<Func<T, IEnumerable<TElement>>>)
+  fullName: FluentValidation.AbstractValidator<T>.RuleForEach<TElement>(System.Linq.Expressions.Expression<System.Func<T, System.Collections.Generic.IEnumerable<TElement>>>)
+  nameWithType.vb: AbstractValidator(Of T).RuleForEach(Of TElement)(Expression(Of Func(Of T, IEnumerable(Of TElement))))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).RuleForEach(Of TElement)(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Collections.Generic.IEnumerable(Of TElement))))
+  name.vb: RuleForEach(Of TElement)(Expression(Of Func(Of T, IEnumerable(Of TElement))))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}})
+    name: RuleForEach
+    isExternal: true
+  - name: <
+  - name: TElement
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TElement
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.RuleForEach``1(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}})
+    name: RuleForEach
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: )
+  - name: )
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{``0,``1})
+  commentId: M:FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{``0,``1})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: TransformForEach<TElement, TTransformed>(Expression<Func<T, IEnumerable<TElement>>>, Func<TElement, TTransformed>)
+  nameWithType: AbstractValidator<T>.TransformForEach<TElement, TTransformed>(Expression<Func<T, IEnumerable<TElement>>>, Func<TElement, TTransformed>)
+  fullName: FluentValidation.AbstractValidator<T>.TransformForEach<TElement, TTransformed>(System.Linq.Expressions.Expression<System.Func<T, System.Collections.Generic.IEnumerable<TElement>>>, System.Func<TElement, TTransformed>)
+  nameWithType.vb: AbstractValidator(Of T).TransformForEach(Of TElement, TTransformed)(Expression(Of Func(Of T, IEnumerable(Of TElement))), Func(Of TElement, TTransformed))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).TransformForEach(Of TElement, TTransformed)(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Collections.Generic.IEnumerable(Of TElement))), System.Func(Of TElement, TTransformed))
+  name.vb: TransformForEach(Of TElement, TTransformed)(Expression(Of Func(Of T, IEnumerable(Of TElement))), Func(Of TElement, TTransformed))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{``0,``1})
+    name: TransformForEach
+    isExternal: true
+  - name: <
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TElement
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{``0,``1})
+    name: TransformForEach
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: )
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{`0,``0,``1})
+  commentId: M:FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{`0,``0,``1})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: TransformForEach<TElement, TTransformed>(Expression<Func<T, IEnumerable<TElement>>>, Func<T, TElement, TTransformed>)
+  nameWithType: AbstractValidator<T>.TransformForEach<TElement, TTransformed>(Expression<Func<T, IEnumerable<TElement>>>, Func<T, TElement, TTransformed>)
+  fullName: FluentValidation.AbstractValidator<T>.TransformForEach<TElement, TTransformed>(System.Linq.Expressions.Expression<System.Func<T, System.Collections.Generic.IEnumerable<TElement>>>, System.Func<T, TElement, TTransformed>)
+  nameWithType.vb: AbstractValidator(Of T).TransformForEach(Of TElement, TTransformed)(Expression(Of Func(Of T, IEnumerable(Of TElement))), Func(Of T, TElement, TTransformed))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).TransformForEach(Of TElement, TTransformed)(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Collections.Generic.IEnumerable(Of TElement))), System.Func(Of T, TElement, TTransformed))
+  name.vb: TransformForEach(Of TElement, TTransformed)(Expression(Of Func(Of T, IEnumerable(Of TElement))), Func(Of T, TElement, TTransformed))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{`0,``0,``1})
+    name: TransformForEach
+    isExternal: true
+  - name: <
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TElement
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.TransformForEach``2(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Func{`0,``0,``1})
+    name: TransformForEach
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TElement
+  - name: )
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TElement
+  - name: ','
+  - name: " "
+  - name: TTransformed
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.RuleSet(System.String,System.Action)
+  commentId: M:FluentValidation.AbstractValidator`1.RuleSet(System.String,System.Action)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: RuleSet(string, Action)
+  nameWithType: AbstractValidator<T>.RuleSet(string, Action)
+  fullName: FluentValidation.AbstractValidator<T>.RuleSet(string, System.Action)
+  nameWithType.vb: AbstractValidator(Of T).RuleSet(String, Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).RuleSet(String, System.Action)
+  name.vb: RuleSet(String, Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.RuleSet(System.String,System.Action)
+    name: RuleSet
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.RuleSet(System.String,System.Action)
+    name: RuleSet
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.When(System.Func{`0,System.Boolean},System.Action)
+  commentId: M:FluentValidation.AbstractValidator`1.When(System.Func{`0,System.Boolean},System.Action)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: When(Func<T, bool>, Action)
+  nameWithType: AbstractValidator<T>.When(Func<T, bool>, Action)
+  fullName: FluentValidation.AbstractValidator<T>.When(System.Func<T, bool>, System.Action)
+  nameWithType.vb: AbstractValidator(Of T).When(Func(Of T, Boolean), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).When(System.Func(Of T, Boolean), System.Action)
+  name.vb: When(Func(Of T, Boolean), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.When(System.Func{`0,System.Boolean},System.Action)
+    name: When
+    isExternal: true
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.When(System.Func{`0,System.Boolean},System.Action)
+    name: When
+    isExternal: true
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.When(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+  commentId: M:FluentValidation.AbstractValidator`1.When(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: When(Func<T, ValidationContext<T>, bool>, Action)
+  nameWithType: AbstractValidator<T>.When(Func<T, ValidationContext<T>, bool>, Action)
+  fullName: FluentValidation.AbstractValidator<T>.When(System.Func<T, FluentValidation.ValidationContext<T>, bool>, System.Action)
+  nameWithType.vb: AbstractValidator(Of T).When(Func(Of T, ValidationContext(Of T), Boolean), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).When(System.Func(Of T, FluentValidation.ValidationContext(Of T), Boolean), System.Action)
+  name.vb: When(Func(Of T, ValidationContext(Of T), Boolean), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.When(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+    name: When
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.When(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+    name: When
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.Unless(System.Func{`0,System.Boolean},System.Action)
+  commentId: M:FluentValidation.AbstractValidator`1.Unless(System.Func{`0,System.Boolean},System.Action)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Unless(Func<T, bool>, Action)
+  nameWithType: AbstractValidator<T>.Unless(Func<T, bool>, Action)
+  fullName: FluentValidation.AbstractValidator<T>.Unless(System.Func<T, bool>, System.Action)
+  nameWithType.vb: AbstractValidator(Of T).Unless(Func(Of T, Boolean), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).Unless(System.Func(Of T, Boolean), System.Action)
+  name.vb: Unless(Func(Of T, Boolean), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.Unless(System.Func{`0,System.Boolean},System.Action)
+    name: Unless
+    isExternal: true
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.Unless(System.Func{`0,System.Boolean},System.Action)
+    name: Unless
+    isExternal: true
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.Unless(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+  commentId: M:FluentValidation.AbstractValidator`1.Unless(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Unless(Func<T, ValidationContext<T>, bool>, Action)
+  nameWithType: AbstractValidator<T>.Unless(Func<T, ValidationContext<T>, bool>, Action)
+  fullName: FluentValidation.AbstractValidator<T>.Unless(System.Func<T, FluentValidation.ValidationContext<T>, bool>, System.Action)
+  nameWithType.vb: AbstractValidator(Of T).Unless(Func(Of T, ValidationContext(Of T), Boolean), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).Unless(System.Func(Of T, FluentValidation.ValidationContext(Of T), Boolean), System.Action)
+  name.vb: Unless(Func(Of T, ValidationContext(Of T), Boolean), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.Unless(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+    name: Unless
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.Unless(System.Func{`0,FluentValidation.ValidationContext{`0},System.Boolean},System.Action)
+    name: Unless
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  commentId: M:FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: WhenAsync(Func<T, CancellationToken, Task<bool>>, Action)
+  nameWithType: AbstractValidator<T>.WhenAsync(Func<T, CancellationToken, Task<bool>>, Action)
+  fullName: FluentValidation.AbstractValidator<T>.WhenAsync(System.Func<T, System.Threading.CancellationToken, System.Threading.Tasks.Task<bool>>, System.Action)
+  nameWithType.vb: AbstractValidator(Of T).WhenAsync(Func(Of T, CancellationToken, Task(Of Boolean)), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).WhenAsync(System.Func(Of T, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of Boolean)), System.Action)
+  name.vb: WhenAsync(Func(Of T, CancellationToken, Task(Of Boolean)), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: WhenAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: WhenAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  commentId: M:FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-4
+  name: WhenAsync(Func<T, ValidationContext<T>, CancellationToken, Task<bool>>, Action)
+  nameWithType: AbstractValidator<T>.WhenAsync(Func<T, ValidationContext<T>, CancellationToken, Task<bool>>, Action)
+  fullName: FluentValidation.AbstractValidator<T>.WhenAsync(System.Func<T, FluentValidation.ValidationContext<T>, System.Threading.CancellationToken, System.Threading.Tasks.Task<bool>>, System.Action)
+  nameWithType.vb: AbstractValidator(Of T).WhenAsync(Func(Of T, ValidationContext(Of T), CancellationToken, Task(Of Boolean)), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).WhenAsync(System.Func(Of T, FluentValidation.ValidationContext(Of T), System.Threading.CancellationToken, System.Threading.Tasks.Task(Of Boolean)), System.Action)
+  name.vb: WhenAsync(Func(Of T, ValidationContext(Of T), CancellationToken, Task(Of Boolean)), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: WhenAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`4
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-4
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.WhenAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: WhenAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`4
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-4
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  commentId: M:FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: UnlessAsync(Func<T, CancellationToken, Task<bool>>, Action)
+  nameWithType: AbstractValidator<T>.UnlessAsync(Func<T, CancellationToken, Task<bool>>, Action)
+  fullName: FluentValidation.AbstractValidator<T>.UnlessAsync(System.Func<T, System.Threading.CancellationToken, System.Threading.Tasks.Task<bool>>, System.Action)
+  nameWithType.vb: AbstractValidator(Of T).UnlessAsync(Func(Of T, CancellationToken, Task(Of Boolean)), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).UnlessAsync(System.Func(Of T, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of Boolean)), System.Action)
+  name.vb: UnlessAsync(Func(Of T, CancellationToken, Task(Of Boolean)), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: UnlessAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: UnlessAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  commentId: M:FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-4
+  name: UnlessAsync(Func<T, ValidationContext<T>, CancellationToken, Task<bool>>, Action)
+  nameWithType: AbstractValidator<T>.UnlessAsync(Func<T, ValidationContext<T>, CancellationToken, Task<bool>>, Action)
+  fullName: FluentValidation.AbstractValidator<T>.UnlessAsync(System.Func<T, FluentValidation.ValidationContext<T>, System.Threading.CancellationToken, System.Threading.Tasks.Task<bool>>, System.Action)
+  nameWithType.vb: AbstractValidator(Of T).UnlessAsync(Func(Of T, ValidationContext(Of T), CancellationToken, Task(Of Boolean)), Action)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).UnlessAsync(System.Func(Of T, FluentValidation.ValidationContext(Of T), System.Threading.CancellationToken, System.Threading.Tasks.Task(Of Boolean)), System.Action)
+  name.vb: UnlessAsync(Func(Of T, ValidationContext(Of T), CancellationToken, Task(Of Boolean)), Action)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: UnlessAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`4
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-4
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.UnlessAsync(System.Func{`0,FluentValidation.ValidationContext{`0},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Action)
+    name: UnlessAsync
+    isExternal: true
+  - name: (
+  - uid: System.Func`4
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-4
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.Include(FluentValidation.IValidator{`0})
+  commentId: M:FluentValidation.AbstractValidator`1.Include(FluentValidation.IValidator{`0})
+  isExternal: true
+  name: Include(IValidator<T>)
+  nameWithType: AbstractValidator<T>.Include(IValidator<T>)
+  fullName: FluentValidation.AbstractValidator<T>.Include(FluentValidation.IValidator<T>)
+  nameWithType.vb: AbstractValidator(Of T).Include(IValidator(Of T))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).Include(FluentValidation.IValidator(Of T))
+  name.vb: Include(IValidator(Of T))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.Include(FluentValidation.IValidator{`0})
+    name: Include
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.Include(FluentValidation.IValidator{`0})
+    name: Include
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.Include``1(System.Func{`0,``0})
+  commentId: M:FluentValidation.AbstractValidator`1.Include``1(System.Func{`0,``0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Include<TValidator>(Func<T, TValidator>)
+  nameWithType: AbstractValidator<T>.Include<TValidator>(Func<T, TValidator>)
+  fullName: FluentValidation.AbstractValidator<T>.Include<TValidator>(System.Func<T, TValidator>)
+  nameWithType.vb: AbstractValidator(Of T).Include(Of TValidator)(Func(Of T, TValidator))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).Include(Of TValidator)(System.Func(Of T, TValidator))
+  name.vb: Include(Of TValidator)(Func(Of T, TValidator))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.Include``1(System.Func{`0,``0})
+    name: Include
+    isExternal: true
+  - name: <
+  - name: TValidator
+  - name: '>'
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TValidator
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.Include``1(System.Func{`0,``0})
+    name: Include
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValidator
+  - name: )
+  - name: (
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TValidator
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.GetEnumerator
+  commentId: M:FluentValidation.AbstractValidator`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: AbstractValidator<T>.GetEnumerator()
+  fullName: FluentValidation.AbstractValidator<T>.GetEnumerator()
+  nameWithType.vb: AbstractValidator(Of T).GetEnumerator()
+  fullName.vb: FluentValidation.AbstractValidator(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+  - name: (
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.EnsureInstanceNotNull(System.Object)
+  commentId: M:FluentValidation.AbstractValidator`1.EnsureInstanceNotNull(System.Object)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: EnsureInstanceNotNull(object)
+  nameWithType: AbstractValidator<T>.EnsureInstanceNotNull(object)
+  fullName: FluentValidation.AbstractValidator<T>.EnsureInstanceNotNull(object)
+  nameWithType.vb: AbstractValidator(Of T).EnsureInstanceNotNull(Object)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).EnsureInstanceNotNull(Object)
+  name.vb: EnsureInstanceNotNull(Object)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.EnsureInstanceNotNull(System.Object)
+    name: EnsureInstanceNotNull
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.EnsureInstanceNotNull(System.Object)
+    name: EnsureInstanceNotNull
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.PreValidate(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+  commentId: M:FluentValidation.AbstractValidator`1.PreValidate(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+  isExternal: true
+  name: PreValidate(ValidationContext<T>, ValidationResult)
+  nameWithType: AbstractValidator<T>.PreValidate(ValidationContext<T>, ValidationResult)
+  fullName: FluentValidation.AbstractValidator<T>.PreValidate(FluentValidation.ValidationContext<T>, FluentValidation.Results.ValidationResult)
+  nameWithType.vb: AbstractValidator(Of T).PreValidate(ValidationContext(Of T), ValidationResult)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).PreValidate(FluentValidation.ValidationContext(Of T), FluentValidation.Results.ValidationResult)
+  name.vb: PreValidate(ValidationContext(Of T), ValidationResult)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.PreValidate(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+    name: PreValidate
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.Results.ValidationResult
+    name: ValidationResult
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.PreValidate(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+    name: PreValidate
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.Results.ValidationResult
+    name: ValidationResult
+    isExternal: true
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.RaiseValidationException(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+  commentId: M:FluentValidation.AbstractValidator`1.RaiseValidationException(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+  isExternal: true
+  name: RaiseValidationException(ValidationContext<T>, ValidationResult)
+  nameWithType: AbstractValidator<T>.RaiseValidationException(ValidationContext<T>, ValidationResult)
+  fullName: FluentValidation.AbstractValidator<T>.RaiseValidationException(FluentValidation.ValidationContext<T>, FluentValidation.Results.ValidationResult)
+  nameWithType.vb: AbstractValidator(Of T).RaiseValidationException(ValidationContext(Of T), ValidationResult)
+  fullName.vb: FluentValidation.AbstractValidator(Of T).RaiseValidationException(FluentValidation.ValidationContext(Of T), FluentValidation.Results.ValidationResult)
+  name.vb: RaiseValidationException(ValidationContext(Of T), ValidationResult)
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.RaiseValidationException(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+    name: RaiseValidationException
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.Results.ValidationResult
+    name: ValidationResult
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.RaiseValidationException(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)
+    name: RaiseValidationException
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.ValidationContext`1
+    name: ValidationContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: FluentValidation.Results.ValidationResult
+    name: ValidationResult
+    isExternal: true
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.OnRuleAdded(FluentValidation.IValidationRule{`0})
+  commentId: M:FluentValidation.AbstractValidator`1.OnRuleAdded(FluentValidation.IValidationRule{`0})
+  isExternal: true
+  name: OnRuleAdded(IValidationRule<T>)
+  nameWithType: AbstractValidator<T>.OnRuleAdded(IValidationRule<T>)
+  fullName: FluentValidation.AbstractValidator<T>.OnRuleAdded(FluentValidation.IValidationRule<T>)
+  nameWithType.vb: AbstractValidator(Of T).OnRuleAdded(IValidationRule(Of T))
+  fullName.vb: FluentValidation.AbstractValidator(Of T).OnRuleAdded(FluentValidation.IValidationRule(Of T))
+  name.vb: OnRuleAdded(IValidationRule(Of T))
+  spec.csharp:
+  - uid: FluentValidation.AbstractValidator`1.OnRuleAdded(FluentValidation.IValidationRule{`0})
+    name: OnRuleAdded
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.IValidationRule`1
+    name: IValidationRule
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: FluentValidation.AbstractValidator`1.OnRuleAdded(FluentValidation.IValidationRule{`0})
+    name: OnRuleAdded
+    isExternal: true
+  - name: (
+  - uid: FluentValidation.IValidationRule`1
+    name: IValidationRule
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: FluentValidation.AbstractValidator`1.CascadeMode
+  commentId: P:FluentValidation.AbstractValidator`1.CascadeMode
+  isExternal: true
+  name: CascadeMode
+  nameWithType: AbstractValidator<T>.CascadeMode
+  fullName: FluentValidation.AbstractValidator<T>.CascadeMode
+  nameWithType.vb: AbstractValidator(Of T).CascadeMode
+  fullName.vb: FluentValidation.AbstractValidator(Of T).CascadeMode
+- uid: FluentValidation.AbstractValidator`1.ClassLevelCascadeMode
+  commentId: P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode
+  isExternal: true
+  name: ClassLevelCascadeMode
+  nameWithType: AbstractValidator<T>.ClassLevelCascadeMode
+  fullName: FluentValidation.AbstractValidator<T>.ClassLevelCascadeMode
+  nameWithType.vb: AbstractValidator(Of T).ClassLevelCascadeMode
+  fullName.vb: FluentValidation.AbstractValidator(Of T).ClassLevelCascadeMode
+- uid: FluentValidation.AbstractValidator`1.RuleLevelCascadeMode
+  commentId: P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode
+  isExternal: true
+  name: RuleLevelCascadeMode
+  nameWithType: AbstractValidator<T>.RuleLevelCascadeMode
+  fullName: FluentValidation.AbstractValidator<T>.RuleLevelCascadeMode
+  nameWithType.vb: AbstractValidator(Of T).RuleLevelCascadeMode
+  fullName.vb: FluentValidation.AbstractValidator(Of T).RuleLevelCascadeMode
+- uid: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.Collections.Generic.IEnumerable{``0},System.String)
+  commentId: M:RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.Collections.Generic.IEnumerable{``0},System.String)
+  isExternal: true
+  href: RPPP_WebApp.Extensions.ExcelCreator.html#RPPP_WebApp_Extensions_ExcelCreator_CreateExcel__1_System_Collections_Generic_IEnumerable___0__System_String_
+  name: CreateExcel<T>(IEnumerable<T>, string)
+  nameWithType: ExcelCreator.CreateExcel<T>(IEnumerable<T>, string)
+  fullName: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel<T>(System.Collections.Generic.IEnumerable<T>, string)
+  nameWithType.vb: ExcelCreator.CreateExcel(Of T)(IEnumerable(Of T), String)
+  fullName.vb: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel(Of T)(System.Collections.Generic.IEnumerable(Of T), String)
+  name.vb: CreateExcel(Of T)(IEnumerable(Of T), String)
+  spec.csharp:
+  - uid: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.Collections.Generic.IEnumerable{``0},System.String)
+    name: CreateExcel
+    href: RPPP_WebApp.Extensions.ExcelCreator.html#RPPP_WebApp_Extensions_ExcelCreator_CreateExcel__1_System_Collections_Generic_IEnumerable___0__System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Extensions.ExcelCreator.CreateExcel``1(System.Collections.Generic.IEnumerable{``0},System.String)
+    name: CreateExcel
+    href: RPPP_WebApp.Extensions.ExcelCreator.html#RPPP_WebApp_Extensions_ExcelCreator_CreateExcel__1_System_Collections_Generic_IEnumerable___0__System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: RPPP_WebApp.Extensions.ExcelCreator
+  commentId: T:RPPP_WebApp.Extensions.ExcelCreator
+  parent: RPPP_WebApp.Extensions
+  href: RPPP_WebApp.Extensions.ExcelCreator.html
+  name: ExcelCreator
+  nameWithType: ExcelCreator
+  fullName: RPPP_WebApp.Extensions.ExcelCreator
+- uid: RPPP_WebApp.Extensions
+  commentId: N:RPPP_WebApp.Extensions
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Extensions
+  nameWithType: RPPP_WebApp.Extensions
+  fullName: RPPP_WebApp.Extensions
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Extensions
+    name: Extensions
+    href: RPPP_WebApp.Extensions.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Extensions
+    name: Extensions
+    href: RPPP_WebApp.Extensions.html
+- uid: RPPP_WebApp.ModelsValidation.WorkerValidator.#ctor*
+  commentId: Overload:RPPP_WebApp.ModelsValidation.WorkerValidator.#ctor
+  href: RPPP_WebApp.ModelsValidation.WorkerValidator.html#RPPP_WebApp_ModelsValidation_WorkerValidator__ctor_RPPP_WebApp_Model_Rppp01Context_
+  name: WorkerValidator
+  nameWithType: WorkerValidator.WorkerValidator
+  fullName: RPPP_WebApp.ModelsValidation.WorkerValidator.WorkerValidator
+  nameWithType.vb: WorkerValidator.New
+  fullName.vb: RPPP_WebApp.ModelsValidation.WorkerValidator.New
+  name.vb: New
+- uid: RPPP_WebApp.Model.Rppp01Context
+  commentId: T:RPPP_WebApp.Model.Rppp01Context
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Rppp01Context.html
+  name: Rppp01Context
+  nameWithType: Rppp01Context
+  fullName: RPPP_WebApp.Model.Rppp01Context
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html

@@ -4,57 +4,132 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RPPP_WebApp.Model;
 
+/// <summary>
+/// Represents the database context for the RPPP01 application.
+/// </summary>
 public partial class Rppp01Context : DbContext
 {
 
-    public Rppp01Context(DbContextOptions<Rppp01Context> options)
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Rppp01Context"/> class.
+  /// </summary>
+  /// <param name="options">The options to be used by the context.</param>
+  public Rppp01Context(DbContextOptions<Rppp01Context> options)
         : base(options)
     {
     }
 
-    public virtual DbSet<Client> Client { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for clients.
+  /// </summary>
+  public virtual DbSet<Client> Client { get; set; }
 
-    public virtual DbSet<Document> Document { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for documents.
+  /// </summary>
+  public virtual DbSet<Document> Document { get; set; }
 
-    public virtual DbSet<DocumentType> DocumentType { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for document types.
+  /// </summary>
+  public virtual DbSet<DocumentType> DocumentType { get; set; }
 
-    public virtual DbSet<LaborDiary> LaborDiary { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for labor diaries.
+  /// </summary>
+  public virtual DbSet<LaborDiary> LaborDiary { get; set; }
 
-    public virtual DbSet<LaborType> LaborType { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for labor types.
+  /// </summary>
+  public virtual DbSet<LaborType> LaborType { get; set; }
 
-    public virtual DbSet<Organization> Organization { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for organizations.
+  /// </summary>
+  public virtual DbSet<Organization> Organization { get; set; }
 
-    public virtual DbSet<Owner> Owner { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for owners.
+  /// </summary>
+  public virtual DbSet<Owner> Owner { get; set; }
 
-    public virtual DbSet<Project> Project { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for projects.
+  /// </summary>
+  public virtual DbSet<Project> Project { get; set; }
 
-    public virtual DbSet<ProjectCard> ProjectCard { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for project cards.
+  /// </summary>
+  public virtual DbSet<ProjectCard> ProjectCard { get; set; }
 
-    public virtual DbSet<ProjectPartner> ProjectPartner { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for project partners.
+  /// </summary>
+  public virtual DbSet<ProjectPartner> ProjectPartner { get; set; }
 
-    public virtual DbSet<ProjectRequirement> ProjectRequirement { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for project requirements.
+  /// </summary>
+  public virtual DbSet<ProjectRequirement> ProjectRequirement { get; set; }
 
-    public virtual DbSet<ProjectRole> ProjectRole { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for project roles.
+  /// </summary>
+  public virtual DbSet<ProjectRole> ProjectRole { get; set; }
 
-    public virtual DbSet<ProjectWork> ProjectWork { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for project works.
+  /// </summary>
+  public virtual DbSet<ProjectWork> ProjectWork { get; set; }
 
-    public virtual DbSet<RequirementPriority> RequirementPriority { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for requirement priorities.
+  /// </summary>
+  public virtual DbSet<RequirementPriority> RequirementPriority { get; set; }
 
-    public virtual DbSet<RequirementTask> RequirementTask { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for requirement tasks.
+  /// </summary>
+  public virtual DbSet<RequirementTask> RequirementTask { get; set; }
 
-    public virtual DbSet<TaskStatus> TaskStatus { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for task statuses.
+  /// </summary>
+  public virtual DbSet<TaskStatus> TaskStatus { get; set; }
 
-    public virtual DbSet<Transaction> Transaction { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for transactions.
+  /// </summary>
+  public virtual DbSet<Transaction> Transaction { get; set; }
 
-    public virtual DbSet<TransactionPurpose> TransactionPurpose { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for transaction purposes.
+  /// </summary>
+  public virtual DbSet<TransactionPurpose> TransactionPurpose { get; set; }
 
-    public virtual DbSet<TransactionType> TransactionType { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for transaction types.
+  /// </summary>
+  public virtual DbSet<TransactionType> TransactionType { get; set; }
 
-    public virtual DbSet<Worker> Worker { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for workers.
+  /// </summary>
+  public virtual DbSet<Worker> Worker { get; set; }
 
-    public virtual DbSet<Product> Product { get; set; }
+  /// <summary>
+  /// Gets or sets the DbSet for products.
+  /// </summary>
+  public virtual DbSet<Product> Product { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+  // <summary>
+  /// Customizes the model configuration.
+  /// </summary>
+  /// <param name="modelBuilder">The builder being used to construct the model for this context.</param>
+  protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Client>(entity =>
         {

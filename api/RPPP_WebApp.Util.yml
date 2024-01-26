@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Util
+  commentId: N:RPPP_WebApp.Util
+  id: RPPP_WebApp.Util
+  children:
+  - RPPP_WebApp.Util.ExcelFormatAttribute
+  langs:
+  - csharp
+  - vb
+  name: RPPP_WebApp.Util
+  nameWithType: RPPP_WebApp.Util
+  fullName: RPPP_WebApp.Util
+  type: Namespace
+  assemblies:
+  - RPPP-WebApp
+references:
+- uid: RPPP_WebApp.Util.ExcelFormatAttribute
+  commentId: T:RPPP_WebApp.Util.ExcelFormatAttribute
+  href: RPPP_WebApp.Util.ExcelFormatAttribute.html
+  name: ExcelFormatAttribute
+  nameWithType: ExcelFormatAttribute
+  fullName: RPPP_WebApp.Util.ExcelFormatAttribute

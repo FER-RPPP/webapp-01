@@ -33,4 +33,7 @@ finally
   NLog.LogManager.Shutdown();
 }
 
+/// <summary>
+/// Partial class for the Program. No additional members added in this partial class.
+/// </summary>
 public partial class Program { }

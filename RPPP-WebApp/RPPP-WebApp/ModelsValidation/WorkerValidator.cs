@@ -2,10 +2,15 @@
 using RPPP_WebApp.Model;
 
 namespace RPPP_WebApp.ModelsValidation
-{
+{  /// <summary>
+   /// Validator class for the <see cref="WorkerValidator"/> entity using FluentValidation.
+   /// </summary>
     public class WorkerValidator : AbstractValidator<Worker>
     {
         private readonly Rppp01Context ctx;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkerValidator"/> class.
+        /// </summary>
         public WorkerValidator(Rppp01Context ctx)
         {
             this.ctx = ctx;

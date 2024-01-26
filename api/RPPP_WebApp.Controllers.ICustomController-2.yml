@@ -1,0 +1,608 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Controllers.ICustomController`2
+  commentId: T:RPPP_WebApp.Controllers.ICustomController`2
+  id: ICustomController`2
+  parent: RPPP_WebApp.Controllers
+  children:
+  - RPPP_WebApp.Controllers.ICustomController`2.Count(System.String)
+  - RPPP_WebApp.Controllers.ICustomController`2.Create(`1)
+  - RPPP_WebApp.Controllers.ICustomController`2.Delete(`0)
+  - RPPP_WebApp.Controllers.ICustomController`2.Get(`0)
+  - RPPP_WebApp.Controllers.ICustomController`2.GetAll(RPPP_WebApp.Model.LoadParams)
+  - RPPP_WebApp.Controllers.ICustomController`2.Update(`0,`1)
+  langs:
+  - csharp
+  - vb
+  name: ICustomController<TKey, TModel>
+  nameWithType: ICustomController<TKey, TModel>
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>
+  type: Interface
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ICustomController
+    path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+    startLine: 5
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Controllers
+  syntax:
+    content: public interface ICustomController<TKey, TModel>
+    typeParameters:
+    - id: TKey
+    - id: TModel
+    content.vb: Public Interface ICustomController(Of TKey, TModel)
+  nameWithType.vb: ICustomController(Of TKey, TModel)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel)
+  name.vb: ICustomController(Of TKey, TModel)
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Count(System.String)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Count(System.String)
+  id: Count(System.String)
+  parent: RPPP_WebApp.Controllers.ICustomController`2
+  langs:
+  - csharp
+  - vb
+  name: Count(string)
+  nameWithType: ICustomController<TKey, TModel>.Count(string)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Count(string)
+  type: Method
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Count
+    path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+    startLine: 7
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Controllers
+  syntax:
+    content: Task<int> Count(string filter)
+    parameters:
+    - id: filter
+      type: System.String
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromQueryAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromQueryAttribute.#ctor
+        arguments: []
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+    content.vb: Function Count(filter As String) As Task(Of Integer)
+  overload: RPPP_WebApp.Controllers.ICustomController`2.Count*
+  nameWithType.vb: ICustomController(Of TKey, TModel).Count(String)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Count(String)
+  name.vb: Count(String)
+- uid: RPPP_WebApp.Controllers.ICustomController`2.GetAll(RPPP_WebApp.Model.LoadParams)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.GetAll(RPPP_WebApp.Model.LoadParams)
+  id: GetAll(RPPP_WebApp.Model.LoadParams)
+  parent: RPPP_WebApp.Controllers.ICustomController`2
+  langs:
+  - csharp
+  - vb
+  name: GetAll(LoadParams)
+  nameWithType: ICustomController<TKey, TModel>.GetAll(LoadParams)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.GetAll(RPPP_WebApp.Model.LoadParams)
+  type: Method
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: GetAll
+    path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+    startLine: 8
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Controllers
+  syntax:
+    content: Task<List<TModel>> GetAll(LoadParams loadParams)
+    parameters:
+    - id: loadParams
+      type: RPPP_WebApp.Model.LoadParams
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromQueryAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromQueryAttribute.#ctor
+        arguments: []
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{{TModel}}}
+    content.vb: Function GetAll(loadParams As LoadParams) As Task(Of List(Of TModel))
+  overload: RPPP_WebApp.Controllers.ICustomController`2.GetAll*
+  nameWithType.vb: ICustomController(Of TKey, TModel).GetAll(LoadParams)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).GetAll(RPPP_WebApp.Model.LoadParams)
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Get(`0)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Get(`0)
+  id: Get(`0)
+  parent: RPPP_WebApp.Controllers.ICustomController`2
+  langs:
+  - csharp
+  - vb
+  name: Get(TKey)
+  nameWithType: ICustomController<TKey, TModel>.Get(TKey)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Get(TKey)
+  type: Method
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Get
+    path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+    startLine: 9
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Controllers
+  syntax:
+    content: Task<ActionResult<TModel>> Get(TKey id)
+    parameters:
+    - id: id
+      type: '{TKey}'
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{{TModel}}}
+    content.vb: Function [Get](id As TKey) As Task(Of ActionResult(Of TModel))
+  overload: RPPP_WebApp.Controllers.ICustomController`2.Get*
+  nameWithType.vb: ICustomController(Of TKey, TModel).Get(TKey)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Get(TKey)
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Create(`1)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Create(`1)
+  id: Create(`1)
+  parent: RPPP_WebApp.Controllers.ICustomController`2
+  langs:
+  - csharp
+  - vb
+  name: Create(TModel)
+  nameWithType: ICustomController<TKey, TModel>.Create(TModel)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Create(TModel)
+  type: Method
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Create
+    path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+    startLine: 10
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Controllers
+  syntax:
+    content: Task<IActionResult> Create(TModel model)
+    parameters:
+    - id: model
+      type: '{TModel}'
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: Function Create(model As TModel) As Task(Of IActionResult)
+  overload: RPPP_WebApp.Controllers.ICustomController`2.Create*
+  nameWithType.vb: ICustomController(Of TKey, TModel).Create(TModel)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Create(TModel)
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Update(`0,`1)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Update(`0,`1)
+  id: Update(`0,`1)
+  parent: RPPP_WebApp.Controllers.ICustomController`2
+  langs:
+  - csharp
+  - vb
+  name: Update(TKey, TModel)
+  nameWithType: ICustomController<TKey, TModel>.Update(TKey, TModel)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Update(TKey, TModel)
+  type: Method
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Update
+    path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+    startLine: 11
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Controllers
+  syntax:
+    content: Task<IActionResult> Update(TKey id, TModel model)
+    parameters:
+    - id: id
+      type: '{TKey}'
+    - id: model
+      type: '{TModel}'
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: Function Update(id As TKey, model As TModel) As Task(Of IActionResult)
+  overload: RPPP_WebApp.Controllers.ICustomController`2.Update*
+  nameWithType.vb: ICustomController(Of TKey, TModel).Update(TKey, TModel)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Update(TKey, TModel)
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Delete(`0)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Delete(`0)
+  id: Delete(`0)
+  parent: RPPP_WebApp.Controllers.ICustomController`2
+  langs:
+  - csharp
+  - vb
+  name: Delete(TKey)
+  nameWithType: ICustomController<TKey, TModel>.Delete(TKey)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Delete(TKey)
+  type: Method
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Delete
+    path: RPPP-WebApp/RPPP-WebApp/Controllers/ICustomController.cs
+    startLine: 12
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Controllers
+  syntax:
+    content: Task<IActionResult> Delete(TKey id)
+    parameters:
+    - id: id
+      type: '{TKey}'
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: Function Delete(id As TKey) As Task(Of IActionResult)
+  overload: RPPP_WebApp.Controllers.ICustomController`2.Delete*
+  nameWithType.vb: ICustomController(Of TKey, TModel).Delete(TKey)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Delete(TKey)
+references:
+- uid: RPPP_WebApp.Controllers
+  commentId: N:RPPP_WebApp.Controllers
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Controllers
+  nameWithType: RPPP_WebApp.Controllers
+  fullName: RPPP_WebApp.Controllers
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers
+    name: Controllers
+    href: RPPP_WebApp.Controllers.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers
+    name: Controllers
+    href: RPPP_WebApp.Controllers.html
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Count*
+  commentId: Overload:RPPP_WebApp.Controllers.ICustomController`2.Count
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Count_System_String_
+  name: Count
+  nameWithType: ICustomController<TKey, TModel>.Count
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Count
+  nameWithType.vb: ICustomController(Of TKey, TModel).Count
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Count
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: RPPP_WebApp.Controllers.ICustomController`2.GetAll*
+  commentId: Overload:RPPP_WebApp.Controllers.ICustomController`2.GetAll
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_GetAll_RPPP_WebApp_Model_LoadParams_
+  name: GetAll
+  nameWithType: ICustomController<TKey, TModel>.GetAll
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.GetAll
+  nameWithType.vb: ICustomController(Of TKey, TModel).GetAll
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).GetAll
+- uid: RPPP_WebApp.Model.LoadParams
+  commentId: T:RPPP_WebApp.Model.LoadParams
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.LoadParams.html
+  name: LoadParams
+  nameWithType: LoadParams
+  fullName: RPPP_WebApp.Model.LoadParams
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{{TModel}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{`1}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<List<TModel>>
+  nameWithType: Task<List<TModel>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<TModel>>
+  nameWithType.vb: Task(Of List(Of TModel))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of TModel))
+  name.vb: Task(Of List(Of TModel))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: TModel
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: )
+  - name: )
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Get*
+  commentId: Overload:RPPP_WebApp.Controllers.ICustomController`2.Get
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Get__0_
+  name: Get
+  nameWithType: ICustomController<TKey, TModel>.Get
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Get
+  nameWithType.vb: ICustomController(Of TKey, TModel).Get
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Get
+- uid: '{TKey}'
+  commentId: '!:TKey'
+  definition: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{{TModel}}}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{`1}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ActionResult<TModel>>
+  nameWithType: Task<ActionResult<TModel>>
+  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<TModel>>
+  nameWithType.vb: Task(Of ActionResult(Of TModel))
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.ActionResult(Of TModel))
+  name.vb: Task(Of ActionResult(Of TModel))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1
+  - name: <
+  - name: TModel
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
+    name: ActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: )
+  - name: )
+- uid: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Create*
+  commentId: Overload:RPPP_WebApp.Controllers.ICustomController`2.Create
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Create__1_
+  name: Create
+  nameWithType: ICustomController<TKey, TModel>.Create
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Create
+  nameWithType.vb: ICustomController(Of TKey, TModel).Create
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Create
+- uid: '{TModel}'
+  commentId: '!:TModel'
+  definition: TModel
+  name: TModel
+  nameWithType: TModel
+  fullName: TModel
+- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IActionResult>
+  nameWithType: Task<IActionResult>
+  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult>
+  nameWithType.vb: Task(Of IActionResult)
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.IActionResult)
+  name.vb: Task(Of IActionResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Mvc.IActionResult
+    name: IActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Mvc.IActionResult
+    name: IActionResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult
+  - name: )
+- uid: TModel
+  name: TModel
+  nameWithType: TModel
+  fullName: TModel
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Update*
+  commentId: Overload:RPPP_WebApp.Controllers.ICustomController`2.Update
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Update__0__1_
+  name: Update
+  nameWithType: ICustomController<TKey, TModel>.Update
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Update
+  nameWithType.vb: ICustomController(Of TKey, TModel).Update
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Update
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Delete*
+  commentId: Overload:RPPP_WebApp.Controllers.ICustomController`2.Delete
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Delete__0_
+  name: Delete
+  nameWithType: ICustomController<TKey, TModel>.Delete
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Delete
+  nameWithType.vb: ICustomController(Of TKey, TModel).Delete
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Delete

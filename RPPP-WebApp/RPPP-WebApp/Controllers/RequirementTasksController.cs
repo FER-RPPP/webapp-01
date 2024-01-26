@@ -15,6 +15,10 @@ using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers
 {
+
+    /// <summary>
+    /// Controller for managing requirement tasks.
+    /// </summary>
     public class RequirementTasksController : Controller
     {
         private readonly Rppp01Context ctx;
@@ -28,7 +32,14 @@ namespace RPPP_WebApp.Controllers
             appData = options.Value;
         }
 
-        // GET: RequirementTasks
+        /// <summary>
+        /// Displays a paginated list of requirement tasks with optional filters.
+        /// </summary>
+        /// <param name="filter">Filter criteria for tasks.</param>
+        /// <param name="page">Page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The view of the index page with filtered requirement tasks.</returns>
         public async Task<IActionResult> Index(RequirementTaskFilter filter, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get Requirement Tasks called...");
@@ -104,7 +115,14 @@ namespace RPPP_WebApp.Controllers
             return View(model);
         }
 
-        // GET: RequirementTasks/Details/5
+        /// <summary>
+        /// Displays details of a specific requirement task.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement task.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The details view for a requirement task.</returns>
         public async Task<IActionResult> Details(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get Requirement Tasks details called...");
@@ -130,7 +148,13 @@ namespace RPPP_WebApp.Controllers
             return View(requirementTask);
         }
 
-        // GET: RequirementTasks/Create
+        /// <summary>
+        /// Opens the form for creating a new requirement task.
+        /// </summary>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The create view for a requirement task.</returns>
         public IActionResult Create(int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get Requirement Tasks create page called...");
@@ -152,9 +176,14 @@ namespace RPPP_WebApp.Controllers
             return View();
         }
 
-        // POST: RequirementTasks/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Posts the data to create a new requirement task.
+        /// </summary>
+        /// <param name="requirementTask">The requirement task to create.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the create view.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,PlannedStartDate,PlannedEndDate,ActualStartDate,ActualEndDate,TaskStatusId,ProjectRequirementId")] RequirementTask requirementTask, int page = 1, int sort = 1, bool ascending = true)
@@ -185,7 +214,14 @@ namespace RPPP_WebApp.Controllers
             return View(requirementTask);
         }
 
-        // GET: RequirementTasks/Edit/5
+        /// <summary>
+        /// Opens the form for editing an existing requirement task.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement task to edit.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The edit view for a requirement task.</returns>
         public async Task<IActionResult> Edit(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get Requirement Tasks update page called...");
@@ -210,9 +246,15 @@ namespace RPPP_WebApp.Controllers
             return View(requirementTask);
         }
 
-        // POST: RequirementTasks/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Posts the updated data for an existing requirement task.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement task being edited.</param>
+        /// <param name="requirementTask">The updated requirement task data.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the edit view.</returns>
         [HttpPost]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,PlannedStartDate,PlannedEndDate,ActualStartDate,ActualEndDate,TaskStatusId,ProjectRequirementId")] RequirementTask requirementTask, int page = 1, int sort = 1, bool ascending = true)
         {
@@ -257,6 +299,11 @@ namespace RPPP_WebApp.Controllers
             return View(requirementTask);
         }
 
+        /// <summary>
+        /// Posts the updated data for an existing requirement task using a view model.
+        /// </summary>
+        /// <param name="taskViewModel">The updated requirement task data in the form of a view model.</param>
+        /// <returns>Redirects to the details view if successful, otherwise returns to the edit view with errors.</returns>
         [HttpPost]
         public async Task<IActionResult> EditTask(RequirementTaskViewModel taskViewModel)
         {
@@ -304,7 +351,14 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
-        // GET: RequirementTasks/Delete/5
+        /// <summary>
+        /// Opens the form for deleting an existing requirement task.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement task to delete.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The delete view for a requirement task.</returns>
         public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get Requirement Tasks delete page called...");
@@ -330,7 +384,14 @@ namespace RPPP_WebApp.Controllers
             return View(requirementTask);
         }
 
-        // POST: RequirementTasks/Delete/5
+        /// <summary>
+        /// Confirms the deletion of a specific requirement task.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement task to delete.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the delete view.</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id, int page = 1, int sort = 1, bool ascending = true)
@@ -363,8 +424,14 @@ namespace RPPP_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        
-
+        /// <summary>
+        /// Checks if a requirement task exists in the database.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement task.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>True if the task exists, otherwise false.</returns>
         private bool RequirementTaskExists(Guid id, int page = 1, int sort = 1, bool ascending = true)
          {
 

@@ -1,0 +1,491 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Services.IProductService
+  commentId: T:RPPP_WebApp.Services.IProductService
+  id: IProductService
+  parent: RPPP_WebApp.Services
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IProductService
+  nameWithType: IProductService
+  fullName: RPPP_WebApp.Services.IProductService
+  type: Interface
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Services/IProductService.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: IProductService
+    path: RPPP-WebApp/RPPP-WebApp/Services/IProductService.cs
+    startLine: 6
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Services
+  syntax:
+    content: 'public interface IProductService : ICustomController<Guid, Product>'
+    content.vb: Public Interface IProductService Inherits ICustomController(Of Guid, Product)
+  inheritedMembers:
+  - RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Count(System.String)
+  - RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.GetAll(RPPP_WebApp.Model.LoadParams)
+  - RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Get(System.Guid)
+  - RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Create(RPPP_WebApp.Model.Product)
+  - RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Update(System.Guid,RPPP_WebApp.Model.Product)
+  - RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Delete(System.Guid)
+references:
+- uid: RPPP_WebApp.Services
+  commentId: N:RPPP_WebApp.Services
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Services
+  nameWithType: RPPP_WebApp.Services
+  fullName: RPPP_WebApp.Services
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Services
+    name: Services
+    href: RPPP_WebApp.Services.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Services
+    name: Services
+    href: RPPP_WebApp.Services.html
+- uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Count(System.String)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Count(System.String)
+  parent: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}
+  definition: RPPP_WebApp.Controllers.ICustomController`2.Count(System.String)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Count_System_String_
+  name: Count(string)
+  nameWithType: ICustomController<Guid, Product>.Count(string)
+  fullName: RPPP_WebApp.Controllers.ICustomController<System.Guid, RPPP_WebApp.Model.Product>.Count(string)
+  nameWithType.vb: ICustomController(Of Guid, Product).Count(String)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of System.Guid, RPPP_WebApp.Model.Product).Count(String)
+  name.vb: Count(String)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Count(System.String)
+    name: Count
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Count_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Count(System.String)
+    name: Count
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Count_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.GetAll(RPPP_WebApp.Model.LoadParams)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.GetAll(RPPP_WebApp.Model.LoadParams)
+  parent: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}
+  definition: RPPP_WebApp.Controllers.ICustomController`2.GetAll(RPPP_WebApp.Model.LoadParams)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_GetAll_RPPP_WebApp_Model_LoadParams_
+  name: GetAll(LoadParams)
+  nameWithType: ICustomController<Guid, Product>.GetAll(LoadParams)
+  fullName: RPPP_WebApp.Controllers.ICustomController<System.Guid, RPPP_WebApp.Model.Product>.GetAll(RPPP_WebApp.Model.LoadParams)
+  nameWithType.vb: ICustomController(Of Guid, Product).GetAll(LoadParams)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of System.Guid, RPPP_WebApp.Model.Product).GetAll(RPPP_WebApp.Model.LoadParams)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.GetAll(RPPP_WebApp.Model.LoadParams)
+    name: GetAll
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_GetAll_RPPP_WebApp_Model_LoadParams_
+  - name: (
+  - uid: RPPP_WebApp.Model.LoadParams
+    name: LoadParams
+    href: RPPP_WebApp.Model.LoadParams.html
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.GetAll(RPPP_WebApp.Model.LoadParams)
+    name: GetAll
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_GetAll_RPPP_WebApp_Model_LoadParams_
+  - name: (
+  - uid: RPPP_WebApp.Model.LoadParams
+    name: LoadParams
+    href: RPPP_WebApp.Model.LoadParams.html
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Get(System.Guid)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Get(System.Guid)
+  parent: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}
+  definition: RPPP_WebApp.Controllers.ICustomController`2.Get(`0)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Get__0_
+  name: Get(Guid)
+  nameWithType: ICustomController<Guid, Product>.Get(Guid)
+  fullName: RPPP_WebApp.Controllers.ICustomController<System.Guid, RPPP_WebApp.Model.Product>.Get(System.Guid)
+  nameWithType.vb: ICustomController(Of Guid, Product).Get(Guid)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of System.Guid, RPPP_WebApp.Model.Product).Get(System.Guid)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Get(System.Guid)
+    name: Get
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Get__0_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Get(System.Guid)
+    name: Get
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Get__0_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Create(RPPP_WebApp.Model.Product)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Create(RPPP_WebApp.Model.Product)
+  parent: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}
+  definition: RPPP_WebApp.Controllers.ICustomController`2.Create(`1)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Create__1_
+  name: Create(Product)
+  nameWithType: ICustomController<Guid, Product>.Create(Product)
+  fullName: RPPP_WebApp.Controllers.ICustomController<System.Guid, RPPP_WebApp.Model.Product>.Create(RPPP_WebApp.Model.Product)
+  nameWithType.vb: ICustomController(Of Guid, Product).Create(Product)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of System.Guid, RPPP_WebApp.Model.Product).Create(RPPP_WebApp.Model.Product)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Create(RPPP_WebApp.Model.Product)
+    name: Create
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Create__1_
+  - name: (
+  - uid: RPPP_WebApp.Model.Product
+    name: Product
+    href: RPPP_WebApp.Model.Product.html
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Create(RPPP_WebApp.Model.Product)
+    name: Create
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Create__1_
+  - name: (
+  - uid: RPPP_WebApp.Model.Product
+    name: Product
+    href: RPPP_WebApp.Model.Product.html
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Update(System.Guid,RPPP_WebApp.Model.Product)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Update(System.Guid,RPPP_WebApp.Model.Product)
+  parent: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}
+  definition: RPPP_WebApp.Controllers.ICustomController`2.Update(`0,`1)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Update__0__1_
+  name: Update(Guid, Product)
+  nameWithType: ICustomController<Guid, Product>.Update(Guid, Product)
+  fullName: RPPP_WebApp.Controllers.ICustomController<System.Guid, RPPP_WebApp.Model.Product>.Update(System.Guid, RPPP_WebApp.Model.Product)
+  nameWithType.vb: ICustomController(Of Guid, Product).Update(Guid, Product)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of System.Guid, RPPP_WebApp.Model.Product).Update(System.Guid, RPPP_WebApp.Model.Product)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Update(System.Guid,RPPP_WebApp.Model.Product)
+    name: Update
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Update__0__1_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: RPPP_WebApp.Model.Product
+    name: Product
+    href: RPPP_WebApp.Model.Product.html
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Update(System.Guid,RPPP_WebApp.Model.Product)
+    name: Update
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Update__0__1_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: RPPP_WebApp.Model.Product
+    name: Product
+    href: RPPP_WebApp.Model.Product.html
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Delete(System.Guid)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Delete(System.Guid)
+  parent: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}
+  definition: RPPP_WebApp.Controllers.ICustomController`2.Delete(`0)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Delete__0_
+  name: Delete(Guid)
+  nameWithType: ICustomController<Guid, Product>.Delete(Guid)
+  fullName: RPPP_WebApp.Controllers.ICustomController<System.Guid, RPPP_WebApp.Model.Product>.Delete(System.Guid)
+  nameWithType.vb: ICustomController(Of Guid, Product).Delete(Guid)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of System.Guid, RPPP_WebApp.Model.Product).Delete(System.Guid)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Delete(System.Guid)
+    name: Delete
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Delete__0_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}.Delete(System.Guid)
+    name: Delete
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Delete__0_
+  - name: (
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Count(System.String)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Count(System.String)
+  isExternal: true
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Count_System_String_
+  name: Count(string)
+  nameWithType: ICustomController<TKey, TModel>.Count(string)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Count(string)
+  nameWithType.vb: ICustomController(Of TKey, TModel).Count(String)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Count(String)
+  name.vb: Count(String)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Count(System.String)
+    name: Count
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Count_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Count(System.String)
+    name: Count
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Count_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}
+  commentId: T:RPPP_WebApp.Controllers.ICustomController{System.Guid,RPPP_WebApp.Model.Product}
+  parent: RPPP_WebApp.Controllers
+  definition: RPPP_WebApp.Controllers.ICustomController`2
+  href: RPPP_WebApp.Controllers.ICustomController-2.html
+  name: ICustomController<Guid, Product>
+  nameWithType: ICustomController<Guid, Product>
+  fullName: RPPP_WebApp.Controllers.ICustomController<System.Guid, RPPP_WebApp.Model.Product>
+  nameWithType.vb: ICustomController(Of Guid, Product)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of System.Guid, RPPP_WebApp.Model.Product)
+  name.vb: ICustomController(Of Guid, Product)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2
+    name: ICustomController
+    href: RPPP_WebApp.Controllers.ICustomController-2.html
+  - name: <
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: RPPP_WebApp.Model.Product
+    name: Product
+    href: RPPP_WebApp.Model.Product.html
+  - name: '>'
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2
+    name: ICustomController
+    href: RPPP_WebApp.Controllers.ICustomController-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: ','
+  - name: " "
+  - uid: RPPP_WebApp.Model.Product
+    name: Product
+    href: RPPP_WebApp.Model.Product.html
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController`2.GetAll(RPPP_WebApp.Model.LoadParams)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.GetAll(RPPP_WebApp.Model.LoadParams)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_GetAll_RPPP_WebApp_Model_LoadParams_
+  name: GetAll(LoadParams)
+  nameWithType: ICustomController<TKey, TModel>.GetAll(LoadParams)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.GetAll(RPPP_WebApp.Model.LoadParams)
+  nameWithType.vb: ICustomController(Of TKey, TModel).GetAll(LoadParams)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).GetAll(RPPP_WebApp.Model.LoadParams)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.GetAll(RPPP_WebApp.Model.LoadParams)
+    name: GetAll
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_GetAll_RPPP_WebApp_Model_LoadParams_
+  - name: (
+  - uid: RPPP_WebApp.Model.LoadParams
+    name: LoadParams
+    href: RPPP_WebApp.Model.LoadParams.html
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.GetAll(RPPP_WebApp.Model.LoadParams)
+    name: GetAll
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_GetAll_RPPP_WebApp_Model_LoadParams_
+  - name: (
+  - uid: RPPP_WebApp.Model.LoadParams
+    name: LoadParams
+    href: RPPP_WebApp.Model.LoadParams.html
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Get(`0)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Get(`0)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Get__0_
+  name: Get(TKey)
+  nameWithType: ICustomController<TKey, TModel>.Get(TKey)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Get(TKey)
+  nameWithType.vb: ICustomController(Of TKey, TModel).Get(TKey)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Get(TKey)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Get(`0)
+    name: Get
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Get__0_
+  - name: (
+  - name: TKey
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Get(`0)
+    name: Get
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Get__0_
+  - name: (
+  - name: TKey
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Create(`1)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Create(`1)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Create__1_
+  name: Create(TModel)
+  nameWithType: ICustomController<TKey, TModel>.Create(TModel)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Create(TModel)
+  nameWithType.vb: ICustomController(Of TKey, TModel).Create(TModel)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Create(TModel)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Create(`1)
+    name: Create
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Create__1_
+  - name: (
+  - name: TModel
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Create(`1)
+    name: Create
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Create__1_
+  - name: (
+  - name: TModel
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Update(`0,`1)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Update(`0,`1)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Update__0__1_
+  name: Update(TKey, TModel)
+  nameWithType: ICustomController<TKey, TModel>.Update(TKey, TModel)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Update(TKey, TModel)
+  nameWithType.vb: ICustomController(Of TKey, TModel).Update(TKey, TModel)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Update(TKey, TModel)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Update(`0,`1)
+    name: Update
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Update__0__1_
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Update(`0,`1)
+    name: Update
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Update__0__1_
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController`2.Delete(`0)
+  commentId: M:RPPP_WebApp.Controllers.ICustomController`2.Delete(`0)
+  href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Delete__0_
+  name: Delete(TKey)
+  nameWithType: ICustomController<TKey, TModel>.Delete(TKey)
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>.Delete(TKey)
+  nameWithType.vb: ICustomController(Of TKey, TModel).Delete(TKey)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel).Delete(TKey)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Delete(`0)
+    name: Delete
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Delete__0_
+  - name: (
+  - name: TKey
+  - name: )
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2.Delete(`0)
+    name: Delete
+    href: RPPP_WebApp.Controllers.ICustomController-2.html#RPPP_WebApp_Controllers_ICustomController_2_Delete__0_
+  - name: (
+  - name: TKey
+  - name: )
+- uid: RPPP_WebApp.Controllers.ICustomController`2
+  commentId: T:RPPP_WebApp.Controllers.ICustomController`2
+  href: RPPP_WebApp.Controllers.ICustomController-2.html
+  name: ICustomController<TKey, TModel>
+  nameWithType: ICustomController<TKey, TModel>
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>
+  nameWithType.vb: ICustomController(Of TKey, TModel)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel)
+  name.vb: ICustomController(Of TKey, TModel)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2
+    name: ICustomController
+    href: RPPP_WebApp.Controllers.ICustomController-2.html
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: '>'
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2
+    name: ICustomController
+    href: RPPP_WebApp.Controllers.ICustomController-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: )
+- uid: RPPP_WebApp.Controllers
+  commentId: N:RPPP_WebApp.Controllers
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Controllers
+  nameWithType: RPPP_WebApp.Controllers
+  fullName: RPPP_WebApp.Controllers
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers
+    name: Controllers
+    href: RPPP_WebApp.Controllers.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers
+    name: Controllers
+    href: RPPP_WebApp.Controllers.html

@@ -15,6 +15,9 @@ using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers
 {
+    /// <summary>
+    /// Controller for managing project requirements.
+    /// </summary>
     public class ProjectRequirementsController : Controller
     {
         private readonly Rppp01Context ctx;
@@ -28,7 +31,13 @@ namespace RPPP_WebApp.Controllers
             appData = options.Value;
         }
 
-        // GET: ProjectRequirements
+        /// <summary>
+        /// Displays a paginated list of project requirements.
+        /// </summary>
+        /// <param name="page">Page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The view of the index page with project requirements.</returns>
         public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("GET Project Requirements called...");
@@ -74,7 +83,14 @@ namespace RPPP_WebApp.Controllers
             return View(model);
         }
 
-        // GET: ProjectRequirements/Details/5
+        /// <summary>
+        /// Displays details of a specific project requirement.
+        /// </summary>
+        /// <param name="id">The unique identifier of the project requirement.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The details view for a project requirement.</returns>
         public async Task<IActionResult> Details(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("GET Project Requirements Details called...");
@@ -100,7 +116,13 @@ namespace RPPP_WebApp.Controllers
             return View(projectRequirement);
         }
 
-        // GET: ProjectRequirements/Create
+        /// <summary>
+        /// Opens the form for creating a new project requirement.
+        /// </summary>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The create view for a project requirement.</returns>
         public IActionResult Create(int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("GET Project Requirements Create called...");
@@ -116,9 +138,14 @@ namespace RPPP_WebApp.Controllers
             return View();
         }
 
-        // POST: ProjectRequirements/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Posts the data to create a new project requirement.
+        /// </summary>
+        /// <param name="projectRequirement">The project requirement to create.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the create view.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Type,RequirementPriorityId,ProjectId,Description")] ProjectRequirement projectRequirement, int page = 1, int sort = 1, bool ascending = true)
@@ -150,7 +177,14 @@ namespace RPPP_WebApp.Controllers
             return View(projectRequirement);
         }
 
-        // GET: ProjectRequirements/Edit/5
+        /// <summary>
+        /// Opens the form for editing an existing project requirement.
+        /// </summary>
+        /// <param name="id">The unique identifier of the project requirement to edit.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The edit view for a project requirement.</returns>
         public async Task<IActionResult> Edit(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get a Project Requirement Edit page called...");
@@ -174,9 +208,15 @@ namespace RPPP_WebApp.Controllers
             return View(projectRequirement);
         }
 
-        // POST: ProjectRequirements/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Posts the updated data for an existing project requirement.
+        /// </summary>
+        /// <param name="id">The unique identifier of the project requirement being edited.</param>
+        /// <param name="projectRequirement">The updated project requirement data.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the edit view.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Type,RequirementPriorityId,ProjectId,Description")] ProjectRequirement projectRequirement, int page = 1, int sort = 1, bool ascending = true)
@@ -217,6 +257,11 @@ namespace RPPP_WebApp.Controllers
             return View(projectRequirement);
         }
 
+        /// <summary>
+        /// Retrieves a specific requirement task.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement task.</param>
+        /// <returns>The partial view of the requirement task.</returns>
         [HttpGet]
         public async Task<IActionResult> GetRequirementTask(Guid id)
         {
@@ -247,6 +292,11 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Opens the form for editing an existing requirement task.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement task to edit.</param>
+        /// <returns>The edit view for a requirement task.</returns>
         [HttpGet]
         public async Task<IActionResult> EditRequirementTask(Guid id)
         {
@@ -276,7 +326,11 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Posts the updated data for an existing requirement task.
+        /// </summary>
+        /// <param name="requirementTask">The updated requirement task data.</param>
+        /// <returns>Redirects to the get requirement task view if successful, otherwise returns to the edit requirement task view.</returns>
         [HttpPost]
         public async Task<IActionResult> EditRequirementTask(RequirementTaskViewModel requirementTask)
         {
@@ -321,6 +375,11 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a specific requirement task.
+        /// </summary>
+        /// <param name="Id">The unique identifier of the requirement task to delete.</param>
+        /// <returns>An empty result if successful, otherwise redirects to the get requirement task view.</returns>
         [HttpDelete]
         public async Task<IActionResult> DeleteRequirementTask(Guid Id)
         {
@@ -354,7 +413,14 @@ namespace RPPP_WebApp.Controllers
 
 
 
-        // GET: ProjectRequirements/Delete/5
+        /// <summary>
+        /// Opens the form for deleting an existing project requirement.
+        /// </summary>
+        /// <param name="id">The unique identifier of the project requirement to delete.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The delete view for a project requirement.</returns>
         public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get a Project Requirement Delete page called...");
@@ -379,7 +445,14 @@ namespace RPPP_WebApp.Controllers
             return View(projectRequirement);
         }
 
-        // POST: ProjectRequirements/Delete/5
+        /// <summary>
+        /// Confirms the deletion of a specific project requirement.
+        /// </summary>
+        /// <param name="id">The unique identifier of the project requirement to delete.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the delete view.</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id, int page = 1, int sort = 1, bool ascending = true)
@@ -412,6 +485,11 @@ namespace RPPP_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Opens the form for creating a new requirement task.
+        /// </summary>
+        /// <param name="projectRequirementId">The unique identifier of the project requirement for the new task.</param>
+        /// <returns>The create view for a requirement task.</returns>
         [HttpGet]
         public async Task<IActionResult> NewRequirementTask(Guid projectRequirementId)
         { 
@@ -423,6 +501,11 @@ namespace RPPP_WebApp.Controllers
             return PartialView();
         }
 
+        /// <summary>
+        /// Posts the data to create a new requirement task.
+        /// </summary>
+        /// <param name="requirementTask">The requirement task to create.</param>
+        /// <returns>Content indicating success or failure, or the partial view for creating a new requirement task.</returns>
         [HttpPost]
         public async Task<IActionResult> NewRequirementTask(RequirementTask requirementTask)
         {
@@ -487,15 +570,21 @@ namespace RPPP_WebApp.Controllers
             Content($"<script>setTimeout(function() {{ window.location.href='/rppp/01/ProjectRequirements/Details/{requirementTask.ProjectRequirementId}?page=1&sort=1&ascending=True'; }}, 1000);</script>", "text/html") : PartialView(requirementTask);
         }
 
-
+        /// <summary>
+        /// Checks if a project requirement exists in the database.
+        /// </summary>
+        /// <param name="id">The unique identifier of the project requirement.</param>
+        /// <returns>True if it exists, otherwise false.</returns>
         private bool ProjectRequirementExists(Guid id)
         {
           return ctx.ProjectRequirement.Any(e => e.Id == id);
         }
 
-
-
-
+        /// <summary>
+        /// Prepares dropdown lists for the requirement task view.
+        /// </summary>
+        /// <param name="projectRequirementId">The unique identifier of the project requirement for which the task is being created or edited.</param>
+        /// <returns>Task.</returns>
         private async Task PrepareDropDownLists(Guid projectRequirementId)
         {
             logger.LogInformation($"Preparing drop down lists for project requirement id: {projectRequirementId}");

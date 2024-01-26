@@ -12,11 +12,15 @@ using RPPP_WebApp.Views;
 
 namespace RPPP_WebApp.Controllers
 {
+
+    /// <summary>
+    /// The DocumentTypesController class manages actions related to document types,
+    /// including listing, viewing details, creating, editing, and deleting document types.
+    /// </summary>
     public class DocumentTypesController : Controller
     {
         private readonly Rppp01Context _context;
         private readonly ILogger<ClientsController> logger;
-
 
         public DocumentTypesController(Rppp01Context context, ILogger<ClientsController> logger)
         {
@@ -24,6 +28,13 @@ namespace RPPP_WebApp.Controllers
             _context = context;
         }
 
+
+        /// <summary>
+        /// Displays a paginated list of document types with optional sorting.
+        /// </summary>
+        /// <param name="sortOrder">Specifies the column to sort by.</param>
+        /// <param name="pageNumber">The page number for pagination.</param>
+        /// <returns>A view with the list of document types.</returns>
         // GET: DocumentTypes
         public async Task<IActionResult> Index(string sortOrder, int? pageNumber)
         {
@@ -51,6 +62,11 @@ namespace RPPP_WebApp.Controllers
             return View(await PaginatedList<DocumentType>.CreateAsync(documentTypes.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
+        /// <summary>
+        /// Shows the details of a specific document type.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document type.</param>
+        /// <returns>A view displaying the document type details if found; otherwise, a NotFound view.</returns>
         // GET: DocumentTypes/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
@@ -69,12 +85,21 @@ namespace RPPP_WebApp.Controllers
             return View(documentType);
         }
 
+        /// <summary>
+        /// Returns the view for creating a new document type.
+        /// </summary>
+        /// <returns>A view for document type creation.</returns>
         // GET: DocumentTypes/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        /// <summary>
+        /// Processes the creation of a new document type.
+        /// </summary>
+        /// <param name="documentType">The document type data to be added.</param>
+        /// <returns>A redirect to the Index view if successful; otherwise, returns to the Create view with error messages.</returns>
         // POST: DocumentTypes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -125,6 +150,12 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Returns the edit view for a specific document type.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document type to be edited.</param>
+        /// <returns>An edit view for the specified document type if found; otherwise, a NotFound view.</returns>
         // GET: DocumentTypes/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -141,6 +172,12 @@ namespace RPPP_WebApp.Controllers
             return View(documentType);
         }
 
+        /// <summary>
+        /// Processes the editing of a specific document type.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document type being edited.</param>
+        /// <param name="documentType">The updated document type data.</param>
+        /// <returns>A redirect to the Index view if successful; otherwise, returns to the Edit view with error messages.</returns>
         // POST: DocumentTypes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -190,6 +227,12 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Returns the delete confirmation view for a specific document type.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document type to be deleted.</param>
+        /// <returns>A delete confirmation view for the specified document type if found; otherwise, a NotFound view.</returns>
         // GET: DocumentTypes/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
@@ -208,6 +251,11 @@ namespace RPPP_WebApp.Controllers
             return View(documentType);
         }
 
+        /// <summary>
+        /// Processes the deletion of a specified document type.
+        /// </summary>
+        /// <param name="id">The unique identifier of the document type to be deleted.</param>
+        /// <returns>A redirect to the Index view if successful; otherwise, returns to the Delete view with error messages.</returns>
         // POST: DocumentTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

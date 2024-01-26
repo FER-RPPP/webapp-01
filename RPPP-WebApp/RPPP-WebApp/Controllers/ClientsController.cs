@@ -12,6 +12,10 @@ using RPPP_WebApp.Views;
 
 namespace RPPP_WebApp.Controllers
 {
+
+    /// <summary>
+    /// The ClientsController class manages client-related actions such as listing, details, creation, editing, and deletion of clients.
+    /// </summary>
     public class ClientsController : Controller
     {
         private readonly Rppp01Context _context;
@@ -23,6 +27,12 @@ namespace RPPP_WebApp.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Displays a paginated list of clients with optional sorting.
+        /// </summary>
+        /// <param name="sortOrder">Specifies the column to sort by.</param>
+        /// <param name="pageNumber">The page number for pagination.</param>
+        /// <returns>A view with the list of clients.</returns>
         // GET: Clients
         public async Task<IActionResult> Index(string sortOrder, int? pageNumber)
         {
@@ -77,7 +87,11 @@ namespace RPPP_WebApp.Controllers
             return View(await PaginatedList<Client>.CreateAsync(clients.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
-
+        /// <summary>
+        /// Shows the details of a specific client.
+        /// </summary>
+        /// <param name="id">The unique identifier of the client.</param>
+        /// <returns>A view displaying the client details if found; otherwise, a NotFound view.</returns>
         // GET: Clients/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
@@ -96,12 +110,22 @@ namespace RPPP_WebApp.Controllers
             return View(client);
         }
 
+        /// <summary>
+        /// Returns the view for creating a new client.
+        /// </summary>
+        /// <returns>A view for client creation.</returns>
         // GET: Clients/Create
         public IActionResult Create()
         {
             return View();
         }
 
+
+        /// <summary>
+        /// Processes the creation of a new client.
+        /// </summary>
+        /// <param name="client">The client data to be added.</param>
+        /// <returns>A redirect to the Index view if successful; otherwise, returns to the Create view with error messages.</returns>
         // POST: Clients/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -153,6 +177,12 @@ namespace RPPP_WebApp.Controllers
 
         }
 
+
+        /// <summary>
+        /// Returns the edit view for a specific client.
+        /// </summary>
+        /// <param name="id">The unique identifier of the client to be edited.</param>
+        /// <returns>An edit view for the specified client if found; otherwise, a NotFound view.</returns>
         // GET: Clients/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -169,6 +199,13 @@ namespace RPPP_WebApp.Controllers
             return View(client);
         }
 
+
+        /// <summary>
+        /// Processes the editing of a specific client.
+        /// </summary>
+        /// <param name="id">The unique identifier of the client being edited.</param>
+        /// <param name="client">The updated client data.</param>
+        /// <returns>A redirect to the Index view if successful; otherwise, returns to the Edit view with error messages.</returns>
         // POST: Clients/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -219,6 +256,12 @@ namespace RPPP_WebApp.Controllers
 
         }
 
+
+        /// <summary>
+        /// Returns the delete confirmation view for a specific client.
+        /// </summary>
+        /// <param name="id">The unique identifier of the client to be deleted.</param>
+        /// <returns>A delete confirmation view for the specified client if found; otherwise, a NotFound view.</returns>
         // GET: Clients/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
@@ -238,6 +281,11 @@ namespace RPPP_WebApp.Controllers
 
         }
 
+        /// <summary>
+        /// Processes the deletion of a specified client.
+        /// </summary>
+        /// <param name="id">The unique identifier of the client to be deleted.</param>
+        /// <returns>A redirect to the Index view if successful; otherwise, returns to the Delete view with error messages.</returns>
         // POST: Clients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -11,17 +11,34 @@ using System.Security.Cryptography;
 using NLog.Filters;
 
 namespace RPPP_WebApp.Controllers {
-  public class ProjectWorkController : Controller {
+    /// <summary>
+    /// Controller for managing project work/activities.
+    /// </summary>
+    public class ProjectWorkController : Controller {
     private readonly Rppp01Context ctx;
     private readonly ILogger<ProjectWorkController> logger;
     private readonly AppSettings appData;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProjectWorkController"/> class.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
+    /// <param name="options">Snapshot of application settings.</param>
+    /// <param name="logger">Logger for logging messages.</param>
     public ProjectWorkController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<ProjectWorkController> logger) {
       this.ctx = ctx;
       this.logger = logger;
       appData = options.Value;
     }
 
+    /// <summary>
+    /// Displays the index page for project work/activitys.
+    /// </summary>
+    /// <param name="filter">Filter parameters.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Index view.</returns>
     public async Task<IActionResult> Index(ProjectWorkFilter filter, int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.ProjectWork
@@ -89,6 +106,12 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
     }
 
+    /// <summary>
+    /// Truncates a string to the specified maximum length.
+    /// </summary>
+    /// <param name="value">The input string to be truncated.</param>
+    /// <param name="maxLength">The maximum length of the truncated string.</param>
+    /// <returns>Truncated string with an ellipsis if needed.</returns>
     public static string MakeShorter(string value, int maxLength) {
       if (value.Length <= maxLength)
         return value;
@@ -96,7 +119,14 @@ namespace RPPP_WebApp.Controllers {
         return value.Substring(0, maxLength) + "...";
     }
 
-
+    /// <summary>
+    /// Displays the details of a project work/activity including its labor diary entries.
+    /// </summary>
+    /// <param name="id">The ID of the project work/activity.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Details view.</returns>
     public async Task<IActionResult> Show(Guid id, int page = 1, int sort = 1, bool ascending = true) {
 
       var query = ctx.LaborDiary
@@ -141,13 +171,21 @@ namespace RPPP_WebApp.Controllers {
     }
 
 
-
+    /// <summary>
+    /// Displays the form for creating a new project work/activity.
+    /// </summary>
+    /// <returns>Create view.</returns>
     [HttpGet]
     public async Task<IActionResult> Create() {
       await PrepareDropDownLists();
       return View();
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for creating a new project work/activity.
+    /// </summary>
+    /// <param name="projectWork">The project work/activity data to be created.</param>
+    /// <returns>Redirects to the index view if successful, otherwise returns the create view with error messages.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(ProjectWork projectWork) {
@@ -174,6 +212,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Deletes a project work/activity with the specified IBAN.
+    /// </summary>
+    /// <param name="id">The ID of the project work/activity to be deleted.</param>
+    /// <param name="page">The current page number.</param>
+    /// <param name="sort">The sort order.</param>
+    /// <param name="ascending">Whether the sorting is in ascending order.</param>
+    /// <returns>Redirects to the index view with updated data.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(Guid id, int page = 1, int sort = 1, bool ascending = true) {
@@ -201,6 +247,14 @@ namespace RPPP_WebApp.Controllers {
       return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
     }
 
+    /// <summary>
+    /// Displays the form for editing an existing project work/activity.
+    /// </summary>
+    /// <param name="id">The ID of the project work/activity to be edited.</param>
+    /// <param name="page">The current page number.</param>
+    /// <param name="sort">The sort order.</param>
+    /// <param name="ascending">Whether the sorting is in ascending order.</param>
+    /// <returns>Edit view if successful, otherwise returns a not found response.</returns>
     [HttpGet]
     public async Task<IActionResult> Edit(Guid id, int page = 1, int sort = 1, bool ascending = true) {
       var projectWork = ctx.ProjectWork.AsNoTracking().Where(o => o.Id == id).SingleOrDefault();
@@ -217,6 +271,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for updating an existing project work/activity.
+    /// </summary>
+    /// <param name="id">The ID of the project work/activity to be updated.</param>
+    /// <param name="page">The current page number.</param>
+    /// <param name="sort">The sort order.</param>
+    /// <param name="ascending">Whether the sorting is in ascending order.</param>
+    /// <returns>Redirects to the index view if successful, otherwise returns the edit view with error messages.</returns>
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(Guid id, int page = 1, int sort = 1, bool ascending = true) {
@@ -258,6 +320,11 @@ namespace RPPP_WebApp.Controllers {
         return RedirectToAction(nameof(Edit), id);
       }
     }
+
+    /// <summary>
+    /// Prepares dropdown lists for form fields.
+    /// </summary>
+    /// <returns>Task representing the asynchronous operation.</returns>
     private async Task PrepareDropDownLists() {
       var projects = await ctx.Project
                                 .ToListAsync();

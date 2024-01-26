@@ -9,17 +9,33 @@ using RPPP_WebApp.Model;
 using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers {
+  /// <summary>
+  /// Controller for managing transaction purposes.
+  /// </summary>
   public class TransactionPurposeController : Controller {
     private readonly Rppp01Context ctx;
     private readonly ILogger<TransactionPurposeController> logger;
     private readonly AppSettings appData;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="TransactionPurposeController"/> class.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
+    /// <param name="options">Application settings.</param>
+    /// <param name="logger">Logger instance.</param>
     public TransactionPurposeController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<TransactionPurposeController> logger) {
       this.ctx = ctx;
       this.logger = logger;
       appData = options.Value;
     }
 
+    /// <summary>
+    /// Displays a paginated list of transaction purposes.
+    /// </summary>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>The view displaying the paginated list of transaction purposes.</returns>
     public IActionResult Index(int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.TransactionPurpose
@@ -60,11 +76,20 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
     }
 
+    /// <summary>
+    /// Displays the form for creating a new transaction purpose.
+    /// </summary>
+    /// <returns>The view for creating a new transaction purpose.</returns>
     [HttpGet]
     public IActionResult Create() {
       return View();
     }
 
+    /// <summary>
+    /// Handles the submission of the new transaction purpose form.
+    /// </summary>
+    /// <param name="transactionPurpose">The transaction purpose data from the form.</param>
+    /// <returns>Redirects to the transaction purpose index on success; returns the form on failure.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create(TransactionPurpose transactionPurpose) {
@@ -90,6 +115,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Deletes a transaction purpose based on its ID.
+    /// </summary>
+    /// <param name="Id">The ID of the transaction purpose to be deleted.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Redirects to the transaction purpose index after deletion.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
@@ -116,6 +149,14 @@ namespace RPPP_WebApp.Controllers {
       return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
     }
 
+    /// <summary>
+    /// Displays the form for editing an existing transaction purpose.
+    /// </summary>
+    /// <param name="Id">The ID of the transaction purpose to be edited.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>The view for editing an existing transaction purpose.</returns>
     [HttpGet]
     public IActionResult Edit(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
       var transactionPurpose = ctx.TransactionPurpose.AsNoTracking().Where(o => o.Id == Id).SingleOrDefault();
@@ -131,6 +172,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the submission of the edited transaction purpose form.
+    /// </summary>
+    /// <param name="Id">The ID of the transaction purpose to be updated.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Redirects to the transaction purpose index on success; returns the form on failure.</returns>
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(Guid Id, int page = 1, int sort = 1, bool ascending = true) {

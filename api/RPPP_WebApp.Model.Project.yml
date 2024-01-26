@@ -1,0 +1,1082 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Model.Project
+  commentId: T:RPPP_WebApp.Model.Project
+  id: Project
+  parent: RPPP_WebApp.Model
+  children:
+  - RPPP_WebApp.Model.Project.Card
+  - RPPP_WebApp.Model.Project.CardId
+  - RPPP_WebApp.Model.Project.Client
+  - RPPP_WebApp.Model.Project.ClientId
+  - RPPP_WebApp.Model.Project.Document
+  - RPPP_WebApp.Model.Project.Id
+  - RPPP_WebApp.Model.Project.Name
+  - RPPP_WebApp.Model.Project.Owner
+  - RPPP_WebApp.Model.Project.OwnerId
+  - RPPP_WebApp.Model.Project.ProjectPartner
+  - RPPP_WebApp.Model.Project.ProjectRequirement
+  - RPPP_WebApp.Model.Project.ProjectWork
+  - RPPP_WebApp.Model.Project.Type
+  langs:
+  - csharp
+  - vb
+  name: Project
+  nameWithType: Project
+  fullName: RPPP_WebApp.Model.Project
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Project
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 7
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public class Project
+    content.vb: Public Class Project
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RPPP_WebApp.Model.Project.Id
+  commentId: P:RPPP_WebApp.Model.Project.Id
+  id: Id
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: Project.Id
+  fullName: RPPP_WebApp.Model.Project.Id
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Id
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 9
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: RPPP_WebApp.Model.Project.Id*
+- uid: RPPP_WebApp.Model.Project.ClientId
+  commentId: P:RPPP_WebApp.Model.Project.ClientId
+  id: ClientId
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: ClientId
+  nameWithType: Project.ClientId
+  fullName: RPPP_WebApp.Model.Project.ClientId
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ClientId
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 11
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: >-
+      [Required(ErrorMessage = "Please select a client.")]
+
+      public Guid ClientId { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: >-
+      <Required(ErrorMessage:="Please select a client.")>
+
+      Public Property ClientId As Guid
+  overload: RPPP_WebApp.Model.Project.ClientId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Please select a client.
+- uid: RPPP_WebApp.Model.Project.Name
+  commentId: P:RPPP_WebApp.Model.Project.Name
+  id: Name
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Project.Name
+  fullName: RPPP_WebApp.Model.Project.Name
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Name
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 14
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: >-
+      [Required(ErrorMessage = "Name cannot be empty")]
+
+      public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required(ErrorMessage:="Name cannot be empty")>
+
+      Public Property Name As String
+  overload: RPPP_WebApp.Model.Project.Name*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Name cannot be empty
+- uid: RPPP_WebApp.Model.Project.Type
+  commentId: P:RPPP_WebApp.Model.Project.Type
+  id: Type
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: Project.Type
+  fullName: RPPP_WebApp.Model.Project.Type
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Type
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 17
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: >-
+      [Required]
+
+      [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Type must contain only letters.")]
+
+      public string Type { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      <RegularExpression("^[a-zA-Z]+$", ErrorMessage:="Type must contain only letters.")>
+
+      Public Property Type As String
+  overload: RPPP_WebApp.Model.Project.Type*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+    ctor: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ^[a-zA-Z]+$
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Type must contain only letters.
+- uid: RPPP_WebApp.Model.Project.OwnerId
+  commentId: P:RPPP_WebApp.Model.Project.OwnerId
+  id: OwnerId
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: OwnerId
+  nameWithType: Project.OwnerId
+  fullName: RPPP_WebApp.Model.Project.OwnerId
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: OwnerId
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 21
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: >-
+      [Required(ErrorMessage = "Please select an Owner.")]
+
+      public string OwnerId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required(ErrorMessage:="Please select an Owner.")>
+
+      Public Property OwnerId As String
+  overload: RPPP_WebApp.Model.Project.OwnerId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Please select an Owner.
+- uid: RPPP_WebApp.Model.Project.CardId
+  commentId: P:RPPP_WebApp.Model.Project.CardId
+  id: CardId
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: CardId
+  nameWithType: Project.CardId
+  fullName: RPPP_WebApp.Model.Project.CardId
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: CardId
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 24
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: >-
+      [Required(ErrorMessage = "Please select a Card.")]
+
+      public string CardId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required(ErrorMessage:="Please select a Card.")>
+
+      Public Property CardId As String
+  overload: RPPP_WebApp.Model.Project.CardId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Please select a Card.
+- uid: RPPP_WebApp.Model.Project.Card
+  commentId: P:RPPP_WebApp.Model.Project.Card
+  id: Card
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: Card
+  nameWithType: Project.Card
+  fullName: RPPP_WebApp.Model.Project.Card
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Card
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 27
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual ProjectCard Card { get; set; }
+    parameters: []
+    return:
+      type: RPPP_WebApp.Model.ProjectCard
+    content.vb: Public Overridable Property Card As ProjectCard
+  overload: RPPP_WebApp.Model.Project.Card*
+- uid: RPPP_WebApp.Model.Project.Client
+  commentId: P:RPPP_WebApp.Model.Project.Client
+  id: Client
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: Client
+  nameWithType: Project.Client
+  fullName: RPPP_WebApp.Model.Project.Client
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Client
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 29
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual Client Client { get; set; }
+    parameters: []
+    return:
+      type: RPPP_WebApp.Model.Client
+    content.vb: Public Overridable Property Client As Client
+  overload: RPPP_WebApp.Model.Project.Client*
+- uid: RPPP_WebApp.Model.Project.Document
+  commentId: P:RPPP_WebApp.Model.Project.Document
+  id: Document
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: Document
+  nameWithType: Project.Document
+  fullName: RPPP_WebApp.Model.Project.Document
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Document
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 31
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual ICollection<Document> Document { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{RPPP_WebApp.Model.Document}
+    content.vb: Public Overridable Property Document As ICollection(Of Document)
+  overload: RPPP_WebApp.Model.Project.Document*
+- uid: RPPP_WebApp.Model.Project.Owner
+  commentId: P:RPPP_WebApp.Model.Project.Owner
+  id: Owner
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: Project.Owner
+  fullName: RPPP_WebApp.Model.Project.Owner
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Owner
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 33
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual Owner Owner { get; set; }
+    parameters: []
+    return:
+      type: RPPP_WebApp.Model.Owner
+    content.vb: Public Overridable Property Owner As Owner
+  overload: RPPP_WebApp.Model.Project.Owner*
+- uid: RPPP_WebApp.Model.Project.ProjectPartner
+  commentId: P:RPPP_WebApp.Model.Project.ProjectPartner
+  id: ProjectPartner
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: ProjectPartner
+  nameWithType: Project.ProjectPartner
+  fullName: RPPP_WebApp.Model.Project.ProjectPartner
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ProjectPartner
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 35
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual ICollection<ProjectPartner> ProjectPartner { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{RPPP_WebApp.Model.ProjectPartner}
+    content.vb: Public Overridable Property ProjectPartner As ICollection(Of ProjectPartner)
+  overload: RPPP_WebApp.Model.Project.ProjectPartner*
+- uid: RPPP_WebApp.Model.Project.ProjectRequirement
+  commentId: P:RPPP_WebApp.Model.Project.ProjectRequirement
+  id: ProjectRequirement
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: ProjectRequirement
+  nameWithType: Project.ProjectRequirement
+  fullName: RPPP_WebApp.Model.Project.ProjectRequirement
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ProjectRequirement
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 37
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual ICollection<ProjectRequirement> ProjectRequirement { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{RPPP_WebApp.Model.ProjectRequirement}
+    content.vb: Public Overridable Property ProjectRequirement As ICollection(Of ProjectRequirement)
+  overload: RPPP_WebApp.Model.Project.ProjectRequirement*
+- uid: RPPP_WebApp.Model.Project.ProjectWork
+  commentId: P:RPPP_WebApp.Model.Project.ProjectWork
+  id: ProjectWork
+  parent: RPPP_WebApp.Model.Project
+  langs:
+  - csharp
+  - vb
+  name: ProjectWork
+  nameWithType: Project.ProjectWork
+  fullName: RPPP_WebApp.Model.Project.ProjectWork
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ProjectWork
+    path: RPPP-WebApp/RPPP-WebApp/Model/Project.cs
+    startLine: 39
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public virtual ICollection<ProjectWork> ProjectWork { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{RPPP_WebApp.Model.ProjectWork}
+    content.vb: Public Overridable Property ProjectWork As ICollection(Of ProjectWork)
+  overload: RPPP_WebApp.Model.Project.ProjectWork*
+references:
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RPPP_WebApp.Model.Project.Id*
+  commentId: Overload:RPPP_WebApp.Model.Project.Id
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_Id
+  name: Id
+  nameWithType: Project.Id
+  fullName: RPPP_WebApp.Model.Project.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: RPPP_WebApp.Model.Project.ClientId*
+  commentId: Overload:RPPP_WebApp.Model.Project.ClientId
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_ClientId
+  name: ClientId
+  nameWithType: Project.ClientId
+  fullName: RPPP_WebApp.Model.Project.ClientId
+- uid: RPPP_WebApp.Model.Project.Name*
+  commentId: Overload:RPPP_WebApp.Model.Project.Name
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_Name
+  name: Name
+  nameWithType: Project.Name
+  fullName: RPPP_WebApp.Model.Project.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: RPPP_WebApp.Model.Project.Type*
+  commentId: Overload:RPPP_WebApp.Model.Project.Type
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_Type
+  name: Type
+  nameWithType: Project.Type
+  fullName: RPPP_WebApp.Model.Project.Type
+- uid: RPPP_WebApp.Model.Project.OwnerId*
+  commentId: Overload:RPPP_WebApp.Model.Project.OwnerId
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_OwnerId
+  name: OwnerId
+  nameWithType: Project.OwnerId
+  fullName: RPPP_WebApp.Model.Project.OwnerId
+- uid: RPPP_WebApp.Model.Project.CardId*
+  commentId: Overload:RPPP_WebApp.Model.Project.CardId
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_CardId
+  name: CardId
+  nameWithType: Project.CardId
+  fullName: RPPP_WebApp.Model.Project.CardId
+- uid: RPPP_WebApp.Model.Project.Card*
+  commentId: Overload:RPPP_WebApp.Model.Project.Card
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_Card
+  name: Card
+  nameWithType: Project.Card
+  fullName: RPPP_WebApp.Model.Project.Card
+- uid: RPPP_WebApp.Model.ProjectCard
+  commentId: T:RPPP_WebApp.Model.ProjectCard
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.ProjectCard.html
+  name: ProjectCard
+  nameWithType: ProjectCard
+  fullName: RPPP_WebApp.Model.ProjectCard
+- uid: RPPP_WebApp.Model.Project.Client*
+  commentId: Overload:RPPP_WebApp.Model.Project.Client
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_Client
+  name: Client
+  nameWithType: Project.Client
+  fullName: RPPP_WebApp.Model.Project.Client
+- uid: RPPP_WebApp.Model.Client
+  commentId: T:RPPP_WebApp.Model.Client
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Client.html
+  name: Client
+  nameWithType: Client
+  fullName: RPPP_WebApp.Model.Client
+- uid: RPPP_WebApp.Model.Project.Document*
+  commentId: Overload:RPPP_WebApp.Model.Project.Document
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_Document
+  name: Document
+  nameWithType: Project.Document
+  fullName: RPPP_WebApp.Model.Project.Document
+- uid: System.Collections.Generic.ICollection{RPPP_WebApp.Model.Document}
+  commentId: T:System.Collections.Generic.ICollection{RPPP_WebApp.Model.Document}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<Document>
+  nameWithType: ICollection<Document>
+  fullName: System.Collections.Generic.ICollection<RPPP_WebApp.Model.Document>
+  nameWithType.vb: ICollection(Of Document)
+  fullName.vb: System.Collections.Generic.ICollection(Of RPPP_WebApp.Model.Document)
+  name.vb: ICollection(Of Document)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: RPPP_WebApp.Model.Document
+    name: Document
+    href: RPPP_WebApp.Model.Document.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.Document
+    name: Document
+    href: RPPP_WebApp.Model.Document.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: RPPP_WebApp.Model.Project.Owner*
+  commentId: Overload:RPPP_WebApp.Model.Project.Owner
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_Owner
+  name: Owner
+  nameWithType: Project.Owner
+  fullName: RPPP_WebApp.Model.Project.Owner
+- uid: RPPP_WebApp.Model.Owner
+  commentId: T:RPPP_WebApp.Model.Owner
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.Owner.html
+  name: Owner
+  nameWithType: Owner
+  fullName: RPPP_WebApp.Model.Owner
+- uid: RPPP_WebApp.Model.Project.ProjectPartner*
+  commentId: Overload:RPPP_WebApp.Model.Project.ProjectPartner
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_ProjectPartner
+  name: ProjectPartner
+  nameWithType: Project.ProjectPartner
+  fullName: RPPP_WebApp.Model.Project.ProjectPartner
+- uid: System.Collections.Generic.ICollection{RPPP_WebApp.Model.ProjectPartner}
+  commentId: T:System.Collections.Generic.ICollection{RPPP_WebApp.Model.ProjectPartner}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<ProjectPartner>
+  nameWithType: ICollection<ProjectPartner>
+  fullName: System.Collections.Generic.ICollection<RPPP_WebApp.Model.ProjectPartner>
+  nameWithType.vb: ICollection(Of ProjectPartner)
+  fullName.vb: System.Collections.Generic.ICollection(Of RPPP_WebApp.Model.ProjectPartner)
+  name.vb: ICollection(Of ProjectPartner)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: RPPP_WebApp.Model.ProjectPartner
+    name: ProjectPartner
+    href: RPPP_WebApp.Model.ProjectPartner.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.ProjectPartner
+    name: ProjectPartner
+    href: RPPP_WebApp.Model.ProjectPartner.html
+  - name: )
+- uid: RPPP_WebApp.Model.Project.ProjectRequirement*
+  commentId: Overload:RPPP_WebApp.Model.Project.ProjectRequirement
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_ProjectRequirement
+  name: ProjectRequirement
+  nameWithType: Project.ProjectRequirement
+  fullName: RPPP_WebApp.Model.Project.ProjectRequirement
+- uid: System.Collections.Generic.ICollection{RPPP_WebApp.Model.ProjectRequirement}
+  commentId: T:System.Collections.Generic.ICollection{RPPP_WebApp.Model.ProjectRequirement}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<ProjectRequirement>
+  nameWithType: ICollection<ProjectRequirement>
+  fullName: System.Collections.Generic.ICollection<RPPP_WebApp.Model.ProjectRequirement>
+  nameWithType.vb: ICollection(Of ProjectRequirement)
+  fullName.vb: System.Collections.Generic.ICollection(Of RPPP_WebApp.Model.ProjectRequirement)
+  name.vb: ICollection(Of ProjectRequirement)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: RPPP_WebApp.Model.ProjectRequirement
+    name: ProjectRequirement
+    href: RPPP_WebApp.Model.ProjectRequirement.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.ProjectRequirement
+    name: ProjectRequirement
+    href: RPPP_WebApp.Model.ProjectRequirement.html
+  - name: )
+- uid: RPPP_WebApp.Model.Project.ProjectWork*
+  commentId: Overload:RPPP_WebApp.Model.Project.ProjectWork
+  href: RPPP_WebApp.Model.Project.html#RPPP_WebApp_Model_Project_ProjectWork
+  name: ProjectWork
+  nameWithType: Project.ProjectWork
+  fullName: RPPP_WebApp.Model.Project.ProjectWork
+- uid: System.Collections.Generic.ICollection{RPPP_WebApp.Model.ProjectWork}
+  commentId: T:System.Collections.Generic.ICollection{RPPP_WebApp.Model.ProjectWork}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<ProjectWork>
+  nameWithType: ICollection<ProjectWork>
+  fullName: System.Collections.Generic.ICollection<RPPP_WebApp.Model.ProjectWork>
+  nameWithType.vb: ICollection(Of ProjectWork)
+  fullName.vb: System.Collections.Generic.ICollection(Of RPPP_WebApp.Model.ProjectWork)
+  name.vb: ICollection(Of ProjectWork)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: RPPP_WebApp.Model.ProjectWork
+    name: ProjectWork
+    href: RPPP_WebApp.Model.ProjectWork.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RPPP_WebApp.Model.ProjectWork
+    name: ProjectWork
+    href: RPPP_WebApp.Model.ProjectWork.html
+  - name: )

@@ -5,16 +5,24 @@ using RPPP_WebApp.Model;
 
 namespace RPPP_WebApp.Services.Impl
 {
-    public class ProductService : IProductService
+  /// <summary>
+  /// Service for handling product-related operations.
+  /// </summary>
+  public class ProductService : IProductService
     {
         private readonly Rppp01Context _context;
 
-        public ProductService(Rppp01Context context)
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProductService"/> class.
+    /// </summary>
+    /// <param name="context">The database context.</param>
+    public ProductService(Rppp01Context context)
         {
             _context = context;
         }
 
-        public async Task<int> Count(string filter)
+    /// <inheritdoc/>
+    public async Task<int> Count(string filter)
         {
             if (string.IsNullOrEmpty(filter))
             {
@@ -26,7 +34,8 @@ namespace RPPP_WebApp.Services.Impl
             }
         }
 
-        public async Task<IActionResult> Create(Product model)
+    /// <inheritdoc/>
+    public async Task<IActionResult> Create(Product model)
         {
             if (model == null)
             {
@@ -41,7 +50,8 @@ namespace RPPP_WebApp.Services.Impl
             return new CreatedAtActionResult(nameof(ProductController.GetAll), "Product", new { id = model.Id }, model);
         }
 
-        public async Task<IActionResult> Delete(Guid id)
+    /// <inheritdoc/>
+    public async Task<IActionResult> Delete(Guid id)
         {
             var product = await _context.Product.FindAsync(id);
             if (product == null)
@@ -55,7 +65,8 @@ namespace RPPP_WebApp.Services.Impl
             return new NoContentResult();
         }
 
-        public async Task<ActionResult<Product>> Get(Guid id)
+    /// <inheritdoc/>
+    public async Task<ActionResult<Product>> Get(Guid id)
         {
             var product = await _context.Product.FindAsync(id);
             if (product == null)
@@ -66,7 +77,8 @@ namespace RPPP_WebApp.Services.Impl
             return new ActionResult<Product>(product);
         }
 
-        public async Task<List<Product>> GetAll(LoadParams loadParams)
+    /// <inheritdoc/>
+    public async Task<List<Product>> GetAll(LoadParams loadParams)
         {
             // Apply the filter if it exists.
             IQueryable<Product> query = _context.Product;
@@ -103,7 +115,8 @@ namespace RPPP_WebApp.Services.Impl
             return products.GetRange(startIndex, count);
         }
 
-        public async Task<IActionResult> Update(Guid id, Product model)
+    /// <inheritdoc/>
+    public async Task<IActionResult> Update(Guid id, Product model)
         {
             if (model == null || id != model.Id)
             {

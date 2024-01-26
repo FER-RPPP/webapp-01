@@ -2,11 +2,23 @@
 using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers {
+  /// <summary>
+  /// Controller for viewing log entries.
+  /// </summary>
   public class ViewLogGOController : Controller {
+    /// <summary>
+    /// Displays the default view for log entries.
+    /// </summary>
+    /// <returns>The default view for log entries.</returns>
     public IActionResult Index() {
       return View();
     }
 
+    /// <summary>
+    /// Retrieves and displays log entries for a specified date.
+    /// </summary>
+    /// <param name="dan">The date for which to retrieve log entries.</param>
+    /// <returns>The view displaying log entries for the specified date.</returns>
     public async Task<IActionResult> Show(DateTime dan) {
       ViewBag.Dan = dan;
       List<LogEntry> list = new List<LogEntry>();

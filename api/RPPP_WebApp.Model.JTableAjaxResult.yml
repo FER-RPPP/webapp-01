@@ -1,0 +1,541 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Model.JTableAjaxResult
+  commentId: T:RPPP_WebApp.Model.JTableAjaxResult
+  id: JTableAjaxResult
+  parent: RPPP_WebApp.Model
+  children:
+  - RPPP_WebApp.Model.JTableAjaxResult.#ctor
+  - RPPP_WebApp.Model.JTableAjaxResult.#ctor(System.String)
+  - RPPP_WebApp.Model.JTableAjaxResult.Error(System.String)
+  - RPPP_WebApp.Model.JTableAjaxResult.Message
+  - RPPP_WebApp.Model.JTableAjaxResult.OK
+  - RPPP_WebApp.Model.JTableAjaxResult.Result
+  langs:
+  - csharp
+  - vb
+  name: JTableAjaxResult
+  nameWithType: JTableAjaxResult
+  fullName: RPPP_WebApp.Model.JTableAjaxResult
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: JTableAjaxResult
+    path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+    startLine: 2
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public class JTableAjaxResult
+    content.vb: Public Class JTableAjaxResult
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - RPPP_WebApp.Model.CreateResult
+  - RPPP_WebApp.Model.OptionsResult
+  - RPPP_WebApp.Model.TableRecords`1
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RPPP_WebApp.Model.JTableAjaxResult.Result
+  commentId: P:RPPP_WebApp.Model.JTableAjaxResult.Result
+  id: Result
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  langs:
+  - csharp
+  - vb
+  name: Result
+  nameWithType: JTableAjaxResult.Result
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.Result
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Result
+    path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+    startLine: 4
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public string Result { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Result As String
+  overload: RPPP_WebApp.Model.JTableAjaxResult.Result*
+- uid: RPPP_WebApp.Model.JTableAjaxResult.Message
+  commentId: P:RPPP_WebApp.Model.JTableAjaxResult.Message
+  id: Message
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: JTableAjaxResult.Message
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.Message
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Message
+    path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+    startLine: 5
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public string Message { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Message As String
+  overload: RPPP_WebApp.Model.JTableAjaxResult.Message*
+- uid: RPPP_WebApp.Model.JTableAjaxResult.#ctor
+  commentId: M:RPPP_WebApp.Model.JTableAjaxResult.#ctor
+  id: '#ctor'
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  langs:
+  - csharp
+  - vb
+  name: JTableAjaxResult()
+  nameWithType: JTableAjaxResult.JTableAjaxResult()
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.JTableAjaxResult()
+  type: Constructor
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: .ctor
+    path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+    startLine: 7
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: protected JTableAjaxResult()
+    content.vb: Protected Sub New()
+  overload: RPPP_WebApp.Model.JTableAjaxResult.#ctor*
+  nameWithType.vb: JTableAjaxResult.New()
+  fullName.vb: RPPP_WebApp.Model.JTableAjaxResult.New()
+  name.vb: New()
+- uid: RPPP_WebApp.Model.JTableAjaxResult.#ctor(System.String)
+  commentId: M:RPPP_WebApp.Model.JTableAjaxResult.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  langs:
+  - csharp
+  - vb
+  name: JTableAjaxResult(string)
+  nameWithType: JTableAjaxResult.JTableAjaxResult(string)
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.JTableAjaxResult(string)
+  type: Constructor
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: .ctor
+    path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+    startLine: 12
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: protected JTableAjaxResult(string errorMessage)
+    parameters:
+    - id: errorMessage
+      type: System.String
+    content.vb: Protected Sub New(errorMessage As String)
+  overload: RPPP_WebApp.Model.JTableAjaxResult.#ctor*
+  nameWithType.vb: JTableAjaxResult.New(String)
+  fullName.vb: RPPP_WebApp.Model.JTableAjaxResult.New(String)
+  name.vb: New(String)
+- uid: RPPP_WebApp.Model.JTableAjaxResult.OK
+  commentId: P:RPPP_WebApp.Model.JTableAjaxResult.OK
+  id: OK
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  langs:
+  - csharp
+  - vb
+  name: OK
+  nameWithType: JTableAjaxResult.OK
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.OK
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: OK
+    path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+    startLine: 18
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public static JTableAjaxResult OK { get; }
+    parameters: []
+    return:
+      type: RPPP_WebApp.Model.JTableAjaxResult
+    content.vb: Public Shared ReadOnly Property OK As JTableAjaxResult
+  overload: RPPP_WebApp.Model.JTableAjaxResult.OK*
+- uid: RPPP_WebApp.Model.JTableAjaxResult.Error(System.String)
+  commentId: M:RPPP_WebApp.Model.JTableAjaxResult.Error(System.String)
+  id: Error(System.String)
+  parent: RPPP_WebApp.Model.JTableAjaxResult
+  langs:
+  - csharp
+  - vb
+  name: Error(string)
+  nameWithType: JTableAjaxResult.Error(string)
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.Error(string)
+  type: Method
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Error
+    path: RPPP-WebApp/RPPP-WebApp/Model/JTableAjaxResult.cs
+    startLine: 19
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.Model
+  syntax:
+    content: public static JTableAjaxResult Error(string errorMessage)
+    parameters:
+    - id: errorMessage
+      type: System.String
+    return:
+      type: RPPP_WebApp.Model.JTableAjaxResult
+    content.vb: Public Shared Function [Error](errorMessage As String) As JTableAjaxResult
+  overload: RPPP_WebApp.Model.JTableAjaxResult.Error*
+  nameWithType.vb: JTableAjaxResult.Error(String)
+  fullName.vb: RPPP_WebApp.Model.JTableAjaxResult.Error(String)
+  name.vb: Error(String)
+references:
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RPPP_WebApp.Model.JTableAjaxResult.Result*
+  commentId: Overload:RPPP_WebApp.Model.JTableAjaxResult.Result
+  href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_Result
+  name: Result
+  nameWithType: JTableAjaxResult.Result
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.Result
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: RPPP_WebApp.Model.JTableAjaxResult.Message*
+  commentId: Overload:RPPP_WebApp.Model.JTableAjaxResult.Message
+  href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_Message
+  name: Message
+  nameWithType: JTableAjaxResult.Message
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.Message
+- uid: RPPP_WebApp.Model.JTableAjaxResult.#ctor*
+  commentId: Overload:RPPP_WebApp.Model.JTableAjaxResult.#ctor
+  href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult__ctor
+  name: JTableAjaxResult
+  nameWithType: JTableAjaxResult.JTableAjaxResult
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.JTableAjaxResult
+  nameWithType.vb: JTableAjaxResult.New
+  fullName.vb: RPPP_WebApp.Model.JTableAjaxResult.New
+  name.vb: New
+- uid: RPPP_WebApp.Model.JTableAjaxResult.OK*
+  commentId: Overload:RPPP_WebApp.Model.JTableAjaxResult.OK
+  href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_OK
+  name: OK
+  nameWithType: JTableAjaxResult.OK
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.OK
+- uid: RPPP_WebApp.Model.JTableAjaxResult
+  commentId: T:RPPP_WebApp.Model.JTableAjaxResult
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.JTableAjaxResult.html
+  name: JTableAjaxResult
+  nameWithType: JTableAjaxResult
+  fullName: RPPP_WebApp.Model.JTableAjaxResult
+- uid: RPPP_WebApp.Model.JTableAjaxResult.Error*
+  commentId: Overload:RPPP_WebApp.Model.JTableAjaxResult.Error
+  href: RPPP_WebApp.Model.JTableAjaxResult.html#RPPP_WebApp_Model_JTableAjaxResult_Error_System_String_
+  name: Error
+  nameWithType: JTableAjaxResult.Error
+  fullName: RPPP_WebApp.Model.JTableAjaxResult.Error

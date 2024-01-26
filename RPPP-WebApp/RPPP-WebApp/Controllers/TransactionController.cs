@@ -8,17 +8,34 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using RPPP_WebApp.Extensions;
 
 namespace RPPP_WebApp.Controllers {
+  /// <summary>
+  /// Controller for managing transactions.
+  /// </summary>
   public class TransactionController : Controller {
     private readonly Rppp01Context ctx;
     private readonly ILogger<TransactionController> logger;
     private readonly AppSettings appData;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="TransactionController"/> class.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
+    /// <param name="options">Application settings.</param>
+    /// <param name="logger">Logger instance.</param>
     public TransactionController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<TransactionController> logger) {
       this.ctx = ctx;
       this.logger = logger;
       appData = options.Value;
     }
 
+    /// <summary>
+    /// Displays a paginated list of transactions based on filter criteria.
+    /// </summary>
+    /// <param name="filter">Filter criteria.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>The view displaying the paginated list of transactions.</returns>
     public async Task<IActionResult> Index(TransactionFilter filter, int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.Transaction
@@ -80,13 +97,21 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
     }
 
-    
+    /// <summary>
+    /// Displays the form for creating a new transaction.
+    /// </summary>
+    /// <returns>The view for creating a new transaction.</returns>
     [HttpGet]
     public async Task<IActionResult> Create() {
       await PrepareDropDownLists();
       return View();
     }
 
+    /// <summary>
+    /// Handles the submission of the new transaction form.
+    /// </summary>
+    /// <param name="transaction">The transaction data from the form.</param>
+    /// <returns>Redirects to the transaction index on success; returns the form on failure.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Transaction transaction) {
@@ -113,6 +138,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Deletes a transaction based on its ID.
+    /// </summary>
+    /// <param name="Id">The ID of the transaction to be deleted.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Redirects to the transaction index after deletion.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
@@ -140,6 +173,15 @@ namespace RPPP_WebApp.Controllers {
       return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
     }
 
+    /// <summary>
+    /// Displays the form for editing an existing transaction.
+    /// </summary>
+    /// <param name="id">The ID of the transaction to be edited.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>The view for editing an existing transaction.</returns>
+    [HttpGet]
     [HttpGet]
     public async Task<IActionResult> Edit(Guid id, int page = 1, int sort = 1, bool ascending = true) {
       var transaction = ctx.Transaction.AsNoTracking().Where(o => o.Id == id).SingleOrDefault();
@@ -156,6 +198,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the submission of the edited transaction form.
+    /// </summary>
+    /// <param name="id">The ID of the transaction to be updated.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Redirects to the transaction index on success; returns the form on failure.</returns>
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(Guid id, int page = 1, int sort = 1, bool ascending = true) {
@@ -199,6 +249,10 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Prepares dropdown lists for form fields.
+    /// </summary>
+    /// <returns>Task representing the asynchronous operation.</returns>
     private async Task PrepareDropDownLists() {
       var ibans = await ctx.ProjectCard
                            .ToListAsync();

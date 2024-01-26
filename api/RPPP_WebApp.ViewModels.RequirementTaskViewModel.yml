@@ -1,0 +1,741 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  commentId: T:RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  id: RequirementTaskViewModel
+  parent: RPPP_WebApp.ViewModels
+  children:
+  - RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualEndDate
+  - RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualStartDate
+  - RPPP_WebApp.ViewModels.RequirementTaskViewModel.FromRequirementTask(RPPP_WebApp.Model.RequirementTask)
+  - RPPP_WebApp.ViewModels.RequirementTaskViewModel.Id
+  - RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedEndDate
+  - RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedStartDate
+  - RPPP_WebApp.ViewModels.RequirementTaskViewModel.ProjectWork
+  - RPPP_WebApp.ViewModels.RequirementTaskViewModel.RequirementDescription
+  - RPPP_WebApp.ViewModels.RequirementTaskViewModel.TaskStatus
+  langs:
+  - csharp
+  - vb
+  name: RequirementTaskViewModel
+  nameWithType: RequirementTaskViewModel
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  type: Class
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: RequirementTaskViewModel
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 4
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public class RequirementTaskViewModel
+    content.vb: Public Class RequirementTaskViewModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.Id
+  commentId: P:RPPP_WebApp.ViewModels.RequirementTaskViewModel.Id
+  id: Id
+  parent: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: RequirementTaskViewModel.Id
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.Id
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: Id
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 6
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: RPPP_WebApp.ViewModels.RequirementTaskViewModel.Id*
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedStartDate
+  commentId: P:RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedStartDate
+  id: PlannedStartDate
+  parent: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  langs:
+  - csharp
+  - vb
+  name: PlannedStartDate
+  nameWithType: RequirementTaskViewModel.PlannedStartDate
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedStartDate
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: PlannedStartDate
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 8
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public DateTime PlannedStartDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property PlannedStartDate As Date
+  overload: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedStartDate*
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedEndDate
+  commentId: P:RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedEndDate
+  id: PlannedEndDate
+  parent: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  langs:
+  - csharp
+  - vb
+  name: PlannedEndDate
+  nameWithType: RequirementTaskViewModel.PlannedEndDate
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedEndDate
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: PlannedEndDate
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 10
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public DateTime PlannedEndDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property PlannedEndDate As Date
+  overload: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedEndDate*
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualStartDate
+  commentId: P:RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualStartDate
+  id: ActualStartDate
+  parent: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  langs:
+  - csharp
+  - vb
+  name: ActualStartDate
+  nameWithType: RequirementTaskViewModel.ActualStartDate
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualStartDate
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ActualStartDate
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 12
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public DateTime? ActualStartDate { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property ActualStartDate As Date?
+  overload: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualStartDate*
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualEndDate
+  commentId: P:RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualEndDate
+  id: ActualEndDate
+  parent: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  langs:
+  - csharp
+  - vb
+  name: ActualEndDate
+  nameWithType: RequirementTaskViewModel.ActualEndDate
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualEndDate
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ActualEndDate
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 14
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public DateTime? ActualEndDate { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property ActualEndDate As Date?
+  overload: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualEndDate*
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.TaskStatus
+  commentId: P:RPPP_WebApp.ViewModels.RequirementTaskViewModel.TaskStatus
+  id: TaskStatus
+  parent: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  langs:
+  - csharp
+  - vb
+  name: TaskStatus
+  nameWithType: RequirementTaskViewModel.TaskStatus
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.TaskStatus
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: TaskStatus
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 16
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public string TaskStatus { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TaskStatus As String
+  overload: RPPP_WebApp.ViewModels.RequirementTaskViewModel.TaskStatus*
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.RequirementDescription
+  commentId: P:RPPP_WebApp.ViewModels.RequirementTaskViewModel.RequirementDescription
+  id: RequirementDescription
+  parent: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  langs:
+  - csharp
+  - vb
+  name: RequirementDescription
+  nameWithType: RequirementTaskViewModel.RequirementDescription
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.RequirementDescription
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: RequirementDescription
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 18
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public string RequirementDescription { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RequirementDescription As String
+  overload: RPPP_WebApp.ViewModels.RequirementTaskViewModel.RequirementDescription*
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ProjectWork
+  commentId: P:RPPP_WebApp.ViewModels.RequirementTaskViewModel.ProjectWork
+  id: ProjectWork
+  parent: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  langs:
+  - csharp
+  - vb
+  name: ProjectWork
+  nameWithType: RequirementTaskViewModel.ProjectWork
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ProjectWork
+  type: Property
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: ProjectWork
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 20
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public string ProjectWork { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ProjectWork As String
+  overload: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ProjectWork*
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.FromRequirementTask(RPPP_WebApp.Model.RequirementTask)
+  commentId: M:RPPP_WebApp.ViewModels.RequirementTaskViewModel.FromRequirementTask(RPPP_WebApp.Model.RequirementTask)
+  id: FromRequirementTask(RPPP_WebApp.Model.RequirementTask)
+  parent: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  langs:
+  - csharp
+  - vb
+  name: FromRequirementTask(RequirementTask)
+  nameWithType: RequirementTaskViewModel.FromRequirementTask(RequirementTask)
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.FromRequirementTask(RPPP_WebApp.Model.RequirementTask)
+  type: Method
+  source:
+    remote:
+      path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+      branch: dev
+      repo: https://github.com/FER-RPPP/webapp-01.git
+    id: FromRequirementTask
+    path: RPPP-WebApp/RPPP-WebApp/ViewModels/RequirementTaskViewModel.cs
+    startLine: 22
+  assemblies:
+  - RPPP-WebApp
+  namespace: RPPP_WebApp.ViewModels
+  syntax:
+    content: public static RequirementTaskViewModel FromRequirementTask(RequirementTask task)
+    parameters:
+    - id: task
+      type: RPPP_WebApp.Model.RequirementTask
+    return:
+      type: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+    content.vb: Public Shared Function FromRequirementTask(task As RequirementTask) As RequirementTaskViewModel
+  overload: RPPP_WebApp.ViewModels.RequirementTaskViewModel.FromRequirementTask*
+references:
+- uid: RPPP_WebApp.ViewModels
+  commentId: N:RPPP_WebApp.ViewModels
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.ViewModels
+  nameWithType: RPPP_WebApp.ViewModels
+  fullName: RPPP_WebApp.ViewModels
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.ViewModels
+    name: ViewModels
+    href: RPPP_WebApp.ViewModels.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.ViewModels
+    name: ViewModels
+    href: RPPP_WebApp.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.Id*
+  commentId: Overload:RPPP_WebApp.ViewModels.RequirementTaskViewModel.Id
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html#RPPP_WebApp_ViewModels_RequirementTaskViewModel_Id
+  name: Id
+  nameWithType: RequirementTaskViewModel.Id
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedStartDate*
+  commentId: Overload:RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedStartDate
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html#RPPP_WebApp_ViewModels_RequirementTaskViewModel_PlannedStartDate
+  name: PlannedStartDate
+  nameWithType: RequirementTaskViewModel.PlannedStartDate
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedStartDate
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedEndDate*
+  commentId: Overload:RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedEndDate
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html#RPPP_WebApp_ViewModels_RequirementTaskViewModel_PlannedEndDate
+  name: PlannedEndDate
+  nameWithType: RequirementTaskViewModel.PlannedEndDate
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.PlannedEndDate
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualStartDate*
+  commentId: Overload:RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualStartDate
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html#RPPP_WebApp_ViewModels_RequirementTaskViewModel_ActualStartDate
+  name: ActualStartDate
+  nameWithType: RequirementTaskViewModel.ActualStartDate
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualStartDate
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualEndDate*
+  commentId: Overload:RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualEndDate
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html#RPPP_WebApp_ViewModels_RequirementTaskViewModel_ActualEndDate
+  name: ActualEndDate
+  nameWithType: RequirementTaskViewModel.ActualEndDate
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ActualEndDate
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.TaskStatus*
+  commentId: Overload:RPPP_WebApp.ViewModels.RequirementTaskViewModel.TaskStatus
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html#RPPP_WebApp_ViewModels_RequirementTaskViewModel_TaskStatus
+  name: TaskStatus
+  nameWithType: RequirementTaskViewModel.TaskStatus
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.TaskStatus
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.RequirementDescription*
+  commentId: Overload:RPPP_WebApp.ViewModels.RequirementTaskViewModel.RequirementDescription
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html#RPPP_WebApp_ViewModels_RequirementTaskViewModel_RequirementDescription
+  name: RequirementDescription
+  nameWithType: RequirementTaskViewModel.RequirementDescription
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.RequirementDescription
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ProjectWork*
+  commentId: Overload:RPPP_WebApp.ViewModels.RequirementTaskViewModel.ProjectWork
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html#RPPP_WebApp_ViewModels_RequirementTaskViewModel_ProjectWork
+  name: ProjectWork
+  nameWithType: RequirementTaskViewModel.ProjectWork
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.ProjectWork
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel.FromRequirementTask*
+  commentId: Overload:RPPP_WebApp.ViewModels.RequirementTaskViewModel.FromRequirementTask
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html#RPPP_WebApp_ViewModels_RequirementTaskViewModel_FromRequirementTask_RPPP_WebApp_Model_RequirementTask_
+  name: FromRequirementTask
+  nameWithType: RequirementTaskViewModel.FromRequirementTask
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel.FromRequirementTask
+- uid: RPPP_WebApp.Model.RequirementTask
+  commentId: T:RPPP_WebApp.Model.RequirementTask
+  parent: RPPP_WebApp.Model
+  href: RPPP_WebApp.Model.RequirementTask.html
+  name: RequirementTask
+  nameWithType: RequirementTask
+  fullName: RPPP_WebApp.Model.RequirementTask
+- uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  commentId: T:RPPP_WebApp.ViewModels.RequirementTaskViewModel
+  parent: RPPP_WebApp.ViewModels
+  href: RPPP_WebApp.ViewModels.RequirementTaskViewModel.html
+  name: RequirementTaskViewModel
+  nameWithType: RequirementTaskViewModel
+  fullName: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+- uid: RPPP_WebApp.Model
+  commentId: N:RPPP_WebApp.Model
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Model
+  nameWithType: RPPP_WebApp.Model
+  fullName: RPPP_WebApp.Model
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Model
+    name: Model
+    href: RPPP_WebApp.Model.html

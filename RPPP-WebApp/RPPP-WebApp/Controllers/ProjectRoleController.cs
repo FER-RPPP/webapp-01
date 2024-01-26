@@ -9,11 +9,23 @@ using System.Text.Json;
 
 namespace RPPP_WebApp.Controllers
 {
+    /// <summary>
+    /// Controller for managing roles on project.
+    /// </summary>
     public class ProjectRoleController : Controller
     {
         private readonly Rppp01Context ctx;
         private readonly ILogger<TransactionTypeController> logger;
         private readonly AppSettings appData;
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectRoleController"/> class.
+        /// </summary>
+        /// <param name="ctx">The database context.</param>
+        /// <param name="options">Application settings.</param>
+        /// <param name="logger">The logger.</param>
+        /// <returns>A new instance of the <see cref="ProjectRoleController"/> class.</returns>
         public ProjectRoleController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<TransactionTypeController> logger)
         {
             this.ctx = ctx;
@@ -21,6 +33,13 @@ namespace RPPP_WebApp.Controllers
             appData = options.Value;
         }
 
+        /// <summary>
+        /// Displays a paginated list of project roles.
+        /// </summary>
+        /// <param name="page">The page number.</param>
+        /// <param name="sort">The sort option.</param>
+        /// <param name="ascending">The sort direction.</param>
+        /// <returns>The result of the action.</returns>
         public IActionResult Index(int page = 1, int sort = 1, bool ascending = true)
         {
             var query = ctx.ProjectRole.AsNoTracking();
@@ -65,12 +84,21 @@ namespace RPPP_WebApp.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Displays the view for creating a new role.
+        /// </summary>
+        /// <returns>The result of the action.</returns>
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
+        /// <summary>
+        /// Handles the HTTP POST request for adding a new role.
+        /// </summary>
+        /// <param name="projectRole">The role data from the form.</param>
+        /// <returns>Redirects to the role index on success; returns the form on failure.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(ProjectRole projectRole)
@@ -101,6 +129,14 @@ namespace RPPP_WebApp.Controllers
                 return View(projectRole);
             }
         }
+        /// <summary>
+        /// Opens the form for editing data about an existing role.
+        /// </summary>
+        /// <param name="Id">The unique identifier of the role to edit.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Role edit view.</returns>
         [HttpGet]
         public IActionResult Edit(Guid Id, int page = 1, int sort = 1, bool ascending = true)
         {
@@ -118,7 +154,14 @@ namespace RPPP_WebApp.Controllers
                 return View(projectRole);
             }
         }
-
+        /// <summary>
+        /// Handles the HTTP POST request for updating data about an existing role.
+        /// </summary>
+        /// <param name="Id">The unique identifier of the role to be updated.</param>
+        /// <param name="page">The current page number.</param>
+        /// <param name="sort">The sort order.</param>
+        /// <param name="ascending">Whether the sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns the edit view with error messages.</returns>
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(Guid Id, int page = 1, int sort = 1, bool ascending = true)
@@ -166,10 +209,17 @@ namespace RPPP_WebApp.Controllers
                 return RedirectToAction(nameof(Edit), Id);
             }
         }
-    
 
 
-[HttpPost]
+        /// <summary>
+        /// Deletes a role with the specified id.
+        /// </summary>
+        /// <param name="Id">The unique identifier of the role to remove.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to an updated index view.</returns>
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(Guid Id, int page = 1, int sort = 1, bool ascending = true)
         {

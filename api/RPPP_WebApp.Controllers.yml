@@ -1,0 +1,379 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Controllers
+  commentId: N:RPPP_WebApp.Controllers
+  id: RPPP_WebApp.Controllers
+  children:
+  - RPPP_WebApp.Controllers.AutoCompleteController
+  - RPPP_WebApp.Controllers.ClientsController
+  - RPPP_WebApp.Controllers.DocumentTypesController
+  - RPPP_WebApp.Controllers.DocumentsController
+  - RPPP_WebApp.Controllers.HomeController
+  - RPPP_WebApp.Controllers.ICustomController`2
+  - RPPP_WebApp.Controllers.JTableController`3
+  - RPPP_WebApp.Controllers.JTableProductController
+  - RPPP_WebApp.Controllers.LaborDiaryController
+  - RPPP_WebApp.Controllers.LaborTypeController
+  - RPPP_WebApp.Controllers.MasterDetailsHeaders
+  - RPPP_WebApp.Controllers.OrganizationController
+  - RPPP_WebApp.Controllers.OwnerController
+  - RPPP_WebApp.Controllers.ProductController
+  - RPPP_WebApp.Controllers.ProductJTableController
+  - RPPP_WebApp.Controllers.ProjectCardController
+  - RPPP_WebApp.Controllers.ProjectMD4Controller
+  - RPPP_WebApp.Controllers.ProjectPartnerController
+  - RPPP_WebApp.Controllers.ProjectRequirementsController
+  - RPPP_WebApp.Controllers.ProjectRoleController
+  - RPPP_WebApp.Controllers.ProjectWorkController
+  - RPPP_WebApp.Controllers.ProjectsController
+  - RPPP_WebApp.Controllers.ReportGOController
+  - RPPP_WebApp.Controllers.ReportGOController.MasterDetailsHeaders
+  - RPPP_WebApp.Controllers.ReportIBController
+  - RPPP_WebApp.Controllers.ReportIBController.MasterDetailsHeaders
+  - RPPP_WebApp.Controllers.ReportKSController
+  - RPPP_WebApp.Controllers.ReportMMController
+  - RPPP_WebApp.Controllers.RequirementPrioritiesController
+  - RPPP_WebApp.Controllers.RequirementTasksController
+  - RPPP_WebApp.Controllers.TaskStatusController
+  - RPPP_WebApp.Controllers.TransactionController
+  - RPPP_WebApp.Controllers.TransactionPurposeController
+  - RPPP_WebApp.Controllers.TransactionTypeController
+  - RPPP_WebApp.Controllers.ViewLogGOController
+  - RPPP_WebApp.Controllers.WorkerController
+  langs:
+  - csharp
+  - vb
+  name: RPPP_WebApp.Controllers
+  nameWithType: RPPP_WebApp.Controllers
+  fullName: RPPP_WebApp.Controllers
+  type: Namespace
+  assemblies:
+  - RPPP-WebApp
+references:
+- uid: RPPP_WebApp.Controllers.AutoCompleteController
+  commentId: T:RPPP_WebApp.Controllers.AutoCompleteController
+  href: RPPP_WebApp.Controllers.AutoCompleteController.html
+  name: AutoCompleteController
+  nameWithType: AutoCompleteController
+  fullName: RPPP_WebApp.Controllers.AutoCompleteController
+- uid: RPPP_WebApp.Controllers.ClientsController
+  commentId: T:RPPP_WebApp.Controllers.ClientsController
+  href: RPPP_WebApp.Controllers.ClientsController.html
+  name: ClientsController
+  nameWithType: ClientsController
+  fullName: RPPP_WebApp.Controllers.ClientsController
+- uid: RPPP_WebApp.Controllers.DocumentsController
+  commentId: T:RPPP_WebApp.Controllers.DocumentsController
+  href: RPPP_WebApp.Controllers.DocumentsController.html
+  name: DocumentsController
+  nameWithType: DocumentsController
+  fullName: RPPP_WebApp.Controllers.DocumentsController
+- uid: RPPP_WebApp.Controllers.DocumentTypesController
+  commentId: T:RPPP_WebApp.Controllers.DocumentTypesController
+  href: RPPP_WebApp.Controllers.DocumentTypesController.html
+  name: DocumentTypesController
+  nameWithType: DocumentTypesController
+  fullName: RPPP_WebApp.Controllers.DocumentTypesController
+- uid: RPPP_WebApp.Controllers.HomeController
+  commentId: T:RPPP_WebApp.Controllers.HomeController
+  href: RPPP_WebApp.Controllers.HomeController.html
+  name: HomeController
+  nameWithType: HomeController
+  fullName: RPPP_WebApp.Controllers.HomeController
+- uid: RPPP_WebApp.Controllers.ICustomController`2
+  commentId: T:RPPP_WebApp.Controllers.ICustomController`2
+  href: RPPP_WebApp.Controllers.ICustomController-2.html
+  name: ICustomController<TKey, TModel>
+  nameWithType: ICustomController<TKey, TModel>
+  fullName: RPPP_WebApp.Controllers.ICustomController<TKey, TModel>
+  nameWithType.vb: ICustomController(Of TKey, TModel)
+  fullName.vb: RPPP_WebApp.Controllers.ICustomController(Of TKey, TModel)
+  name.vb: ICustomController(Of TKey, TModel)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2
+    name: ICustomController
+    href: RPPP_WebApp.Controllers.ICustomController-2.html
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: '>'
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ICustomController`2
+    name: ICustomController
+    href: RPPP_WebApp.Controllers.ICustomController-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: )
+- uid: RPPP_WebApp.Controllers.JTableController`3
+  commentId: T:RPPP_WebApp.Controllers.JTableController`3
+  href: RPPP_WebApp.Controllers.JTableController-3.html
+  name: JTableController<TController, TKey, TModel>
+  nameWithType: JTableController<TController, TKey, TModel>
+  fullName: RPPP_WebApp.Controllers.JTableController<TController, TKey, TModel>
+  nameWithType.vb: JTableController(Of TController, TKey, TModel)
+  fullName.vb: RPPP_WebApp.Controllers.JTableController(Of TController, TKey, TModel)
+  name.vb: JTableController(Of TController, TKey, TModel)
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.JTableController`3
+    name: JTableController
+    href: RPPP_WebApp.Controllers.JTableController-3.html
+  - name: <
+  - name: TController
+  - name: ','
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: '>'
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.JTableController`3
+    name: JTableController
+    href: RPPP_WebApp.Controllers.JTableController-3.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TController
+  - name: ','
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: )
+- uid: RPPP_WebApp.Controllers.JTableProductController
+  commentId: T:RPPP_WebApp.Controllers.JTableProductController
+  href: RPPP_WebApp.Controllers.JTableProductController.html
+  name: JTableProductController
+  nameWithType: JTableProductController
+  fullName: RPPP_WebApp.Controllers.JTableProductController
+- uid: RPPP_WebApp.Controllers.LaborDiaryController
+  commentId: T:RPPP_WebApp.Controllers.LaborDiaryController
+  href: RPPP_WebApp.Controllers.LaborDiaryController.html
+  name: LaborDiaryController
+  nameWithType: LaborDiaryController
+  fullName: RPPP_WebApp.Controllers.LaborDiaryController
+- uid: RPPP_WebApp.Controllers.LaborTypeController
+  commentId: T:RPPP_WebApp.Controllers.LaborTypeController
+  href: RPPP_WebApp.Controllers.LaborTypeController.html
+  name: LaborTypeController
+  nameWithType: LaborTypeController
+  fullName: RPPP_WebApp.Controllers.LaborTypeController
+- uid: RPPP_WebApp.Controllers.OrganizationController
+  commentId: T:RPPP_WebApp.Controllers.OrganizationController
+  href: RPPP_WebApp.Controllers.OrganizationController.html
+  name: OrganizationController
+  nameWithType: OrganizationController
+  fullName: RPPP_WebApp.Controllers.OrganizationController
+- uid: RPPP_WebApp.Controllers.OwnerController
+  commentId: T:RPPP_WebApp.Controllers.OwnerController
+  href: RPPP_WebApp.Controllers.OwnerController.html
+  name: OwnerController
+  nameWithType: OwnerController
+  fullName: RPPP_WebApp.Controllers.OwnerController
+- uid: RPPP_WebApp.Controllers.ProductController
+  commentId: T:RPPP_WebApp.Controllers.ProductController
+  parent: RPPP_WebApp.Controllers
+  href: RPPP_WebApp.Controllers.ProductController.html
+  name: ProductController
+  nameWithType: ProductController
+  fullName: RPPP_WebApp.Controllers.ProductController
+- uid: RPPP_WebApp.Controllers.ProductJTableController
+  commentId: T:RPPP_WebApp.Controllers.ProductJTableController
+  href: RPPP_WebApp.Controllers.ProductJTableController.html
+  name: ProductJTableController
+  nameWithType: ProductJTableController
+  fullName: RPPP_WebApp.Controllers.ProductJTableController
+- uid: RPPP_WebApp.Controllers.ProjectCardController
+  commentId: T:RPPP_WebApp.Controllers.ProjectCardController
+  href: RPPP_WebApp.Controllers.ProjectCardController.html
+  name: ProjectCardController
+  nameWithType: ProjectCardController
+  fullName: RPPP_WebApp.Controllers.ProjectCardController
+- uid: RPPP_WebApp.Controllers.ProjectMD4Controller
+  commentId: T:RPPP_WebApp.Controllers.ProjectMD4Controller
+  href: RPPP_WebApp.Controllers.ProjectMD4Controller.html
+  name: ProjectMD4Controller
+  nameWithType: ProjectMD4Controller
+  fullName: RPPP_WebApp.Controllers.ProjectMD4Controller
+- uid: RPPP_WebApp.Controllers.ProjectPartnerController
+  commentId: T:RPPP_WebApp.Controllers.ProjectPartnerController
+  href: RPPP_WebApp.Controllers.ProjectPartnerController.html
+  name: ProjectPartnerController
+  nameWithType: ProjectPartnerController
+  fullName: RPPP_WebApp.Controllers.ProjectPartnerController
+- uid: RPPP_WebApp.Controllers.ProjectRequirementsController
+  commentId: T:RPPP_WebApp.Controllers.ProjectRequirementsController
+  href: RPPP_WebApp.Controllers.ProjectRequirementsController.html
+  name: ProjectRequirementsController
+  nameWithType: ProjectRequirementsController
+  fullName: RPPP_WebApp.Controllers.ProjectRequirementsController
+- uid: RPPP_WebApp.Controllers.ProjectRoleController
+  commentId: T:RPPP_WebApp.Controllers.ProjectRoleController
+  href: RPPP_WebApp.Controllers.ProjectRoleController.html
+  name: ProjectRoleController
+  nameWithType: ProjectRoleController
+  fullName: RPPP_WebApp.Controllers.ProjectRoleController
+- uid: RPPP_WebApp.Controllers.ProjectsController
+  commentId: T:RPPP_WebApp.Controllers.ProjectsController
+  href: RPPP_WebApp.Controllers.ProjectsController.html
+  name: ProjectsController
+  nameWithType: ProjectsController
+  fullName: RPPP_WebApp.Controllers.ProjectsController
+- uid: RPPP_WebApp.Controllers.ProjectWorkController
+  commentId: T:RPPP_WebApp.Controllers.ProjectWorkController
+  href: RPPP_WebApp.Controllers.ProjectWorkController.html
+  name: ProjectWorkController
+  nameWithType: ProjectWorkController
+  fullName: RPPP_WebApp.Controllers.ProjectWorkController
+- uid: RPPP_WebApp.Controllers.ReportGOController
+  commentId: T:RPPP_WebApp.Controllers.ReportGOController
+  href: RPPP_WebApp.Controllers.ReportGOController.html
+  name: ReportGOController
+  nameWithType: ReportGOController
+  fullName: RPPP_WebApp.Controllers.ReportGOController
+- uid: RPPP_WebApp.Controllers.ReportGOController.MasterDetailsHeaders
+  commentId: T:RPPP_WebApp.Controllers.ReportGOController.MasterDetailsHeaders
+  href: RPPP_WebApp.Controllers.ReportGOController.html
+  name: ReportGOController.MasterDetailsHeaders
+  nameWithType: ReportGOController.MasterDetailsHeaders
+  fullName: RPPP_WebApp.Controllers.ReportGOController.MasterDetailsHeaders
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ReportGOController
+    name: ReportGOController
+    href: RPPP_WebApp.Controllers.ReportGOController.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers.ReportGOController.MasterDetailsHeaders
+    name: MasterDetailsHeaders
+    href: RPPP_WebApp.Controllers.ReportGOController.MasterDetailsHeaders.html
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ReportGOController
+    name: ReportGOController
+    href: RPPP_WebApp.Controllers.ReportGOController.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers.ReportGOController.MasterDetailsHeaders
+    name: MasterDetailsHeaders
+    href: RPPP_WebApp.Controllers.ReportGOController.MasterDetailsHeaders.html
+- uid: RPPP_WebApp.Controllers.ReportIBController
+  commentId: T:RPPP_WebApp.Controllers.ReportIBController
+  href: RPPP_WebApp.Controllers.ReportIBController.html
+  name: ReportIBController
+  nameWithType: ReportIBController
+  fullName: RPPP_WebApp.Controllers.ReportIBController
+- uid: RPPP_WebApp.Controllers.ReportIBController.MasterDetailsHeaders
+  commentId: T:RPPP_WebApp.Controllers.ReportIBController.MasterDetailsHeaders
+  href: RPPP_WebApp.Controllers.ReportIBController.html
+  name: ReportIBController.MasterDetailsHeaders
+  nameWithType: ReportIBController.MasterDetailsHeaders
+  fullName: RPPP_WebApp.Controllers.ReportIBController.MasterDetailsHeaders
+  spec.csharp:
+  - uid: RPPP_WebApp.Controllers.ReportIBController
+    name: ReportIBController
+    href: RPPP_WebApp.Controllers.ReportIBController.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers.ReportIBController.MasterDetailsHeaders
+    name: MasterDetailsHeaders
+    href: RPPP_WebApp.Controllers.ReportIBController.MasterDetailsHeaders.html
+  spec.vb:
+  - uid: RPPP_WebApp.Controllers.ReportIBController
+    name: ReportIBController
+    href: RPPP_WebApp.Controllers.ReportIBController.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers.ReportIBController.MasterDetailsHeaders
+    name: MasterDetailsHeaders
+    href: RPPP_WebApp.Controllers.ReportIBController.MasterDetailsHeaders.html
+- uid: RPPP_WebApp.Controllers.ReportKSController
+  commentId: T:RPPP_WebApp.Controllers.ReportKSController
+  href: RPPP_WebApp.Controllers.ReportKSController.html
+  name: ReportKSController
+  nameWithType: ReportKSController
+  fullName: RPPP_WebApp.Controllers.ReportKSController
+- uid: RPPP_WebApp.Controllers.ReportMMController
+  commentId: T:RPPP_WebApp.Controllers.ReportMMController
+  href: RPPP_WebApp.Controllers.ReportMMController.html
+  name: ReportMMController
+  nameWithType: ReportMMController
+  fullName: RPPP_WebApp.Controllers.ReportMMController
+- uid: RPPP_WebApp.Controllers.MasterDetailsHeaders
+  commentId: T:RPPP_WebApp.Controllers.MasterDetailsHeaders
+  href: RPPP_WebApp.Controllers.MasterDetailsHeaders.html
+  name: MasterDetailsHeaders
+  nameWithType: MasterDetailsHeaders
+  fullName: RPPP_WebApp.Controllers.MasterDetailsHeaders
+- uid: RPPP_WebApp.Controllers.RequirementPrioritiesController
+  commentId: T:RPPP_WebApp.Controllers.RequirementPrioritiesController
+  href: RPPP_WebApp.Controllers.RequirementPrioritiesController.html
+  name: RequirementPrioritiesController
+  nameWithType: RequirementPrioritiesController
+  fullName: RPPP_WebApp.Controllers.RequirementPrioritiesController
+- uid: RPPP_WebApp.Controllers.RequirementTasksController
+  commentId: T:RPPP_WebApp.Controllers.RequirementTasksController
+  href: RPPP_WebApp.Controllers.RequirementTasksController.html
+  name: RequirementTasksController
+  nameWithType: RequirementTasksController
+  fullName: RPPP_WebApp.Controllers.RequirementTasksController
+- uid: RPPP_WebApp.Controllers.TaskStatusController
+  commentId: T:RPPP_WebApp.Controllers.TaskStatusController
+  href: RPPP_WebApp.Controllers.TaskStatusController.html
+  name: TaskStatusController
+  nameWithType: TaskStatusController
+  fullName: RPPP_WebApp.Controllers.TaskStatusController
+- uid: RPPP_WebApp.Controllers.TransactionController
+  commentId: T:RPPP_WebApp.Controllers.TransactionController
+  href: RPPP_WebApp.Controllers.TransactionController.html
+  name: TransactionController
+  nameWithType: TransactionController
+  fullName: RPPP_WebApp.Controllers.TransactionController
+- uid: RPPP_WebApp.Controllers.TransactionPurposeController
+  commentId: T:RPPP_WebApp.Controllers.TransactionPurposeController
+  href: RPPP_WebApp.Controllers.TransactionPurposeController.html
+  name: TransactionPurposeController
+  nameWithType: TransactionPurposeController
+  fullName: RPPP_WebApp.Controllers.TransactionPurposeController
+- uid: RPPP_WebApp.Controllers.TransactionTypeController
+  commentId: T:RPPP_WebApp.Controllers.TransactionTypeController
+  href: RPPP_WebApp.Controllers.TransactionTypeController.html
+  name: TransactionTypeController
+  nameWithType: TransactionTypeController
+  fullName: RPPP_WebApp.Controllers.TransactionTypeController
+- uid: RPPP_WebApp.Controllers.ViewLogGOController
+  commentId: T:RPPP_WebApp.Controllers.ViewLogGOController
+  href: RPPP_WebApp.Controllers.ViewLogGOController.html
+  name: ViewLogGOController
+  nameWithType: ViewLogGOController
+  fullName: RPPP_WebApp.Controllers.ViewLogGOController
+- uid: RPPP_WebApp.Controllers.WorkerController
+  commentId: T:RPPP_WebApp.Controllers.WorkerController
+  href: RPPP_WebApp.Controllers.WorkerController.html
+  name: WorkerController
+  nameWithType: WorkerController
+  fullName: RPPP_WebApp.Controllers.WorkerController
+- uid: RPPP_WebApp.Controllers
+  commentId: N:RPPP_WebApp.Controllers
+  href: RPPP_WebApp.html
+  name: RPPP_WebApp.Controllers
+  nameWithType: RPPP_WebApp.Controllers
+  fullName: RPPP_WebApp.Controllers
+  spec.csharp:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers
+    name: Controllers
+    href: RPPP_WebApp.Controllers.html
+  spec.vb:
+  - uid: RPPP_WebApp
+    name: RPPP_WebApp
+    href: RPPP_WebApp.html
+  - name: .
+  - uid: RPPP_WebApp.Controllers
+    name: Controllers
+    href: RPPP_WebApp.Controllers.html

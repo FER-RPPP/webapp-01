@@ -9,17 +9,33 @@ using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers {
 	public class OwnerController : Controller {
+    /// <summary>
+    /// Controller for handling actions related to owners.
+    /// </summary>
 		private readonly Rppp01Context ctx;
     private readonly ILogger<OwnerController> logger;
     private readonly AppSettings appData;
 
-		public OwnerController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<OwnerController> logger) {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="OwnerController"/> class.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
+    /// <param name="options">The application settings options.</param>
+    /// <param name="logger">The logger.</param>
+    public OwnerController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<OwnerController> logger) {
 			this.ctx = ctx;
       this.logger = logger;
       appData = options.Value;
 		}
 
-		public IActionResult Index(int page = 1, int sort = 1, bool ascending = true) {
+    /// <summary>
+    /// Displays a paginated list of owners.
+    /// </summary>
+    /// <param name="page">The page number.</param>
+    /// <param name="sort">The sort option.</param>
+    /// <param name="ascending">The sort direction.</param>
+    /// <returns>The result of the action.</returns>
+    public IActionResult Index(int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.Owner
                      .AsNoTracking();
@@ -59,11 +75,20 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
 		}
 
+    /// <summary>
+    /// Displays the view for creating a new owner.
+    /// </summary>
+    /// <returns>The result of the action.</returns>
     [HttpGet]
     public IActionResult Create() {
       return View();
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for creating a new owner.
+    /// </summary>
+    /// <param name="owner">The owner to be created.</param>
+    /// <returns>The result of the action.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create(Owner owner) {
@@ -89,6 +114,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for deleting an owner.
+    /// </summary>
+    /// <param name="Oib">The OIB of the owner to be deleted.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sort">The sort option.</param>
+    /// <param name="ascending">The sort direction.</param>
+    /// <returns>The result of the action.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(string Oib, int page = 1, int sort = 1, bool ascending = true) {
@@ -115,7 +148,14 @@ namespace RPPP_WebApp.Controllers {
       return RedirectToAction(nameof(Index), new { page = page, sort = sort, ascending = ascending });
     }
 
-
+    /// <summary>
+    /// Displays the view for editing an existing owner.
+    /// </summary>
+    /// <param name="id">The OIB of the owner to be edited.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sort">The sort option.</param>
+    /// <param name="ascending">The sort direction.</param>
+    /// <returns>The result of the action.</returns>
     [HttpGet]
     public IActionResult Edit(string id, int page = 1, int sort = 1, bool ascending = true) {
       var owner = ctx.Owner.AsNoTracking().Where(o => o.Oib == id).SingleOrDefault();
@@ -131,6 +171,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the HTTP POST request for updating an existing owner.
+    /// </summary>
+    /// <param name="id">The OIB of the owner to be updated.</param>
+    /// <param name="page">The page number.</param>
+    /// <param name="sort">The sort option.</param>
+    /// <param name="ascending">The sort direction.</param>
+    /// <returns>The result of the action.</returns>
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(string id, int page = 1, int sort = 1, bool ascending = true) {

@@ -8,17 +8,33 @@ using RPPP_WebApp.Model;
 using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers {
+  /// <summary>
+  /// Controller for managing transaction types.
+  /// </summary>
   public class TransactionTypeController : Controller {
     private readonly Rppp01Context ctx;
     private readonly ILogger<TransactionTypeController> logger;
     private readonly AppSettings appData;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="TransactionTypeController"/> class.
+    /// </summary>
+    /// <param name="ctx">The database context.</param>
+    /// <param name="options">Application settings.</param>
+    /// <param name="logger">Logger instance.</param>
     public TransactionTypeController(Rppp01Context ctx, IOptionsSnapshot<AppSettings> options, ILogger<TransactionTypeController> logger) {
       this.ctx = ctx;
       this.logger = logger;
       appData = options.Value;
     }
 
+    /// <summary>
+    /// Displays a paginated list of transaction types.
+    /// </summary>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>The view displaying the paginated list of transaction types.</returns>
     public IActionResult Index(int page = 1, int sort = 1, bool ascending = true) {
       int pagesize = appData.PageSize;
       var query = ctx.TransactionType
@@ -59,12 +75,20 @@ namespace RPPP_WebApp.Controllers {
       return View(model);
     }
 
-
+    /// <summary>
+    /// Displays the form for creating a new transaction type.
+    /// </summary>
+    /// <returns>The view for creating a new transaction type.</returns>
     [HttpGet]
     public IActionResult Create() {
       return View();
     }
 
+    /// <summary>
+    /// Handles the submission of the new transaction type form.
+    /// </summary>
+    /// <param name="transactionType">The transaction type data from the form.</param>
+    /// <returns>Redirects to the transaction type index on success; returns the form on failure.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create(TransactionType transactionType) {
@@ -90,6 +114,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Deletes a transaction type based on its ID.
+    /// </summary>
+    /// <param name="Id">The ID of the transaction type to be deleted.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Redirects to the transaction type index after deletion.</returns>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
@@ -117,6 +149,14 @@ namespace RPPP_WebApp.Controllers {
     }
 
 
+    /// <summary>
+    /// Displays the form for editing an existing transaction type.
+    /// </summary>
+    /// <param name="Id">The ID of the transaction type to be edited.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>The view for editing an existing transaction type.</returns>
     [HttpGet]
     public IActionResult Edit(Guid Id, int page = 1, int sort = 1, bool ascending = true) {
       var transactionType = ctx.TransactionType.AsNoTracking().Where(o => o.Id == Id).SingleOrDefault();
@@ -132,6 +172,14 @@ namespace RPPP_WebApp.Controllers {
       }
     }
 
+    /// <summary>
+    /// Handles the submission of the edited transaction type form.
+    /// </summary>
+    /// <param name="Id">The ID of the transaction type to be updated.</param>
+    /// <param name="page">Page number.</param>
+    /// <param name="sort">Sorting option.</param>
+    /// <param name="ascending">Sort order.</param>
+    /// <returns>Redirects to the transaction type index on success; returns the form on failure.</returns>
     [HttpPost, ActionName("Edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(Guid Id, int page = 1, int sort = 1, bool ascending = true) {

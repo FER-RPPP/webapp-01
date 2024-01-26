@@ -1,0 +1,42 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.Views
+  commentId: N:RPPP_WebApp.Views
+  id: RPPP_WebApp.Views
+  children:
+  - RPPP_WebApp.Views.PaginatedList`1
+  langs:
+  - csharp
+  - vb
+  name: RPPP_WebApp.Views
+  nameWithType: RPPP_WebApp.Views
+  fullName: RPPP_WebApp.Views
+  type: Namespace
+  assemblies:
+  - RPPP-WebApp
+references:
+- uid: RPPP_WebApp.Views.PaginatedList`1
+  commentId: T:RPPP_WebApp.Views.PaginatedList`1
+  href: RPPP_WebApp.Views.PaginatedList-1.html
+  name: PaginatedList<T>
+  nameWithType: PaginatedList<T>
+  fullName: RPPP_WebApp.Views.PaginatedList<T>
+  nameWithType.vb: PaginatedList(Of T)
+  fullName.vb: RPPP_WebApp.Views.PaginatedList(Of T)
+  name.vb: PaginatedList(Of T)
+  spec.csharp:
+  - uid: RPPP_WebApp.Views.PaginatedList`1
+    name: PaginatedList
+    href: RPPP_WebApp.Views.PaginatedList-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: RPPP_WebApp.Views.PaginatedList`1
+    name: PaginatedList
+    href: RPPP_WebApp.Views.PaginatedList-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

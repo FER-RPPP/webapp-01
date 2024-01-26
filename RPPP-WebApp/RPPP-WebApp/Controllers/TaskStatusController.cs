@@ -12,6 +12,10 @@ using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers
 {
+
+    /// <summary>
+    /// Controller for managing task statuses.
+    /// </summary>
     public class TaskStatusController : Controller
     {
         private readonly Rppp01Context _context;
@@ -25,7 +29,13 @@ namespace RPPP_WebApp.Controllers
             this.logger = logger;
         }
 
-        // GET: TaskStatus
+        /// <summary>
+        /// Displays a paginated list of task statuses.
+        /// </summary>
+        /// <param name="page">Page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The view of the index page with task statuses.</returns>
         public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Task Status Index called.");
@@ -63,7 +73,14 @@ namespace RPPP_WebApp.Controllers
             return View(model);
         }
 
-        // GET: TaskStatus/Details/5
+        /// <summary>
+        /// Displays details of a specific task status.
+        /// </summary>
+        /// <param name="id">The unique identifier of the task status.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The details view for a task status.</returns>
         public async Task<IActionResult> Details(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Task Status Details called.");
@@ -85,7 +102,13 @@ namespace RPPP_WebApp.Controllers
             return View(taskStatus);
         }
 
-        // GET: TaskStatus/Create
+        /// <summary>
+        /// Opens the form for creating a new task status.
+        /// </summary>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The create view for a task status.</returns>
         public IActionResult Create(int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Task Status Create called.");
@@ -95,9 +118,14 @@ namespace RPPP_WebApp.Controllers
             return View();
         }
 
-        // POST: TaskStatus/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Posts the data to create a new task status.
+        /// </summary>
+        /// <param name="taskStatus">The task status to create.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the create view.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Type")] Model.TaskStatus taskStatus, int page = 1, int sort = 1, bool ascending = true)
@@ -123,7 +151,14 @@ namespace RPPP_WebApp.Controllers
             return View(taskStatus);
         }
 
-        // GET: TaskStatus/Edit/5
+        /// <summary>
+        /// Opens the form for editing an existing task status.
+        /// </summary>
+        /// <param name="id">The unique identifier of the task status to edit.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The edit view for a task status.</returns>
         public async Task<IActionResult> Edit(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Task Status Edit page called.");
@@ -143,9 +178,15 @@ namespace RPPP_WebApp.Controllers
             return View(taskStatus);
         }
 
-        // POST: TaskStatus/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Posts the updated data for an existing task status.
+        /// </summary>
+        /// <param name="id">The unique identifier of the task status being edited.</param>
+        /// <param name="taskStatus">The updated task status data.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the edit view.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Type")] Model.TaskStatus taskStatus, int page = 1, int sort = 1, bool ascending = true)
@@ -182,7 +223,14 @@ namespace RPPP_WebApp.Controllers
             return View(taskStatus);
         }
 
-        // GET: TaskStatus/Delete/5
+        /// <summary>
+        /// Opens the form for deleting an existing task status.
+        /// </summary>
+        /// <param name="id">The unique identifier of the task status to delete.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The delete view for a task status.</returns>
         public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Task Status Delete page called.");
@@ -203,7 +251,14 @@ namespace RPPP_WebApp.Controllers
             return View(taskStatus);
         }
 
-        // POST: TaskStatus/Delete/5
+        /// <summary>
+        /// Confirms the deletion of a specific task status.
+        /// </summary>
+        /// <param name="id">The unique identifier of the task status to delete.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the delete view.</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id, int page = 1, int sort = 1, bool ascending = true)
@@ -234,6 +289,11 @@ namespace RPPP_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Checks if a task status exists in the database.
+        /// </summary>
+        /// <param name="id">The unique identifier of the task status.</param>
+        /// <returns>True if the task status exists, otherwise false.</returns>
         private bool TaskStatusExists(Guid id)
         {
           return _context.TaskStatus.Any(e => e.Id == id);

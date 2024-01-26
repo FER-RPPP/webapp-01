@@ -10,6 +10,10 @@ using System.Linq.Expressions;
 namespace RPPP_WebApp.Controllers
 {
 
+    /// <summary>
+    /// Web API controller for handling CRUD operations on Product entities.
+    /// </summary>
+
     [ApiController]
     [Route("[controller]")]
     public class ProductController : ControllerBase, ICustomController<Guid, ProductViewModel>
@@ -33,12 +37,11 @@ namespace RPPP_WebApp.Controllers
             this.ctx = ctx;
         }
 
-
-        // <summary>
-        /// Vraća broj svih produkta filtriran prema nazivu mjesta 
+        /// <summary>
+        /// Gets the count of Product entities optionally filtered by a query.
         /// </summary>
-        /// <param name="filter">Opcionalni filter za naziv produkta</param>
-        /// <returns></returns>
+        /// <param name="filter">Query string to filter the Product entities.</param>
+        /// <returns>The count of filtered or all Product entities.</returns>
         [HttpGet("count", Name = "BrojProdukta")]
         public async Task<int> Count([FromQuery] string filter)
         {
@@ -50,14 +53,11 @@ namespace RPPP_WebApp.Controllers
             int count = await query.CountAsync();
             return count;
         }
-
-
         /// <summary>
-        /// Dohvat produkta (opcionalno filtrirano po nazivu produkta).
-        /// Broj produkta, poredak, početna pozicija određeni s loadParams.
+        /// Retrieves a list of Product entities based on provided load parameters.
         /// </summary>
-        /// <param name="loadParams">Postavke za straničenje i filter</param>
-        /// <returns></returns>
+        /// <param name="loadParams">Parameters for loading data such as filtering, sorting, paging, etc.</param>
+        /// <returns>A list of Product entities.</returns>
         [HttpGet(Name = "DohvatiMjesta")]
         public async Task<List<ProductViewModel>> GetAll([FromQuery] LoadParams loadParams)
         {
@@ -84,10 +84,10 @@ namespace RPPP_WebApp.Controllers
         }
 
         /// <summary>
-        /// Vraća produkt čiji je id jednak vrijednosti parametra id
+        /// Retrieves a specific Product entity by its identifier.
         /// </summary>
-        /// <param name="id">IdProdukta</param>
-        /// <returns></returns>
+        /// <param name="id">The unique identifier of the Product entity.</param>
+        /// <returns>The Product entity if found, otherwise a 404 Not Found status.</returns>
         [HttpGet("{id}", Name = "DohvatiProdukt")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -108,12 +108,10 @@ namespace RPPP_WebApp.Controllers
         }
 
         /// <summary>
-        /// Brisanje produkta određenog s id
+        /// Deletes a specific Product entity by its identifier.
         /// </summary>
-        /// <param name="id">Vrijednost primarnog ključa (Id produkta)</param>
-        /// <returns></returns>
-        /// <response code="204">Ako je produkt uspješno obrisan</response>
-        /// <response code="404">Ako produkt s poslanim id-om ne postoji</response>      
+        /// <param name="id">The unique identifier of the Product entity to delete.</param>
+        /// <returns>A 204 No Content status if successful, otherwise a 404 Not Found status.</returns>
         [HttpDelete("{id}", Name = "ObrisiProdukt")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -132,12 +130,12 @@ namespace RPPP_WebApp.Controllers
             };
         }
 
-        // <summary>
-        /// Ažurira produkt
+        /// <summary>
+        /// Updates a specific Product entity identified by the provided id with the data in the provided model.
         /// </summary>
-        /// <param name="id">parametar čija vrijednost jednoznačno identificira produkt</param>
-        /// <param name="model">Podaci o produktu. Id mora se podudarati s parametrom id</param>
-        /// <returns></returns>
+        /// <param name="id">The unique identifier of the Product entity to update.</param>
+        /// <param name="model">The model containing updated data for the Product entity.</param>
+        /// <returns>A 204 No Content status if successful, otherwise a 404 Not Found or 400 Bad Request status.</returns>
         [HttpPut("{id}", Name = "AzurirajMjesto")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -164,10 +162,10 @@ namespace RPPP_WebApp.Controllers
         }
 
         /// <summary>
-        /// Stvara novi produkt opisanim poslanim modelom
+        /// Creates a new Product entity based on the provided model.
         /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        /// <param name="model">The model to create a new Product entity from.</param>
+        /// <returns>A 201 Created status with the newly created Product entity, otherwise a 400 Bad Request status.</returns>
         [HttpPost(Name = "DodajProdukt")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -1,0 +1,341 @@
+### YamlMime:TableOfContent
+items:
+- uid: RPPP_WebApp
+  name: RPPP_WebApp
+  items:
+  - uid: RPPP_WebApp.AppSettings
+    name: AppSettings
+  - uid: RPPP_WebApp.Constants
+    name: Constants
+  - uid: RPPP_WebApp.StartupExtensions
+    name: StartupExtensions
+- uid: RPPP_WebApp.Controllers
+  name: RPPP_WebApp.Controllers
+  items:
+  - uid: RPPP_WebApp.Controllers.AutoCompleteController
+    name: AutoCompleteController
+  - uid: RPPP_WebApp.Controllers.ClientsController
+    name: ClientsController
+  - uid: RPPP_WebApp.Controllers.DocumentTypesController
+    name: DocumentTypesController
+  - uid: RPPP_WebApp.Controllers.DocumentsController
+    name: DocumentsController
+  - uid: RPPP_WebApp.Controllers.HomeController
+    name: HomeController
+  - uid: RPPP_WebApp.Controllers.ICustomController`2
+    name: ICustomController<TKey, TModel>
+  - uid: RPPP_WebApp.Controllers.JTableController`3
+    name: JTableController<TController, TKey, TModel>
+  - uid: RPPP_WebApp.Controllers.JTableProductController
+    name: JTableProductController
+  - uid: RPPP_WebApp.Controllers.LaborDiaryController
+    name: LaborDiaryController
+  - uid: RPPP_WebApp.Controllers.LaborTypeController
+    name: LaborTypeController
+  - uid: RPPP_WebApp.Controllers.MasterDetailsHeaders
+    name: MasterDetailsHeaders
+  - uid: RPPP_WebApp.Controllers.OrganizationController
+    name: OrganizationController
+  - uid: RPPP_WebApp.Controllers.OwnerController
+    name: OwnerController
+  - uid: RPPP_WebApp.Controllers.ProductController
+    name: ProductController
+  - uid: RPPP_WebApp.Controllers.ProductJTableController
+    name: ProductJTableController
+  - uid: RPPP_WebApp.Controllers.ProjectCardController
+    name: ProjectCardController
+  - uid: RPPP_WebApp.Controllers.ProjectMD4Controller
+    name: ProjectMD4Controller
+  - uid: RPPP_WebApp.Controllers.ProjectPartnerController
+    name: ProjectPartnerController
+  - uid: RPPP_WebApp.Controllers.ProjectRequirementsController
+    name: ProjectRequirementsController
+  - uid: RPPP_WebApp.Controllers.ProjectRoleController
+    name: ProjectRoleController
+  - uid: RPPP_WebApp.Controllers.ProjectWorkController
+    name: ProjectWorkController
+  - uid: RPPP_WebApp.Controllers.ProjectsController
+    name: ProjectsController
+  - uid: RPPP_WebApp.Controllers.ReportGOController
+    name: ReportGOController
+  - uid: RPPP_WebApp.Controllers.ReportGOController.MasterDetailsHeaders
+    name: ReportGOController.MasterDetailsHeaders
+  - uid: RPPP_WebApp.Controllers.ReportIBController
+    name: ReportIBController
+  - uid: RPPP_WebApp.Controllers.ReportIBController.MasterDetailsHeaders
+    name: ReportIBController.MasterDetailsHeaders
+  - uid: RPPP_WebApp.Controllers.ReportKSController
+    name: ReportKSController
+  - uid: RPPP_WebApp.Controllers.ReportMMController
+    name: ReportMMController
+  - uid: RPPP_WebApp.Controllers.RequirementPrioritiesController
+    name: RequirementPrioritiesController
+  - uid: RPPP_WebApp.Controllers.RequirementTasksController
+    name: RequirementTasksController
+  - uid: RPPP_WebApp.Controllers.TaskStatusController
+    name: TaskStatusController
+  - uid: RPPP_WebApp.Controllers.TransactionController
+    name: TransactionController
+  - uid: RPPP_WebApp.Controllers.TransactionPurposeController
+    name: TransactionPurposeController
+  - uid: RPPP_WebApp.Controllers.TransactionTypeController
+    name: TransactionTypeController
+  - uid: RPPP_WebApp.Controllers.ViewLogGOController
+    name: ViewLogGOController
+  - uid: RPPP_WebApp.Controllers.WorkerController
+    name: WorkerController
+- uid: RPPP_WebApp.Extensions
+  name: RPPP_WebApp.Extensions
+  items:
+  - uid: RPPP_WebApp.Extensions.ExcelCreator
+    name: ExcelCreator
+  - uid: RPPP_WebApp.Extensions.ExceptionExtensions
+    name: ExceptionExtensions
+- uid: RPPP_WebApp.Extensions.Selectors
+  name: RPPP_WebApp.Extensions.Selectors
+  items:
+  - uid: RPPP_WebApp.Extensions.Selectors.LaborDiarySort
+    name: LaborDiarySort
+  - uid: RPPP_WebApp.Extensions.Selectors.LaborTypeSort
+    name: LaborTypeSort
+  - uid: RPPP_WebApp.Extensions.Selectors.OrganizationSort
+    name: OrganizationSort
+  - uid: RPPP_WebApp.Extensions.Selectors.OwnerSort
+    name: OwnerSort
+  - uid: RPPP_WebApp.Extensions.Selectors.ProjectCardSort
+    name: ProjectCardSort
+  - uid: RPPP_WebApp.Extensions.Selectors.ProjectMD4Sort
+    name: ProjectMD4Sort
+  - uid: RPPP_WebApp.Extensions.Selectors.ProjectPartnerSort
+    name: ProjectPartnerSort
+  - uid: RPPP_WebApp.Extensions.Selectors.ProjectRequirementSort
+    name: ProjectRequirementSort
+  - uid: RPPP_WebApp.Extensions.Selectors.ProjectRoleSort
+    name: ProjectRoleSort
+  - uid: RPPP_WebApp.Extensions.Selectors.ProjectWorkSort
+    name: ProjectWorkSort
+  - uid: RPPP_WebApp.Extensions.Selectors.RequirementPrioritySort
+    name: RequirementPrioritySort
+  - uid: RPPP_WebApp.Extensions.Selectors.RequirementTaskSort
+    name: RequirementTaskSort
+  - uid: RPPP_WebApp.Extensions.Selectors.TaskStatusSort
+    name: TaskStatusSort
+  - uid: RPPP_WebApp.Extensions.Selectors.TransactionPurposeSort
+    name: TransactionPurposeSort
+  - uid: RPPP_WebApp.Extensions.Selectors.TransactionSort
+    name: TransactionSort
+  - uid: RPPP_WebApp.Extensions.Selectors.TransactionTypeSort
+    name: TransactionTypeSort
+  - uid: RPPP_WebApp.Extensions.Selectors.WorkerSort
+    name: WorkerSort
+- uid: RPPP_WebApp.Model
+  name: RPPP_WebApp.Model
+  items:
+  - uid: RPPP_WebApp.Model.CardTransaction
+    name: CardTransaction
+  - uid: RPPP_WebApp.Model.Client
+    name: Client
+  - uid: RPPP_WebApp.Model.CreateResult
+    name: CreateResult
+  - uid: RPPP_WebApp.Model.Document
+    name: Document
+  - uid: RPPP_WebApp.Model.DocumentType
+    name: DocumentType
+  - uid: RPPP_WebApp.Model.ErrorStatusTo200WithErrorMessage
+    name: ErrorStatusTo200WithErrorMessage
+  - uid: RPPP_WebApp.Model.JTableAjaxResult
+    name: JTableAjaxResult
+  - uid: RPPP_WebApp.Model.LaborDiary
+    name: LaborDiary
+  - uid: RPPP_WebApp.Model.LaborType
+    name: LaborType
+  - uid: RPPP_WebApp.Model.LoadParams
+    name: LoadParams
+  - uid: RPPP_WebApp.Model.ModelStateExtensions
+    name: ModelStateExtensions
+  - uid: RPPP_WebApp.Model.OptionsResult
+    name: OptionsResult
+  - uid: RPPP_WebApp.Model.Organization
+    name: Organization
+  - uid: RPPP_WebApp.Model.Owner
+    name: Owner
+  - uid: RPPP_WebApp.Model.Product
+    name: Product
+  - uid: RPPP_WebApp.Model.Project
+    name: Project
+  - uid: RPPP_WebApp.Model.ProjectCard
+    name: ProjectCard
+  - uid: RPPP_WebApp.Model.ProjectPartner
+    name: ProjectPartner
+  - uid: RPPP_WebApp.Model.ProjectRequirement
+    name: ProjectRequirement
+  - uid: RPPP_WebApp.Model.ProjectRole
+    name: ProjectRole
+  - uid: RPPP_WebApp.Model.ProjectWork
+    name: ProjectWork
+  - uid: RPPP_WebApp.Model.RequirementPriority
+    name: RequirementPriority
+  - uid: RPPP_WebApp.Model.RequirementTask
+    name: RequirementTask
+  - uid: RPPP_WebApp.Model.Rppp01Context
+    name: Rppp01Context
+  - uid: RPPP_WebApp.Model.TableRecords`1
+    name: TableRecords<T>
+  - uid: RPPP_WebApp.Model.TaskStatus
+    name: TaskStatus
+  - uid: RPPP_WebApp.Model.TextValue
+    name: TextValue
+  - uid: RPPP_WebApp.Model.Transaction
+    name: Transaction
+  - uid: RPPP_WebApp.Model.TransactionPurpose
+    name: TransactionPurpose
+  - uid: RPPP_WebApp.Model.TransactionType
+    name: TransactionType
+  - uid: RPPP_WebApp.Model.Worker
+    name: Worker
+- uid: RPPP_WebApp.ModelsValidation
+  name: RPPP_WebApp.ModelsValidation
+  items:
+  - uid: RPPP_WebApp.ModelsValidation.LaborDiaryValidator
+    name: LaborDiaryValidator
+  - uid: RPPP_WebApp.ModelsValidation.LaborTypeValidator
+    name: LaborTypeValidator
+  - uid: RPPP_WebApp.ModelsValidation.OrganizationValidator
+    name: OrganizationValidator
+  - uid: RPPP_WebApp.ModelsValidation.OwnerValidator
+    name: OwnerValidator
+  - uid: RPPP_WebApp.ModelsValidation.ProjectCardValidator
+    name: ProjectCardValidator
+  - uid: RPPP_WebApp.ModelsValidation.ProjectMD4Validator
+    name: ProjectMD4Validator
+  - uid: RPPP_WebApp.ModelsValidation.ProjectPartnerValidator
+    name: ProjectPartnerValidator
+  - uid: RPPP_WebApp.ModelsValidation.ProjectRoleValidator
+    name: ProjectRoleValidator
+  - uid: RPPP_WebApp.ModelsValidation.ProjectWorkValidator
+    name: ProjectWorkValidator
+  - uid: RPPP_WebApp.ModelsValidation.TransactionPurposeValidator
+    name: TransactionPurposeValidator
+  - uid: RPPP_WebApp.ModelsValidation.TransactionTypeValidator
+    name: TransactionTypeValidator
+  - uid: RPPP_WebApp.ModelsValidation.TransactionValidator
+    name: TransactionValidator
+  - uid: RPPP_WebApp.ModelsValidation.WorkerValidator
+    name: WorkerValidator
+- uid: RPPP_WebApp.Services
+  name: RPPP_WebApp.Services
+  items:
+  - uid: RPPP_WebApp.Services.IProductService
+    name: IProductService
+- uid: RPPP_WebApp.Services.Impl
+  name: RPPP_WebApp.Services.Impl
+  items:
+  - uid: RPPP_WebApp.Services.Impl.ProductService
+    name: ProductService
+- uid: RPPP_WebApp.TagHelpers
+  name: RPPP_WebApp.TagHelpers
+  items:
+  - uid: RPPP_WebApp.TagHelpers.PagerTagHelper
+    name: PagerTagHelper
+- uid: RPPP_WebApp.Util
+  name: RPPP_WebApp.Util
+  items:
+  - uid: RPPP_WebApp.Util.ExcelFormatAttribute
+    name: ExcelFormatAttribute
+- uid: RPPP_WebApp.ViewModels
+  name: RPPP_WebApp.ViewModels
+  items:
+  - uid: RPPP_WebApp.ViewModels.ActionResponseMessage
+    name: ActionResponseMessage
+  - uid: RPPP_WebApp.ViewModels.CardTransactionsViewModel
+    name: CardTransactionsViewModel
+  - uid: RPPP_WebApp.ViewModels.DocumentViewModel
+    name: DocumentViewModel
+  - uid: RPPP_WebApp.ViewModels.IdLabel
+    name: IdLabel
+  - uid: RPPP_WebApp.ViewModels.LaborDiariesViewModel
+    name: LaborDiariesViewModel
+  - uid: RPPP_WebApp.ViewModels.LaborDiaryFilter
+    name: LaborDiaryFilter
+  - uid: RPPP_WebApp.ViewModels.LaborDiaryViewModel
+    name: LaborDiaryViewModel
+  - uid: RPPP_WebApp.ViewModels.LaborTypeViewModel
+    name: LaborTypeViewModel
+  - uid: RPPP_WebApp.ViewModels.LogEntry
+    name: LogEntry
+  - uid: RPPP_WebApp.ViewModels.MessageType
+    name: MessageType
+  - uid: RPPP_WebApp.ViewModels.OrganizationViewModel
+    name: OrganizationViewModel
+  - uid: RPPP_WebApp.ViewModels.OwnerViewModel
+    name: OwnerViewModel
+  - uid: RPPP_WebApp.ViewModels.PagingInfo
+    name: PagingInfo
+  - uid: RPPP_WebApp.ViewModels.ProductViewModel
+    name: ProductViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectCardFilter
+    name: ProjectCardFilter
+  - uid: RPPP_WebApp.ViewModels.ProjectCardTransactionsViewModel
+    name: ProjectCardTransactionsViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectCardViewModel
+    name: ProjectCardViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectCardsViewModel
+    name: ProjectCardsViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectDocumentsViewModel
+    name: ProjectDocumentsViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectMD4ViewModel
+    name: ProjectMD4ViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectPartnerFilter
+    name: ProjectPartnerFilter
+  - uid: RPPP_WebApp.ViewModels.ProjectPartnerViewModel
+    name: ProjectPartnerViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectPartnersViewModel
+    name: ProjectPartnersViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectRequirementsViewModel
+    name: ProjectRequirementsViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectRoleViewModel
+    name: ProjectRoleViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectWorkFilter
+    name: ProjectWorkFilter
+  - uid: RPPP_WebApp.ViewModels.ProjectWorkViewModel
+    name: ProjectWorkViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectWorksViewModel
+    name: ProjectWorksViewModel
+  - uid: RPPP_WebApp.ViewModels.ProjectsMD4ViewModel
+    name: ProjectsMD4ViewModel
+  - uid: RPPP_WebApp.ViewModels.ReportProjectIBMasterDetail
+    name: ReportProjectIBMasterDetail
+  - uid: RPPP_WebApp.ViewModels.RequirementPrioritiesViewModel
+    name: RequirementPrioritiesViewModel
+  - uid: RPPP_WebApp.ViewModels.RequirementTaskDenorm
+    name: RequirementTaskDenorm
+  - uid: RPPP_WebApp.ViewModels.RequirementTaskFilter
+    name: RequirementTaskFilter
+  - uid: RPPP_WebApp.ViewModels.RequirementTaskViewModel
+    name: RequirementTaskViewModel
+  - uid: RPPP_WebApp.ViewModels.RequirementTasksViewModel
+    name: RequirementTasksViewModel
+  - uid: RPPP_WebApp.ViewModels.TaskStatusesViewModel
+    name: TaskStatusesViewModel
+  - uid: RPPP_WebApp.ViewModels.TransactionFilter
+    name: TransactionFilter
+  - uid: RPPP_WebApp.ViewModels.TransactionPurposeViewModel
+    name: TransactionPurposeViewModel
+  - uid: RPPP_WebApp.ViewModels.TransactionTypeViewModel
+    name: TransactionTypeViewModel
+  - uid: RPPP_WebApp.ViewModels.TransactionViewModel
+    name: TransactionViewModel
+  - uid: RPPP_WebApp.ViewModels.TransactionsViewModel
+    name: TransactionsViewModel
+  - uid: RPPP_WebApp.ViewModels.WorkerFilter
+    name: WorkerFilter
+  - uid: RPPP_WebApp.ViewModels.WorkerViewModel
+    name: WorkerViewModel
+  - uid: RPPP_WebApp.ViewModels.WorkerViewsModel
+    name: WorkerViewsModel
+- uid: RPPP_WebApp.Views
+  name: RPPP_WebApp.Views
+  items:
+  - uid: RPPP_WebApp.Views.PaginatedList`1
+    name: PaginatedList<T>
+memberLayout: SamePage

@@ -13,6 +13,10 @@ using RPPP_WebApp.ViewModels;
 
 namespace RPPP_WebApp.Controllers
 {
+
+    /// <summary>
+    /// Controller for managing requirement priorities.
+    /// </summary>
     public class RequirementPrioritiesController : Controller
     {
         private readonly Rppp01Context _context;
@@ -26,7 +30,13 @@ namespace RPPP_WebApp.Controllers
             this.logger = logger;
         }
 
-        // GET: RequirementPriorities
+        /// <summary>
+        /// Displays a paginated list of requirement priorities.
+        /// </summary>
+        /// <param name="page">Page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The view of the index page with requirement priorities.</returns>
         public async Task<IActionResult> Index(int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get Requirement Priorities called...");
@@ -64,7 +74,14 @@ namespace RPPP_WebApp.Controllers
             return View(model);
         }
 
-        // GET: RequirementPriorities/Details/5
+        /// <summary>
+        /// Displays details of a specific requirement priority.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement priority.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The details view for a requirement priority.</returns>
         public async Task<IActionResult> Details(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get Requirement Priorities details called...");
@@ -87,16 +104,24 @@ namespace RPPP_WebApp.Controllers
             return View(requirementPriority);
         }
 
-        // GET: RequirementPriorities/Create
+        /// <summary>
+        /// Opens the form for creating a new requirement priority.
+        /// </summary>
+        /// <returns>The create view for a requirement priority.</returns>
         public IActionResult Create()
         {
             logger.LogInformation("Get Requirement Priorities create page called...");
             return View();
         }
 
-        // POST: RequirementPriorities/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Posts the data to create a new requirement priority.
+        /// </summary>
+        /// <param name="requirementPriority">The requirement priority to create.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the create view.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Type")] RequirementPriority requirementPriority, int page = 1, int sort = 1, bool ascending = true)
@@ -124,7 +149,14 @@ namespace RPPP_WebApp.Controllers
             return View(requirementPriority);
         }
 
-        // GET: RequirementPriorities/Edit/5
+        /// <summary>
+        /// Opens the form for editing an existing requirement priority.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement priority to edit.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The edit view for a requirement priority.</returns>
         public async Task<IActionResult> Edit(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get Requirement Priorities Edit page called...");
@@ -146,9 +178,15 @@ namespace RPPP_WebApp.Controllers
             return View(requirementPriority);
         }
 
-        // POST: RequirementPriorities/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Posts the updated data for an existing requirement priority.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement priority being edited.</param>
+        /// <param name="requirementPriority">The updated requirement priority data.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the edit view.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Type")] RequirementPriority requirementPriority, int page = 1, int sort = 1, bool ascending = true)
@@ -187,7 +225,14 @@ namespace RPPP_WebApp.Controllers
             return View(requirementPriority);
         }
 
-        // GET: RequirementPriorities/Delete/5
+        /// <summary>
+        /// Opens the form for deleting an existing requirement priority.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement priority to delete.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>The delete view for a requirement priority.</returns>
         public async Task<IActionResult> Delete(Guid? id, int page = 1, int sort = 1, bool ascending = true)
         {
             logger.LogInformation("Get Requirement Priorities Delete page called...");
@@ -210,7 +255,14 @@ namespace RPPP_WebApp.Controllers
             return View(requirementPriority);
         }
 
-        // POST: RequirementPriorities/Delete/5
+        /// <summary>
+        /// Confirms the deletion of a specific requirement priority.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement priority to delete.</param>
+        /// <param name="page">Current page number.</param>
+        /// <param name="sort">Sort order.</param>
+        /// <param name="ascending">Whether sorting is in ascending order.</param>
+        /// <returns>Redirects to the index view if successful, otherwise returns to the delete view.</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id, int page = 1, int sort = 1, bool ascending = true)
@@ -241,6 +293,11 @@ namespace RPPP_WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Checks if a requirement priority exists in the database.
+        /// </summary>
+        /// <param name="id">The unique identifier of the requirement priority.</param>
+        /// <returns>True if the requirement priority exists, otherwise false.</returns>
         private bool RequirementPriorityExists(Guid id, int page = 1, int sort = 1, bool ascending = true)
         {
           return _context.RequirementPriority.Any(e => e.Id == id);

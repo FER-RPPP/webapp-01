@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: RPPP_WebApp.TagHelpers
+  commentId: N:RPPP_WebApp.TagHelpers
+  id: RPPP_WebApp.TagHelpers
+  children:
+  - RPPP_WebApp.TagHelpers.PagerTagHelper
+  langs:
+  - csharp
+  - vb
+  name: RPPP_WebApp.TagHelpers
+  nameWithType: RPPP_WebApp.TagHelpers
+  fullName: RPPP_WebApp.TagHelpers
+  type: Namespace
+  assemblies:
+  - RPPP-WebApp
+references:
+- uid: RPPP_WebApp.TagHelpers.PagerTagHelper
+  commentId: T:RPPP_WebApp.TagHelpers.PagerTagHelper
+  href: RPPP_WebApp.TagHelpers.PagerTagHelper.html
+  name: PagerTagHelper
+  nameWithType: PagerTagHelper
+  fullName: RPPP_WebApp.TagHelpers.PagerTagHelper

@@ -17,6 +17,10 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace RPPP_WebApp.Controllers
 {
+
+    /// <summary>
+    /// Manages the operations related to projects.
+    /// </summary>
     public class ProjectsController : Controller
     {
         private readonly Rppp01Context _context;
@@ -29,6 +33,13 @@ namespace RPPP_WebApp.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Displays a paginated list of projects, optionally filtered and sorted.
+        /// </summary>
+        /// <param name="sortOrder">The order in which to sort the projects.</param>
+        /// <param name="searchString">The search string to filter projects.</param>
+        /// <param name="pageNumber">The page number for pagination.</param>
+        /// <returns>An asynchronous task that returns the view for the Index page.</returns>
         // GET: Projects
         public async Task<IActionResult> Index(string sortOrder, string searchString, int? pageNumber)
         {
@@ -100,6 +111,12 @@ namespace RPPP_WebApp.Controllers
             return View(await PaginatedList<Project>.CreateAsync(projects.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
+
+        /// <summary>
+        /// Displays the details of a specific project.
+        /// </summary>
+        /// <param name="id">The unique identifier of the project.</param>
+        /// <returns>An asynchronous task that returns the view for the project's Details page.</returns>
         // GET: Projects/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
@@ -145,6 +162,11 @@ namespace RPPP_WebApp.Controllers
             return View(model);
         }
 
+
+        /// <summary>
+        /// Returns the view for creating a new project.
+        /// </summary>
+        /// <returns>The view for creating a new project.</returns>
         // GET: Projects/Create
         public IActionResult Create()
         {
@@ -175,6 +197,13 @@ namespace RPPP_WebApp.Controllers
             return View();
         }
 
+
+
+        /// <summary>
+        /// Processes the creation of a new project.
+        /// </summary>
+        /// <param name="project">The project data to create.</param>
+        /// <returns>An asynchronous task that returns to the index view if successful, or back to the create view with errors.</returns>
         // POST: Projects/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -234,6 +263,12 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Returns the view for editing an existing project.
+        /// </summary>
+        /// <param name="id">The ID of the project to edit.</param>
+        /// <returns>An asynchronous task that returns the edit view for the project.</returns>
         // GET: Projects/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -266,6 +301,12 @@ namespace RPPP_WebApp.Controllers
         }
 
 
+        /// <summary>
+        /// Processes the editing of an existing project.
+        /// </summary>
+        /// <param name="id">The ID of the project to edit.</param>
+        /// <param name="project">The updated project data.</param>
+        /// <returns>An asynchronous task that returns to the index view if successful, or back to the edit view with errors.</returns>
         // POST: Projects/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -324,6 +365,11 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Returns the view for deleting a project.
+        /// </summary>
+        /// <param name="id">The ID of the project to delete.</param>
+        /// <returns>An asynchronous task that returns the delete view for the project.</returns>
         // GET: Projects/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
@@ -345,6 +391,11 @@ namespace RPPP_WebApp.Controllers
             return View(project);
         }
 
+        /// <summary>
+        /// Processes the deletion of a project.
+        /// </summary>
+        /// <param name="id">The ID of the project to delete.</param>
+        /// <returns>An asynchronous task that returns to the index view after deletion.</returns>
         // POST: Projects/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -400,6 +451,10 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Prepares the drop-down lists required for the document-related views.
+        /// </summary>
+        /// <returns>An asynchronous task.</returns>
         private async Task PrepareDropDownLists()
         {
             var documentTypes = await _context.DocumentType
@@ -415,6 +470,11 @@ namespace RPPP_WebApp.Controllers
             ViewBag.DocumentTypes = documentTypesList;
         }
 
+        /// <summary>
+        /// Returns the view for a specific document.
+        /// </summary>
+        /// <param name="id">The ID of the document to display.</param>
+        /// <returns>An asynchronous task that returns the partial view for the document.</returns>
         [HttpGet]
         public async Task<IActionResult> GetDocument(Guid id)
         {
@@ -439,6 +499,12 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Processes the deletion of a document.
+        /// </summary>
+        /// <param name="Id">The ID of the document to delete.</param>
+        /// <returns>An asynchronous task that returns to the previous view after deletion.</returns>
         [HttpDelete]
         public async Task<IActionResult> DeleteDocument(Guid Id)
         {
@@ -466,6 +532,12 @@ namespace RPPP_WebApp.Controllers
             return PartialView(document);
         }
 
+
+        /// <summary>
+        /// Returns the view for editing an existing document.
+        /// </summary>
+        /// <param name="id">The ID of the document to edit.</param>
+        /// <returns>An asynchronous task that returns the edit view for the document.</returns>
         [HttpGet]
         public async Task<IActionResult> EditDocument(Guid id)
         {
@@ -493,6 +565,11 @@ namespace RPPP_WebApp.Controllers
         }
 
 
+        /// <summary>
+        /// Processes the editing of an existing document.
+        /// </summary>
+        /// <param name="document">The updated document data.</param>
+        /// <returns>An asynchronous task that returns to the document's view if successful, or back to the edit view with errors.</returns>
         [HttpPost]
         public async Task<IActionResult> EditDocument(DocumentViewModel document)
         {
@@ -531,7 +608,11 @@ namespace RPPP_WebApp.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Processes the creation of a new document.
+        /// </summary>
+        /// <param name="document">The document data to create.</param>
+        /// <returns>An asynchronous task that returns to the project details view if successful, or displays errors.</returns>
         [HttpPost]
         public async Task<IActionResult> NewDocument(Document document)
         {
